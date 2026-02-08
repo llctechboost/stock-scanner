@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Scanner Command Center</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+        }
+        .container { max-width: 1600px; margin: 0 auto; padding: 15px; }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(90deg, rgba(88,166,255,0.1), rgba(163,113,247,0.1));
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 1.6em;
+            background: linear-gradient(90deg, #58a6ff, #a371f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .timestamp { color: #8b949e; font-size: 0.85em; }
+        .header .status { display: flex; gap: 15px; align-items: center; }
+        .status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600; }
+        .status-live { background: rgba(63,185,80,0.2); color: #3fb950; }
+        .status-market { background: rgba(88,166,255,0.2); color: #58a6ff; }
+        
+        .main-grid { display: grid; grid-template-columns: 1fr 420px; gap: 20px; }
+        
+        .section {
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .section-header {
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-title { font-size: 1em; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .section-count { background: rgba(88,166,255,0.2); color: #58a6ff; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; }
+        .section-body { padding: 0; }
+        
+        /* 200-WMA Section Special Styling */
+        .section-200wma { border: 1px solid rgba(0,212,255,0.3); }
+        .section-200wma .section-header { background: rgba(0,212,255,0.1); }
+        .section-200wma .section-title { color: #00d4ff; }
+        
+        table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+        th { padding: 10px 12px; text-align: left; font-weight: 600; color: #8b949e; font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(255,255,255,0.02); }
+        td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        tr:hover { background: rgba(255,255,255,0.03); }
+        tr.actionable { background: rgba(63,185,80,0.08); }
+        tr.actionable:hover { background: rgba(63,185,80,0.12); }
+        tr.wma-buy-zone { background: rgba(0,212,255,0.08); }
+        tr.wma-buy-zone:hover { background: rgba(0,212,255,0.12); }
+        
+        .ticker { font-weight: 700; color: #e6edf3; cursor: pointer; }
+        .ticker:hover { color: #58a6ff; text-decoration: underline; }
+        .positive { color: #3fb950; }
+        .negative { color: #f85149; }
+        .neutral { color: #8b949e; }
+        .cyan { color: #00d4ff; }
+        
+        .score-pill { padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.85em; }
+        .score-a { background: rgba(63,185,80,0.2); color: #3fb950; }
+        .score-b { background: rgba(254,202,87,0.2); color: #d29922; }
+        .score-c { background: rgba(248,81,73,0.2); color: #f85149; }
+        
+        .pattern-tag { padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 600; }
+        .tag-breakout { background: rgba(63,185,80,0.15); color: #3fb950; }
+        .tag-vcp { background: rgba(255,107,107,0.15); color: #ff6b6b; }
+        .tag-pivot { background: rgba(88,166,255,0.15); color: #58a6ff; }
+        .tag-forming { background: rgba(139,148,158,0.15); color: #8b949e; }
+        .tag-200wma { background: rgba(0,212,255,0.15); color: #00d4ff; }
+        
+        .zone-badge { padding: 3px 10px; border-radius: 15px; font-size: 0.75em; font-weight: 600; }
+        .zone-green { background: rgba(0,255,136,0.2); color: #00ff88; }
+        .zone-yellow { background: rgba(255,193,7,0.2); color: #ffc107; }
+        
+        .action-badge { padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 700; }
+        .action-buy { background: #238636; color: #fff; }
+        .action-watch { background: rgba(210,153,34,0.2); color: #d29922; }
+        
+        .munger-stars { color: #ffc107; }
+        
+        .quick-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }
+        .stat-card { background: rgba(255,255,255,0.03); border-radius: 10px; padding: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.08); }
+        .stat-value { font-size: 1.8em; font-weight: 700; }
+        .stat-label { color: #8b949e; font-size: 0.75em; margin-top: 5px; }
+        
+        .chart-panel { position: sticky; top: 15px; }
+        .chart-container { background: #1e222d; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+        .chart-header { padding: 10px 15px; background: rgba(255,255,255,0.03); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .chart-ticker { font-weight: 700; font-size: 1.1em; color: #58a6ff; }
+        .chart-price { color: #3fb950; font-weight: 600; }
+        .tradingview-widget-container { height: 350px; }
+        
+        .trade-box { margin: 15px; padding: 15px; background: rgba(63,185,80,0.1); border-radius: 8px; border: 1px solid rgba(63,185,80,0.2); }
+        .trade-box h4 { color: #3fb950; margin-bottom: 10px; font-size: 0.9em; }
+        .trade-row { display: flex; justify-content: space-between; margin: 8px 0; }
+        .trade-label { color: #8b949e; font-size: 0.85em; }
+        .trade-value { font-weight: 700; font-size: 0.95em; }
+        .trade-value.entry { color: #3fb950; }
+        .trade-value.stop { color: #f85149; }
+        .trade-value.target { color: #58a6ff; }
+        
+        .stock-details { padding: 15px; background: rgba(255,255,255,0.02); }
+        .detail-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85em; }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label { color: #8b949e; }
+        .detail-value { font-weight: 600; }
+        
+        .footer { text-align: center; padding: 20px; color: #6e7681; font-size: 0.8em; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 20px; }
+        
+        @media (max-width: 1200px) { .main-grid { grid-template-columns: 1fr; } .chart-panel { position: static; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>📊 Stock Scanner Command Center</h1>
+                <div class="timestamp">Last scan: February 7, 2026 • 07:10 AM EST</div>
+            </div>
+            <div class="status">
+                <span class="status-badge status-live">● Data Live</span>
+                <span class="status-badge status-market">Market Open 9:30 AM</span>
+            </div>
+        </div>
+        
+        <div class="quick-stats">
+            <div class="stat-card">
+                <div class="stat-value" style="color:#3fb950">14</div>
+                <div class="stat-label">🎯 Actionable Now</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" style="color:#00d4ff">8</div>
+                <div class="stat-label">🧠 incl. 200-WMA</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" style="color:#ff6b6b">6</div>
+                <div class="stat-label">⭐ Textbook VCPs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" style="color:#d29922">12</div>
+                <div class="stat-label">👀 Watch List</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" style="color:#a371f7">66</div>
+                <div class="stat-label">📊 Total Universe</div>
+            </div>
+        </div>
+        
+        <div class="main-grid">
+            <div class="tables-column">
+                
+                <!-- ACTIONABLE NOW - Combined Breakouts + 200-WMA Buy Zone -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">🎯 ACTIONABLE NOW <span class="section-count">14 setups</span></div>
+                        <span style="color:#3fb950; font-size:0.8em;">Breakouts + 200-WMA Buy Zone</span>
+                    </div>
+                    <div class="section-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th>Signal Type</th>
+                                    <th>Score</th>
+                                    <th>Price</th>
+                                    <th>Entry</th>
+                                    <th>Stop Loss</th>
+                                    <th>Target</th>
+                                    <th>200-WMA</th>
+                                    <th>Munger</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BREAKOUTS -->
+                                <tr class="actionable" onclick="loadChart('GWW')">
+                                    <td class="ticker">GWW</td>
+                                    <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
+                                    <td><span class="score-pill score-a">100</span></td>
+                                    <td>$1,197.65</td>
+                                    <td class="positive">$1,200.00</td>
+                                    <td class="negative">$1,080.00</td>
+                                    <td class="positive">$1,440.00</td>
+                                    <td>+78%</td>
+                                    <td class="munger-stars">⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="actionable" onclick="loadChart('LOW')">
+                                    <td class="ticker">LOW</td>
+                                    <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
+                                    <td><span class="score-pill score-a">100</span></td>
+                                    <td>$278.38</td>
+                                    <td class="positive">$280.00</td>
+                                    <td class="negative">$252.00</td>
+                                    <td class="positive">$336.00</td>
+                                    <td>+45%</td>
+                                    <td class="munger-stars">⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="actionable" onclick="loadChart('TJX')">
+                                    <td class="ticker">TJX</td>
+                                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
+                                    <td><span class="score-pill score-a">96</span></td>
+                                    <td>$155.86</td>
+                                    <td class="positive">$157.29</td>
+                                    <td class="negative">$141.00</td>
+                                    <td class="positive">$189.00</td>
+                                    <td>+32%</td>
+                                    <td class="munger-stars">⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="actionable" onclick="loadChart('ASML')">
+                                    <td class="ticker">ASML</td>
+                                    <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
+                                    <td><span class="score-pill score-a">90</span></td>
+                                    <td>$1,413.01</td>
+                                    <td class="positive">$1,420.00</td>
+                                    <td class="negative">$1,278.00</td>
+                                    <td class="positive">$1,704.00</td>
+                                    <td>+52%</td>
+                                    <td class="munger-stars">⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="actionable" onclick="loadChart('JPM')">
+                                    <td class="ticker">JPM</td>
+                                    <td><span class="pattern-tag tag-vcp">VCP ⭐</span></td>
+                                    <td><span class="score-pill score-a">83</span></td>
+                                    <td>$322.40</td>
+                                    <td class="positive">$327.69</td>
+                                    <td class="negative">$295.00</td>
+                                    <td class="positive">$393.00</td>
+                                    <td>+42%</td>
+                                    <td class="munger-stars">⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="actionable" onclick="loadChart('MA')">
+                                    <td class="ticker">MA</td>
+                                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
+                                    <td><span class="score-pill score-b">73</span></td>
+                                    <td>$548.74</td>
+                                    <td class="positive">$552.90</td>
+                                    <td class="negative">$497.00</td>
+                                    <td class="positive">$663.00</td>
+                                    <td>+24%</td>
+                                    <td class="munger-stars">⭐⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <!-- 200-WMA BUY ZONE with Strong Fundamentals -->
+                                <tr class="wma-buy-zone" onclick="loadChart('COIN')">
+                                    <td class="ticker">COIN</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-a">95</span></td>
+                                    <td>$165.12</td>
+                                    <td class="positive">$169.07</td>
+                                    <td class="negative">$152.00</td>
+                                    <td class="positive">$203.00</td>
+                                    <td class="cyan">-2.3%</td>
+                                    <td class="munger-stars">⭐⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('MSFT')">
+                                    <td class="ticker">MSFT</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-a">92</span></td>
+                                    <td>$401.14</td>
+                                    <td class="positive">$410.00</td>
+                                    <td class="negative">$369.00</td>
+                                    <td class="positive">$492.00</td>
+                                    <td class="cyan">+8.6%</td>
+                                    <td class="munger-stars">⭐⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('ABNB')">
+                                    <td class="ticker">ABNB</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-a">88</span></td>
+                                    <td>$122.18</td>
+                                    <td class="positive">$127.87</td>
+                                    <td class="negative">$115.00</td>
+                                    <td class="positive">$153.00</td>
+                                    <td class="cyan">-4.4%</td>
+                                    <td class="munger-stars">⭐⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('DECK')">
+                                    <td class="ticker">DECK</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-a">85</span></td>
+                                    <td>$115.45</td>
+                                    <td class="positive">$120.00</td>
+                                    <td class="negative">$108.00</td>
+                                    <td class="positive">$144.00</td>
+                                    <td class="cyan">+7.7%</td>
+                                    <td class="munger-stars">⭐⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('TOST')">
+                                    <td class="ticker">TOST</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-b">78</span></td>
+                                    <td>$27.73</td>
+                                    <td class="positive">$28.00</td>
+                                    <td class="negative">$25.00</td>
+                                    <td class="positive">$34.00</td>
+                                    <td class="cyan">+5.1%</td>
+                                    <td class="munger-stars">⭐⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('SMCI')">
+                                    <td class="ticker">SMCI</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-b">75</span></td>
+                                    <td>$34.38</td>
+                                    <td class="positive">$34.56</td>
+                                    <td class="negative">$31.00</td>
+                                    <td class="positive">$41.00</td>
+                                    <td class="cyan">-0.5%</td>
+                                    <td class="munger-stars">⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('SNOW')">
+                                    <td class="ticker">SNOW</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-b">72</span></td>
+                                    <td>$168.43</td>
+                                    <td class="positive">$169.34</td>
+                                    <td class="negative">$152.00</td>
+                                    <td class="positive">$203.00</td>
+                                    <td class="cyan">-0.5%</td>
+                                    <td class="munger-stars">⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                                <tr class="wma-buy-zone" onclick="loadChart('QCOM')">
+                                    <td class="ticker">QCOM</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                                    <td><span class="score-pill score-b">70</span></td>
+                                    <td>$137.34</td>
+                                    <td class="positive">$140.95</td>
+                                    <td class="negative">$127.00</td>
+                                    <td class="positive">$169.00</td>
+                                    <td class="cyan">-2.6%</td>
+                                    <td class="munger-stars">⭐</td>
+                                    <td><span class="action-badge action-buy">BUY</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="padding: 10px 15px; background: rgba(0,0,0,0.2); font-size: 0.8em; color: #8b949e; display: flex; gap: 20px;">
+                            <span><span class="pattern-tag tag-breakout">BREAKOUT</span> = New highs with volume</span>
+                            <span><span class="pattern-tag tag-vcp">VCP</span> = Volatility Contraction Pattern</span>
+                            <span><span class="pattern-tag tag-200wma">200-WMA 🧠</span> = Within 10% of 200-week MA (Munger buy zone)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VCP TEXTBOOK -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">⭐ TEXTBOOK VCPs — Minervini Patterns <span class="section-count">6 stocks</span></div>
+                        <span style="color:#ff6b6b; font-size:0.8em;">Classic setups</span>
+                    </div>
+                    <div class="section-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th>VCP Score</th>
+                                    <th>Grade</th>
+                                    <th># Contractions</th>
+                                    <th>Tightness</th>
+                                    <th>Vol Dry-Up</th>
+                                    <th>Pivot</th>
+                                    <th>From High</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr onclick="loadChart('NVDA')">
+                                    <td class="ticker">NVDA</td>
+                                    <td><span class="score-pill score-a">9.3</span></td>
+                                    <td><span class="pattern-tag tag-vcp">A</span></td>
+                                    <td>3</td>
+                                    <td>71% → 27%</td>
+                                    <td>0.7x</td>
+                                    <td>$190.53</td>
+                                    <td>10.4%</td>
+                                    <td><span class="pattern-tag tag-vcp">⭐ TEXTBOOK</span></td>
+                                </tr>
+                                <tr onclick="loadChart('VRTX')">
+                                    <td class="ticker">VRTX</td>
+                                    <td><span class="score-pill score-a">8.8</span></td>
+                                    <td><span class="pattern-tag tag-vcp">A</span></td>
+                                    <td>3</td>
+                                    <td>95% → 83%</td>
+                                    <td>0.5x</td>
+                                    <td>$462.99</td>
+                                    <td>7.0%</td>
+                                    <td><span class="pattern-tag tag-vcp">⭐ TEXTBOOK</span></td>
+                                </tr>
+                                <tr onclick="loadChart('KLAC')">
+                                    <td class="ticker">KLAC</td>
+                                    <td><span class="score-pill score-a">8.8</span></td>
+                                    <td><span class="pattern-tag tag-vcp">A</span></td>
+                                    <td>3</td>
+                                    <td>54% → 85%</td>
+                                    <td>0.5x</td>
+                                    <td>$1,279.60</td>
+                                    <td>14.4%</td>
+                                    <td><span class="pattern-tag tag-vcp">⭐ TEXTBOOK</span></td>
+                                </tr>
+                                <tr onclick="loadChart('V')">
+                                    <td class="ticker">V</td>
+                                    <td><span class="score-pill score-a">8.3</span></td>
+                                    <td><span class="pattern-tag tag-vcp">A</span></td>
+                                    <td>3</td>
+                                    <td>35% → 93%</td>
+                                    <td>0.5x</td>
+                                    <td>$355.14</td>
+                                    <td>10.8%</td>
+                                    <td><span class="pattern-tag tag-vcp">⭐ TEXTBOOK</span></td>
+                                </tr>
+                                <tr onclick="loadChart('JPM')">
+                                    <td class="ticker">JPM</td>
+                                    <td><span class="score-pill score-a">8.0</span></td>
+                                    <td><span class="pattern-tag tag-vcp">A</span></td>
+                                    <td>4</td>
+                                    <td>71% → 44% → 96%</td>
+                                    <td>0.6x</td>
+                                    <td>$327.69</td>
+                                    <td>3.6%</td>
+                                    <td><span class="pattern-tag tag-vcp">⭐ TEXTBOOK</span></td>
+                                </tr>
+                                <tr onclick="loadChart('GS')">
+                                    <td class="ticker">GS</td>
+                                    <td><span class="score-pill score-b">7.0</span></td>
+                                    <td><span class="pattern-tag tag-pivot">B</span></td>
+                                    <td>3</td>
+                                    <td>82% → 68%</td>
+                                    <td>0.9x</td>
+                                    <td>$955.47</td>
+                                    <td>4.8%</td>
+                                    <td><span class="pattern-tag tag-vcp">⭐ TEXTBOOK</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- WATCH LIST -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">👀 WATCH LIST <span class="section-count">12 forming</span></div>
+                        <span style="color:#d29922; font-size:0.8em;">Patterns developing</span>
+                    </div>
+                    <div class="section-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th>Pattern</th>
+                                    <th>VCP Score</th>
+                                    <th>Price</th>
+                                    <th>Pivot</th>
+                                    <th>% to Pivot</th>
+                                    <th>200-WMA</th>
+                                    <th>Volume</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr onclick="loadChart('AMAT')">
+                                    <td class="ticker">AMAT</td>
+                                    <td><span class="pattern-tag tag-forming">ASCENDING</span></td>
+                                    <td><span class="score-pill score-a">97</span></td>
+                                    <td>$322.51</td>
+                                    <td>$340.00</td>
+                                    <td class="negative">+5.4%</td>
+                                    <td>+48%</td>
+                                    <td>0.9x</td>
+                                    <td><span class="action-badge action-watch">WATCH</span></td>
+                                </tr>
+                                <tr onclick="loadChart('GOOGL')">
+                                    <td class="ticker">GOOGL</td>
+                                    <td><span class="pattern-tag tag-forming">ASCENDING</span></td>
+                                    <td><span class="score-pill score-a">91</span></td>
+                                    <td>$322.86</td>
+                                    <td>$335.97</td>
+                                    <td class="negative">+4.1%</td>
+                                    <td>+65%</td>
+                                    <td>0.9x</td>
+                                    <td><span class="action-badge action-watch">WATCH</span></td>
+                                </tr>
+                                <tr onclick="loadChart('LLY')">
+                                    <td class="ticker">LLY</td>
+                                    <td><span class="pattern-tag tag-forming">ASCENDING</span></td>
+                                    <td><span class="score-pill score-a">86</span></td>
+                                    <td>$1,058.18</td>
+                                    <td>$1,108.09</td>
+                                    <td class="negative">+4.7%</td>
+                                    <td>+54%</td>
+                                    <td>0.9x</td>
+                                    <td><span class="action-badge action-watch">WATCH</span></td>
+                                </tr>
+                                <tr onclick="loadChart('NET')">
+                                    <td class="ticker">NET</td>
+                                    <td><span class="pattern-tag tag-forming">FORMING</span></td>
+                                    <td><span class="score-pill score-b">78</span></td>
+                                    <td>$202.66</td>
+                                    <td>$202.66</td>
+                                    <td class="neutral">0.0%</td>
+                                    <td>+55%</td>
+                                    <td>0.6x</td>
+                                    <td><span class="action-badge action-watch">NEAR</span></td>
+                                </tr>
+                                <tr onclick="loadChart('META')">
+                                    <td class="ticker">META</td>
+                                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
+                                    <td><span class="score-pill score-b">68</span></td>
+                                    <td>$672.87</td>
+                                    <td>$672.87</td>
+                                    <td class="neutral">0.0%</td>
+                                    <td>+85%</td>
+                                    <td>0.9x</td>
+                                    <td><span class="action-badge action-watch">NEAR</span></td>
+                                </tr>
+                                <tr onclick="loadChart('PANW')">
+                                    <td class="ticker">PANW</td>
+                                    <td><span class="pattern-tag tag-forming">FORMING</span></td>
+                                    <td><span class="score-pill score-b">78</span></td>
+                                    <td>$159.32</td>
+                                    <td>$189.49</td>
+                                    <td class="negative">+18.9%</td>
+                                    <td>+11%</td>
+                                    <td>0.6x</td>
+                                    <td><span class="action-badge action-watch">WATCH</span></td>
+                                </tr>
+                                <tr onclick="loadChart('V')">
+                                    <td class="ticker">V</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA</span></td>
+                                    <td><span class="score-pill score-a">83</span></td>
+                                    <td>$331.58</td>
+                                    <td>$355.14</td>
+                                    <td class="negative">+7.1%</td>
+                                    <td class="cyan">+23%</td>
+                                    <td>0.5x</td>
+                                    <td><span class="action-badge action-watch">WATCH</span></td>
+                                </tr>
+                                <tr onclick="loadChart('HD')">
+                                    <td class="ticker">HD</td>
+                                    <td><span class="pattern-tag tag-200wma">200-WMA</span></td>
+                                    <td><span class="score-pill score-c">55</span></td>
+                                    <td>$385.15</td>
+                                    <td>$355.61</td>
+                                    <td class="positive">-7.7%</td>
+                                    <td class="cyan">+17%</td>
+                                    <td>1.2x</td>
+                                    <td><span class="action-badge action-watch">WATCH</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- FULL SCANNER -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">📊 FULL SCANNER DATA <span class="section-count">66 stocks</span></div>
+                        <span style="color:#8b949e; font-size:0.8em;">Complete universe</span>
+                    </div>
+                    <div class="section-body" style="max-height: 350px; overflow-y: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th>VCP</th>
+                                    <th>Pattern</th>
+                                    <th>Price</th>
+                                    <th>From High</th>
+                                    <th>RS 3M</th>
+                                    <th>200-WMA</th>
+                                    <th>Munger</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr onclick="loadChart('NVDA')"><td class="ticker">NVDA</td><td><span class="score-pill score-a">9.3</span></td><td>VCP</td><td>$171.42</td><td>10.4%</td><td class="positive">+62.5%</td><td>+89%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('SOFI')"><td class="ticker">SOFI</td><td><span class="score-pill score-a">9.3</span></td><td>VCP</td><td>$27.48</td><td>35.2%</td><td class="positive">+45%</td><td>+36%</td><td class="munger-stars">⭐</td></tr>
+                                <tr onclick="loadChart('VRTX')"><td class="ticker">VRTX</td><td><span class="score-pill score-a">8.8</span></td><td>VCP</td><td>$477.92</td><td>7.0%</td><td class="positive">+14.8%</td><td>+23%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('KLAC')"><td class="ticker">KLAC</td><td><span class="score-pill score-a">8.8</span></td><td>VCP</td><td>$1,279.60</td><td>14.4%</td><td class="positive">+19.8%</td><td>+45%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('TJX')"><td class="ticker">TJX</td><td><span class="score-pill score-a">8.5</span></td><td>PIVOT</td><td>$155.86</td><td>1.5%</td><td class="positive">+8.7%</td><td>+32%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('SNOW')"><td class="ticker">SNOW</td><td><span class="score-pill score-a">8.3</span></td><td>VCP</td><td>$168.43</td><td>39.2%</td><td class="negative">-12%</td><td class="cyan">-0.5%</td><td class="munger-stars">⭐</td></tr>
+                                <tr onclick="loadChart('V')"><td class="ticker">V</td><td><span class="score-pill score-a">8.3</span></td><td>VCP</td><td>$331.58</td><td>10.8%</td><td class="negative">-1.4%</td><td>+23%</td><td class="munger-stars">⭐⭐⭐</td></tr>
+                                <tr onclick="loadChart('JPM')"><td class="ticker">JPM</td><td><span class="score-pill score-a">8.0</span></td><td>VCP</td><td>$322.40</td><td>3.6%</td><td class="positive">+3.3%</td><td>+42%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('COIN')"><td class="ticker">COIN</td><td><span class="score-pill score-c">5.8</span></td><td>200-WMA</td><td>$165.12</td><td>60.7%</td><td class="positive">+59%</td><td class="cyan">-2.3%</td><td class="munger-stars">⭐⭐⭐</td></tr>
+                                <tr onclick="loadChart('MSFT')"><td class="ticker">MSFT</td><td><span class="score-pill score-b">7.3</span></td><td>200-WMA</td><td>$401.14</td><td>25.9%</td><td class="positive">+17%</td><td class="cyan">+8.6%</td><td class="munger-stars">⭐⭐⭐</td></tr>
+                                <tr onclick="loadChart('GWW')"><td class="ticker">GWW</td><td><span class="score-pill score-b">7.0</span></td><td>BREAK</td><td>$1,197.65</td><td>0.0%</td><td class="positive">+26%</td><td>+78%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('GS')"><td class="ticker">GS</td><td><span class="score-pill score-b">7.0</span></td><td>VCP</td><td>$928.75</td><td>4.8%</td><td class="positive">+18.5%</td><td>+56%</td><td class="munger-stars">⭐⭐</td></tr>
+                                <tr onclick="loadChart('ABNB')"><td class="ticker">ABNB</td><td><span class="score-pill score-b">7.8</span></td><td>200-WMA</td><td>$122.18</td><td>24.3%</td><td class="positive">+10%</td><td class="cyan">-4.4%</td><td class="munger-stars">⭐⭐⭐</td></tr>
+                                <tr onclick="loadChart('DECK')"><td class="ticker">DECK</td><td><span class="score-pill score-c">5.5</span></td><td>200-WMA</td><td>$115.45</td><td>31.4%</td><td class="positive">+7%</td><td class="cyan">+7.7%</td><td class="munger-stars">⭐⭐⭐</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Right Column - Chart -->
+            <div class="chart-panel">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-ticker" id="chartTicker">GWW</span>
+                        <span class="chart-price" id="chartPrice">$1,197.65</span>
+                    </div>
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_chart"></div>
+                    </div>
+                    
+                    <div class="trade-box">
+                        <h4>🎯 Trade Setup</h4>
+                        <div class="trade-row">
+                            <span class="trade-label">Entry Price</span>
+                            <span class="trade-value entry" id="entryPrice">$1,200.00</span>
+                        </div>
+                        <div class="trade-row">
+                            <span class="trade-label">Stop Loss (10%)</span>
+                            <span class="trade-value stop" id="stopPrice">$1,080.00</span>
+                        </div>
+                        <div class="trade-row">
+                            <span class="trade-label">Target (20%)</span>
+                            <span class="trade-value target" id="targetPrice">$1,440.00</span>
+                        </div>
+                        <div class="trade-row">
+                            <span class="trade-label">Risk:Reward</span>
+                            <span class="trade-value">2.0 : 1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stock-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Pattern</span>
+                            <span class="detail-value" id="detailPattern">Base Breakout</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">VCP Score</span>
+                            <span class="detail-value" id="detailVCP">7.0 / 10</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">RS (3 Month)</span>
+                            <span class="detail-value positive" id="detailRS">+26.0%</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">From 52W High</span>
+                            <span class="detail-value positive" id="detailHigh">0.0%</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">200-Week MA</span>
+                            <span class="detail-value cyan" id="detail200WMA">+78% above</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Munger Score</span>
+                            <span class="detail-value munger-stars" id="detailMunger">⭐⭐</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <strong>CANSLIM + VCP + 200-Week MA</strong> — Pattern Recognition System<br>
+            Data: Yahoo Finance • Charts: TradingView • Analysis: Minervini + O'Neil + Munger Methodology
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+        const stockData = {
+            'GWW': { price: 1197.65, entry: 1200, stop: 1080, target: 1440, pattern: 'Base Breakout', vcp: 7.0, rs: '+26.0%', high: '0.0%', wma: '+78% above', munger: '⭐⭐' },
+            'TJX': { price: 155.86, entry: 157.29, stop: 141, target: 189, pattern: 'At Pivot (VCP)', vcp: 8.5, rs: '+8.7%', high: '1.5%', wma: '+32% above', munger: '⭐⭐' },
+            'LOW': { price: 278.38, entry: 280, stop: 252, target: 336, pattern: 'Base Breakout', vcp: 7.8, rs: '+20.9%', high: '0.0%', wma: '+45% above', munger: '⭐⭐' },
+            'NVDA': { price: 171.42, entry: 190.53, stop: 171, target: 228, pattern: 'Textbook VCP', vcp: 9.3, rs: '+62.5%', high: '10.4%', wma: '+89% above', munger: '⭐⭐' },
+            'MA': { price: 548.74, entry: 552.90, stop: 497, target: 663, pattern: 'At Pivot', vcp: 7.3, rs: '+8%', high: '8.1%', wma: '+24% above', munger: '⭐⭐⭐' },
+            'ASML': { price: 1413.01, entry: 1420, stop: 1278, target: 1704, pattern: 'Base Breakout', vcp: 7.0, rs: '+37.3%', high: '2.9%', wma: '+52% above', munger: '⭐⭐' },
+            'COIN': { price: 165.12, entry: 169.07, stop: 152, target: 203, pattern: '200-WMA Buy Zone', vcp: 5.8, rs: '+58.9%', high: '60.7%', wma: '-2.3% (BUY ZONE)', munger: '⭐⭐⭐' },
+            'MSFT': { price: 401.14, entry: 410, stop: 369, target: 492, pattern: '200-WMA Buy Zone', vcp: 7.3, rs: '+16.7%', high: '25.9%', wma: '+8.6% (BUY ZONE)', munger: '⭐⭐⭐' },
+            'ABNB': { price: 122.18, entry: 127.87, stop: 115, target: 153, pattern: '200-WMA Buy Zone', vcp: 7.8, rs: '+9.7%', high: '24.3%', wma: '-4.4% (BUY ZONE)', munger: '⭐⭐⭐' },
+            'DECK': { price: 115.45, entry: 120, stop: 108, target: 144, pattern: '200-WMA Buy Zone', vcp: 5.5, rs: '+7.1%', high: '31.4%', wma: '+7.7% (BUY ZONE)', munger: '⭐⭐⭐' },
+            'SMCI': { price: 34.38, entry: 34.56, stop: 31, target: 41, pattern: '200-WMA Buy Zone', vcp: 6.0, rs: '+123%', high: '43.4%', wma: '-0.5% (BUY ZONE)', munger: '⭐' },
+            'SNOW': { price: 168.43, entry: 169.34, stop: 152, target: 203, pattern: '200-WMA Buy Zone', vcp: 8.3, rs: '-12%', high: '39.2%', wma: '-0.5% (BUY ZONE)', munger: '⭐' },
+            'VRTX': { price: 477.92, entry: 462.99, stop: 416, target: 555, pattern: 'Textbook VCP', vcp: 8.8, rs: '+14.8%', high: '7.0%', wma: '+23% above', munger: '⭐⭐' },
+            'KLAC': { price: 1279.60, entry: 1279.60, stop: 1151, target: 1535, pattern: 'Textbook VCP', vcp: 8.8, rs: '+19.8%', high: '14.4%', wma: '+45% above', munger: '⭐⭐' },
+            'V': { price: 331.58, entry: 355.14, stop: 319, target: 426, pattern: 'Textbook VCP', vcp: 8.3, rs: '-1.4%', high: '10.8%', wma: '+23% above', munger: '⭐⭐⭐' },
+            'JPM': { price: 322.40, entry: 327.69, stop: 295, target: 393, pattern: 'Textbook VCP', vcp: 8.0, rs: '+3.3%', high: '3.6%', wma: '+42% above', munger: '⭐⭐' },
+            'AMAT': { price: 322.51, entry: 340, stop: 306, target: 408, pattern: 'Ascending Base', vcp: 6.5, rs: '+38.4%', high: '12%', wma: '+48% above', munger: '⭐⭐' },
+            'GOOGL': { price: 322.86, entry: 335.97, stop: 302, target: 403, pattern: 'Ascending Base', vcp: 6.8, rs: '+13.5%', high: '6.1%', wma: '+65% above', munger: '⭐⭐' },
+            'LLY': { price: 1058.18, entry: 1108.09, stop: 997, target: 1329, pattern: 'Ascending Base', vcp: 7.3, rs: '+13%', high: '4.7%', wma: '+54% above', munger: '⭐⭐⭐' },
+            'META': { price: 672.87, entry: 672.87, stop: 605, target: 807, pattern: 'At Pivot', vcp: 6.8, rs: '+12%', high: '16.1%', wma: '+85% above', munger: '⭐⭐' },
+            'GS': { price: 928.75, entry: 955.47, stop: 860, target: 1146, pattern: 'Textbook VCP', vcp: 7.0, rs: '+18.5%', high: '4.8%', wma: '+56% above', munger: '⭐⭐' },
+            'QCOM': { price: 137.34, entry: 140.95, stop: 127, target: 169, pattern: '200-WMA Buy Zone', vcp: 6.3, rs: '+5%', high: '26.4%', wma: '-2.6% (BUY ZONE)', munger: '⭐' },
+            'TOST': { price: 27.73, entry: 28, stop: 25, target: 34, pattern: '200-WMA Buy Zone', vcp: 7.8, rs: '+25%', high: '43.8%', wma: '+5.1% (BUY ZONE)', munger: '⭐⭐' }
+        };
+        
+        function loadChart(ticker) {
+            document.getElementById('chartTicker').textContent = ticker;
+            const data = stockData[ticker] || stockData['GWW'];
+            document.getElementById('chartPrice').textContent = '$' + data.price.toFixed(2);
+            document.getElementById('entryPrice').textContent = '$' + data.entry.toFixed(2);
+            document.getElementById('stopPrice').textContent = '$' + data.stop.toFixed(2);
+            document.getElementById('targetPrice').textContent = '$' + data.target.toFixed(2);
+            document.getElementById('detailPattern').textContent = data.pattern;
+            document.getElementById('detailVCP').textContent = data.vcp + ' / 10';
+            document.getElementById('detailRS').textContent = data.rs;
+            document.getElementById('detailHigh').textContent = data.high;
+            document.getElementById('detail200WMA').textContent = data.wma;
+            document.getElementById('detailMunger').textContent = data.munger;
+            
+            document.getElementById('tradingview_chart').innerHTML = '';
+            new TradingView.widget({
+                "width": "100%",
+                "height": 350,
+                "symbol": ticker,
+                "interval": "D",
+                "timezone": "America/New_York",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#1e222d",
+                "enable_publishing": false,
+                "hide_top_toolbar": false,
+                "hide_legend": false,
+                "save_image": false,
+                "container_id": "tradingview_chart",
+                "studies": ["MASimple@tv-basicstudies", "Volume@tv-basicstudies"]
+            });
+        }
+        
+        window.onload = function() { loadChart('GWW'); };
+    </script>
+</body>
+</html>
