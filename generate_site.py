@@ -42,6 +42,7 @@ UNIVERSE = [
 def scan_stock(ticker):
     """Scan a single stock and return data."""
     try:
+        # Daily data for price/volume analysis
         df = yf.download(ticker, period='2y', progress=False)
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
@@ -52,9 +53,17 @@ def scan_stock(ticker):
         volume = df['Volume']
         price = float(close.iloc[-1])
         
-        # 200 WMA
-        weights = np.arange(1, 201)
-        wma_200 = close.rolling(200).apply(lambda x: np.dot(x, weights) / weights.sum(), raw=True).iloc[-1]
+        # 200-WEEK SMA (need 5 years of weekly data)
+        df_weekly = yf.download(ticker, period='5y', interval='1wk', progress=False)
+        if isinstance(df_weekly.columns, pd.MultiIndex):
+            df_weekly.columns = df_weekly.columns.get_level_values(0)
+        
+        if len(df_weekly) >= 200:
+            wma_200 = df_weekly['Close'].rolling(200).mean().iloc[-1]
+        else:
+            # Fallback: use available weeks
+            wma_200 = df_weekly['Close'].mean() if len(df_weekly) > 0 else price
+        
         wma_pct = ((price - wma_200) / wma_200) * 100
         
         # 50 and 200 SMA
