@@ -305,6 +305,10 @@ def generate_html(results):
         .trade-value.stop {{ color: #f85149; }}
         .trade-value.target {{ color: #58a6ff; }}
         
+        .tv-button {{ display: block; margin: 15px; padding: 12px 20px; background: linear-gradient(90deg, #2962FF, #2979FF); color: #fff; text-align: center; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 0.9em; transition: all 0.2s; }}
+        .tv-button:hover {{ background: linear-gradient(90deg, #1E88E5, #2196F3); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(41,98,255,0.3); }}
+        .tv-button svg {{ vertical-align: middle; margin-right: 8px; }}
+        
         .stock-details {{ padding: 15px; border-top: 1px solid rgba(255,255,255,0.08); }}
         .detail-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }}
         .detail-item {{ display: flex; justify-content: space-between; }}
@@ -416,6 +420,10 @@ def generate_html(results):
                             <div class="detail-item"><span class="detail-label">200-WMA:</span><span class="detail-value" id="detail-wma">—</span></div>
                         </div>
                     </div>
+                    <a href="#" id="tv-link" class="tv-button" target="_blank" style="display:none;">
+                        <svg width="20" height="20" viewBox="0 0 36 28" fill="currentColor"><path d="M14 22H7V11H0V4h14v18zm8-18h7v18h-7V4zm-4 0h3v18h-3V4z"/></svg>
+                        Open in TradingView
+                    </a>
                 </div>
             </div>
         </div>
@@ -485,6 +493,11 @@ def generate_html(results):
             
             document.getElementById('trade-box').style.display = 'block';
             document.getElementById('stock-details').style.display = 'block';
+            
+            // Show and update TradingView link
+            const tvLink = document.getElementById('tv-link');
+            tvLink.style.display = 'block';
+            tvLink.href = 'https://www.tradingview.com/chart/?symbol=' + ticker;
             
             document.getElementById('tv-chart').innerHTML = '';
             new TradingView.widget({{
