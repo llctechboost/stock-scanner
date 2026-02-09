@@ -59,6 +59,27 @@
         .action-badge { padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 700; }
         .action-buy { background: #238636; color: #fff; }
         .action-watch { background: rgba(210,153,34,0.2); color: #d29922; }
+        
+        .export-btn { background: linear-gradient(135deg, #2962ff, #a371f7); color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.85em; transition: transform 0.1s, box-shadow 0.2s; }
+        .export-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(88,166,255,0.3); }
+        .export-btn:active { transform: translateY(0); }
+        
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: #161b22; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; max-width: 500px; width: 90%; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .modal-header h3 { color: #58a6ff; font-size: 1.1em; }
+        .modal-close { background: none; border: none; color: #8b949e; font-size: 1.5em; cursor: pointer; }
+        .modal-close:hover { color: #fff; }
+        .modal-tabs { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+        .modal-tab { padding: 8px 16px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #8b949e; cursor: pointer; font-size: 0.85em; }
+        .modal-tab.active { background: rgba(88,166,255,0.2); border-color: #58a6ff; color: #58a6ff; }
+        .modal-textarea { width: 100%; height: 150px; background: #0d1117; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; color: #e6edf3; font-family: monospace; font-size: 0.9em; resize: none; }
+        .modal-actions { display: flex; gap: 10px; margin-top: 15px; }
+        .modal-btn { flex: 1; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; }
+        .modal-btn-primary { background: #238636; color: #fff; }
+        .modal-btn-secondary { background: rgba(255,255,255,0.1); color: #e6edf3; }
+        .modal-note { font-size: 0.75em; color: #8b949e; margin-top: 10px; }
         .munger-stars { color: #ffc107; }
         
         .chart-panel { position: sticky; top: 15px; }
@@ -108,6 +129,7 @@
                 <div class="timestamp">Last scan: February 09, 2026 • 06:01 AM EST</div>
             </div>
             <div class="status">
+                <button class="export-btn" onclick="exportToTradingView()">📤 Export to TradingView</button>
                 <span class="status-badge status-live">● Data Live</span>
                 <span class="status-badge status-market">Auto-updates 6h</span>
             </div>
@@ -2604,6 +2626,30 @@
         </div>
     </div>
     
+    <!-- Export Modal -->
+    <div class="modal-overlay" id="exportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📤 Export to TradingView</h3>
+                <button class="modal-close" onclick="closeExportModal()">&times;</button>
+            </div>
+            <div class="modal-tabs">
+                <button class="modal-tab active" onclick="setExportType('actionable', this)">🎯 Actionable</button>
+                <button class="modal-tab" onclick="setExportType('wma', this)">🧠 200-WMA</button>
+                <button class="modal-tab" onclick="setExportType('vcp', this)">⭐ VCPs</button>
+                <button class="modal-tab" onclick="setExportType('all', this)">📊 All</button>
+            </div>
+            <textarea class="modal-textarea" id="exportTextarea" readonly></textarea>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-primary" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+                <button class="modal-btn modal-btn-secondary" onclick="downloadWatchlist()">💾 Download .txt</button>
+            </div>
+            <div class="modal-note">
+                <strong>How to import:</strong> TradingView → Lists → Import list → Paste symbols
+            </div>
+        </div>
+    </div>
+    
     <script src="https://s3.tradingview.com/tv.js"></script>
     <script>
         const stockData = {
@@ -2898,6 +2944,67 @@
         
         // Initialize with actionable filter
         filterStocks('actionable');
+        
+        // Export to TradingView functionality
+        let currentExportType = 'actionable';
+        
+        function getTickersByCategory(category) {
+            const rows = document.querySelectorAll('.stock-row');
+            const tickers = [];
+            rows.forEach(row => {
+                const cats = row.dataset.categories.split(' ');
+                if (cats.includes(category)) {
+                    tickers.push(row.dataset.ticker);
+                }
+            });
+            return tickers;
+        }
+        
+        function exportToTradingView() {
+            document.getElementById('exportModal').classList.add('active');
+            setExportType('actionable', document.querySelector('.modal-tab'));
+        }
+        
+        function closeExportModal() {
+            document.getElementById('exportModal').classList.remove('active');
+        }
+        
+        function setExportType(type, btn) {
+            currentExportType = type;
+            document.querySelectorAll('.modal-tab').forEach(tab => tab.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            const symbols = getTickersByCategory(type);
+            document.getElementById('exportTextarea').value = symbols.join(',\n');
+        }
+        
+        function copyToClipboard() {
+            const textarea = document.getElementById('exportTextarea');
+            textarea.select();
+            document.execCommand('copy');
+            
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => { btn.textContent = originalText; }, 2000);
+        }
+        
+        function downloadWatchlist() {
+            const symbols = getTickersByCategory(currentExportType);
+            const content = symbols.join('\n');
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `tradingview_${currentExportType}_${new Date().toISOString().slice(0,10)}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        document.getElementById('exportModal').addEventListener('click', function(e) {
+            if (e.target === this) closeExportModal();
+        });
     </script>
 </body>
 </html>
