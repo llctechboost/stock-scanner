@@ -71,6 +71,79 @@ UNIVERSE = [
 ]
 
 
+def calculate_squeeze(close, length=20, bb_mult=2.0, kc_mult=1.5):
+    """
+    Calculate Squeeze indicator (Bollinger Bands inside Keltner Channels).
+    Returns: (squeeze_on, squeeze_score, bb_pct, kc_pct, momentum)
+    
+    squeeze_on: True if BB is inside KC (compression)
+    squeeze_score: 0-100, higher = tighter squeeze
+    bb_pct: Bollinger Band width as % of price
+    kc_pct: Keltner Channel width as % of price
+    momentum: Current momentum oscillator value
+    """
+    if len(close) < length + 10:
+        return False, 0, 0, 0, 0
+    
+    try:
+        # Bollinger Bands
+        sma = close.rolling(length).mean()
+        std = close.rolling(length).std()
+        bb_upper = sma + (bb_mult * std)
+        bb_lower = sma - (bb_mult * std)
+        
+        # Keltner Channels (using SMA of True Range approximation)
+        tr = close.diff().abs()  # Simplified TR
+        atr = tr.rolling(length).mean()
+        kc_upper = sma + (kc_mult * atr)
+        kc_lower = sma - (kc_mult * atr)
+        
+        # Current values
+        current_price = float(close.iloc[-1])
+        current_bb_upper = float(bb_upper.iloc[-1])
+        current_bb_lower = float(bb_lower.iloc[-1])
+        current_kc_upper = float(kc_upper.iloc[-1])
+        current_kc_lower = float(kc_lower.iloc[-1])
+        
+        # BB and KC widths as percentage of price
+        bb_width = current_bb_upper - current_bb_lower
+        kc_width = current_kc_upper - current_kc_lower
+        bb_pct = (bb_width / current_price) * 100
+        kc_pct = (kc_width / current_price) * 100
+        
+        # Squeeze is ON when BB is inside KC
+        squeeze_on = (current_bb_lower > current_kc_lower) and (current_bb_upper < current_kc_upper)
+        
+        # Squeeze score: how tight is the squeeze (0-100)
+        # Higher score = tighter squeeze = BB much smaller than KC
+        if kc_width > 0:
+            squeeze_ratio = bb_width / kc_width
+            # squeeze_ratio < 1 means squeeze is on
+            # The smaller the ratio, the tighter the squeeze
+            if squeeze_ratio < 1:
+                squeeze_score = int((1 - squeeze_ratio) * 100)
+                squeeze_score = min(100, max(0, squeeze_score))
+            else:
+                squeeze_score = 0
+        else:
+            squeeze_score = 0
+        
+        # Momentum (linear regression of price - simple approximation)
+        momentum_length = 12
+        if len(close) >= momentum_length:
+            recent = close.iloc[-momentum_length:].values
+            x = np.arange(momentum_length)
+            slope = np.polyfit(x, recent, 1)[0]
+            momentum = slope
+        else:
+            momentum = 0
+        
+        return squeeze_on, squeeze_score, bb_pct, kc_pct, momentum
+        
+    except Exception as e:
+        return False, 0, 0, 0, 0
+
+
 def detect_cup_and_handle(close, volume):
     """
     Detect Cup and Handle pattern.
@@ -225,6 +298,24 @@ def scan_stock(ticker):
         if is_cup_handle:
             score += 20  # Bonus for cup and handle pattern
         
+        # Squeeze detection - Daily
+        daily_squeeze_on, daily_squeeze_score, daily_bb_pct, daily_kc_pct, daily_momentum = calculate_squeeze(close)
+        
+        # Squeeze detection - Weekly
+        weekly_close = df_weekly['Close'] if len(df_weekly) > 0 else close
+        weekly_squeeze_on, weekly_squeeze_score, weekly_bb_pct, weekly_kc_pct, weekly_momentum = calculate_squeeze(weekly_close)
+        
+        # High squeeze = score >= 70
+        is_daily_high_squeeze = daily_squeeze_on and daily_squeeze_score >= 70
+        is_weekly_high_squeeze = weekly_squeeze_on and weekly_squeeze_score >= 70
+        is_high_squeeze = is_daily_high_squeeze or is_weekly_high_squeeze
+        
+        # Bonus for high squeeze
+        if is_weekly_high_squeeze:
+            score += 15
+        elif is_daily_high_squeeze:
+            score += 10
+        
         # 52-week high proximity
         high_52w = close.iloc[-252:].max() if len(close) >= 252 else close.max()
         pct_from_high = ((high_52w - price) / high_52w) * 100
@@ -286,7 +377,17 @@ def scan_stock(ticker):
             'pct_from_high': pct_from_high,
             'vol_ratio': vol_ratio,
             'perf_3m': perf_3m,
-            'munger': munger
+            'munger': munger,
+            # Squeeze data
+            'daily_squeeze_on': daily_squeeze_on,
+            'daily_squeeze_score': daily_squeeze_score,
+            'weekly_squeeze_on': weekly_squeeze_on,
+            'weekly_squeeze_score': weekly_squeeze_score,
+            'is_daily_high_squeeze': is_daily_high_squeeze,
+            'is_weekly_high_squeeze': is_weekly_high_squeeze,
+            'is_high_squeeze': is_high_squeeze,
+            'daily_momentum': daily_momentum,
+            'weekly_momentum': weekly_momentum
         }
     except Exception as e:
         print(f"Error scanning {ticker}: {e}")
@@ -301,12 +402,16 @@ def generate_html(results):
     wma_zone = [r for r in results if r['in_wma_zone']]
     vcps = [r for r in results if r['is_vcp']]
     cup_handles = [r for r in results if r.get('is_cup_handle', False)]
+    high_squeeze = [r for r in results if r.get('is_high_squeeze', False)]
+    daily_squeeze = [r for r in results if r.get('is_daily_high_squeeze', False)]
+    weekly_squeeze = [r for r in results if r.get('is_weekly_high_squeeze', False)]
     watchlist = [r for r in results if r['is_watchlist']]
     
     actionable.sort(key=lambda x: x['score'], reverse=True)
     wma_zone.sort(key=lambda x: x['score'], reverse=True)
     vcps.sort(key=lambda x: x['score'], reverse=True)
     cup_handles.sort(key=lambda x: x['score'], reverse=True)
+    high_squeeze.sort(key=lambda x: (x.get('weekly_squeeze_score', 0), x.get('daily_squeeze_score', 0)), reverse=True)
     watchlist.sort(key=lambda x: x['score'], reverse=True)
     results.sort(key=lambda x: x['score'], reverse=True)
     
@@ -340,12 +445,16 @@ def generate_html(results):
         if s['in_wma_zone']: cats.append('wma')
         if s['is_vcp']: cats.append('vcp')
         if s.get('is_cup_handle', False): cats.append('cup')
+        if s.get('is_high_squeeze', False): cats.append('squeeze')
+        if s.get('is_daily_high_squeeze', False): cats.append('squeeze_daily')
+        if s.get('is_weekly_high_squeeze', False): cats.append('squeeze_weekly')
         if s['is_watchlist']: cats.append('watchlist')
         cats.append('all')
         
         row_class = 'actionable' if s['is_actionable'] and s['signal_type'] not in ['200-WMA'] else ''
         if s['in_wma_zone']: row_class = 'wma-buy-zone'
         if s.get('is_cup_handle', False): row_class = 'cup-handle'
+        if s.get('is_high_squeeze', False): row_class = 'high-squeeze'
         
         return f'''<tr class="stock-row {row_class}" data-categories="{' '.join(cats)}" data-ticker="{s['ticker']}" onclick="loadChart('{s['ticker']}')">
                     <td class="ticker">{s['ticker']}</td>
@@ -364,7 +473,7 @@ def generate_html(results):
     
     # Stock data for charts
     stock_data_js = ',\n            '.join([
-        f"'{s['ticker']}': {{ price: {s['price']:.2f}, entry: {s['entry']:.2f}, stop: {s['stop']:.0f}, target: {s['target']:.0f}, pattern: '{s['signal_type']}', vcp: {s['vcp_score']}, rs: '{s['perf_3m']:+.0f}%', high: '{s['pct_from_high']:.1f}%', wma: '{s['wma_pct']:+.0f}%', munger: '{s['munger']}' }}"
+        f"'{s['ticker']}': {{ price: {s['price']:.2f}, entry: {s['entry']:.2f}, stop: {s['stop']:.0f}, target: {s['target']:.0f}, pattern: '{s['signal_type']}', vcp: {s['vcp_score']}, rs: '{s['perf_3m']:+.0f}%', high: '{s['pct_from_high']:.1f}%', wma: '{s['wma_pct']:+.0f}%', munger: '{s['munger']}', dailySq: {s.get('daily_squeeze_score', 0)}, weeklySq: {s.get('weekly_squeeze_score', 0)} }}"
         for s in results
     ])
     
@@ -407,7 +516,7 @@ def generate_html(results):
         .modal-btn-secondary {{ background: rgba(255,255,255,0.1); color: #e6edf3; }}
         .modal-note {{ font-size: 0.75em; color: #8b949e; margin-top: 10px; }}
         
-        .quick-stats {{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 20px; }}
+        .quick-stats {{ display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; margin-bottom: 20px; }}
         .stat-card {{ background: rgba(255,255,255,0.03); border-radius: 10px; padding: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.08); cursor: pointer; transition: all 0.2s; }}
         .stat-card:hover {{ border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }}
         .stat-card.active {{ border-color: #58a6ff; background: rgba(88,166,255,0.1); }}
@@ -429,6 +538,7 @@ def generate_html(results):
         tr.stock-row.actionable {{ background: rgba(63,185,80,0.08); }}
         tr.stock-row.wma-buy-zone {{ background: rgba(0,212,255,0.08); }}
         tr.stock-row.cup-handle {{ background: rgba(255,165,0,0.12); }}
+        tr.stock-row.high-squeeze {{ background: rgba(255,0,255,0.12); }}
         tr.stock-row.hidden {{ display: none; }}
         
         .ticker {{ font-weight: 700; color: #e6edf3; }}
@@ -482,10 +592,16 @@ def generate_html(results):
         
         .footer {{ text-align: center; padding: 20px; color: #6e7681; font-size: 0.8em; margin-top: 20px; }}
         
+        @media (max-width: 1400px) {{ 
+            .quick-stats {{ grid-template-columns: repeat(4, 1fr); }} 
+        }}
         @media (max-width: 1200px) {{ 
             .main-grid {{ grid-template-columns: 1fr; }} 
             .chart-panel {{ position: static; }} 
-            .quick-stats {{ grid-template-columns: repeat(3, 1fr); }} 
+            .quick-stats {{ grid-template-columns: repeat(4, 1fr); }} 
+        }}
+        @media (max-width: 800px) {{
+            .quick-stats {{ grid-template-columns: repeat(2, 1fr); }}
         }}
         @media (max-width: 600px) {{
             .quick-stats {{ grid-template-columns: repeat(2, 1fr); }}
@@ -512,17 +628,25 @@ def generate_html(results):
                 <div class="stat-value" style="color:#3fb950">{len(actionable)}</div>
                 <div class="stat-label">🎯 Actionable Now</div>
             </div>
+            <div class="stat-card" data-filter="squeeze_weekly" onclick="filterStocks('squeeze_weekly')">
+                <div class="stat-value" style="color:#ff00ff">{len(weekly_squeeze)}</div>
+                <div class="stat-label">🔥 Weekly Squeeze</div>
+            </div>
+            <div class="stat-card" data-filter="squeeze_daily" onclick="filterStocks('squeeze_daily')">
+                <div class="stat-value" style="color:#ff66ff">{len(daily_squeeze)}</div>
+                <div class="stat-label">⚡ Daily Squeeze</div>
+            </div>
             <div class="stat-card" data-filter="cup" onclick="filterStocks('cup')">
                 <div class="stat-value" style="color:#ffa500">{len(cup_handles)}</div>
                 <div class="stat-label">☕ Cup & Handle</div>
             </div>
-            <div class="stat-card" data-filter="wma" onclick="filterStocks('wma')">
-                <div class="stat-value" style="color:#00d4ff">{len(wma_zone)}</div>
-                <div class="stat-label">🧠 200-WMA Zone</div>
-            </div>
             <div class="stat-card" data-filter="vcp" onclick="filterStocks('vcp')">
                 <div class="stat-value" style="color:#ff6b6b">{len(vcps)}</div>
                 <div class="stat-label">⭐ VCPs</div>
+            </div>
+            <div class="stat-card" data-filter="wma" onclick="filterStocks('wma')">
+                <div class="stat-value" style="color:#00d4ff">{len(wma_zone)}</div>
+                <div class="stat-label">🧠 200-WMA Zone</div>
             </div>
             <div class="stat-card" data-filter="watchlist" onclick="filterStocks('watchlist')">
                 <div class="stat-value" style="color:#d29922">{len(watchlist)}</div>
@@ -612,8 +736,9 @@ def generate_html(results):
             </div>
             <div class="modal-tabs">
                 <button class="modal-tab active" onclick="setExportType('actionable', this)">🎯 Actionable</button>
+                <button class="modal-tab" onclick="setExportType('squeeze_weekly', this)">🔥 Weekly Squeeze</button>
+                <button class="modal-tab" onclick="setExportType('squeeze_daily', this)">⚡ Daily Squeeze</button>
                 <button class="modal-tab" onclick="setExportType('cup', this)">☕ Cup & Handle</button>
-                <button class="modal-tab" onclick="setExportType('wma', this)">🧠 200-WMA</button>
                 <button class="modal-tab" onclick="setExportType('vcp', this)">⭐ VCPs</button>
                 <button class="modal-tab" onclick="setExportType('all', this)">📊 All</button>
             </div>
@@ -636,6 +761,9 @@ def generate_html(results):
         
         const filterLabels = {{
             'actionable': '🎯 ACTIONABLE NOW',
+            'squeeze_weekly': '🔥 WEEKLY SQUEEZE (HIGH)',
+            'squeeze_daily': '⚡ DAILY SQUEEZE (HIGH)',
+            'squeeze': '💥 ALL HIGH SQUEEZE',
             'cup': '☕ CUP & HANDLE',
             'wma': '🧠 200-WMA ZONE',
             'vcp': '⭐ VCP PATTERNS',
@@ -814,12 +942,28 @@ def main():
     cup_handles = [r for r in results if r.get('is_cup_handle', False)]
     wma = [r for r in results if r['in_wma_zone']]
     vcps = [r for r in results if r['is_vcp']]
+    weekly_squeeze = [r for r in results if r.get('is_weekly_high_squeeze', False)]
+    daily_squeeze = [r for r in results if r.get('is_daily_high_squeeze', False)]
     
     print(f"\n📊 SUMMARY:")
     print(f"   🎯 Actionable: {len(actionable)}")
+    print(f"   🔥 Weekly High Squeeze: {len(weekly_squeeze)}")
+    print(f"   ⚡ Daily High Squeeze: {len(daily_squeeze)}")
     print(f"   ☕ Cup & Handle: {len(cup_handles)}")
     print(f"   🧠 200-WMA Zone: {len(wma)}")
     print(f"   ⭐ VCPs: {len(vcps)}")
+    
+    if weekly_squeeze:
+        print(f"\n🔥 WEEKLY HIGH SQUEEZE (Score >= 70):")
+        for s in sorted(weekly_squeeze, key=lambda x: x.get('weekly_squeeze_score', 0), reverse=True)[:15]:
+            momentum_dir = "↑" if s.get('weekly_momentum', 0) > 0 else "↓"
+            print(f"   {s['ticker']}: Score {s.get('weekly_squeeze_score', 0)}, Momentum {momentum_dir}")
+    
+    if daily_squeeze:
+        print(f"\n⚡ DAILY HIGH SQUEEZE (Score >= 70):")
+        for s in sorted(daily_squeeze, key=lambda x: x.get('daily_squeeze_score', 0), reverse=True)[:15]:
+            momentum_dir = "↑" if s.get('daily_momentum', 0) > 0 else "↓"
+            print(f"   {s['ticker']}: Score {s.get('daily_squeeze_score', 0)}, Momentum {momentum_dir}")
     
     if cup_handles:
         print(f"\n☕ CUP & HANDLE PATTERNS:")
