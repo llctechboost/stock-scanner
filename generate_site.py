@@ -71,74 +71,86 @@ UNIVERSE = [
 ]
 
 
-def calculate_squeeze(close, length=20, bb_mult=2.0, kc_mult=1.5):
+def calculate_squeeze(df, bb_len=20, bb_mult=2.0, kc_len=20, kc_mult=2.0, atr_len=10):
     """
-    Calculate Squeeze indicator (Bollinger Bands inside Keltner Channels).
-    Returns: (squeeze_on, squeeze_score, bb_pct, kc_pct, momentum)
+    Calculate Squeeze indicator matching TradingView settings.
+    BB: SMA basis, length=20, mult=2.0
+    KC: EMA basis, length=20, mult=2.0, ATR length=10
     
-    squeeze_on: True if BB is inside KC (compression)
-    squeeze_score: 0-100, higher = tighter squeeze
-    bb_pct: Bollinger Band width as % of price
-    kc_pct: Keltner Channel width as % of price
-    momentum: Current momentum oscillator value
+    Returns: (squeeze_on, squeeze_score, bb_pct, kc_pct, squeeze_bars)
     """
-    if len(close) < length + 10:
+    if len(df) < max(bb_len, kc_len, atr_len) + 15:
         return False, 0, 0, 0, 0
     
     try:
-        # Bollinger Bands
-        sma = close.rolling(length).mean()
-        std = close.rolling(length).std()
-        bb_upper = sma + (bb_mult * std)
-        bb_lower = sma - (bb_mult * std)
+        close = df['Close']
+        high = df['High'] if 'High' in df.columns else close
+        low = df['Low'] if 'Low' in df.columns else close
         
-        # Keltner Channels (using SMA of True Range approximation)
-        tr = close.diff().abs()  # Simplified TR
-        atr = tr.rolling(length).mean()
-        kc_upper = sma + (kc_mult * atr)
-        kc_lower = sma - (kc_mult * atr)
+        # === Bollinger Bands (SMA basis, like TW) ===
+        bb_basis = close.rolling(bb_len).mean()
+        bb_dev = bb_mult * close.rolling(bb_len).std()
+        bb_upper = bb_basis + bb_dev
+        bb_lower = bb_basis - bb_dev
+        bb_width = bb_upper - bb_lower
+        
+        # === Keltner Channels (EMA basis, ATR bands, like TV) ===
+        kc_basis = close.ewm(span=kc_len, adjust=False).mean()
+        
+        # True Range for ATR
+        tr1 = high - low
+        tr2 = abs(high - close.shift(1))
+        tr3 = abs(low - close.shift(1))
+        tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+        atr = tr.rolling(atr_len).mean()
+        
+        kc_upper = kc_basis + (kc_mult * atr)
+        kc_lower = kc_basis - (kc_mult * atr)
+        kc_width = kc_upper - kc_lower
+        
+        # === Squeeze detection (per bar) ===
+        squeeze_on_series = (bb_upper < kc_upper) & (bb_lower > kc_lower)
+        
+        # Count consecutive squeeze bars at end
+        squeeze_count = 0
+        for i in range(len(squeeze_on_series) - 1, -1, -1):
+            if squeeze_on_series.iloc[i]:
+                squeeze_count += 1
+            else:
+                break
         
         # Current values
-        current_price = float(close.iloc[-1])
-        current_bb_upper = float(bb_upper.iloc[-1])
-        current_bb_lower = float(bb_lower.iloc[-1])
-        current_kc_upper = float(kc_upper.iloc[-1])
-        current_kc_lower = float(kc_lower.iloc[-1])
+        idx = -1
+        current_bb_basis = float(bb_basis.iloc[idx])
+        current_bb_width = float(bb_width.iloc[idx])
+        current_kc_width = float(kc_width.iloc[idx])
+        squeeze_on = bool(squeeze_on_series.iloc[idx])
         
-        # BB and KC widths as percentage of price
-        bb_width = current_bb_upper - current_bb_lower
-        kc_width = current_kc_upper - current_kc_lower
-        bb_pct = (bb_width / current_price) * 100
-        kc_pct = (kc_width / current_price) * 100
+        # BB and KC widths as percentage
+        bb_pct = (current_bb_width / current_bb_basis) * 100 if current_bb_basis > 0 else 0
+        kc_pct = (current_kc_width / current_bb_basis) * 100 if current_bb_basis > 0 else 0
         
-        # Squeeze is ON when BB is inside KC
-        squeeze_on = (current_bb_lower > current_kc_lower) and (current_bb_upper < current_kc_upper)
+        # === Score calculation (matching PineScript) ===
+        # Thresholds from PineScript
+        min_bars_high = 10
+        min_bars_med = 5
+        depth_high = 0.25
+        depth_med = 0.10
         
-        # Squeeze score: how tight is the squeeze (0-100)
-        # Higher score = tighter squeeze = BB much smaller than KC
-        if kc_width > 0:
-            squeeze_ratio = bb_width / kc_width
-            # squeeze_ratio < 1 means squeeze is on
-            # The smaller the ratio, the tighter the squeeze
-            if squeeze_ratio < 1:
-                squeeze_score = int((1 - squeeze_ratio) * 100)
-                squeeze_score = min(100, max(0, squeeze_score))
-            else:
-                squeeze_score = 0
+        if squeeze_on and current_kc_width > 0:
+            depth = (current_kc_width - current_bb_width) / current_kc_width
+            
+            # Normalize depth and duration
+            depth_norm = max(0, min(1, (depth - depth_med) / max(depth_high - depth_med, 0.0001)))
+            dur_norm = max(0, min(1, (squeeze_count - min_bars_med) / max(min_bars_high - min_bars_med, 0.0001)))
+            
+            # Score = 60% depth + 40% duration
+            score_raw = 0.6 * depth_norm + 0.4 * dur_norm
+            squeeze_score = int(round(score_raw * 100))
         else:
             squeeze_score = 0
         
-        # Momentum (linear regression of price - simple approximation)
-        momentum_length = 12
-        if len(close) >= momentum_length:
-            recent = close.iloc[-momentum_length:].values
-            x = np.arange(momentum_length)
-            slope = np.polyfit(x, recent, 1)[0]
-            momentum = slope
-        else:
-            momentum = 0
-        
-        return squeeze_on, squeeze_score, bb_pct, kc_pct, momentum
+        return squeeze_on, squeeze_score, bb_pct, kc_pct, squeeze_count
         
     except Exception as e:
         return False, 0, 0, 0, 0
@@ -298,16 +310,15 @@ def scan_stock(ticker):
         if is_cup_handle:
             score += 20  # Bonus for cup and handle pattern
         
-        # Squeeze detection - Daily
-        daily_squeeze_on, daily_squeeze_score, daily_bb_pct, daily_kc_pct, daily_momentum = calculate_squeeze(close)
+        # Squeeze detection - Daily (pass full dataframe for proper TR calculation)
+        daily_squeeze_on, daily_squeeze_score, daily_bb_pct, daily_kc_pct, daily_momentum = calculate_squeeze(df)
         
         # Squeeze detection - Weekly
-        weekly_close = df_weekly['Close'] if len(df_weekly) > 0 else close
-        weekly_squeeze_on, weekly_squeeze_score, weekly_bb_pct, weekly_kc_pct, weekly_momentum = calculate_squeeze(weekly_close)
+        weekly_squeeze_on, weekly_squeeze_score, weekly_bb_pct, weekly_kc_pct, weekly_momentum = calculate_squeeze(df_weekly)
         
-        # High squeeze = score >= 70
-        is_daily_high_squeeze = daily_squeeze_on and daily_squeeze_score >= 70
-        is_weekly_high_squeeze = weekly_squeeze_on and weekly_squeeze_score >= 70
+        # High squeeze = score >= 50 (squeezed with decent compression)
+        is_daily_high_squeeze = daily_squeeze_on and daily_squeeze_score >= 50
+        is_weekly_high_squeeze = weekly_squeeze_on and weekly_squeeze_score >= 50
         is_high_squeeze = is_daily_high_squeeze or is_weekly_high_squeeze
         
         # Bonus for high squeeze
