@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Generate static index.html for GitHub Pages
-Runs scanner on 200 S&P 500 stocks and updates the site
+Runs scanner on S&P 500 stocks and updates the site
+Now includes Cup & Handle pattern detection
 """
 import os
 import sys
@@ -14,29 +15,146 @@ import numpy as np
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Top 200 S&P 500 by market cap
+# Full S&P 500 (alphabetical)
 UNIVERSE = [
-    'AAPL', 'MSFT', 'NVDA', 'AMZN', 'GOOGL', 'META', 'GOOG', 'BRK-B', 'TSLA', 'UNH',
-    'XOM', 'LLY', 'JPM', 'JNJ', 'V', 'PG', 'MA', 'AVGO', 'HD', 'CVX',
-    'MRK', 'ABBV', 'COST', 'PEP', 'ADBE', 'KO', 'WMT', 'MCD', 'CSCO', 'CRM',
-    'BAC', 'PFE', 'TMO', 'ACN', 'NFLX', 'AMD', 'ABT', 'LIN', 'ORCL', 'DIS',
-    'CMCSA', 'DHR', 'VZ', 'PM', 'INTC', 'WFC', 'TXN', 'INTU', 'COP', 'NKE',
-    'NEE', 'RTX', 'UNP', 'QCOM', 'HON', 'LOW', 'UPS', 'SPGI', 'IBM', 'BA',
-    'CAT', 'GE', 'AMAT', 'ELV', 'PLD', 'SBUX', 'DE', 'NOW', 'ISRG', 'MS',
-    'GS', 'BMY', 'BLK', 'BKNG', 'MDLZ', 'GILD', 'ADP', 'LMT', 'VRTX', 'AMT',
-    'ADI', 'SYK', 'TJX', 'REGN', 'CVS', 'SCHW', 'MMC', 'TMUS', 'ZTS', 'CI',
-    'PGR', 'LRCX', 'CB', 'MO', 'SO', 'ETN', 'EOG', 'BDX', 'SNPS', 'DUK',
-    'SLB', 'PANW', 'BSX', 'CME', 'AON', 'KLAC', 'NOC', 'ITW', 'MU', 'CDNS',
-    'CL', 'WM', 'ICE', 'CSX', 'SHW', 'HUM', 'EQIX', 'ORLY', 'GD', 'MCK',
-    'FCX', 'PNC', 'APD', 'USB', 'PSX', 'MCO', 'MPC', 'EMR', 'MSI', 'NSC',
-    'CTAS', 'CMG', 'MAR', 'MCHP', 'ROP', 'NXPI', 'AJG', 'AZO', 'TGT', 'PCAR',
-    'TFC', 'AIG', 'AFL', 'HCA', 'KDP', 'CARR', 'OXY', 'SRE', 'AEP', 'PSA',
-    'TRV', 'WMB', 'ADSK', 'NEM', 'MSCI', 'F', 'FDX', 'DXCM', 'KMB', 'FTNT',
-    'D', 'EW', 'GM', 'IDXX', 'TEL', 'AMP', 'JCI', 'O', 'CCI', 'DVN',
-    'SPG', 'PAYX', 'ROST', 'GIS', 'A', 'ALL', 'BIIB', 'IQV', 'LHX', 'CMI',
-    'BK', 'YUM', 'PRU', 'CTVA', 'ODFL', 'WELL', 'DOW', 'HAL', 'KMI', 'MNST',
-    'ANET', 'CPRT', 'EXC', 'PCG', 'FAST', 'KR', 'VRSK', 'EA', 'GEHC', 'ON'
+    'A', 'AAL', 'AAPL', 'ABBV', 'ABNB', 'ABT', 'ACGL', 'ACN', 'ADBE', 'ADI',
+    'ADM', 'ADP', 'ADSK', 'AEE', 'AEP', 'AES', 'AFL', 'AIG', 'AIZ', 'AJG',
+    'AKAM', 'ALB', 'ALGN', 'ALL', 'ALLE', 'AMAT', 'AMCR', 'AMD', 'AME', 'AMGN',
+    'AMP', 'AMT', 'AMZN', 'ANET', 'ANSS', 'AON', 'AOS', 'APA', 'APD', 'APH',
+    'APTV', 'ARE', 'ATO', 'AVB', 'AVGO', 'AVY', 'AWK', 'AXON', 'AXP', 'AZO',
+    'BA', 'BAC', 'BALL', 'BAX', 'BBWI', 'BBY', 'BDX', 'BEN', 'BF-B', 'BG',
+    'BIIB', 'BIO', 'BK', 'BKNG', 'BKR', 'BLDR', 'BLK', 'BMY', 'BR', 'BRK-B',
+    'BRO', 'BSX', 'BWA', 'BX', 'BXP', 'C', 'CAG', 'CAH', 'CARR', 'CAT',
+    'CB', 'CBOE', 'CBRE', 'CCI', 'CCL', 'CDNS', 'CDW', 'CE', 'CEG', 'CF',
+    'CFG', 'CHD', 'CHRW', 'CHTR', 'CI', 'CINF', 'CL', 'CLX', 'CMCSA', 'CME',
+    'CMG', 'CMI', 'CMS', 'CNC', 'CNP', 'COF', 'COO', 'COP', 'COR', 'COST',
+    'CPAY', 'CPB', 'CPRT', 'CPT', 'CRL', 'CRM', 'CRWD', 'CSCO', 'CSGP', 'CSX',
+    'CTAS', 'CTLT', 'CTRA', 'CTSH', 'CTVA', 'CVS', 'CVX', 'CZR', 'D', 'DAL',
+    'DAY', 'DD', 'DE', 'DECK', 'DFS', 'DG', 'DGX', 'DHI', 'DHR', 'DIS',
+    'DLR', 'DLTR', 'DOC', 'DOV', 'DOW', 'DPZ', 'DRI', 'DTE', 'DUK', 'DVA',
+    'DVN', 'DXCM', 'EA', 'EBAY', 'ECL', 'ED', 'EFX', 'EG', 'EIX', 'EL',
+    'ELV', 'EMN', 'EMR', 'ENPH', 'EOG', 'EPAM', 'EQIX', 'EQR', 'EQT', 'ES',
+    'ESS', 'ETN', 'ETR', 'ETSY', 'EVRG', 'EW', 'EXC', 'EXPD', 'EXPE', 'EXR',
+    'F', 'FANG', 'FAST', 'FCX', 'FDS', 'FDX', 'FE', 'FFIV', 'FI', 'FICO',
+    'FIS', 'FITB', 'FMC', 'FOX', 'FOXA', 'FRT', 'FSLR', 'FTNT', 'FTV', 'GD',
+    'GDDY', 'GE', 'GEHC', 'GEN', 'GEV', 'GILD', 'GIS', 'GL', 'GLW', 'GM',
+    'GNRC', 'GOOG', 'GOOGL', 'GPC', 'GPN', 'GRMN', 'GS', 'GWW', 'HAL', 'HAS',
+    'HBAN', 'HCA', 'HD', 'HES', 'HIG', 'HII', 'HLT', 'HOLX', 'HON', 'HPE',
+    'HPQ', 'HRL', 'HSIC', 'HST', 'HSY', 'HUBB', 'HUM', 'HWM', 'IBM', 'ICE',
+    'IDXX', 'IEX', 'IFF', 'ILMN', 'INCY', 'INTC', 'INTU', 'INVH', 'IP', 'IPG',
+    'IQV', 'IR', 'IRM', 'ISRG', 'IT', 'ITW', 'IVZ', 'J', 'JBHT', 'JBL',
+    'JCI', 'JKHY', 'JNJ', 'JNPR', 'JPM', 'K', 'KDP', 'KEY', 'KEYS', 'KHC',
+    'KIM', 'KKR', 'KLAC', 'KMB', 'KMI', 'KMX', 'KO', 'KR', 'KVUE', 'L',
+    'LDOS', 'LEN', 'LH', 'LHX', 'LIN', 'LKQ', 'LLY', 'LMT', 'LNT', 'LOW',
+    'LRCX', 'LULU', 'LUV', 'LVS', 'LW', 'LYB', 'LYV', 'MA', 'MAA', 'MAR',
+    'MAS', 'MCD', 'MCHP', 'MCK', 'MCO', 'MDLZ', 'MDT', 'MET', 'META', 'MGM',
+    'MHK', 'MKC', 'MKTX', 'MLM', 'MMC', 'MMM', 'MNST', 'MO', 'MOH', 'MOS',
+    'MPC', 'MPWR', 'MRK', 'MRNA', 'MRO', 'MS', 'MSCI', 'MSFT', 'MSI', 'MTB',
+    'MTCH', 'MTD', 'MU', 'NCLH', 'NDAQ', 'NDSN', 'NEE', 'NEM', 'NFLX', 'NI',
+    'NKE', 'NOC', 'NOW', 'NRG', 'NSC', 'NTAP', 'NTRS', 'NUE', 'NVDA', 'NVR',
+    'NWS', 'NWSA', 'NXPI', 'O', 'ODFL', 'OKE', 'OMC', 'ON', 'ORCL', 'ORLY',
+    'OTIS', 'OXY', 'PANW', 'PARA', 'PAYC', 'PAYX', 'PCAR', 'PCG', 'PEG', 'PEP',
+    'PFE', 'PFG', 'PG', 'PGR', 'PH', 'PHM', 'PKG', 'PLD', 'PM', 'PNC',
+    'PNR', 'PNW', 'PODD', 'POOL', 'PPG', 'PPL', 'PRU', 'PSA', 'PSX', 'PTC',
+    'PWR', 'PYPL', 'QCOM', 'QRVO', 'RCL', 'REG', 'REGN', 'RF', 'RJF', 'RL',
+    'RMD', 'ROK', 'ROL', 'ROP', 'ROST', 'RSG', 'RTX', 'RVTY', 'SBAC', 'SBUX',
+    'SCHW', 'SHW', 'SJM', 'SLB', 'SMCI', 'SNA', 'SNPS', 'SO', 'SOLV', 'SPG',
+    'SPGI', 'SRE', 'STE', 'STLD', 'STT', 'STX', 'STZ', 'SW', 'SWK', 'SWKS',
+    'SYF', 'SYK', 'SYY', 'T', 'TAP', 'TDG', 'TDY', 'TECH', 'TEL', 'TER',
+    'TFC', 'TFX', 'TGT', 'TJX', 'TMO', 'TMUS', 'TPR', 'TRGP', 'TRMB', 'TROW',
+    'TRV', 'TSCO', 'TSLA', 'TSN', 'TT', 'TTWO', 'TXN', 'TXT', 'TYL', 'UAL',
+    'UBER', 'UDR', 'UHS', 'ULTA', 'UNH', 'UNP', 'UPS', 'URI', 'USB', 'V',
+    'VFC', 'VICI', 'VLO', 'VLTO', 'VMC', 'VRSK', 'VRSN', 'VRTX', 'VST', 'VTR',
+    'VTRS', 'VZ', 'WAB', 'WAT', 'WBA', 'WBD', 'WDC', 'WEC', 'WELL', 'WFC',
+    'WM', 'WMB', 'WMT', 'WRB', 'WST', 'WTW', 'WY', 'WYNN', 'XEL', 'XOM',
+    'XYL', 'YUM', 'ZBH', 'ZBRA', 'ZTS'
 ]
+
+
+def detect_cup_and_handle(close, volume):
+    """
+    Detect Cup and Handle pattern.
+    Returns: (is_cup_handle, cup_depth_pct, handle_depth_pct, breakout_level)
+    """
+    if len(close) < 120:  # Need at least 6 months of data
+        return False, 0, 0, 0
+    
+    try:
+        price = float(close.iloc[-1])
+        
+        # Look for cup formation over past 3-6 months
+        lookback = min(len(close), 180)  # ~6 months max
+        segment = close.iloc[-lookback:]
+        
+        # Find the cup: highest point at start, lowest in middle, recovery to near start
+        left_high_idx = segment.iloc[:20].idxmax()  # Left rim of cup
+        left_high = segment.loc[left_high_idx]
+        
+        # Find the lowest point (bottom of cup) - should be in middle portion
+        mid_start = len(segment) // 4
+        mid_end = 3 * len(segment) // 4
+        mid_segment = segment.iloc[mid_start:mid_end]
+        
+        if len(mid_segment) == 0:
+            return False, 0, 0, 0
+            
+        cup_bottom_idx = mid_segment.idxmin()
+        cup_bottom = mid_segment.loc[cup_bottom_idx]
+        
+        # Cup depth should be 15-35% typically
+        cup_depth_pct = ((left_high - cup_bottom) / left_high) * 100
+        if cup_depth_pct < 10 or cup_depth_pct > 50:
+            return False, 0, 0, 0
+        
+        # Right side should recover to near left high (within 10%)
+        recent_high = segment.iloc[-40:].max()  # Right rim
+        recovery_pct = ((recent_high - cup_bottom) / (left_high - cup_bottom)) * 100
+        
+        if recovery_pct < 80:  # Must recover at least 80% of the cup
+            return False, 0, 0, 0
+        
+        # Handle detection: small pullback from the right rim (5-15%)
+        if len(close) < 20:
+            return False, 0, 0, 0
+            
+        handle_segment = close.iloc[-20:]
+        handle_high = handle_segment.max()
+        handle_low = handle_segment.min()
+        handle_depth_pct = ((handle_high - handle_low) / handle_high) * 100
+        
+        # Handle should be smaller than the cup and within range
+        if handle_depth_pct < 3 or handle_depth_pct > 20:
+            return False, 0, 0, 0
+        
+        if handle_depth_pct >= cup_depth_pct:  # Handle must be shallower than cup
+            return False, 0, 0, 0
+        
+        # Volume should decrease during handle
+        if len(volume) >= 20:
+            recent_vol = volume.iloc[-10:].mean()
+            prior_vol = volume.iloc[-30:-10].mean() if len(volume) >= 30 else volume.mean()
+            vol_decrease = recent_vol < prior_vol * 0.9  # Volume should decrease
+        else:
+            vol_decrease = True
+        
+        # Breakout level is the handle high / right rim
+        breakout_level = float(handle_high)
+        
+        # Current price should be within 5% of breakout level (forming or breaking)
+        distance_to_breakout = ((breakout_level - price) / breakout_level) * 100
+        
+        # Valid cup and handle if:
+        # 1. Cup formed properly (✓ checked above)
+        # 2. Handle is forming (✓ checked above)
+        # 3. Price is near breakout level (within 8%)
+        # 4. Volume decreasing in handle (bonus, not required)
+        
+        is_valid = distance_to_breakout >= -2 and distance_to_breakout <= 8
+        
+        return is_valid, cup_depth_pct, handle_depth_pct, breakout_level
+        
+    except Exception as e:
+        return False, 0, 0, 0
 
 
 def scan_stock(ticker):
@@ -102,6 +220,11 @@ def scan_stock(ticker):
             score += 10
             vcp_score = 7
         
+        # Cup and Handle detection
+        is_cup_handle, cup_depth, handle_depth, breakout_level = detect_cup_and_handle(close, volume)
+        if is_cup_handle:
+            score += 20  # Bonus for cup and handle pattern
+        
         # 52-week high proximity
         high_52w = close.iloc[-252:].max() if len(close) >= 252 else close.max()
         pct_from_high = ((high_52w - price) / high_52w) * 100
@@ -115,8 +238,10 @@ def scan_stock(ticker):
         
         if in_wma_zone: score += 10
         
-        # Signal type
-        if is_breakout:
+        # Signal type - prioritize cup and handle
+        if is_cup_handle:
+            signal_type = 'CUP & HANDLE'
+        elif is_breakout:
             signal_type = 'BREAKOUT'
         elif is_vcp:
             signal_type = 'VCP'
@@ -128,9 +253,15 @@ def scan_stock(ticker):
             signal_type = 'WATCH'
         
         # Entry/stop/target
-        entry = round(price * 1.005, 2)
-        stop = round(price * 0.92, 2)
-        target = round(price * 1.20, 2)
+        if is_cup_handle and breakout_level > 0:
+            entry = round(breakout_level * 1.01, 2)  # Entry just above breakout
+            stop = round(breakout_level * 0.92, 2)   # Stop below handle low
+            # Target = cup depth added to breakout level
+            target = round(breakout_level * (1 + cup_depth/100), 2)
+        else:
+            entry = round(price * 1.005, 2)
+            stop = round(price * 0.92, 2)
+            target = round(price * 1.20, 2)
         
         munger = '⭐⭐⭐' if score >= 80 else '⭐⭐' if score >= 60 else '⭐'
         
@@ -146,6 +277,10 @@ def scan_stock(ticker):
             'in_wma_zone': in_wma_zone,
             'is_actionable': is_actionable,
             'is_vcp': is_vcp,
+            'is_cup_handle': is_cup_handle,
+            'cup_depth': cup_depth if is_cup_handle else 0,
+            'handle_depth': handle_depth if is_cup_handle else 0,
+            'breakout_level': breakout_level if is_cup_handle else 0,
             'is_watchlist': is_watchlist,
             'vcp_score': vcp_score,
             'pct_from_high': pct_from_high,
@@ -165,11 +300,13 @@ def generate_html(results):
     actionable = [r for r in results if r['is_actionable']]
     wma_zone = [r for r in results if r['in_wma_zone']]
     vcps = [r for r in results if r['is_vcp']]
+    cup_handles = [r for r in results if r.get('is_cup_handle', False)]
     watchlist = [r for r in results if r['is_watchlist']]
     
     actionable.sort(key=lambda x: x['score'], reverse=True)
     wma_zone.sort(key=lambda x: x['score'], reverse=True)
     vcps.sort(key=lambda x: x['score'], reverse=True)
+    cup_handles.sort(key=lambda x: x['score'], reverse=True)
     watchlist.sort(key=lambda x: x['score'], reverse=True)
     results.sort(key=lambda x: x['score'], reverse=True)
     
@@ -180,7 +317,7 @@ def generate_html(results):
         score_class = 'score-a' if s['score'] >= 80 else 'score-b' if s['score'] >= 60 else 'score-c'
         tag_class = {
             'BREAKOUT': 'tag-breakout', 'VCP': 'tag-vcp', 'AT PIVOT': 'tag-pivot',
-            '200-WMA': 'tag-200wma', 'WATCH': 'tag-forming'
+            '200-WMA': 'tag-200wma', 'WATCH': 'tag-forming', 'CUP & HANDLE': 'tag-cup'
         }.get(s['signal_type'], 'tag-forming')
         
         wma_display = f"+{s['wma_pct']:.0f}%" if s['wma_pct'] > 0 else f"{s['wma_pct']:.0f}%"
@@ -191,6 +328,8 @@ def generate_html(results):
             signal_display = 'VCP ⭐'
         elif s['signal_type'] == '200-WMA':
             signal_display = '200-WMA 🧠'
+        elif s['signal_type'] == 'CUP & HANDLE':
+            signal_display = 'CUP & HANDLE ☕'
         
         action = 'BUY' if s['score'] >= 70 else 'WATCH'
         action_class = 'action-buy' if action == 'BUY' else 'action-watch'
@@ -200,10 +339,13 @@ def generate_html(results):
         if s['is_actionable']: cats.append('actionable')
         if s['in_wma_zone']: cats.append('wma')
         if s['is_vcp']: cats.append('vcp')
+        if s.get('is_cup_handle', False): cats.append('cup')
         if s['is_watchlist']: cats.append('watchlist')
         cats.append('all')
         
-        row_class = 'actionable' if s['is_actionable'] and s['signal_type'] != '200-WMA' else 'wma-buy-zone' if s['in_wma_zone'] else ''
+        row_class = 'actionable' if s['is_actionable'] and s['signal_type'] not in ['200-WMA'] else ''
+        if s['in_wma_zone']: row_class = 'wma-buy-zone'
+        if s.get('is_cup_handle', False): row_class = 'cup-handle'
         
         return f'''<tr class="stock-row {row_class}" data-categories="{' '.join(cats)}" data-ticker="{s['ticker']}" onclick="loadChart('{s['ticker']}')">
                     <td class="ticker">{s['ticker']}</td>
@@ -244,7 +386,28 @@ def generate_html(results):
         .status-live {{ background: rgba(63,185,80,0.2); color: #3fb950; }}
         .status-market {{ background: rgba(88,166,255,0.2); color: #58a6ff; }}
         
-        .quick-stats {{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }}
+        .export-btn {{ background: linear-gradient(135deg, #2962ff, #a371f7); color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.85em; transition: transform 0.1s, box-shadow 0.2s; }}
+        .export-btn:hover {{ transform: translateY(-1px); box-shadow: 0 4px 12px rgba(88,166,255,0.3); }}
+        .export-btn:active {{ transform: translateY(0); }}
+        
+        .modal-overlay {{ position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }}
+        .modal-overlay.active {{ display: flex; }}
+        .modal-content {{ background: #161b22; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; max-width: 500px; width: 90%; }}
+        .modal-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }}
+        .modal-header h3 {{ color: #58a6ff; font-size: 1.1em; }}
+        .modal-close {{ background: none; border: none; color: #8b949e; font-size: 1.5em; cursor: pointer; }}
+        .modal-close:hover {{ color: #fff; }}
+        .modal-tabs {{ display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }}
+        .modal-tab {{ padding: 8px 16px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #8b949e; cursor: pointer; font-size: 0.85em; }}
+        .modal-tab.active {{ background: rgba(88,166,255,0.2); border-color: #58a6ff; color: #58a6ff; }}
+        .modal-textarea {{ width: 100%; height: 150px; background: #0d1117; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; color: #e6edf3; font-family: monospace; font-size: 0.9em; resize: none; }}
+        .modal-actions {{ display: flex; gap: 10px; margin-top: 15px; }}
+        .modal-btn {{ flex: 1; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; }}
+        .modal-btn-primary {{ background: #238636; color: #fff; }}
+        .modal-btn-secondary {{ background: rgba(255,255,255,0.1); color: #e6edf3; }}
+        .modal-note {{ font-size: 0.75em; color: #8b949e; margin-top: 10px; }}
+        
+        .quick-stats {{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 20px; }}
         .stat-card {{ background: rgba(255,255,255,0.03); border-radius: 10px; padding: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.08); cursor: pointer; transition: all 0.2s; }}
         .stat-card:hover {{ border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }}
         .stat-card.active {{ border-color: #58a6ff; background: rgba(88,166,255,0.1); }}
@@ -265,6 +428,7 @@ def generate_html(results):
         tr.stock-row:hover {{ background: rgba(255,255,255,0.05); }}
         tr.stock-row.actionable {{ background: rgba(63,185,80,0.08); }}
         tr.stock-row.wma-buy-zone {{ background: rgba(0,212,255,0.08); }}
+        tr.stock-row.cup-handle {{ background: rgba(255,165,0,0.12); }}
         tr.stock-row.hidden {{ display: none; }}
         
         .ticker {{ font-weight: 700; color: #e6edf3; }}
@@ -283,6 +447,7 @@ def generate_html(results):
         .tag-pivot {{ background: rgba(88,166,255,0.15); color: #58a6ff; }}
         .tag-forming {{ background: rgba(139,148,158,0.15); color: #8b949e; }}
         .tag-200wma {{ background: rgba(0,212,255,0.15); color: #00d4ff; }}
+        .tag-cup {{ background: rgba(255,165,0,0.2); color: #ffa500; }}
         
         .action-badge {{ padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 700; }}
         .action-buy {{ background: #238636; color: #fff; }}
@@ -336,6 +501,7 @@ def generate_html(results):
                 <div class="timestamp">Last scan: {timestamp}</div>
             </div>
             <div class="status">
+                <button class="export-btn" onclick="exportToTradingView()">📤 Export to TradingView</button>
                 <span class="status-badge status-live">● Data Live</span>
                 <span class="status-badge status-market">Auto-updates 6h</span>
             </div>
@@ -345,6 +511,10 @@ def generate_html(results):
             <div class="stat-card active" data-filter="actionable" onclick="filterStocks('actionable')">
                 <div class="stat-value" style="color:#3fb950">{len(actionable)}</div>
                 <div class="stat-label">🎯 Actionable Now</div>
+            </div>
+            <div class="stat-card" data-filter="cup" onclick="filterStocks('cup')">
+                <div class="stat-value" style="color:#ffa500">{len(cup_handles)}</div>
+                <div class="stat-label">☕ Cup & Handle</div>
             </div>
             <div class="stat-card" data-filter="wma" onclick="filterStocks('wma')">
                 <div class="stat-value" style="color:#00d4ff">{len(wma_zone)}</div>
@@ -429,7 +599,32 @@ def generate_html(results):
         </div>
         
         <div class="footer">
-            Stock Scanner Command Center • Top 200 S&P 500 • Auto-updates every 6 hours
+            Stock Scanner Command Center • S&P 500 • Auto-updates every 6 hours
+        </div>
+    </div>
+    
+    <!-- Export Modal -->
+    <div class="modal-overlay" id="exportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📤 Export to TradingView</h3>
+                <button class="modal-close" onclick="closeExportModal()">&times;</button>
+            </div>
+            <div class="modal-tabs">
+                <button class="modal-tab active" onclick="setExportType('actionable', this)">🎯 Actionable</button>
+                <button class="modal-tab" onclick="setExportType('cup', this)">☕ Cup & Handle</button>
+                <button class="modal-tab" onclick="setExportType('wma', this)">🧠 200-WMA</button>
+                <button class="modal-tab" onclick="setExportType('vcp', this)">⭐ VCPs</button>
+                <button class="modal-tab" onclick="setExportType('all', this)">📊 All</button>
+            </div>
+            <textarea class="modal-textarea" id="exportTextarea" readonly></textarea>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-primary" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+                <button class="modal-btn modal-btn-secondary" onclick="downloadWatchlist()">💾 Download .txt</button>
+            </div>
+            <div class="modal-note">
+                <strong>How to import:</strong> TradingView → Lists → Import list → Paste symbols
+            </div>
         </div>
     </div>
     
@@ -441,6 +636,7 @@ def generate_html(results):
         
         const filterLabels = {{
             'actionable': '🎯 ACTIONABLE NOW',
+            'cup': '☕ CUP & HANDLE',
             'wma': '🧠 200-WMA ZONE',
             'vcp': '⭐ VCP PATTERNS',
             'watchlist': '👀 WATCH LIST',
@@ -528,6 +724,67 @@ def generate_html(results):
         
         // Initialize with actionable filter
         filterStocks('actionable');
+        
+        // Export to TradingView functionality
+        let currentExportType = 'actionable';
+        
+        function getTickersByCategory(category) {{
+            const rows = document.querySelectorAll('.stock-row');
+            const tickers = [];
+            rows.forEach(row => {{
+                const cats = row.dataset.categories.split(' ');
+                if (cats.includes(category)) {{
+                    tickers.push(row.dataset.ticker);
+                }}
+            }});
+            return tickers;
+        }}
+        
+        function exportToTradingView() {{
+            document.getElementById('exportModal').classList.add('active');
+            setExportType('actionable', document.querySelector('.modal-tab'));
+        }}
+        
+        function closeExportModal() {{
+            document.getElementById('exportModal').classList.remove('active');
+        }}
+        
+        function setExportType(type, btn) {{
+            currentExportType = type;
+            document.querySelectorAll('.modal-tab').forEach(tab => tab.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            const symbols = getTickersByCategory(type);
+            document.getElementById('exportTextarea').value = symbols.join(',\\n');
+        }}
+        
+        function copyToClipboard() {{
+            const textarea = document.getElementById('exportTextarea');
+            textarea.select();
+            document.execCommand('copy');
+            
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => {{ btn.textContent = originalText; }}, 2000);
+        }}
+        
+        function downloadWatchlist() {{
+            const symbols = getTickersByCategory(currentExportType);
+            const content = symbols.join('\\n');
+            const blob = new Blob([content], {{ type: 'text/plain' }});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `tradingview_${{currentExportType}}_${{new Date().toISOString().slice(0,10)}}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }}
+        
+        document.getElementById('exportModal').addEventListener('click', function(e) {{
+            if (e.target === this) closeExportModal();
+        }});
     </script>
 </body>
 </html>'''
@@ -536,53 +793,50 @@ def generate_html(results):
 
 
 def main():
-    print(f"\\n{'='*60}")
-    print(f"📊 GENERATING STOCK SCANNER SITE")
-    print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"{'='*60}\\n")
-    
-    print(f"Scanning {len(UNIVERSE)} stocks...")
+    """Main entry point."""
+    print(f"🔍 Scanning {len(UNIVERSE)} S&P 500 stocks...")
+    print("=" * 50)
     
     results = []
     for i, ticker in enumerate(UNIVERSE):
-        sys.stdout.write(f"\\r  {ticker}... ({i+1}/{len(UNIVERSE)})")
-        sys.stdout.flush()
-        r = scan_stock(ticker)
-        if r:
-            results.append(r)
+        result = scan_stock(ticker)
+        if result:
+            results.append(result)
+        
+        # Progress indicator
+        if (i + 1) % 50 == 0:
+            print(f"  Scanned {i + 1}/{len(UNIVERSE)} stocks...")
     
-    print(f"\\r\\n✓ Scanned {len(results)} stocks successfully\\n")
+    print(f"\n✅ Scanned {len(results)} stocks successfully")
     
-    results.sort(key=lambda x: x['score'], reverse=True)
+    # Generate summary
+    actionable = [r for r in results if r['is_actionable']]
+    cup_handles = [r for r in results if r.get('is_cup_handle', False)]
+    wma = [r for r in results if r['in_wma_zone']]
+    vcps = [r for r in results if r['is_vcp']]
     
+    print(f"\n📊 SUMMARY:")
+    print(f"   🎯 Actionable: {len(actionable)}")
+    print(f"   ☕ Cup & Handle: {len(cup_handles)}")
+    print(f"   🧠 200-WMA Zone: {len(wma)}")
+    print(f"   ⭐ VCPs: {len(vcps)}")
+    
+    if cup_handles:
+        print(f"\n☕ CUP & HANDLE PATTERNS:")
+        for s in sorted(cup_handles, key=lambda x: x['score'], reverse=True)[:10]:
+            print(f"   {s['ticker']}: Cup {s['cup_depth']:.1f}%, Handle {s['handle_depth']:.1f}%, Breakout ${s['breakout_level']:.2f}")
+    
+    # Generate HTML
     html = generate_html(results)
     
+    # Write to file
     output_path = os.path.join(SCRIPT_DIR, 'index.html')
     with open(output_path, 'w') as f:
         f.write(html)
     
-    print(f"✓ Generated index.html")
+    print(f"\n✅ Generated {output_path}")
     
-    # Git commit and push
-    try:
-        os.chdir(SCRIPT_DIR)
-        subprocess.run(['git', 'add', 'index.html', 'generate_site.py'], check=True)
-        subprocess.run(['git', 'commit', '-m', f'Auto-update scan {datetime.now().strftime("%Y-%m-%d %H:%M")}'], check=True)
-        subprocess.run(['git', 'push'], check=True)
-        print(f"✓ Pushed to GitHub\\n")
-    except subprocess.CalledProcessError as e:
-        print(f"⚠ Git push failed: {e}\\n")
-    
-    # Summary
-    actionable = [r for r in results if r['is_actionable']]
-    wma_zone = [r for r in results if r['in_wma_zone']]
-    vcps = [r for r in results if r['is_vcp']]
-    
-    print(f"{'='*60}")
-    print(f"SUMMARY:")
-    print(f"  Total: {len(results)} | Actionable: {len(actionable)} | 200-WMA: {len(wma_zone)} | VCPs: {len(vcps)}")
-    print(f"  Top 3: {', '.join([r['ticker'] for r in results[:3]])}")
-    print(f"{'='*60}\\n")
+    return results
 
 
 if __name__ == '__main__':
