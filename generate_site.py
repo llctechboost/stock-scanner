@@ -71,89 +71,124 @@ UNIVERSE = [
 ]
 
 
+def wilder_rma(series, length):
+    """
+    Wilder's RMA (SMMA) - matches TradingView's ta.rma()
+    rma_t = (rma_{t-1} * (n-1) + x_t) / n
+    Seed: SMA of first n values
+    """
+    alpha = 1.0 / length
+    return series.ewm(alpha=alpha, adjust=False).mean()
+
+
 def calculate_squeeze(df, bb_len=20, bb_mult=2.0, kc_len=20, kc_mult=2.0, atr_len=10):
     """
-    Calculate Squeeze indicator matching TradingView settings.
-    BB: SMA basis, length=20, mult=2.0
-    KC: EMA basis, length=20, mult=2.0, ATR length=10
+    Calculate Squeeze indicator matching TradingView exactly.
     
-    Returns: (squeeze_on, squeeze_score, bb_pct, kc_pct, squeeze_bars)
+    BB (TW Golden Indicators): SMA basis, length=20, mult=2.0
+    KC (TV KC script): EMA basis, length=20, mult=2.0, ATR(10) with Wilder's RMA
+    
+    Returns: (squeeze_on, squeeze_score, squeeze_state, bb_pct, kc_pct, squeeze_bars)
     """
-    if len(df) < max(bb_len, kc_len, atr_len) + 15:
-        return False, 0, 0, 0, 0
+    min_len = max(bb_len, kc_len, atr_len) + 5
+    if len(df) < min_len:
+        return False, 0, 'NONE', 0, 0, 0
     
     try:
         close = df['Close']
         high = df['High'] if 'High' in df.columns else close
         low = df['Low'] if 'Low' in df.columns else close
         
-        # === Bollinger Bands (SMA basis, like TW) ===
+        # === Bollinger Bands (SMA basis) ===
         bb_basis = close.rolling(bb_len).mean()
         bb_dev = bb_mult * close.rolling(bb_len).std()
         bb_upper = bb_basis + bb_dev
         bb_lower = bb_basis - bb_dev
         bb_width = bb_upper - bb_lower
         
-        # === Keltner Channels (EMA basis, ATR bands, like TV) ===
+        # === Keltner Channels (EMA basis, Wilder's ATR) ===
         kc_basis = close.ewm(span=kc_len, adjust=False).mean()
         
-        # True Range for ATR
+        # True Range - handle first row (no prev close)
+        prev_close = close.shift(1)
         tr1 = high - low
-        tr2 = abs(high - close.shift(1))
-        tr3 = abs(low - close.shift(1))
+        tr2 = (high - prev_close).abs()
+        tr3 = (low - prev_close).abs()
         tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
-        atr = tr.rolling(atr_len).mean()
+        tr.iloc[0] = high.iloc[0] - low.iloc[0]  # First row: H-L only
+        
+        # ATR using Wilder's RMA (not SMA!)
+        atr = wilder_rma(tr, atr_len)
         
         kc_upper = kc_basis + (kc_mult * atr)
         kc_lower = kc_basis - (kc_mult * atr)
         kc_width = kc_upper - kc_lower
         
-        # === Squeeze detection (per bar) ===
+        # === Squeeze detection ===
         squeeze_on_series = (bb_upper < kc_upper) & (bb_lower > kc_lower)
         
-        # Count consecutive squeeze bars at end
-        squeeze_count = 0
-        for i in range(len(squeeze_on_series) - 1, -1, -1):
+        # Count consecutive squeeze bars (forward accumulation)
+        squeeze_count_series = pd.Series(0, index=df.index)
+        for i in range(len(squeeze_on_series)):
             if squeeze_on_series.iloc[i]:
-                squeeze_count += 1
+                squeeze_count_series.iloc[i] = (squeeze_count_series.iloc[i-1] + 1) if i > 0 else 1
             else:
-                break
+                squeeze_count_series.iloc[i] = 0
         
-        # Current values
+        # === Current bar values ===
         idx = -1
         current_bb_basis = float(bb_basis.iloc[idx])
         current_bb_width = float(bb_width.iloc[idx])
+        current_kc_basis = float(kc_basis.iloc[idx])
         current_kc_width = float(kc_width.iloc[idx])
         squeeze_on = bool(squeeze_on_series.iloc[idx])
+        squeeze_count = int(squeeze_count_series.iloc[idx])
         
-        # BB and KC widths as percentage
+        # Width percentages (divide by respective basis)
         bb_pct = (current_bb_width / current_bb_basis) * 100 if current_bb_basis > 0 else 0
-        kc_pct = (current_kc_width / current_bb_basis) * 100 if current_bb_basis > 0 else 0
+        kc_pct = (current_kc_width / current_kc_basis) * 100 if current_kc_basis > 0 else 0
         
-        # === Score calculation (matching PineScript) ===
-        # Thresholds from PineScript
+        # === Depth calculation ===
+        if current_kc_width > 0:
+            depth = (current_kc_width - current_bb_width) / current_kc_width
+        else:
+            depth = float('nan')
+        
+        # === Classification thresholds ===
         min_bars_high = 10
         min_bars_med = 5
         depth_high = 0.25
         depth_med = 0.10
         
-        if squeeze_on and current_kc_width > 0:
-            depth = (current_kc_width - current_bb_width) / current_kc_width
-            
-            # Normalize depth and duration
-            depth_norm = max(0, min(1, (depth - depth_med) / max(depth_high - depth_med, 0.0001)))
-            dur_norm = max(0, min(1, (squeeze_count - min_bars_med) / max(min_bars_high - min_bars_med, 0.0001)))
-            
-            # Score = 60% depth + 40% duration
+        # === State classification (HIGH/MED/LOW/NONE) ===
+        depth_safe = 0.0 if pd.isna(depth) else depth
+        
+        is_high = squeeze_on and squeeze_count >= min_bars_high and depth_safe >= depth_high
+        is_med = squeeze_on and not is_high and squeeze_count >= min_bars_med and depth_safe >= depth_med
+        is_low = squeeze_on and not is_high and not is_med
+        
+        if is_high:
+            state = 'HIGH'
+        elif is_med:
+            state = 'MED'
+        elif is_low:
+            state = 'LOW'
+        else:
+            state = 'NONE'
+        
+        # === Compression score (0-100) ===
+        if squeeze_on:
+            depth_norm = max(0, min(1, (depth_safe - depth_med) / max(depth_high - depth_med, 1e-4)))
+            dur_norm = max(0, min(1, (squeeze_count - min_bars_med) / max(min_bars_high - min_bars_med, 1e-4)))
             score_raw = 0.6 * depth_norm + 0.4 * dur_norm
             squeeze_score = int(round(score_raw * 100))
         else:
             squeeze_score = 0
         
-        return squeeze_on, squeeze_score, bb_pct, kc_pct, squeeze_count
+        return squeeze_on, squeeze_score, state, bb_pct, kc_pct, squeeze_count
         
     except Exception as e:
-        return False, 0, 0, 0, 0
+        return False, 0, 'NONE', 0, 0, 0
 
 
 def detect_cup_and_handle(close, volume):
@@ -311,14 +346,14 @@ def scan_stock(ticker):
             score += 20  # Bonus for cup and handle pattern
         
         # Squeeze detection - Daily (pass full dataframe for proper TR calculation)
-        daily_squeeze_on, daily_squeeze_score, daily_bb_pct, daily_kc_pct, daily_momentum = calculate_squeeze(df)
+        daily_squeeze_on, daily_squeeze_score, daily_state, daily_bb_pct, daily_kc_pct, daily_bars = calculate_squeeze(df)
         
         # Squeeze detection - Weekly
-        weekly_squeeze_on, weekly_squeeze_score, weekly_bb_pct, weekly_kc_pct, weekly_momentum = calculate_squeeze(df_weekly)
+        weekly_squeeze_on, weekly_squeeze_score, weekly_state, weekly_bb_pct, weekly_kc_pct, weekly_bars = calculate_squeeze(df_weekly)
         
-        # High squeeze = score >= 50 (squeezed with decent compression)
-        is_daily_high_squeeze = daily_squeeze_on and daily_squeeze_score >= 50
-        is_weekly_high_squeeze = weekly_squeeze_on and weekly_squeeze_score >= 50
+        # High squeeze = state is HIGH or MED with good score
+        is_daily_high_squeeze = daily_state in ('HIGH', 'MED') and daily_squeeze_score >= 50
+        is_weekly_high_squeeze = weekly_state in ('HIGH', 'MED') and weekly_squeeze_score >= 50
         is_high_squeeze = is_daily_high_squeeze or is_weekly_high_squeeze
         
         # Bonus for high squeeze
@@ -392,13 +427,19 @@ def scan_stock(ticker):
             # Squeeze data
             'daily_squeeze_on': daily_squeeze_on,
             'daily_squeeze_score': daily_squeeze_score,
+            'daily_state': daily_state,
+            'daily_bars': daily_bars,
+            'daily_bb_pct': daily_bb_pct,
+            'daily_kc_pct': daily_kc_pct,
             'weekly_squeeze_on': weekly_squeeze_on,
             'weekly_squeeze_score': weekly_squeeze_score,
+            'weekly_state': weekly_state,
+            'weekly_bars': weekly_bars,
+            'weekly_bb_pct': weekly_bb_pct,
+            'weekly_kc_pct': weekly_kc_pct,
             'is_daily_high_squeeze': is_daily_high_squeeze,
             'is_weekly_high_squeeze': is_weekly_high_squeeze,
-            'is_high_squeeze': is_high_squeeze,
-            'daily_momentum': daily_momentum,
-            'weekly_momentum': weekly_momentum
+            'is_high_squeeze': is_high_squeeze
         }
     except Exception as e:
         print(f"Error scanning {ticker}: {e}")
@@ -965,16 +1006,22 @@ def main():
     print(f"   ⭐ VCPs: {len(vcps)}")
     
     if weekly_squeeze:
-        print(f"\n🔥 WEEKLY HIGH SQUEEZE (Score >= 70):")
+        print(f"\n🔥 WEEKLY HIGH SQUEEZE:")
         for s in sorted(weekly_squeeze, key=lambda x: x.get('weekly_squeeze_score', 0), reverse=True)[:15]:
-            momentum_dir = "↑" if s.get('weekly_momentum', 0) > 0 else "↓"
-            print(f"   {s['ticker']}: Score {s.get('weekly_squeeze_score', 0)}, Momentum {momentum_dir}")
+            state = s.get('weekly_state', 'NONE')
+            bars = s.get('weekly_bars', 0)
+            bb_pct = s.get('weekly_bb_pct', 0)
+            kc_pct = s.get('weekly_kc_pct', 0)
+            print(f"   {s['ticker']}: {state} | Score {s.get('weekly_squeeze_score', 0)} | BB%: {bb_pct:.1f} | KC%: {kc_pct:.1f} | Bars: {bars}")
     
     if daily_squeeze:
-        print(f"\n⚡ DAILY HIGH SQUEEZE (Score >= 70):")
+        print(f"\n⚡ DAILY HIGH SQUEEZE:")
         for s in sorted(daily_squeeze, key=lambda x: x.get('daily_squeeze_score', 0), reverse=True)[:15]:
-            momentum_dir = "↑" if s.get('daily_momentum', 0) > 0 else "↓"
-            print(f"   {s['ticker']}: Score {s.get('daily_squeeze_score', 0)}, Momentum {momentum_dir}")
+            state = s.get('daily_state', 'NONE')
+            bars = s.get('daily_bars', 0)
+            bb_pct = s.get('daily_bb_pct', 0)
+            kc_pct = s.get('daily_kc_pct', 0)
+            print(f"   {s['ticker']}: {state} | Score {s.get('daily_squeeze_score', 0)} | BB%: {bb_pct:.1f} | KC%: {kc_pct:.1f} | Bars: {bars}")
     
     if cup_handles:
         print(f"\n☕ CUP & HANDLE PATTERNS:")
