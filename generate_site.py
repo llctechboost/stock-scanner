@@ -508,7 +508,7 @@ def generate_html(results):
         if s.get('is_cup_handle', False): row_class = 'cup-handle'
         if s.get('is_high_squeeze', False): row_class = 'high-squeeze'
         
-        return f'''<tr class="stock-row {row_class}" data-categories="{' '.join(cats)}" data-ticker="{s['ticker']}" onclick="loadChart('{s['ticker']}')">
+        return f'''<tr class="stock-row {row_class}" data-categories="{' '.join(cats)}" data-ticker="{s['ticker']}" data-score="{s['score']}" data-weekly-sq="{s.get('weekly_squeeze_score', 0)}" data-daily-sq="{s.get('daily_squeeze_score', 0)}" onclick="loadChart('{s['ticker']}')">
                     <td class="ticker">{s['ticker']}</td>
                     <td><span class="pattern-tag {tag_class}">{signal_display}</span></td>
                     <td><span class="score-pill {score_class}">{s['score']}</span></td>
@@ -827,9 +827,29 @@ def generate_html(results):
         
         function filterStocks(category) {{
             currentFilter = category;
-            const rows = document.querySelectorAll('.stock-row');
+            const tbody = document.querySelector('tbody');
+            const rows = Array.from(document.querySelectorAll('.stock-row'));
             let visibleCount = 0;
             
+            // Sort rows based on category
+            if (category === 'squeeze_weekly') {{
+                rows.sort((a, b) => parseInt(b.dataset.weeklySq || 0) - parseInt(a.dataset.weeklySq || 0));
+            }} else if (category === 'squeeze_daily') {{
+                rows.sort((a, b) => parseInt(b.dataset.dailySq || 0) - parseInt(a.dataset.dailySq || 0));
+            }} else if (category === 'squeeze') {{
+                rows.sort((a, b) => {{
+                    const aMax = Math.max(parseInt(a.dataset.weeklySq || 0), parseInt(a.dataset.dailySq || 0));
+                    const bMax = Math.max(parseInt(b.dataset.weeklySq || 0), parseInt(b.dataset.dailySq || 0));
+                    return bMax - aMax;
+                }});
+            }} else {{
+                rows.sort((a, b) => parseInt(b.dataset.score || 0) - parseInt(a.dataset.score || 0));
+            }}
+            
+            // Re-append rows in sorted order
+            rows.forEach(row => tbody.appendChild(row));
+            
+            // Show/hide based on category
             rows.forEach(row => {{
                 const cats = row.dataset.categories.split(' ');
                 if (cats.includes(category)) {{
