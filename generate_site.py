@@ -351,9 +351,9 @@ def scan_stock(ticker):
         # Squeeze detection - Weekly
         weekly_squeeze_on, weekly_squeeze_score, weekly_state, weekly_bb_pct, weekly_kc_pct, weekly_bars = calculate_squeeze(df_weekly)
         
-        # High squeeze = state is HIGH or MED with good score
-        is_daily_high_squeeze = daily_state in ('HIGH', 'MED') and daily_squeeze_score >= 50
-        is_weekly_high_squeeze = weekly_state in ('HIGH', 'MED') and weekly_squeeze_score >= 50
+        # High squeeze = state is HIGH only with score >= 80
+        is_daily_high_squeeze = daily_state == 'HIGH' and daily_squeeze_score >= 80
+        is_weekly_high_squeeze = weekly_state == 'HIGH' and weekly_squeeze_score >= 80
         is_high_squeeze = is_daily_high_squeeze or is_weekly_high_squeeze
         
         # Bonus for high squeeze
