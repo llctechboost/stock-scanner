@@ -1,0 +1,41 @@
+{
+  "updated": "2026-02-08",
+  "options": {
+    "winners": [
+      {"ticker": "NVDA", "type": "Call", "strike": 200, "expiry": "2026-06-18", "qty": 3, "pnl": 1119},
+      {"ticker": "YINN", "type": "Call", "strike": 35, "expiry": "2027-01-15", "qty": 3, "pnl": 540},
+      {"ticker": "HOOD", "type": "Call", "strike": 150, "expiry": "2027-01-15", "qty": 2, "pnl": 336},
+      {"ticker": "IBIT", "type": "Call", "strike": 60, "expiry": "2026-10-16", "qty": 10, "pnl": 232},
+      {"ticker": "MSFT", "type": "Call", "strike": 450, "expiry": "2027-01-15", "qty": 1, "pnl": 227},
+      {"ticker": "PLUG", "type": "Call", "strike": 2.5, "expiry": "2027-01-15", "qty": 22, "pnl": 220},
+      {"ticker": "HOOD", "type": "Call", "strike": 95, "expiry": "2026-02-13", "qty": 9, "pnl": 176},
+      {"ticker": "ORCL", "type": "Call", "strike": 180, "expiry": "2028-01-21", "qty": 1, "pnl": 145},
+      {"ticker": "AAPL", "type": "Call", "strike": 275, "expiry": "2026-04-17", "qty": 3, "pnl": 75},
+      {"ticker": "QQQ", "type": "Put", "strike": 560, "expiry": "2026-03-31", "qty": 2, "pnl": 4}
+    ],
+    "losers": [
+      {"ticker": "AMZN", "type": "Call", "strike": 300, "expiry": "2026-09-18", "qty": 3, "pnl": -876},
+      {"ticker": "META", "type": "Put", "strike": 600, "expiry": "2026-02-27", "qty": 2, "pnl": -304},
+      {"ticker": "MSTU", "type": "Call", "strike": 20, "expiry": "2028-01-21", "qty": 5, "pnl": -190},
+      {"ticker": "MSFT", "type": "Call", "strike": 500, "expiry": "2027-01-15", "qty": 1, "pnl": -152},
+      {"ticker": "IBIT", "type": "Call", "strike": 44, "expiry": "2026-02-20", "qty": 10, "pnl": -110},
+      {"ticker": "QQQ", "type": "Put", "strike": 580, "expiry": "2026-02-20", "qty": 5, "pnl": -100},
+      {"ticker": "ADBE", "type": "Call", "strike": 350, "expiry": "2028-01-21", "qty": 1, "pnl": -47},
+      {"ticker": "APPS", "type": "Call", "strike": 5, "expiry": "2027-01-15", "qty": 4, "pnl": -20},
+      {"ticker": "IBIT", "type": "Call", "strike": 60, "expiry": "2026-09-18", "qty": 5, "pnl": -5},
+      {"ticker": "SOFI", "type": "Call", "strike": 30, "expiry": "2026-03-20", "qty": 4, "pnl": -4}
+    ],
+    "flat": [
+      {"ticker": "LCID", "type": "Call", "strike": 2.5, "expiry": "2026-08-21", "qty": 5, "pnl": 0},
+      {"ticker": "APPS", "type": "Call", "strike": 10, "expiry": "2027-01-15", "qty": 7, "pnl": 0}
+    ]
+  },
+  "stocks": [
+    {"ticker": "AMZN", "shares": 200.02, "last_price": 210.05},
+    {"ticker": "IBIT", "shares": 1775.27, "last_price": 39.66},
+    {"ticker": "FXI", "shares": 189.05, "last_price": 39.23}
+  ],
+  "recurring": [
+    {"ticker": "GRAB", "amount": 380, "frequency": "monthly"}
+  ]
+}

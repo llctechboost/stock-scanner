@@ -1,0 +1,107 @@
+{
+  "portfolios": {
+    "mock1": {
+      "name": "Mock Portfolio 1 — Pattern Signals",
+      "description": "All pattern signals from Feb 2 scan, entered at signal price",
+      "created": "2026-02-02",
+      "starting_balance": 25000,
+      "strategy": "10% stop / 20% target / 60d max hold / all pattern signals",
+      "positions": [
+        {
+          "ticker": "GWW",
+          "entry_price": 1079.94,
+          "shares": 4,
+          "entry_date": "2026-02-03",
+          "stop_price": 971.95,
+          "target_price": 1295.93,
+          "max_exit_date": "2026-04-04",
+          "patterns": ["Flat Base", "VCP"],
+          "score": 50,
+          "status": "open"
+        },
+        {
+          "ticker": "NVDA",
+          "entry_price": 191.13,
+          "shares": 26,
+          "entry_date": "2026-02-03",
+          "stop_price": 172.02,
+          "target_price": 229.36,
+          "max_exit_date": "2026-04-04",
+          "patterns": ["VCP", "Cup w/ Handle"],
+          "score": 45,
+          "status": "open"
+        },
+        {
+          "ticker": "TSLA",
+          "entry_price": 430.41,
+          "shares": 11,
+          "entry_date": "2026-02-03",
+          "stop_price": 387.37,
+          "target_price": 516.49,
+          "max_exit_date": "2026-04-04",
+          "patterns": ["VCP", "Cup w/ Handle"],
+          "score": 45,
+          "status": "open"
+        },
+        {
+          "ticker": "ABNB",
+          "entry_price": 129.37,
+          "shares": 38,
+          "entry_date": "2026-02-03",
+          "stop_price": 116.43,
+          "target_price": 155.24,
+          "max_exit_date": "2026-04-04",
+          "patterns": ["VCP", "Cup w/ Handle"],
+          "score": 45,
+          "status": "open"
+        },
+        {
+          "ticker": "HD",
+          "entry_price": 374.59,
+          "shares": 13,
+          "entry_date": "2026-02-03",
+          "stop_price": 337.13,
+          "target_price": 449.51,
+          "max_exit_date": "2026-04-04",
+          "patterns": ["VCP", "Cup w/ Handle"],
+          "score": 45,
+          "status": "open"
+        }
+      ],
+      "closed": []
+    },
+    "mock2": {
+      "name": "Mock Portfolio 2 — Top Pick Only",
+      "description": "Only highest-score signal, concentrated position",
+      "created": "2026-02-02",
+      "starting_balance": 25000,
+      "strategy": "10% stop / 20% target / 60d max hold / top signal only per scan",
+      "positions": [
+        {
+          "ticker": "GWW",
+          "entry_price": 1079.94,
+          "shares": 4,
+          "entry_date": "2026-02-03",
+          "stop_price": 971.95,
+          "target_price": 1295.93,
+          "max_exit_date": "2026-04-04",
+          "patterns": ["Flat Base", "VCP"],
+          "score": 50,
+          "status": "open"
+        }
+      ],
+      "closed": []
+    },
+    "mock3": {
+      "name": "Mock Portfolio 3 — Watchlist Entries",
+      "description": "Enter watchlist stocks when they trigger (tracked separately)",
+      "created": "2026-02-02",
+      "starting_balance": 25000,
+      "strategy": "10% stop / 20% target / 60d max hold / only enter when watchlist stock confirms pattern",
+      "positions": [],
+      "closed": [],
+      "watchlist": ["JPM", "LRCX", "AMAT", "AMD", "LLY", "GOOGL", "NU", "ASML", "AMZN", "META"]
+    }
+  },
+  "last_updated": "2026-02-02T11:04:00"
+}

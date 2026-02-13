@@ -1,0 +1,1250 @@
+{
+  "timestamp": "2026-02-06T23:06:47.932239",
+  "hot": [],
+  "strong": [],
+  "watch": [],
+  "all": [
+    {
+      "ticker": "AMAT",
+      "conviction": 64,
+      "stock_score": 87,
+      "pattern": "",
+      "price": 322.510009765625,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 2308417.0,
+      "reasons": [
+        "Strong stock score (87/100)",
+        "Bullish options flow",
+        "Large flow $2,308,417",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932062"
+    },
+    {
+      "ticker": "GWW",
+      "conviction": 64,
+      "stock_score": 85,
+      "pattern": "",
+      "price": 1197.6500244140625,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 3321762.0,
+      "reasons": [
+        "Strong stock score (85/100)",
+        "Bullish options flow",
+        "Large flow $3,321,762",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932066"
+    },
+    {
+      "ticker": "ASML",
+      "conviction": 62,
+      "stock_score": 82,
+      "pattern": "",
+      "price": 1413.010009765625,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 2192836.0,
+      "reasons": [
+        "Strong stock score (82/100)",
+        "Bullish options flow",
+        "Large flow $2,192,836",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932069"
+    },
+    {
+      "ticker": "GOOGL",
+      "conviction": 60,
+      "stock_score": 89,
+      "pattern": "Flat Base",
+      "price": 322.8599853515625,
+      "buy_point": 342.97,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 3973305.0,
+      "reasons": [
+        "Strong stock score (89/100)",
+        "Pattern: Flat Base (47% backtest win rate)",
+        "Bullish options flow",
+        "Large flow $3,973,305",
+        "Fresh positioning",
+        "\ud83d\udea8 EARNINGS IN 4 DAYS \u2014 HIGH RISK"
+      ],
+      "earnings_warning": true,
+      "earnings_days": 4,
+      "timestamp": "2026-02-06T23:06:47.932053"
+    },
+    {
+      "ticker": "LLY",
+      "conviction": 58,
+      "stock_score": 79,
+      "pattern": "",
+      "price": 1058.1800537109375,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 899678.0,
+      "reasons": [
+        "Good stock score (79/100)",
+        "Bullish options flow",
+        "Moderate flow $899,678",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932076"
+    },
+    {
+      "ticker": "LOW",
+      "conviction": 58,
+      "stock_score": 79,
+      "pattern": "",
+      "price": 278.3800048828125,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 663534.9999999999,
+      "reasons": [
+        "Good stock score (79/100)",
+        "Bullish options flow",
+        "Moderate flow $663,535",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932078"
+    },
+    {
+      "ticker": "KLAC",
+      "conviction": 58,
+      "stock_score": 72,
+      "pattern": "",
+      "price": 1442.949951171875,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1220490.0,
+      "reasons": [
+        "Good stock score (72/100)",
+        "Bullish options flow",
+        "Large flow $1,220,490",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932084"
+    },
+    {
+      "ticker": "GS",
+      "conviction": 57,
+      "stock_score": 77,
+      "pattern": "",
+      "price": 928.75,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 564834.0,
+      "reasons": [
+        "Good stock score (77/100)",
+        "Bullish options flow",
+        "Moderate flow $564,834",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932081"
+    },
+    {
+      "ticker": "AAPL",
+      "conviction": 54,
+      "stock_score": 62,
+      "pattern": "",
+      "price": 278.1199951171875,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 7363795.0,
+      "reasons": [
+        "Good stock score (62/100)",
+        "Bullish options flow",
+        "Large flow $7,363,795",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932094"
+    },
+    {
+      "ticker": "VRTX",
+      "conviction": 53,
+      "stock_score": 65,
+      "pattern": "",
+      "price": 477.9200134277344,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 962460.0,
+      "reasons": [
+        "Good stock score (65/100)",
+        "Bullish options flow",
+        "Moderate flow $962,460",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932091"
+    },
+    {
+      "ticker": "RKLB",
+      "conviction": 53,
+      "stock_score": 59,
+      "pattern": "",
+      "price": 72.31999969482422,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1726504.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,726,504",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932098"
+    },
+    {
+      "ticker": "CAVA",
+      "conviction": 52,
+      "stock_score": 56,
+      "pattern": "",
+      "price": 69.95999908447266,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1399934.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,399,934",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932101"
+    },
+    {
+      "ticker": "JPM",
+      "conviction": 50,
+      "stock_score": 51,
+      "pattern": "",
+      "price": 322.3999938964844,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1853653.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,853,653",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932107"
+    },
+    {
+      "ticker": "COST",
+      "conviction": 47,
+      "stock_score": 43,
+      "pattern": "",
+      "price": 1001.1599731445312,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 2427564.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $2,427,564",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932116"
+    },
+    {
+      "ticker": "DECK",
+      "conviction": 45,
+      "stock_score": 55,
+      "pattern": "",
+      "price": 115.44999694824219,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 154485.0,
+      "reasons": [
+        "Bullish options flow",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932103"
+    },
+    {
+      "ticker": "HD",
+      "conviction": 45,
+      "stock_score": 55,
+      "pattern": "",
+      "price": 385.1499938964844,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 274326.0,
+      "reasons": [
+        "Bullish options flow",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932105"
+    },
+    {
+      "ticker": "AXP",
+      "conviction": 45,
+      "stock_score": 46,
+      "pattern": "",
+      "price": 359.1499938964844,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 583700.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $583,700",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932110"
+    },
+    {
+      "ticker": "NVDA",
+      "conviction": 45,
+      "stock_score": 39,
+      "pattern": "",
+      "price": 185.41000366210938,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 48206145.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $48,206,145",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932118"
+    },
+    {
+      "ticker": "SMCI",
+      "conviction": 45,
+      "stock_score": 39,
+      "pattern": "",
+      "price": 34.380001068115234,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 4290724.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $4,290,724",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932121"
+    },
+    {
+      "ticker": "ARM",
+      "conviction": 45,
+      "stock_score": 39,
+      "pattern": "",
+      "price": 123.69999694824219,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 3506600.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $3,506,600",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932123"
+    },
+    {
+      "ticker": "AVGO",
+      "conviction": 43,
+      "stock_score": 34,
+      "pattern": "",
+      "price": 332.9200134277344,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 4406250.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $4,406,250",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932126"
+    },
+    {
+      "ticker": "TJX",
+      "conviction": 42,
+      "stock_score": 62,
+      "pattern": "",
+      "price": 155.86000061035156,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 133110.0,
+      "reasons": [
+        "Good stock score (62/100)",
+        "Bullish options flow"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932096"
+    },
+    {
+      "ticker": "CELH",
+      "conviction": 42,
+      "stock_score": 31,
+      "pattern": "",
+      "price": 50.56999969482422,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1773137.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,773,137",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932132"
+    },
+    {
+      "ticker": "TSLA",
+      "conviction": 42,
+      "stock_score": 30,
+      "pattern": "",
+      "price": 411.1099853515625,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 32410070.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $32,410,070",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932135"
+    },
+    {
+      "ticker": "MRVL",
+      "conviction": 42,
+      "stock_score": 30,
+      "pattern": "",
+      "price": 80.27999877929688,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 2487314.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $2,487,314",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932137"
+    },
+    {
+      "ticker": "NU",
+      "conviction": 41,
+      "stock_score": 71,
+      "pattern": "Ascending Base",
+      "price": 17.399999618530273,
+      "buy_point": 19.02,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 8889.0,
+      "reasons": [
+        "Good stock score (71/100)",
+        "Pattern: Ascending Base (42% backtest win rate)",
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932088"
+    },
+    {
+      "ticker": "AMZN",
+      "conviction": 40,
+      "stock_score": 25,
+      "pattern": "",
+      "price": 210.32000732421875,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 25730115.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $25,730,115",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932141"
+    },
+    {
+      "ticker": "PLTR",
+      "conviction": 38,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 135.89999389648438,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 7111654.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $7,111,654",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932148"
+    },
+    {
+      "ticker": "DDOG",
+      "conviction": 38,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 111.69000244140625,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 2491320.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $2,491,320",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932150"
+    },
+    {
+      "ticker": "APP",
+      "conviction": 38,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 406.7200012207031,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 6112556.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $6,112,556",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932160"
+    },
+    {
+      "ticker": "HOOD",
+      "conviction": 38,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 82.81999969482422,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 7143440.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $7,143,440",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932164"
+    },
+    {
+      "ticker": "MSFT",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 401.1400146484375,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 7481715.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $7,481,715",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932178"
+    },
+    {
+      "ticker": "META",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 661.4600219726562,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 9320334.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $9,320,334",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932180"
+    },
+    {
+      "ticker": "CRM",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 191.35000610351562,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1345970.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,345,970",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932183"
+    },
+    {
+      "ticker": "NET",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 173.2100067138672,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 2095460.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $2,095,460",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932185"
+    },
+    {
+      "ticker": "SNOW",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 168.42999267578125,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1057272.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,057,272",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932187"
+    },
+    {
+      "ticker": "V",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 331.5799865722656,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1056539.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,056,539",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932203"
+    },
+    {
+      "ticker": "COIN",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 165.1199951171875,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 4941010.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $4,941,010",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932206"
+    },
+    {
+      "ticker": "SOFI",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 20.860000610351562,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1792580.0000000002,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,792,580",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932208"
+    },
+    {
+      "ticker": "UNH",
+      "conviction": 36,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 276.6499938964844,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1829208.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,829,208",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932213"
+    },
+    {
+      "ticker": "AMD",
+      "conviction": 35,
+      "stock_score": 32,
+      "pattern": "Ascending Base",
+      "price": 208.44000244140625,
+      "buy_point": 267.49,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 18902484.0,
+      "reasons": [
+        "Pattern: Ascending Base (42% backtest win rate)",
+        "Bullish options flow",
+        "Large flow $18,902,484",
+        "Fresh positioning",
+        "\ud83d\udea8 EARNINGS IN 3 DAYS \u2014 HIGH RISK"
+      ],
+      "earnings_warning": true,
+      "earnings_days": 3,
+      "timestamp": "2026-02-06T23:06:47.932130"
+    },
+    {
+      "ticker": "CRWD",
+      "conviction": 35,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 395.5,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 909220.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $909,220",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932153"
+    },
+    {
+      "ticker": "SHOP",
+      "conviction": 35,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 112.05000305175781,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 833285.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $833,285",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932157"
+    },
+    {
+      "ticker": "UBER",
+      "conviction": 35,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 74.7699966430664,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 571353.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $571,353",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932171"
+    },
+    {
+      "ticker": "ABNB",
+      "conviction": 35,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 122.18000030517578,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 920190.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $920,190",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932173"
+    },
+    {
+      "ticker": "NKE",
+      "conviction": 33,
+      "stock_score": 25,
+      "pattern": "",
+      "price": 63.91999816894531,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 438971.00000000006,
+      "reasons": [
+        "Bullish options flow",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932146"
+    },
+    {
+      "ticker": "QCOM",
+      "conviction": 33,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 137.33999633789062,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 1053495.0,
+      "reasons": [
+        "Bullish options flow",
+        "Large flow $1,053,495"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932176"
+    },
+    {
+      "ticker": "PANW",
+      "conviction": 33,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 159.32000732421875,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 774245.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $774,245",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932189"
+    },
+    {
+      "ticker": "NOW",
+      "conviction": 33,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 100.73999786376953,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 600360.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $600,360",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932192"
+    },
+    {
+      "ticker": "NVO",
+      "conviction": 29,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 47.63999938964844,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 445725.0,
+      "reasons": [
+        "Bullish options flow",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932210"
+    },
+    {
+      "ticker": "DASH",
+      "conviction": 29,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 182.47000122070312,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 325695.0,
+      "reasons": [
+        "Bullish options flow",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932217"
+    },
+    {
+      "ticker": "RGTI",
+      "conviction": 29,
+      "stock_score": 5,
+      "pattern": "",
+      "price": 17.709999084472656,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 660306.0,
+      "reasons": [
+        "Bullish options flow",
+        "Moderate flow $660,306",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932224"
+    },
+    {
+      "ticker": "MA",
+      "conviction": 28,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 548.739990234375,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BULLISH",
+      "premium_flow": 70389.0,
+      "reasons": [
+        "Bullish options flow",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932162"
+    },
+    {
+      "ticker": "LRCX",
+      "conviction": 27,
+      "stock_score": 82,
+      "pattern": "",
+      "price": 231.00999450683594,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 0,
+      "reasons": [
+        "Strong stock score (82/100)",
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932072"
+    },
+    {
+      "ticker": "URI",
+      "conviction": 16,
+      "stock_score": 46,
+      "pattern": "",
+      "price": 899.5499877929688,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 126560.00000000001,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932112"
+    },
+    {
+      "ticker": "MDB",
+      "conviction": 10,
+      "stock_score": 43,
+      "pattern": "",
+      "price": 344.3500061035156,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 228479.99999999997,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932114"
+    },
+    {
+      "ticker": "DXCM",
+      "conviction": 10,
+      "stock_score": 27,
+      "pattern": "",
+      "price": 69.97000122070312,
+      "buy_point": null,
+      "has_flow": false,
+      "flow_bias": "N/A",
+      "premium_flow": 0,
+      "reasons": [],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932139"
+    },
+    {
+      "ticker": "ZS",
+      "conviction": 6,
+      "stock_score": 20,
+      "pattern": "",
+      "price": 167.3300018310547,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 321497.0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932155"
+    },
+    {
+      "ticker": "PODD",
+      "conviction": 6,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 241.92999267578125,
+      "buy_point": null,
+      "has_flow": false,
+      "flow_bias": "N/A",
+      "premium_flow": 0,
+      "reasons": [],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932214"
+    },
+    {
+      "ticker": "ISRG",
+      "conviction": 5,
+      "stock_score": 25,
+      "pattern": "",
+      "price": 488.1499938964844,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932143"
+    },
+    {
+      "ticker": "IONQ",
+      "conviction": 4,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 34.9900016784668,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 284360.0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932194"
+    },
+    {
+      "ticker": "HIMS",
+      "conviction": 4,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 23.020000457763672,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 456181.99999999994,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932196"
+    },
+    {
+      "ticker": "DUOL",
+      "conviction": 4,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 119.4000015258789,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 356301.0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932198"
+    },
+    {
+      "ticker": "TOST",
+      "conviction": 1,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 27.729999542236328,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932200"
+    },
+    {
+      "ticker": "AXON",
+      "conviction": 1,
+      "stock_score": 15,
+      "pattern": "",
+      "price": 414.20001220703125,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932219"
+    },
+    {
+      "ticker": "LULU",
+      "conviction": 0,
+      "stock_score": 9,
+      "pattern": "",
+      "price": 172.85000610351562,
+      "buy_point": null,
+      "has_flow": true,
+      "flow_bias": "BEARISH",
+      "premium_flow": 0,
+      "reasons": [
+        "\u26a0\ufe0f BEARISH flow \u2014 conflicting signal",
+        "Fresh positioning"
+      ],
+      "earnings_warning": false,
+      "earnings_days": null,
+      "timestamp": "2026-02-06T23:06:47.932222"
+    }
+  ]
+}

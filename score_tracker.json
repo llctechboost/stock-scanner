@@ -1,0 +1,41 @@
+{
+  "watchlist": {
+    "GOOGL": {
+      "score": 82,
+      "price": 338.0,
+      "perf_3m": 20.15811648875163,
+      "vol_ratio": 0.8084340739255533,
+      "pct_from_high": 0.07390983000739099,
+      "last_seen": "2026-02-01T22:31:25.845059"
+    },
+    "ASML": {
+      "score": 82,
+      "price": 1423.0,
+      "perf_3m": 32.31671064277919,
+      "vol_ratio": 1.8106086227813092,
+      "pct_from_high": 2.2100685439603187,
+      "last_seen": "2026-02-01T22:31:25.845059"
+    }
+  },
+  "history": [
+    {
+      "ticker": "GOOGL",
+      "score": 82,
+      "price": 338.0,
+      "timestamp": "2026-02-01T22:31:25.845059",
+      "event": "CROSSED_ABOVE_80"
+    },
+    {
+      "ticker": "ASML",
+      "score": 82,
+      "price": 1423.0,
+      "timestamp": "2026-02-01T22:31:25.845059",
+      "event": "CROSSED_ABOVE_80"
+    }
+  ],
+  "alerts": [
+    "\ud83d\udfe2 NEW 80+ | GOOGL scored 82 @ $338.00",
+    "\ud83d\udfe2 NEW 80+ | ASML scored 82 @ $1423.00"
+  ],
+  "last_updated": "2026-02-01T22:31:25.845059"
+}

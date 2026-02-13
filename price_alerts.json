@@ -1,0 +1,40 @@
+{
+  "alerts": [
+    {
+      "ticker": "HOOD",
+      "type": "below",
+      "price": 83.0,
+      "message": "\ud83d\udc3b HOOD hit $83 support zone! Watch for bounce or breakdown to $79",
+      "created": "2026-02-04",
+      "active": false,
+      "triggered_at": "2026-02-04T10:00:07.023069",
+      "triggered_price": 80.45999908447266
+    },
+    {
+      "ticker": "HOOD",
+      "type": "below",
+      "price": 79.0,
+      "message": "\u26a0\ufe0f HOOD broke 61.8% Fib ($79)! Distribution confirmed - caution",
+      "created": "2026-02-04",
+      "active": false,
+      "triggered_at": "2026-02-04T13:00:05.375830",
+      "triggered_price": 78.66999816894531
+    },
+    {
+      "ticker": "HOOD",
+      "type": "above",
+      "price": 107.0,
+      "message": "\ud83d\udc02 HOOD broke $107 (38.2% Fib)! Bullish - distribution may be failing",
+      "created": "2026-02-04",
+      "active": true
+    },
+    {
+      "ticker": "HOOD",
+      "type": "above",
+      "price": 137.0,
+      "message": "\ud83d\ude80 HOOD broke recent high $137! Full bull mode - markup phase",
+      "created": "2026-02-04",
+      "active": true
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "activities": [
+    {
+      "id": "ACT-1",
+      "timestamp": "2026-01-31 18:00",
+      "title": "Clawdbot Identity & Setup",
+      "description": "Set up Rara identity (AI familiar), configured SOUL.md, USER.md, IDENTITY.md, AGENTS.md. Connected via Telegram to Rah.",
+      "duration": "30 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "BOOTSTRAP.md flow \u2014 structured first conversation worked well for establishing identity",
+      "what_didnt": "N/A \u2014 smooth setup",
+      "improvements": "Could automate more of the initial file creation",
+      "tags": [
+        "setup",
+        "identity"
+      ]
+    },
+    {
+      "id": "ACT-2",
+      "timestamp": "2026-01-31 19:00",
+      "title": "Trading System Migration from Hetzner",
+      "description": "Migrated all trading system files from old Hetzner server (5.161.231.205) to local MacBook Air. Two folders dropped: allfilestradingsystem202601310015/ (Python tools + backtest engine) and completedocumentationpackageallmarkdownfiles/ (docs). 16 Python tools reorganized into trading/.",
+      "duration": "45 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "Clean folder structure made it easy to reorganize",
+      "what_didnt": "Some old server references (5.161.231.205) still in docs",
+      "improvements": "Find-and-replace old server IPs across all docs",
+      "tags": [
+        "migration",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "ACT-3",
+      "timestamp": "2026-01-31 19:30",
+      "title": "Gmail Integration (IMAP + SMTP)",
+      "description": "Connected rara3bot@gmail.com via app password. Set up IMAP reading and SMTP sending. Default recipient: llctechboost@gmail.com. 16 existing messages in inbox.",
+      "duration": "20 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "App password approach \u2014 clean, no OAuth complexity",
+      "what_didnt": "N/A",
+      "improvements": "Could add OAuth later for more security",
+      "tags": [
+        "integration",
+        "email"
+      ]
+    },
+    {
+      "id": "ACT-4",
+      "timestamp": "2026-01-31 19:45",
+      "title": "Google Cloud Service Account Setup",
+      "description": "Configured GCP project dash-485802 with service account. Sheets API working. OAuth client in rara-485713 project (unused for now).",
+      "duration": "15 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "Service account key was already generated",
+      "what_didnt": "OAuth client created but not needed",
+      "improvements": "Clean up unused GCP resources later",
+      "tags": [
+        "integration",
+        "gcp"
+      ]
+    },
+    {
+      "id": "ACT-5",
+      "timestamp": "2026-01-31 20:00",
+      "title": "Scanner V3 Bug Fixes \u2014 Major Overhaul",
+      "description": "Fixed 5 critical bugs: (1) HTF false positives \u2014 raised threshold from 15% to 40%, eliminated 45 fake breakouts. (2) Score overflow \u2014 capped at 12 (was 13/12). (3) Duplicate buy points \u2014 deduped. (4) GOOGL appearing in both sections \u2014 one section per stock. (5) RS Rating broken on small samples \u2014 absolute thresholds for <20 stocks.",
+      "duration": "90 min",
+      "status": "Completed",
+      "blockers": [
+        "Understanding the existing scanner code flow"
+      ],
+      "what_worked": "Systematic approach \u2014 fix one bug, test, next. Each fix verified with full scan output comparison.",
+      "what_didnt": "Initially raised HTF threshold too low (25%), still had some false positives. Had to go to 40%.",
+      "improvements": "Write unit tests for scanner edge cases. Add regression test for known-good stocks.",
+      "tags": [
+        "scanner",
+        "bugfix",
+        "critical"
+      ]
+    },
+    {
+      "id": "ACT-6",
+      "timestamp": "2026-01-31 21:00",
+      "title": "New Features: Earnings Warning + Signal Penalties",
+      "description": "Added earnings proximity warning (\u26a0\ufe0f flags within 14 days). Signal matcher now penalizes: -25 pts for \u22647 days to earnings, -15 pts for \u226414 days. Also penalizes bearish options flow on bullish signals.",
+      "duration": "45 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "Penalty system elegantly handles the earnings risk \u2014 doesn't remove signals, just downgrades conviction. GOOGL went from potential \ud83d\udd25 HOT to 57/100 correctly.",
+      "what_didnt": "N/A",
+      "improvements": "Add post-earnings auto-reassessment \u2014 scanner should automatically re-run after earnings date passes",
+      "tags": [
+        "scanner",
+        "feature"
+      ]
+    },
+    {
+      "id": "ACT-7",
+      "timestamp": "2026-01-31 21:30",
+      "title": "Dashboard Text Parser Fix",
+      "description": "Stock scanner dashboard was showing empty patterns and bogus 'RS' cards. Fixed the text parsing logic in dashboard.py.",
+      "duration": "20 min",
+      "status": "Completed",
+      "blockers": [
+        "Complex regex parsing of scanner output"
+      ],
+      "what_worked": "Traced the issue through the full parse pipeline",
+      "what_didnt": "First fix broke another card format",
+      "improvements": "Use structured JSON output from scanner instead of parsing text",
+      "tags": [
+        "dashboard",
+        "bugfix"
+      ]
+    },
+    {
+      "id": "ACT-8",
+      "timestamp": "2026-01-31 21:45",
+      "title": "Sub-Agent Tool Building Sprint",
+      "description": "Spawned sub-agents to build: sector_rotation.py, earnings_calendar.py, dark_pool_tracker.py, signal_tracker.py. All completed and in testing.",
+      "duration": "30 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "Sub-agent spawning is incredibly efficient \u2014 4 tools built in parallel in 30 min. Would have taken hours serially.",
+      "what_didnt": "Some sub-agents needed API data sources that may not be available",
+      "improvements": "Verify data sources for each tool before marking as production-ready",
+      "tags": [
+        "trading",
+        "tool",
+        "sub-agent"
+      ]
+    },
+    {
+      "id": "ACT-9",
+      "timestamp": "2026-01-31 22:00",
+      "title": "Chart Intelligence Pipeline",
+      "description": "Built chart_screenshotter.py (TradingView screenshots), chart_vision.py (AI pattern grading), chart_intel.py (combined intel reports). Screenshots taken for GOOGL, AMD, NU.",
+      "duration": "45 min",
+      "status": "Completed",
+      "blockers": [
+        "TradingView loading times",
+        "Browser automation complexity"
+      ],
+      "what_worked": "AI vision correctly identified cup-with-handle, ascending base, VCP patterns. Grading system (A/B/C/F) adds value over math-only scanning.",
+      "what_didnt": "Browser automation flaky \u2014 sometimes pages don't load fully",
+      "improvements": "Add retry logic for screenshots. Consider headless mode for speed.",
+      "tags": [
+        "trading",
+        "ai",
+        "vision"
+      ]
+    },
+    {
+      "id": "ACT-10",
+      "timestamp": "2026-01-31 22:30",
+      "title": "CANSLIM Visual Guide v2 \u2014 Full Pattern Guide",
+      "description": "Created comprehensive visual guide covering all 7 CANSLIM patterns with real chart examples. Analyzed 7 charts (NVDA, NFLX, META, CELH, GOOGL, AMD, NU) with AI vision. Each pattern has definition, rules, real example, AI analysis, trade plan. Emailed to Rah with all chart images attached.",
+      "duration": "60 min",
+      "status": "Completed",
+      "blockers": [
+        "No Brave API key for web search",
+        "IBD pages returning 404"
+      ],
+      "what_worked": "Using TradingView browser screenshots + AI vision analysis gave much better real-world examples than trying to find static images online. The vision model correctly identified patterns across multiple stocks.",
+      "what_didnt": "First version used 'column' field instead of 'status' in tasks JSON \u2014 had to debug",
+      "improvements": "Build a library of annotated chart examples over time. Each time scanner detects a pattern, save it as a teaching example.",
+      "tags": [
+        "docs",
+        "education",
+        "vision"
+      ]
+    },
+    {
+      "id": "ACT-11",
+      "timestamp": "2026-01-31 22:40",
+      "title": "External Access Attempts (Cloudflare + Tailscale)",
+      "description": "Tried Cloudflare tunnels for external dashboard access \u2014 failed (tunnels kept dying). Tried Tailscale \u2014 failed (needs sudo password for pkg installer). Deprioritized in favor of local WiFi access.",
+      "duration": "20 min",
+      "status": "Completed",
+      "blockers": [
+        "Cloudflare tunnel instability",
+        "Tailscale needs sudo for install",
+        "No admin password available"
+      ],
+      "what_worked": "Quick decision to fall back to local WiFi instead of fighting infrastructure issues",
+      "what_didnt": "Both Cloudflare and Tailscale approaches failed",
+      "improvements": "Try Tailscale again when admin password is available. Or use ngrok as alternative.",
+      "tags": [
+        "infrastructure",
+        "networking"
+      ]
+    },
+    {
+      "id": "ACT-12",
+      "timestamp": "2026-02-01 00:16",
+      "title": "Kanban Board Fix + Full Task Seeding",
+      "description": "Board was rendering empty \u2014 tasks.json used 'column' field but JS expected 'status'. Fixed field name. Then seeded with comprehensive 57-task list covering all work done tonight.",
+      "duration": "30 min",
+      "status": "Completed",
+      "blockers": [
+        "Field name mismatch between backend and frontend"
+      ],
+      "what_worked": "Browser screenshot immediately revealed the empty board. API check confirmed data was there but field names mismatched.",
+      "what_didnt": "Initial seed only had 18 tasks \u2014 Rah wanted ALL tasks captured",
+      "improvements": "Auto-generate tasks from activity log. When logging an activity, optionally create/update a kanban task.",
+      "tags": [
+        "dashboard",
+        "bugfix"
+      ]
+    },
+    {
+      "id": "ACT-13",
+      "timestamp": "2026-02-01 00:20",
+      "title": "Nightly Ops Engine \u2014 4 Swimlane System",
+      "description": "Built nightly_ops.py with 4 swimlanes: Trading (full scanner pipeline), Contracts (deadline/follow-up tracking), Content (calendar/ideas), Automation (system health). Set up 11 PM EST cron job. Created contracts/pipeline.json and content/calendar.json frameworks.",
+      "duration": "30 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "Modular swimlane design \u2014 each lane is independent, can be developed incrementally. Cron job setup was straightforward.",
+      "what_didnt": "Full test run got killed during gateway restart",
+      "improvements": "Add more robust error handling per lane. One lane failing shouldn't kill the whole run.",
+      "tags": [
+        "automation",
+        "nightly",
+        "cron"
+      ]
+    },
+    {
+      "id": "ACT-14",
+      "timestamp": "2026-02-01 00:37",
+      "title": "Brave Search API Configuration",
+      "description": "Configured Brave Search API key via gateway config.patch. Gateway restarted. Web search now functional.",
+      "duration": "10 min",
+      "status": "Completed",
+      "blockers": [
+        "First key provided was Anthropic key (wrong type)",
+        "Interactive configure wizard hard to automate"
+      ],
+      "what_worked": "config.patch with tools.web.search.apiKey path worked after reading docs",
+      "what_didnt": "clawdbot configure --section web is interactive and hard to script",
+      "improvements": "Document the config.patch JSON path for future reference",
+      "tags": [
+        "config",
+        "api"
+      ]
+    },
+    {
+      "id": "ACT-15",
+      "timestamp": "2026-02-01 00:43",
+      "title": "Gov Contracts Guide Research (Sub-Agent)",
+      "description": "Spawned sub-agent to research and write comprehensive government contracts guide: city (Hackensack), county (Bergen), state (NJ), federal. Covers certifications (SDVOSB, MBE, 8(a)), registrations (SAM.gov, NJSTART), strategy for 51/49 SDVOB partnership.",
+      "duration": "In progress",
+      "status": "Completed",
+      "blockers": [
+        "First attempt killed by gateway restart"
+      ],
+      "what_worked": "Sub-agent approach \u2014 lets main session continue while research happens in background",
+      "what_didnt": "First spawn died during config restart. Had to respawn.",
+      "improvements": "Sub-agents should be resilient to gateway restarts",
+      "tags": [
+        "contracts",
+        "research",
+        "sub-agent"
+      ]
+    },
+    {
+      "id": "ACT-16",
+      "timestamp": "2026-02-01 13:01",
+      "title": "BotExchange Telegram Group \u2014 Allowlist Config",
+      "description": "Added BotExchange group (-5208247029) to Telegram allowlist. First attempt used wrong ID format (-1005208247029 supergroup prefix) \u2014 group is a regular group, not supergroup. Fixed via Bot API getChat validation. Configured requireMention: true. Also turned off Group Privacy in BotFather so bot receives all messages.",
+      "duration": "15 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "Using Telegram Bot API getChat to validate the correct chat ID format",
+      "what_didnt": "Assumed -100 prefix for supergroups \u2014 regular groups use raw negative ID",
+      "improvements": "Always validate chat ID via Bot API before adding to config",
+      "tags": [
+        "telegram",
+        "config",
+        "botexchange"
+      ]
+    },
+    {
+      "id": "ACT-17",
+      "timestamp": "2026-02-01 13:02",
+      "title": "UiPath Autonomous Build Platform \u2014 TRD Review",
+      "description": "Reviewed Technical Requirements Document (TRD) v1.0 for Clawdbot-UiPath integration. Covers: cross-OS communication (macOS\u2192Windows), UiPath execution agent, project constraints (Main.xaml, typed args, pinned packages), validation/execution loop, error handling, security isolation. Key constraint: must target UiPath Studio 2024.10.4 specifically for compatibility with Rah work environment.",
+      "duration": "10 min",
+      "status": "Completed",
+      "blockers": [],
+      "what_worked": "PDF extraction with PyPDF2 \u2014 clean text output from the TRD",
+      "what_didnt": "pdftotext not installed, had to install PyPDF2",
+      "improvements": "Keep PyPDF2 installed for future PDF handling",
+      "tags": [
+        "uipath",
+        "rpa",
+        "architecture",
+        "planning"
+      ]
+    },
+    {
+      "id": "ACT-18",
+      "timestamp": "2026-02-01 13:02",
+      "title": "UTM + Windows 11 ARM VM Setup \u2014 In Progress",
+      "description": "Installing UTM (v4.7.5) via Homebrew for Windows 11 ARM VM on MacBook Air. Purpose: UiPath Studio 2024.10.4 execution environment. Stack: UTM + Windows 11 24H2 ARM + UiPath Community Edition. ISO being built via UUP dump (build 26100.7705). Dependencies installed: aria2, cabextract, wimlib, cdrtools. chntpw failed to build on Apple Silicon (known openssl@1.0 issue) \u2014 skipped, not critical for ISO build.",
+      "duration": "20 min",
+      "status": "Blocked",
+      "blockers": [
+        "ISO download still in progress (~15 min remaining)"
+      ],
+      "what_worked": "UUP dump macOS script approach \u2014 automated ISO build from Microsoft CDN",
+      "what_didnt": "chntpw brew formula broken on Apple Silicon (openssl@1.0 EC point validation errors)",
+      "improvements": "Consider pre-built VHDX images for faster setup in future",
+      "tags": [
+        "vm",
+        "windows",
+        "utm",
+        "uipath",
+        "infrastructure"
+      ]
+    }
+  ]
+}

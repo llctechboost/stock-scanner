@@ -1,0 +1,214 @@
+{
+  "ticker": "HOOD",
+  "current_price": 87.06999969482422,
+  "date": "2026-02-03",
+  "patterns_detected": [
+    {
+      "name": "head_and_shoulders",
+      "correlation": 0.677,
+      "bias": "bearish"
+    },
+    {
+      "name": "descending_triangle",
+      "correlation": 0.612,
+      "bias": "bearish"
+    },
+    {
+      "name": "wyckoff_distribution",
+      "correlation": 0.731,
+      "bias": "bearish"
+    }
+  ],
+  "pattern_scores": {
+    "cup_and_handle": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.7,
+      "detected": false,
+      "bias": "bullish",
+      "description": "U-shaped base with handle pullback before breakout"
+    },
+    "inverse_cup_handle": {
+      "correlation": 0.619,
+      "window": 120,
+      "min_required": 0.7,
+      "detected": "False",
+      "bias": "bearish",
+      "description": "Inverted U-shape, bearish continuation"
+    },
+    "vcp_tight": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.6,
+      "detected": false,
+      "bias": "bullish",
+      "description": "Volatility contraction with tightening range"
+    },
+    "vcp_loose": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.55,
+      "detected": false,
+      "bias": "bullish",
+      "description": "Volatility contraction with looser swings"
+    },
+    "head_and_shoulders": {
+      "correlation": 0.677,
+      "window": 60,
+      "min_required": 0.65,
+      "detected": "True",
+      "bias": "bearish",
+      "description": "Three peaks with middle highest - bearish reversal"
+    },
+    "inverse_head_shoulders": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.65,
+      "detected": false,
+      "bias": "bullish",
+      "description": "Three troughs with middle lowest - bullish reversal"
+    },
+    "double_top": {
+      "correlation": 0.533,
+      "window": 120,
+      "min_required": 0.7,
+      "detected": "False",
+      "bias": "bearish",
+      "description": "Two peaks at similar level - bearish reversal"
+    },
+    "double_bottom": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.7,
+      "detected": false,
+      "bias": "bullish",
+      "description": "Two troughs at similar level - bullish reversal"
+    },
+    "ascending_triangle": {
+      "correlation": 0.003,
+      "window": 120,
+      "min_required": 0.6,
+      "detected": "False",
+      "bias": "bullish",
+      "description": "Flat resistance with higher lows - bullish"
+    },
+    "descending_triangle": {
+      "correlation": 0.612,
+      "window": 60,
+      "min_required": 0.6,
+      "detected": "True",
+      "bias": "bearish",
+      "description": "Flat support with lower highs - bearish"
+    },
+    "symmetric_triangle": {
+      "correlation": 0.104,
+      "window": 120,
+      "min_required": 0.55,
+      "detected": "False",
+      "bias": "neutral",
+      "description": "Converging trendlines - breakout pending"
+    },
+    "bull_flag": {
+      "correlation": 0.373,
+      "window": 120,
+      "min_required": 0.65,
+      "detected": "False",
+      "bias": "bullish",
+      "description": "Sharp rally followed by downward channel - bullish continuation"
+    },
+    "bear_flag": {
+      "correlation": 0.391,
+      "window": 90,
+      "min_required": 0.65,
+      "detected": "False",
+      "bias": "bearish",
+      "description": "Sharp decline followed by upward channel - bearish continuation"
+    },
+    "wyckoff_accumulation": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.6,
+      "detected": false,
+      "bias": "bullish",
+      "description": "Wyckoff accumulation - smart money buying"
+    },
+    "wyckoff_distribution": {
+      "correlation": 0.731,
+      "window": 120,
+      "min_required": 0.6,
+      "detected": "True",
+      "bias": "bearish",
+      "description": "Wyckoff distribution - smart money selling"
+    },
+    "flat_base": {
+      "correlation": 0,
+      "window": 60,
+      "min_required": 0.5,
+      "detected": false,
+      "bias": "bullish",
+      "description": "Tight consolidation near highs - bullish"
+    }
+  },
+  "technical_analysis": {
+    "volatility_contraction": {
+      "contracting": "False",
+      "ranges": [
+        24.98240039575767,
+        19.144837096864013,
+        32.00362043087661
+      ],
+      "contraction_ratio": 1.281046653799978,
+      "vcp_quality": "none"
+    },
+    "cup_shape": {
+      "detected": false
+    },
+    "trendlines": {
+      "support": {
+        "slope": 0.24607140677315847,
+        "direction": "up",
+        "points": [
+          [
+            10,
+            106.20999908447266
+          ],
+          [
+            26,
+            115.26000213623047
+          ],
+          [
+            37,
+            113.0999984741211
+          ]
+        ]
+      },
+      "resistance": {
+        "slope": -0.6590478079659599,
+        "direction": "down",
+        "points": [
+          [
+            19,
+            137.0800018310547
+          ],
+          [
+            31,
+            122.37000274658203
+          ],
+          [
+            39,
+            123.23999786376953
+          ]
+        ]
+      }
+    },
+    "pivot_highs": 7,
+    "pivot_lows": 7
+  },
+  "best_match": {
+    "pattern": "wyckoff_distribution",
+    "correlation": 0.731,
+    "bias": "bearish"
+  },
+  "overall_bias": "BEARISH",
+  "confidence": 73.1
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie Munger 200-Week MA Scanner</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header .subtitle { color: #888; font-size: 1.1em; }
+        .header .timestamp { color: #666; font-size: 0.9em; margin-top: 5px; }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-card .value { font-size: 2em; font-weight: bold; color: #00d4ff; }
+        .stat-card .label { color: #888; font-size: 0.9em; margin-top: 5px; }
+        
+        .section-title {
+            font-size: 1.3em;
+            margin: 25px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th {
+            background: rgba(0,212,255,0.15);
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #00d4ff;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        tr:hover { background: rgba(255,255,255,0.05); }
+        
+        .ticker { font-weight: bold; color: #fff; font-size: 1.1em; }
+        .price { color: #00d4ff; }
+        .positive { color: #00ff88; }
+        .negative { color: #ff4757; }
+        .neutral { color: #888; }
+        
+        .zone-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .zone-green { background: rgba(0,255,136,0.2); color: #00ff88; }
+        .zone-yellow { background: rgba(255,193,7,0.2); color: #ffc107; }
+        .zone-red { background: rgba(255,71,87,0.2); color: #ff4757; }
+        
+        .munger-score {
+            display: flex;
+            gap: 2px;
+        }
+        .star { color: #ffc107; }
+        .star-empty { color: #333; }
+        
+        .legend {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+        }
+        .legend-item { display: flex; align-items: center; gap: 8px; color: #888; font-size: 0.9em; }
+        
+        .highlight-row { background: rgba(0,212,255,0.08) !important; }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #555;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Charlie Munger 200-Week MA Scanner</h1>
+            <div class="subtitle">Quality Stocks at Institutional Support Levels</div>
+            <div class="timestamp">February 7, 2026 • 07:04 AM EST</div>
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="value">8</div>
+                <div class="label">🟢 In Buy Zone (&lt;10%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">14</div>
+                <div class="label">🟡 Watch Zone (10-25%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">5</div>
+                <div class="label">⭐⭐⭐ Strong Fundamentals</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">COIN</div>
+                <div class="label">🎯 Top Pick</div>
+            </div>
+        </div>
+        
+        <div class="section-title">🟢 BUY ZONE — Within 10% of 200-Week MA</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Price</th>
+                    <th>200-WMA</th>
+                    <th>From WMA</th>
+                    <th>Rev Growth</th>
+                    <th>Earn Growth</th>
+                    <th>Margin</th>
+                    <th>ROE</th>
+                    <th>P/E</th>
+                    <th>Munger</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td class="ticker">COIN</td>
+                    <td class="price">$165.12</td>
+                    <td>$169.07</td>
+                    <td><span class="zone-badge zone-green">-2.3%</span></td>
+                    <td class="positive">+58.9%</td>
+                    <td class="positive">+430.6%</td>
+                    <td>43.7%</td>
+                    <td class="positive">26.0%</td>
+                    <td>14.3</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">ABNB</td>
+                    <td class="price">$122.18</td>
+                    <td>$127.87</td>
+                    <td><span class="zone-badge zone-green">-4.4%</span></td>
+                    <td class="positive">+9.7%</td>
+                    <td class="positive">+3.8%</td>
+                    <td>22.0%</td>
+                    <td class="positive">30.8%</td>
+                    <td>29.1</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">DECK</td>
+                    <td class="price">$115.45</td>
+                    <td>$107.18</td>
+                    <td><span class="zone-badge zone-green">+7.7%</span></td>
+                    <td class="positive">+7.1%</td>
+                    <td class="positive">+11.0%</td>
+                    <td>19.3%</td>
+                    <td class="positive">39.7%</td>
+                    <td>16.4</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">MSFT</td>
+                    <td class="price">$401.14</td>
+                    <td>$369.53</td>
+                    <td><span class="zone-badge zone-green">+8.6%</span></td>
+                    <td class="positive">+16.7%</td>
+                    <td class="positive">+59.8%</td>
+                    <td>39.0%</td>
+                    <td class="positive">34.4%</td>
+                    <td>25.1</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">SMCI</td>
+                    <td class="price">$34.38</td>
+                    <td>$34.56</td>
+                    <td><span class="zone-badge zone-green">-0.5%</span></td>
+                    <td class="positive">+123.4%</td>
+                    <td class="positive">+18.2%</td>
+                    <td>3.1%</td>
+                    <td>13.2%</td>
+                    <td>25.1</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star-empty">★</span><span class="star-empty">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">TOST</td>
+                    <td class="price">$27.73</td>
+                    <td>$26.38</td>
+                    <td><span class="zone-badge zone-green">+5.1%</span></td>
+                    <td class="positive">+25.1%</td>
+                    <td class="positive">+137.4%</td>
+                    <td>4.7%</td>
+                    <td>15.9%</td>
+                    <td>63.0</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">SNOW</td>
+                    <td class="price">$168.43</td>
+                    <td>$169.34</td>
+                    <td><span class="zone-badge zone-green">-0.5%</span></td>
+                    <td class="positive">+28.7%</td>
+                    <td class="neutral">N/A</td>
+                    <td class="negative">-30.8%</td>
+                    <td class="negative">-53.1%</td>
+                    <td>—</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star-empty">★</span><span class="star-empty">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">QCOM</td>
+                    <td class="price">$137.34</td>
+                    <td>$140.95</td>
+                    <td><span class="zone-badge zone-green">-2.6%</span></td>
+                    <td class="positive">+5.0%</td>
+                    <td class="negative">-1.8%</td>
+                    <td>12.0%</td>
+                    <td>21.5%</td>
+                    <td>27.7</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star-empty">★</span><span class="star-empty">★</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="section-title">🟡 WATCH ZONE — 10-25% from 200-Week MA</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Price</th>
+                    <th>200-WMA</th>
+                    <th>From WMA</th>
+                    <th>Rev Growth</th>
+                    <th>Earn Growth</th>
+                    <th>Margin</th>
+                    <th>ROE</th>
+                    <th>P/E</th>
+                    <th>Munger</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td class="ticker">V</td>
+                    <td class="price">$331.58</td>
+                    <td>$268.72</td>
+                    <td><span class="zone-badge zone-yellow">+23.4%</span></td>
+                    <td class="positive">+14.6%</td>
+                    <td class="positive">+17.4%</td>
+                    <td>50.2%</td>
+                    <td class="positive">54.0%</td>
+                    <td>31.2</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">MA</td>
+                    <td class="price">$548.74</td>
+                    <td>$444.03</td>
+                    <td><span class="zone-badge zone-yellow">+23.6%</span></td>
+                    <td class="positive">+17.6%</td>
+                    <td class="positive">+24.2%</td>
+                    <td>45.6%</td>
+                    <td class="positive">209.9%</td>
+                    <td>33.2</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">MRVL</td>
+                    <td class="price">$80.28</td>
+                    <td>$65.00</td>
+                    <td><span class="zone-badge zone-yellow">+23.5%</span></td>
+                    <td class="positive">+36.8%</td>
+                    <td class="neutral">N/A</td>
+                    <td>31.7%</td>
+                    <td>18.0%</td>
+                    <td>28.3</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">VRTX</td>
+                    <td class="price">$477.92</td>
+                    <td>$389.21</td>
+                    <td><span class="zone-badge zone-yellow">+22.8%</span></td>
+                    <td class="positive">+11.0%</td>
+                    <td class="positive">+4.7%</td>
+                    <td>31.3%</td>
+                    <td>22.3%</td>
+                    <td>33.7</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">HD</td>
+                    <td class="price">$385.15</td>
+                    <td>$328.41</td>
+                    <td><span class="zone-badge zone-yellow">+17.3%</span></td>
+                    <td class="positive">+2.8%</td>
+                    <td class="negative">-1.4%</td>
+                    <td>8.8%</td>
+                    <td class="positive">162.9%</td>
+                    <td>26.3</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">CRM</td>
+                    <td class="price">$191.35</td>
+                    <td>$232.62</td>
+                    <td><span class="zone-badge zone-yellow">-17.7%</span></td>
+                    <td class="positive">+8.6%</td>
+                    <td class="positive">+38.6%</td>
+                    <td>17.9%</td>
+                    <td>12.2%</td>
+                    <td>25.6</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">HIMS</td>
+                    <td class="price">$23.02</td>
+                    <td>$20.12</td>
+                    <td><span class="zone-badge zone-yellow">+14.4%</span></td>
+                    <td class="positive">+49.2%</td>
+                    <td class="negative">-80.3%</td>
+                    <td>6.1%</td>
+                    <td class="positive">26.2%</td>
+                    <td>43.4</td>
+                    <td class="munger-score"><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="legend">
+            <div class="legend-item"><span class="zone-badge zone-green">🟢</span> Buy Zone: Within 10% of 200-WMA</div>
+            <div class="legend-item"><span class="zone-badge zone-yellow">🟡</span> Watch Zone: 10-25% from 200-WMA</div>
+            <div class="legend-item"><span class="star">★★★</span> Strong Munger Score (ROE &gt;25%, Margin &gt;25%)</div>
+        </div>
+        
+        <div class="footer">
+            <strong>🎯 TOP PICKS:</strong> COIN (near 200-WMA + 430% earnings growth) • MSFT (quality at support) • V/MA (payment duopoly, ridiculous ROE)
+            <br><br>
+            Munger Philosophy: "A great company at a fair price beats a fair company at a great price"
+        </div>
+    </div>
+</body>
+</html>

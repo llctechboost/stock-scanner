@@ -1,0 +1,394 @@
+Universe: 536 tickers (503 S&P 500 + 37 additions)
+Screening 536 stocks...
+============================================================
+[1/536] CDNS: 55.7 pts - ['200W MA (+5.6%)']
+[2/536] MSI: 50.0 pts - ['Flat Base']
+[9/536] AAPL: 60.0 pts - ['Flat Base']
+[10/536] GOOGL: 72.8 pts - ['Flat Base']
+[13/536] ADP: 60.0 pts - ['200W MA (-4.6%)']
+[15/536] AME: 52.8 pts - ['Flat Base']
+[17/536] ALLE: 55.7 pts - ['Flat Base']
+[21/536] GS: 57.1 pts - ['Flat Base']
+[26/536] GL: 60.0 pts - ['Flat Base']
+[29/536] CL: 60.0 pts - ['Cup & Handle']
+[32/536] ACGL: 64.3 pts - ['Flat Base']
+[34/536] STE: 58.6 pts - ['Flat Base']
+[35/536] SYK: 58.6 pts - ['Flat Base']
+[37/536] CF: 55.7 pts - ['200W MA (+14.3%)']
+[38/536] HIG: 70.0 pts - ['Flat Base']
+[39/536] SNA: 54.3 pts - ['Flat Base']
+[42/536] ABNB: 58.6 pts - ['200W MA (-4.5%)']
+[44/536] HCA: 50.0 pts - ['Flat Base']
+[45/536] AVB: 54.3 pts - ['200W MA', 'Flat Base']
+[47/536] TRV: 65.7 pts - ['Flat Base']
+... processed 50/536
+[53/536] ATO: 55.7 pts - ['Flat Base']
+[55/536] DPZ: 60.0 pts - ['200W MA', 'Flat Base']
+[58/536] LLY: 61.4 pts - ['Flat Base']
+[65/536] GD: 55.7 pts - ['Flat Base']
+[69/536] AMCR: 54.3 pts - ['200W MA', 'Flat Base']
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FI"}}}
+$FI: possibly delisted; no price data found  (period=5y) (Yahoo error = "No data found, symbol may be delisted")
+$FI: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FI"}}}
+[72/536] PCG: 64.3 pts - ['200W MA', 'Flat Base']
+[76/536] WM: 58.6 pts - ['Flat Base']
+[82/536] ROST: 55.7 pts - ['Flat Base']
+[86/536] UBER: 67.1 pts - ['Flat Base']
+[87/536] EG: 55.7 pts - ['200W MA', 'Flat Base']
+[88/536] ESS: 72.9 pts - ['200W MA', 'Flat Base']
+[96/536] V: 60.0 pts - ['Flat Base']
+[97/536] A: 67.1 pts - ['200W MA (+2.0%)']
+[100/536] RL: 64.3 pts - ['Flat Base']
+... processed 100/536
+[102/536] ETR: 50.0 pts - ['Flat Base']
+[109/536] ABT: 50.0 pts - ['200W MA (-0.6%)']
+[112/536] ICE: 51.4 pts - ['Flat Base']
+[113/536] SO: 51.4 pts - ['Flat Base']
+[121/536] UPS: 65.8 pts - ['Cup & Handle']
+[131/536] USB: 55.7 pts - ['Flat Base']
+[132/536] VTR: 50.0 pts - ['Flat Base']
+[133/536] GOOG: 72.8 pts - ['Flat Base']
+[145/536] MMC: 65.7 pts - ['200W MA', 'Flat Base']
+[148/536] BK: 55.7 pts - ['Flat Base']
+... processed 150/536
+[153/536] WAB: 51.4 pts - ['Flat Base']
+[157/536] AMZN: 67.1 pts - ['Flat Base']
+$SQ: possibly delisted; no price data found  (period=5y) (Yahoo error = "No data found, symbol may be delisted")
+$SQ: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+[171/536] AES: 51.4 pts - ['200W MA (-1.0%)']
+[185/536] PM: 60.0 pts - ['Cup & Handle']
+[186/536] CINF: 58.6 pts - ['Flat Base']
+[190/536] CBOE: 64.3 pts - ['Flat Base']
+... processed 200/536
+[203/536] FTV: 55.7 pts - ['200W MA', 'Flat Base']
+[210/536] BMY: 74.3 pts - ['Cup & Handle']
+[217/536] AKAM: 54.3 pts - ['200W MA (-0.8%)']
+[218/536] PEG: 57.1 pts - ['Flat Base']
+[222/536] DGX: 52.8 pts - ['Flat Base']
+[229/536] BRK-B: 55.7 pts - ['Flat Base']
+[232/536] HOOD: 64.3 pts - ['VCP (loose)']
+[233/536] PNC: 55.7 pts - ['Flat Base']
+[237/536] GEN: 54.3 pts - ['200W MA (-2.7%)']
+[238/536] AXP: 60.0 pts - ['Flat Base']
+[239/536] HOLX: 55.7 pts - ['200W MA', 'Flat Base']
+[241/536] CI: 52.8 pts - ['200W MA (-5.3%)']
+[243/536] IEX: 52.8 pts - ['200W MA (+2.1%)']
+[249/536] JKHY: 67.1 pts - ['200W MA (-0.9%)']
+... processed 250/536
+[252/536] AEE: 61.4 pts - ['Flat Base']
+$IPG: possibly delisted; no price data found  (period=5y) (Yahoo error = "No data found, symbol may be delisted")
+$IPG: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: IPG"}}}
+[254/536] MO: 50.0 pts - ['Cup & Handle']
+[256/536] AVY: 58.6 pts - ['200W MA', 'Flat Base']
+[258/536] HWM: 57.1 pts - ['Flat Base']
+[260/536] F: 55.7 pts - ['Flat Base']
+[261/536] MNST: 64.3 pts - ['Flat Base']
+[262/536] CCL: 78.6 pts - ['Cup & Handle']
+[271/536] CFG: 52.8 pts - ['Flat Base']
+[273/536] EXPD: 54.3 pts - ['Flat Base']
+[276/536] LDOS: 52.8 pts - ['Flat Base']
+[277/536] L: 51.4 pts - ['Flat Base']
+[278/536] AIZ: 64.3 pts - ['Flat Base']
+[279/536] PTC: 72.8 pts - ['200W MA (-5.0%)']
+[280/536] HST: 54.3 pts - ['Flat Base']
+[284/536] BLK: 54.3 pts - ['Flat Base']
+[287/536] BR: 70.0 pts - ['200W MA (-1.1%)']
+[288/536] MCK: 50.0 pts - ['Flat Base']
+[291/536] SPGI: 50.0 pts - ['200W MA (+9.5%)']
+[293/536] AEP: 50.0 pts - ['Flat Base']
+[294/536] CTVA: 60.0 pts - ['Cup & Handle']
+[296/536] NEM: 50.0 pts - []
+[298/536] IBM: 61.4 pts - ['Flat Base']
+[299/536] NVDA: 61.4 pts - ['Flat Base']
+[300/536] MLM: 54.3 pts - ['Flat Base']
+... processed 300/536
+[305/536] LH: 55.7 pts - ['Flat Base']
+[309/536] CSCO: 52.8 pts - ['Flat Base']
+[311/536] MS: 61.4 pts - ['Flat Base']
+[312/536] GE: 61.4 pts - ['Flat Base']
+[316/536] NEE: 52.8 pts - ['Flat Base']
+[317/536] TPR: 55.7 pts - ['Flat Base']
+[318/536] CBRE: 52.8 pts - ['Flat Base']
+[319/536] MA: 64.3 pts - ['Flat Base']
+[320/536] ALL: 62.8 pts - ['Flat Base']
+$WBA: possibly delisted; no price data found  (period=5y) (Yahoo error = "No data found, symbol may be delisted")
+$WBA: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: WBA"}}}
+[332/536] WEC: 50.0 pts - ['Flat Base']
+[333/536] MRK: 60.0 pts - ['Flat Base']
+[335/536] PPG: 52.8 pts - ['200W MA (+0.1%)']
+[339/536] CTAS: 54.3 pts - ['Flat Base']
+[345/536] DRI: 74.3 pts - ['Cup & Handle']
+... processed 350/536
+[352/536] CB: 61.4 pts - ['Flat Base']
+[360/536] GRMN: 52.8 pts - ['Flat Base']
+[361/536] FITB: 58.6 pts - ['Flat Base']
+[363/536] REGN: 52.9 pts - ['200W MA', 'Flat Base']
+[365/536] EOG: 64.3 pts - ['200W MA', 'Flat Base']
+[369/536] BX: 50.0 pts - ['200W MA (+12.1%)']
+[370/536] PFG: 54.3 pts - ['Flat Base']
+[371/536] PSA: 57.1 pts - ['200W MA (+1.9%)']
+[372/536] ROL: 61.4 pts - ['Flat Base']
+[376/536] IQV: 55.7 pts - ['200W MA (-2.5%)']
+[381/536] VRTX: 61.4 pts - ['Flat Base']
+[386/536] K: 57.2 pts - ['VCP (tight)']
+[400/536] RMD: 68.6 pts - ['Flat Base']
+... processed 400/536
+[401/536] DG: 51.4 pts - ['200W MA (+2.4%)']
+[404/536] OTIS: 55.7 pts - ['200W MA', 'Flat Base']
+[408/536] DLTR: 62.8 pts - ['200W MA (+0.1%)']
+[409/536] LIN: 71.5 pts - ['Cup & Handle']
+[411/536] AMGN: 60.0 pts - ['Flat Base']
+[412/536] MSFT: 52.9 pts - ['200W MA (+11.3%)']
+[418/536] AFL: 54.3 pts - ['Flat Base']
+[419/536] DECK: 57.1 pts - ['200W MA (+5.8%)']
+[420/536] EQR: 68.6 pts - ['200W MA', 'Flat Base']
+[427/536] TJX: 54.3 pts - ['Flat Base']
+[432/536] DAL: 54.3 pts - ['Flat Base']
+[433/536] PDD: 62.8 pts - ['200W MA (+1.9%)']
+[436/536] CMS: 52.8 pts - ['Flat Base']
+[438/536] NVR: 52.8 pts - ['Flat Base']
+[446/536] PPL: 50.0 pts - ['Flat Base']
+[448/536] UDR: 58.6 pts - ['200W MA', 'Flat Base']
+[449/536] TOST: 52.8 pts - ['200W MA (+7.1%)']
+... processed 450/536
+[457/536] FE: 50.0 pts - ['Flat Base']
+[459/536] EW: 54.3 pts - ['200W MA', 'Flat Base']
+[464/536] COIN: 75.7 pts - ['VCP (loose)']
+[471/536] JBHT: 54.3 pts - ['Flat Base']
+[473/536] VICI: 60.0 pts - ['200W MA', 'Flat Base']
+[477/536] HSIC: 58.6 pts - ['200W MA', 'Flat Base']
+[480/536] DIS: 62.9 pts - ['200W MA', 'Flat Base']
+[490/536] ADSK: 70.0 pts - ['200W MA (-0.8%)']
+[493/536] SCHW: 67.1 pts - ['Flat Base']
+[495/536] INVH: 50.0 pts - ['Flat Base']
+[496/536] AMP: 51.4 pts - ['Flat Base']
+[497/536] DLR: 50.0 pts - ['Flat Base']
+[499/536] CFLT: 51.5 pts - ['VCP (tight)']
+... processed 500/536
+[504/536] TEL: 67.1 pts - ['Flat Base']
+[506/536] TROW: 64.3 pts - ['200W MA', 'Flat Base']
+[513/536] SPG: 61.4 pts - ['Flat Base']
+[517/536] EIX: 72.9 pts - ['200W MA', 'Flat Base']
+[519/536] VMC: 55.7 pts - ['Flat Base']
+[528/536] BAC: 58.6 pts - ['Flat Base']
+[530/536] PODD: 62.8 pts - ['200W MA (-0.1%)']
+[536/536] DHR: 55.7 pts - ['200W MA', 'Flat Base']
+
+================================================================================
+TOP 30 CANDIDATES
+================================================================================
+
+1. CCL (Carnival Corporation)
+   TOTAL: 78.6/100
+   Pattern: 42.9/50 (raw: 30/35) — ['Cup & Handle']
+   Fundamentals: 35.7/50 (raw: 25/35)
+   Price: $31.94 | 200W MA: $17.79 (+79.5%)
+   EPS: 35.8% ⭐ | ROE: 25.6% ⭐ | Rev: 6.6% | D/E: 2.28 | P/E: 15.8 ⭐
+
+2. COIN (Coinbase Global, Inc. - 3)
+   TOTAL: 75.7/100
+   Pattern: 28.6/50 (raw: 20/35) — ['VCP (loose)']
+   Fundamentals: 47.1/50 (raw: 33/35)
+   Price: $179.66 | 200W MA: $169.14 (+6.2%)
+   EPS: 430.6% ⭐ | ROE: 26.0% ⭐ | Rev: 58.9% ⭐ | D/E: 0.49 | P/E: 15.5 ⭐
+
+3. BMY (Bristol-Myers Squibb Company)
+   TOTAL: 74.3/100
+   Pattern: 42.9/50 (raw: 30/35) — ['Cup & Handle']
+   Fundamentals: 31.4/50 (raw: 22/35)
+   Price: $55.99 | 200W MA: $52.81 (+6.0%)
+   EPS: 80.9% ⭐ | ROE: 33.8% ⭐ | Rev: 2.8% | D/E: 2.74 | P/E: 18.9 ⭐
+
+4. DRI (Darden Restaurants, Inc.)
+   TOTAL: 74.3/100
+   Pattern: 42.9/50 (raw: 30/35) — ['Cup & Handle']
+   Fundamentals: 31.4/50 (raw: 22/35)
+   Price: $205.49 | 200W MA: $154.2 (+33.3%)
+   EPS: 11.8% | ROE: 54.1% ⭐ | Rev: 7.3% | D/E: 4.01 | P/E: 21.6 ⭐
+
+5. ESS (Essex Property Trust, Inc.)
+   TOTAL: 72.9/100
+   Pattern: 40.0/50 (raw: 28/35) — ['200W MA', 'Flat Base']
+   Fundamentals: 32.9/50 (raw: 23/35)
+   Price: $247.59 | 200W MA: $239.81 (+3.2%)
+   EPS: 38.9% ⭐ | ROE: 16.0% | Rev: 6.2% | D/E: 1.15 | P/E: 18.8 ⭐
+
+6. EIX (Edison International)
+   TOTAL: 72.9/100
+   Pattern: 40.0/50 (raw: 28/35) — ['200W MA', 'Flat Base']
+   Fundamentals: 32.9/50 (raw: 23/35)
+   Price: $61.48 | 200W MA: $60.14 (+2.2%)
+   EPS: 63.6% ⭐ | ROE: 15.8% | Rev: 10.6% | D/E: 2.04 | P/E: 8.1
+
+7. GOOGL (Alphabet Inc.)
+   TOTAL: 72.8/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 47.1/50 (raw: 33/35)
+   Price: $339.71 | 200W MA: $157.57 (+115.6%)
+   EPS: 35.3% ⭐ | ROE: 35.4% ⭐ | Rev: 15.9% ⭐ | D/E: 0.11 ⭐ | P/E: 33.6
+
+8. GOOG (Alphabet Inc.)
+   TOTAL: 72.8/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 47.1/50 (raw: 33/35)
+   Price: $340.7 | 200W MA: $158.57 (+114.9%)
+   EPS: 35.3% ⭐ | ROE: 35.4% ⭐ | Rev: 15.9% ⭐ | D/E: 0.11 ⭐ | P/E: 33.7
+
+9. PTC (PTC Inc.)
+   TOTAL: 72.8/100
+   Pattern: 25.7/50 (raw: 18/35) — ['200W MA (-5.0%)']
+   Fundamentals: 47.1/50 (raw: 33/35)
+   Price: $149.25 | 200W MA: $157.09 (-5.0%)
+   EPS: 174.8% ⭐ | ROE: 20.8% ⭐ | Rev: 42.7% ⭐ | D/E: 0.36 | P/E: 24.6 ⭐
+
+10. LIN (Linde plc)
+   TOTAL: 71.5/100
+   Pattern: 42.9/50 (raw: 30/35) — ['Cup & Handle']
+   Fundamentals: 28.6/50 (raw: 20/35)
+   Price: $463.57 | 200W MA: $391.99 (+18.3%)
+   EPS: 27.0% ⭐ | ROE: 18.0% | Rev: 3.1% | D/E: 0.65 | P/E: 31.0
+
+11. HIG (The Hartford Insurance Group, I)
+   TOTAL: 70.0/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 44.3/50 (raw: 31/35)
+   Price: $138.44 | 200W MA: $93.05 (+48.8%)
+   EPS: 37.8% ⭐ | ROE: 21.7% ⭐ | Rev: 6.5% | D/E: 0.23 ⭐ | P/E: 10.4 ⭐
+
+12. BR (Broadridge Financial Solutions,)
+   TOTAL: 70.0/100
+   Pattern: 31.4/50 (raw: 22/35) — ['200W MA (-1.1%)']
+   Fundamentals: 38.6/50 (raw: 27/35)
+   Price: $185.95 | 200W MA: $188.11 (-1.1%)
+   EPS: 105.9% ⭐ | ROE: 38.2% ⭐ | Rev: 11.7% | D/E: 1.32 | P/E: 20.6 ⭐
+
+13. ADSK (Autodesk, Inc.)
+   TOTAL: 70.0/100
+   Pattern: 31.4/50 (raw: 22/35) — ['200W MA (-0.8%)']
+   Fundamentals: 38.6/50 (raw: 27/35)
+   Price: $240.79 | 200W MA: $242.78 (-0.8%)
+   EPS: 26.0% ⭐ | ROE: 40.3% ⭐ | Rev: 18.0% ⭐ | D/E: 0.95 | P/E: 46.8
+
+14. RMD (ResMed Inc.)
+   TOTAL: 68.6/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 42.9/50 (raw: 30/35)
+   Price: $251.41 | 200W MA: $216.39 (+16.2%)
+   EPS: 14.5% | ROE: 25.7% ⭐ | Rev: 11.0% | D/E: 0.13 ⭐ | P/E: 24.9 ⭐
+
+15. EQR (Equity Residential)
+   TOTAL: 68.6/100
+   Pattern: 40.0/50 (raw: 28/35) — ['200W MA', 'Flat Base']
+   Fundamentals: 28.6/50 (raw: 20/35)
+   Price: $61.79 | 200W MA: $61.37 (+0.7%)
+   EPS: 100.9% ⭐ | ROE: 10.4% | Rev: 4.6% | D/E: 0.76 | P/E: 20.3 ⭐
+
+16. UBER (Uber Technologies, Inc.)
+   TOTAL: 67.1/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 41.4/50 (raw: 29/35)
+   Price: $77.93 | 200W MA: $58.81 (+32.5%)
+   EPS: 158.5% ⭐ | ROE: 73.0% ⭐ | Rev: 20.4% ⭐ | D/E: 0.46 | P/E: 41.7
+
+17. A (Agilent Technologies, Inc.)
+   TOTAL: 67.1/100
+   Pattern: 31.4/50 (raw: 22/35) — ['200W MA (+2.0%)']
+   Fundamentals: 35.7/50 (raw: 25/35)
+   Price: $132.14 | 200W MA: $129.6 (+2.0%)
+   EPS: 24.5% ⭐ | ROE: 20.6% ⭐ | Rev: 9.4% | D/E: 0.53 | P/E: 28.9
+
+18. AMZN (Amazon.com, Inc.)
+   TOTAL: 67.1/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 41.4/50 (raw: 29/35)
+   Price: $238.62 | 200W MA: $165.17 (+44.5%)
+   EPS: 36.4% ⭐ | ROE: 24.3% ⭐ | Rev: 13.4% | D/E: 0.43 | P/E: 33.7
+
+19. JKHY (Jack Henry & Associates, Inc.)
+   TOTAL: 67.1/100
+   Pattern: 31.4/50 (raw: 22/35) — ['200W MA (-0.9%)']
+   Fundamentals: 35.7/50 (raw: 25/35)
+   Price: $166.16 | 200W MA: $167.6 (-0.9%)
+   EPS: 20.9% ⭐ | ROE: 23.4% ⭐ | Rev: 7.3% | D/E: 3.17 | P/E: 23.8 ⭐
+
+20. SCHW (Charles Schwab Corporation (The)
+   TOTAL: 67.1/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 41.4/50 (raw: 29/35)
+   Price: $103.73 | 200W MA: $72.03 (+44.0%)
+   EPS: 41.8% ⭐ | ROE: 18.1% | Rev: 18.9% ⭐ | D/E: 1.00 | P/E: 22.3 ⭐
+
+21. TEL (TE Connectivity plc)
+   TOTAL: 67.1/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 41.4/50 (raw: 29/35)
+   Price: $226.35 | 200W MA: $145.73 (+55.3%)
+   EPS: 44.4% ⭐ | ROE: 16.1% | Rev: 21.7% ⭐ | D/E: 0.46 | P/E: 32.7
+
+22. UPS (United Parcel Service, Inc.)
+   TOTAL: 65.8/100
+   Pattern: 42.9/50 (raw: 30/35) — ['Cup & Handle']
+   Fundamentals: 22.9/50 (raw: 16/35)
+   Price: $111.85 | 200W MA: $129.57 (-13.7%)
+   EPS: 4.7% | ROE: 33.8% ⭐ | Rev: -3.2% | D/E: 1.76 | P/E: 17.1 ⭐
+
+23. TRV (The Travelers Companies, Inc.)
+   TOTAL: 65.7/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 40.0/50 (raw: 28/35)
+   Price: $288.23 | 200W MA: $207.72 (+38.8%)
+   EPS: 23.4% ⭐ | ROE: 20.7% ⭐ | Rev: 3.5% | D/E: 0.28 ⭐ | P/E: 10.5 ⭐
+
+24. MMC (Marsh & McLennan Companies, Inc)
+   TOTAL: 65.7/100
+   Pattern: 40.0/50 (raw: 28/35) — ['200W MA', 'Flat Base']
+   Fundamentals: 25.7/50 (raw: 18/35)
+   Price: $188.49 | 200W MA: $188.02 (+0.2%)
+   EPS: 0.0% | ROE: 28.7% ⭐ | Rev: 11.5% | D/E: 1.40 | P/E: 21.9 ⭐
+
+25. ACGL (Arch Capital Group Ltd.)
+   TOTAL: 64.3/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 38.6/50 (raw: 27/35)
+   Price: $96.82 | 200W MA: $78.02 (+24.1%)
+   EPS: 39.1% ⭐ | ROE: 17.8% | Rev: 8.2% | D/E: 0.12 ⭐ | P/E: 9.1
+
+26. PCG (Pacific Gas & Electric Co.)
+   TOTAL: 64.3/100
+   Pattern: 40.0/50 (raw: 28/35) — ['200W MA', 'Flat Base']
+   Fundamentals: 24.3/50 (raw: 17/35)
+   Price: $15.34 | 200W MA: $16.04 (-4.3%)
+   EPS: 37.8% ⭐ | ROE: 8.8% | Rev: 5.2% | D/E: 1.86 | P/E: 12.9 ⭐
+
+27. RL (Ralph Lauren Corporation)
+   TOTAL: 64.3/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 38.6/50 (raw: 27/35)
+   Price: $354.04 | 200W MA: $177.38 (+99.6%)
+   EPS: 43.7% ⭐ | ROE: 34.0% ⭐ | Rev: 16.5% ⭐ | D/E: 1.11 | P/E: 26.2
+
+28. CBOE (Cboe Global Markets, Inc.)
+   TOTAL: 64.3/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 38.6/50 (raw: 27/35)
+   Price: $268.68 | 200W MA: $175.37 (+53.2%)
+   EPS: 37.7% ⭐ | ROE: 21.6% ⭐ | Rev: 8.1% | D/E: 0.33 | P/E: 28.9
+
+29. HOOD (Robinhood Markets, Inc.)
+   TOTAL: 64.3/100
+   Pattern: 28.6/50 (raw: 20/35) — ['VCP (loose)']
+   Fundamentals: 35.7/50 (raw: 25/35)
+   Price: $87.07 | 200W MA: $35.76 (+143.5%)
+   EPS: 259.5% ⭐ | ROE: 27.8% ⭐ | Rev: 100.0% ⭐ | D/E: 1.89 | P/E: 36.3
+
+30. MNST (Monster Beverage Corporation)
+   TOTAL: 64.3/100
+   Pattern: 25.7/50 (raw: 18/35) — ['Flat Base']
+   Fundamentals: 38.6/50 (raw: 27/35)
+   Price: $81.97 | 200W MA: $55.28 (+48.3%)
+   EPS: 39.5% ⭐ | ROE: 25.5% ⭐ | Rev: 16.8% ⭐ | D/E: 0.78 | P/E: 46.6
+
+Results saved to: /Users/rara/clawd/trading/screener_results_20260203_2331.json

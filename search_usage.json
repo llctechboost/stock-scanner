@@ -1,0 +1,13 @@
+{
+  "tavily": {
+    "count": 1,
+    "limit": 1000,
+    "reset": "2026-02"
+  },
+  "brave": {
+    "count": 0,
+    "limit": 2000,
+    "reset": "2026-02",
+    "last_call": 0
+  }
+}

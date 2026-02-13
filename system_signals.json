@@ -1,0 +1,1092 @@
+{
+  "timestamp": "2026-02-12T19:58:02.943821",
+  "regime": "bull",
+  "spy": {
+    "price": 681.27001953125,
+    "ma200": 645.3341091918945
+  },
+  "signals": [
+    {
+      "ticker": "NKE",
+      "price": 61.1,
+      "score": 45,
+      "patterns": [
+        "VCP",
+        "Cup w/ Handle"
+      ],
+      "pattern_details": [
+        "Contractions: 16% \u2192 8% \u2192 5%, vol declining",
+        "Depth 17%, handle 7%, vol drying up"
+      ],
+      "vol_ratio": 0.72,
+      "num_patterns": 2,
+      "shares": 81,
+      "cost": 4949.1,
+      "stop_price": 54.99,
+      "target_price": 73.32,
+      "pct_from_high": 23.5,
+      "above_ma50": false,
+      "above_ma200": false,
+      "scan_time": "2026-02-12T19:57:59.347380"
+    },
+    {
+      "ticker": "CAVA",
+      "price": 63.61,
+      "score": 30,
+      "patterns": [
+        "Cup w/ Handle"
+      ],
+      "pattern_details": [
+        "Depth 22%, handle 15%, vol drying up"
+      ],
+      "vol_ratio": 0.6,
+      "num_patterns": 1,
+      "shares": 78,
+      "cost": 4961.58,
+      "stop_price": 57.25,
+      "target_price": 76.33,
+      "pct_from_high": 52.3,
+      "above_ma50": true,
+      "above_ma200": false,
+      "scan_time": "2026-02-12T19:57:54.798825"
+    },
+    {
+      "ticker": "BABA",
+      "price": 158.73,
+      "score": 30,
+      "patterns": [
+        "Cup w/ Handle"
+      ],
+      "pattern_details": [
+        "Depth 19%, handle 11%, vol drying up"
+      ],
+      "vol_ratio": 1.03,
+      "num_patterns": 1,
+      "shares": 31,
+      "cost": 4920.63,
+      "stop_price": 142.86,
+      "target_price": 190.48,
+      "pct_from_high": 16.2,
+      "above_ma50": false,
+      "above_ma200": true,
+      "scan_time": "2026-02-12T19:58:00.085330"
+    },
+    {
+      "ticker": "COST",
+      "price": 998.86,
+      "score": 20,
+      "patterns": [
+        "Flat Base"
+      ],
+      "pattern_details": [
+        "17.9% range, 98% position, near 52wk high"
+      ],
+      "vol_ratio": 1.04,
+      "num_patterns": 1,
+      "shares": 5,
+      "cost": 4994.3,
+      "stop_price": 898.97,
+      "target_price": 1198.63,
+      "pct_from_high": 6.7,
+      "above_ma50": true,
+      "above_ma200": true,
+      "scan_time": "2026-02-12T19:57:58.915262"
+    },
+    {
+      "ticker": "LULU",
+      "price": 169.53,
+      "score": 20,
+      "patterns": [
+        "VCP"
+      ],
+      "pattern_details": [
+        "Contractions: 25% \u2192 17% \u2192 7%, vol declining"
+      ],
+      "vol_ratio": 0.65,
+      "num_patterns": 1,
+      "shares": 29,
+      "cost": 4916.37,
+      "stop_price": 152.58,
+      "target_price": 203.44,
+      "pct_from_high": 57.1,
+      "above_ma50": false,
+      "above_ma200": false,
+      "scan_time": "2026-02-12T19:57:59.190943"
+    },
+    {
+      "ticker": "HD",
+      "price": 390.22,
+      "score": 20,
+      "patterns": [
+        "Flat Base"
+      ],
+      "pattern_details": [
+        "13.5% range, 99% position, near 52wk high"
+      ],
+      "vol_ratio": 0.82,
+      "num_patterns": 1,
+      "shares": 12,
+      "cost": 4682.64,
+      "stop_price": 351.2,
+      "target_price": 468.26,
+      "pct_from_high": 7.2,
+      "above_ma50": true,
+      "above_ma200": true,
+      "scan_time": "2026-02-12T19:57:59.500319"
+    },
+    {
+      "ticker": "AA",
+      "price": 60.51,
+      "score": 20,
+      "patterns": [
+        "VCP"
+      ],
+      "pattern_details": [
+        "Contractions: 41% \u2192 19% \u2192 11%, vol declining"
+      ],
+      "vol_ratio": 1.11,
+      "num_patterns": 1,
+      "shares": 82,
+      "cost": 4961.82,
+      "stop_price": 54.46,
+      "target_price": 72.61,
+      "pct_from_high": 7.9,
+      "above_ma50": true,
+      "above_ma200": true,
+      "scan_time": "2026-02-12T19:58:01.346743"
+    },
+    {
+      "ticker": "NBIS",
+      "price": 89.73,
+      "score": 17,
+      "patterns": [
+        "Pocket Pivot"
+      ],
+      "pattern_details": [
+        "Vol 1.4x max down-day vol"
+      ],
+      "vol_ratio": 2.06,
+      "num_patterns": 1,
+      "shares": 55,
+      "cost": 4935.15,
+      "stop_price": 80.76,
+      "target_price": 107.68,
+      "pct_from_high": 33.8,
+      "above_ma50": false,
+      "above_ma200": true,
+      "scan_time": "2026-02-12T19:58:02.712059"
+    }
+  ],
+  "watchlist": [
+    {
+      "ticker": "NVDA",
+      "price": 186.94,
+      "pct_from_high": 9.7,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.11,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (74%\u2192>90%)"
+          ],
+          "progress": "13% range, 74% pos, 93% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (11%\u2192<6%)",
+            "vol decline"
+          ],
+          "progress": "11%\u21927%\u219211%"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$192.51 (3.0% away)",
+            "vol (1.1x\u2192>1.5x)"
+          ],
+          "progress": "$186.94 vs 20d high $192.51"
+        }
+      ]
+    },
+    {
+      "ticker": "AAPL",
+      "price": 261.73,
+      "pct_from_high": 8.5,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.46,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (49%\u2192>90%)"
+          ],
+          "progress": "13% range, 49% pos, 97% of high"
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 309.0,
+      "pct_from_high": 10.1,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.39,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (26%\u2192>90%)"
+          ],
+          "progress": "16% range, 26% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (11%\u2192<5%)",
+            "vol decline"
+          ],
+          "progress": "15%\u21927%\u219211%"
+        }
+      ]
+    },
+    {
+      "ticker": "GOOG",
+      "price": 309.37,
+      "pct_from_high": 10.3,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.27,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (24%\u2192>90%)"
+          ],
+          "progress": "16% range, 24% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (11%\u2192<5%)",
+            "vol decline"
+          ],
+          "progress": "15%\u21927%\u219211%"
+        }
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "price": 417.07,
+      "pct_from_high": 14.9,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 0.9,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (23%\u2192<18%)",
+            "price to top (21%\u2192>90%)"
+          ],
+          "progress": "23% range, 21% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (8%\u2192<6%)",
+            "vol decline"
+          ],
+          "progress": "21%\u21928%\u21928%"
+        }
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "price": 368.1,
+      "pct_from_high": 1.6,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.27,
+      "near_patterns": [
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$374.09 (1.6% away)",
+            "vol (1.3x\u2192>1.5x)"
+          ],
+          "progress": "$368.10 vs 20d high $374.09"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "1.6% from high, +27% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "MU",
+      "price": 413.97,
+      "pct_from_high": 5.4,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.33,
+      "near_patterns": [
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "5.4% from high, +72% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "ASML",
+      "price": 1406.87,
+      "pct_from_high": 3.2,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 0.87,
+      "near_patterns": [
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$1453.24 (3.3% away)",
+            "vol (0.9x\u2192>1.5x)"
+          ],
+          "progress": "$1406.87 vs 20d high $1453.24"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "3.2% from high, +38% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "LRCX",
+      "price": 231.29,
+      "pct_from_high": 6.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 0.85,
+      "near_patterns": [
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "6.8% from high, +46% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "AMAT",
+      "price": 328.39,
+      "pct_from_high": 3.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.23,
+      "near_patterns": [
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$341.34 (3.9% away)",
+            "vol (1.2x\u2192>1.5x)"
+          ],
+          "progress": "$328.39 vs 20d high $341.34"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "3.8% from high, +44% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "price": 583.46,
+      "pct_from_high": 0.0,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.0,
+      "near_patterns": [
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (35%\u2192<18%)",
+            "vol decline"
+          ],
+          "progress": "49%\u219222%\u219235%"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "0.0% from high, +131% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "GS",
+      "price": 904.55,
+      "pct_from_high": 7.3,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.33,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (31%\u2192>90%)"
+          ],
+          "progress": "12% range, 31% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "vol decline"
+          ],
+          "progress": "16%\u219210%\u21926%"
+        }
+      ]
+    },
+    {
+      "ticker": "JPM",
+      "price": 302.64,
+      "pct_from_high": 9.6,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 0.89,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (13%\u2192>90%)"
+          ],
+          "progress": "12% range, 13% pos, 100% of high"
+        }
+      ]
+    },
+    {
+      "ticker": "AXP",
+      "price": 342.88,
+      "pct_from_high": 10.7,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.43,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (0%\u2192>90%)"
+          ],
+          "progress": "12% range, 0% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "vol decline"
+          ],
+          "progress": "12%\u21929%\u21926%"
+        }
+      ]
+    },
+    {
+      "ticker": "NU",
+      "price": 17.04,
+      "pct_from_high": 9.2,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.17,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (18%\u2192<18%)",
+            "price to top (41%\u2192>90%)"
+          ],
+          "progress": "18% range, 41% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "2nd tighten (13%\u2192<11%)",
+            "3rd tighten (11%\u2192<11%)",
+            "vol decline"
+          ],
+          "progress": "14%\u219213%\u219211%"
+        }
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "price": 1038.27,
+      "pct_from_high": 6.5,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 0.87,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (33%\u2192>90%)"
+          ],
+          "progress": "10% range, 33% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (10%\u2192<6%)",
+            "vol decline"
+          ],
+          "progress": "12%\u21928%\u219210%"
+        }
+      ]
+    },
+    {
+      "ticker": "VRTX",
+      "price": 465.02,
+      "pct_from_high": 9.5,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.2,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (58%\u2192>90%)"
+          ],
+          "progress": "10% range, 58% pos, 94% of high"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$477.92 (2.8% away)",
+            "vol (1.2x\u2192>1.5x)"
+          ],
+          "progress": "$465.02 vs 20d high $477.92"
+        }
+      ]
+    },
+    {
+      "ticker": "GWW",
+      "price": 1116.6,
+      "pct_from_high": 7.1,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 2.58,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (20%\u2192<18%)",
+            "price to top (57%\u2192>90%)"
+          ],
+          "progress": "20% range, 57% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (11%\u2192<5%)",
+            "vol decline"
+          ],
+          "progress": "11%\u21926%\u219211%"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "7.1% from high, +18% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "URI",
+      "price": 869.46,
+      "pct_from_high": 14.4,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 0.88,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (23%\u2192<18%)",
+            "price to top (52%\u2192>90%)"
+          ],
+          "progress": "23% range, 52% pos, 94% of high"
+        }
+      ]
+    },
+    {
+      "ticker": "TJX",
+      "price": 154.18,
+      "pct_from_high": 2.6,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.19,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (62%\u2192>90%)"
+          ],
+          "progress": "7% range, 62% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "2nd tighten (7%\u2192<6%)",
+            "3rd tighten (6%\u2192<5%)",
+            "vol decline"
+          ],
+          "progress": "8%\u21927%\u21926%"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$158.14 (2.6% away)",
+            "vol (1.2x\u2192>1.5x)"
+          ],
+          "progress": "$154.18 vs 20d high $158.14"
+        }
+      ]
+    },
+    {
+      "ticker": "LOW",
+      "price": 285.53,
+      "pct_from_high": 0.5,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.29,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (20%\u2192<18%)"
+          ],
+          "progress": "20% range, 97% pos, 100% of high"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$287.04 (0.5% away)",
+            "vol (1.3x\u2192>1.5x)"
+          ],
+          "progress": "$285.53 vs 20d high $287.04"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "0.5% from high, +22% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "XOM",
+      "price": 149.93,
+      "pct_from_high": 3.6,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.14,
+      "near_patterns": [
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$155.56 (3.8% away)",
+            "vol (1.1x\u2192>1.5x)"
+          ],
+          "progress": "$149.93 vs 20d high $155.56"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "3.6% from high, +26% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "CVX",
+      "price": 182.4,
+      "pct_from_high": 1.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 0.88,
+      "near_patterns": [
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$185.82 (1.9% away)",
+            "vol (0.9x\u2192>1.5x)"
+          ],
+          "progress": "$182.40 vs 20d high $185.82"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "1.8% from high, +18% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "EOG",
+      "price": 117.85,
+      "pct_from_high": 9.9,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.67,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "closer to high (90%\u2192>92%)"
+          ],
+          "progress": "17% range, 98% pos, 90% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "2nd tighten (9%\u2192<8%)",
+            "3rd tighten (8%\u2192<7%)",
+            "vol decline"
+          ],
+          "progress": "10%\u21929%\u21928%"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$118.22 (0.3% away)"
+          ],
+          "progress": "$117.85 vs 20d high $118.22"
+        }
+      ]
+    },
+    {
+      "ticker": "FCX",
+      "price": 62.04,
+      "pct_from_high": 5.2,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.01,
+      "near_patterns": [
+        {
+          "name": "Near VCP",
+          "needs": [
+            "vol decline"
+          ],
+          "progress": "30%\u219222%\u219210%"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "5.2% from high, +51% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "NUE",
+      "price": 188.81,
+      "pct_from_high": 2.9,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 0.72,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (24%\u2192<18%)",
+            "price to top (85%\u2192>90%)"
+          ],
+          "progress": "24% range, 85% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "2nd tighten (11%\u2192<10%)",
+            "3rd tighten (9%\u2192<9%)",
+            "vol decline"
+          ],
+          "progress": "12%\u219211%\u21929%"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$194.42 (3.0% away)",
+            "vol (0.7x\u2192>1.5x)"
+          ],
+          "progress": "$188.81 vs 20d high $194.42"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "2.9% from high, +32% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "SPY",
+      "price": 681.27,
+      "pct_from_high": 2.0,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.36,
+      "near_patterns": [
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (3%\u2192<2%)",
+            "vol decline"
+          ],
+          "progress": "6%\u21923%\u21923%"
+        }
+      ]
+    },
+    {
+      "ticker": "QQQ",
+      "price": 600.64,
+      "pct_from_high": 5.4,
+      "above_ma50": false,
+      "above_ma200": true,
+      "vol_ratio": 1.47,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (10%\u2192>90%)"
+          ],
+          "progress": "6% range, 10% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (5%\u2192<3%)",
+            "vol decline"
+          ],
+          "progress": "7%\u21924%\u21925%"
+        }
+      ]
+    },
+    {
+      "ticker": "IWM",
+      "price": 259.54,
+      "pct_from_high": 3.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.24,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (57%\u2192>90%)"
+          ],
+          "progress": "10% range, 57% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "vol decline"
+          ],
+          "progress": "11%\u21929%\u21924%"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$269.79 (3.9% away)",
+            "vol (1.2x\u2192>1.5x)"
+          ],
+          "progress": "$259.54 vs 20d high $269.79"
+        }
+      ]
+    },
+    {
+      "ticker": "SMH",
+      "price": 406.11,
+      "pct_from_high": 2.7,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.06,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (23%\u2192<18%)",
+            "price to top (86%\u2192>90%)"
+          ],
+          "progress": "23% range, 86% pos, 100% of high"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$417.52 (2.8% away)",
+            "vol (1.1x\u2192>1.5x)"
+          ],
+          "progress": "$406.11 vs 20d high $417.52"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "2.7% from high, +16% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "XLE",
+      "price": 53.98,
+      "pct_from_high": 1.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.58,
+      "near_patterns": [
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$54.98 (1.9% away)"
+          ],
+          "progress": "$53.98 vs 20d high $54.98"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "1.8% from high, +19% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "CAH",
+      "price": 215.06,
+      "pct_from_high": 5.3,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.6,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "price to top (59%\u2192>90%)"
+          ],
+          "progress": "15% range, 59% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (9%\u2192<5%)",
+            "vol decline"
+          ],
+          "progress": "8%\u21926%\u21929%"
+        }
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "price": 236.51,
+      "pct_from_high": 4.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 1.78,
+      "near_patterns": [
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (30%\u2192<15%)",
+            "vol decline"
+          ],
+          "progress": "24%\u219219%\u219230%"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "4.8% from high, +32% 3M"
+        }
+      ]
+    },
+    {
+      "ticker": "MCK",
+      "price": 916.0,
+      "pct_from_high": 4.8,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 2.05,
+      "near_patterns": [
+        {
+          "name": "Near Flat Base",
+          "needs": [
+            "range tighten (19%\u2192<18%)",
+            "price to top (70%\u2192>90%)"
+          ],
+          "progress": "19% range, 70% pos, 100% of high"
+        },
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (15%\u2192<3%)",
+            "vol decline"
+          ],
+          "progress": "11%\u21924%\u219215%"
+        }
+      ]
+    },
+    {
+      "ticker": "GEV",
+      "price": 816.56,
+      "pct_from_high": 0.9,
+      "above_ma50": true,
+      "above_ma200": true,
+      "vol_ratio": 0.65,
+      "near_patterns": [
+        {
+          "name": "Near VCP",
+          "needs": [
+            "3rd tighten (13%\u2192<11%)",
+            "vol decline"
+          ],
+          "progress": "25%\u219214%\u219213%"
+        },
+        {
+          "name": "Near Breakout",
+          "needs": [
+            "$823.67 (0.9% away)",
+            "vol (0.6x\u2192>1.5x)"
+          ],
+          "progress": "$816.56 vs 20d high $823.67"
+        },
+        {
+          "name": "Momentum",
+          "needs": [
+            "pattern to form"
+          ],
+          "progress": "0.9% from high, +42% 3M"
+        }
+      ]
+    }
+  ],
+  "open_slots": 5
+}

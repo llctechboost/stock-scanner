@@ -1,0 +1,258 @@
+[
+  {
+    "ticker": "CCL",
+    "total": 73,
+    "pattern": 30,
+    "fundamentals": 25,
+    "options": 18,
+    "patterns": [
+      "Cup & Handle"
+    ],
+    "pct_200w": 79.52,
+    "eps": "35.8% \u2b50"
+  },
+  {
+    "ticker": "COIN",
+    "total": 71,
+    "pattern": 20,
+    "fundamentals": 33,
+    "options": 18,
+    "patterns": [
+      "VCP (loose)"
+    ],
+    "pct_200w": 6.22,
+    "eps": "430.6% \u2b50"
+  },
+  {
+    "ticker": "BMY",
+    "total": 70,
+    "pattern": 30,
+    "fundamentals": 22,
+    "options": 18,
+    "patterns": [
+      "Cup & Handle"
+    ],
+    "pct_200w": 6.03,
+    "eps": "80.9% \u2b50"
+  },
+  {
+    "ticker": "DRI",
+    "total": 70,
+    "pattern": 30,
+    "fundamentals": 22,
+    "options": 18,
+    "patterns": [
+      "Cup & Handle"
+    ],
+    "pct_200w": 33.26,
+    "eps": "11.8%"
+  },
+  {
+    "ticker": "ESS",
+    "total": 69,
+    "pattern": 28,
+    "fundamentals": 23,
+    "options": 18,
+    "patterns": [
+      "200W MA",
+      "Flat Base"
+    ],
+    "pct_200w": 3.24,
+    "eps": "38.9% \u2b50"
+  },
+  {
+    "ticker": "EIX",
+    "total": 69,
+    "pattern": 28,
+    "fundamentals": 23,
+    "options": 18,
+    "patterns": [
+      "200W MA",
+      "Flat Base"
+    ],
+    "pct_200w": 2.22,
+    "eps": "63.6% \u2b50"
+  },
+  {
+    "ticker": "PTC",
+    "total": 69,
+    "pattern": 18,
+    "fundamentals": 33,
+    "options": 18,
+    "patterns": [
+      "200W MA (-5.0%)"
+    ],
+    "pct_200w": -4.99,
+    "eps": "174.8% \u2b50"
+  },
+  {
+    "ticker": "GOOGL",
+    "total": 69,
+    "pattern": 18,
+    "fundamentals": 33,
+    "options": 18,
+    "patterns": [
+      "Flat Base"
+    ],
+    "pct_200w": 115.6,
+    "eps": "35.3% \u2b50"
+  },
+  {
+    "ticker": "LIN",
+    "total": 68,
+    "pattern": 30,
+    "fundamentals": 20,
+    "options": 18,
+    "patterns": [
+      "Cup & Handle"
+    ],
+    "pct_200w": 18.26,
+    "eps": "27.0% \u2b50"
+  },
+  {
+    "ticker": "BR",
+    "total": 67,
+    "pattern": 22,
+    "fundamentals": 27,
+    "options": 18,
+    "patterns": [
+      "200W MA (-1.1%)"
+    ],
+    "pct_200w": -1.15,
+    "eps": "105.9% \u2b50"
+  },
+  {
+    "ticker": "ADSK",
+    "total": 67,
+    "pattern": 22,
+    "fundamentals": 27,
+    "options": 18,
+    "patterns": [
+      "200W MA (-0.8%)"
+    ],
+    "pct_200w": -0.82,
+    "eps": "26.0% \u2b50"
+  },
+  {
+    "ticker": "HIG",
+    "total": 67,
+    "pattern": 18,
+    "fundamentals": 31,
+    "options": 18,
+    "patterns": [
+      "Flat Base"
+    ],
+    "pct_200w": 48.77,
+    "eps": "37.8% \u2b50"
+  },
+  {
+    "ticker": "RMD",
+    "total": 66,
+    "pattern": 18,
+    "fundamentals": 30,
+    "options": 18,
+    "patterns": [
+      "Flat Base"
+    ],
+    "pct_200w": 16.18,
+    "eps": "14.5%"
+  },
+  {
+    "ticker": "EQR",
+    "total": 66,
+    "pattern": 28,
+    "fundamentals": 20,
+    "options": 18,
+    "patterns": [
+      "200W MA",
+      "Flat Base"
+    ],
+    "pct_200w": 0.68,
+    "eps": "100.9% \u2b50"
+  },
+  {
+    "ticker": "A",
+    "total": 65,
+    "pattern": 22,
+    "fundamentals": 25,
+    "options": 18,
+    "patterns": [
+      "200W MA (+2.0%)"
+    ],
+    "pct_200w": 1.96,
+    "eps": "24.5% \u2b50"
+  },
+  {
+    "ticker": "JKHY",
+    "total": 65,
+    "pattern": 22,
+    "fundamentals": 25,
+    "options": 18,
+    "patterns": [
+      "200W MA (-0.9%)"
+    ],
+    "pct_200w": -0.86,
+    "eps": "20.9% \u2b50"
+  },
+  {
+    "ticker": "UBER",
+    "total": 65,
+    "pattern": 18,
+    "fundamentals": 29,
+    "options": 18,
+    "patterns": [
+      "Flat Base"
+    ],
+    "pct_200w": 32.5,
+    "eps": "158.5% \u2b50"
+  },
+  {
+    "ticker": "AMZN",
+    "total": 65,
+    "pattern": 18,
+    "fundamentals": 29,
+    "options": 18,
+    "patterns": [
+      "Flat Base"
+    ],
+    "pct_200w": 44.47,
+    "eps": "36.4% \u2b50"
+  },
+  {
+    "ticker": "MMC",
+    "total": 64,
+    "pattern": 28,
+    "fundamentals": 18,
+    "options": 18,
+    "patterns": [
+      "200W MA",
+      "Flat Base"
+    ],
+    "pct_200w": 0.25,
+    "eps": "0.0%"
+  },
+  {
+    "ticker": "TRV",
+    "total": 64,
+    "pattern": 18,
+    "fundamentals": 28,
+    "options": 18,
+    "patterns": [
+      "Flat Base"
+    ],
+    "pct_200w": 38.76,
+    "eps": "23.4% \u2b50"
+  },
+  {
+    "ticker": "UPS",
+    "total": 64,
+    "pattern": 30,
+    "fundamentals": 16,
+    "options": 18,
+    "patterns": [
+      "Cup & Handle"
+    ],
+    "pct_200w": -13.68,
+    "eps": "4.7%"
+  }
+]

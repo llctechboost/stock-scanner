@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-02-01T22:46:40.733236",
+  "parameters": {
+    "start_date": "2021-01-01",
+    "end_date": "2026-01-31",
+    "stop_loss": 0.08,
+    "profit_target": 0.2,
+    "max_hold_days": 60,
+    "universe_size": 64,
+    "stocks_loaded": 64
+  },
+  "results": {
+    "0": {
+      "trades": 2282,
+      "win_rate": 45.70552147239264,
+      "avg_return": 3.257665348634458,
+      "total_return": 7433.992325583833,
+      "avg_win": 16.38108472469201,
+      "avg_loss": -7.789732883188003,
+      "profit_factor": 1.7702438448061575,
+      "best_trade": 20.0,
+      "worst_trade": -8.0
+    },
+    "60": {
+      "trades": 1503,
+      "win_rate": 46.83965402528277,
+      "avg_return": 3.608547699944679,
+      "total_return": 5423.647193016852,
+      "avg_win": 16.520211965910814,
+      "avg_loss": -7.767937460556146,
+      "profit_factor": 1.873854106163637,
+      "best_trade": 20.0,
+      "worst_trade": -8.0
+    },
+    "70": {
+      "trades": 1209,
+      "win_rate": 45.82299421009098,
+      "avg_return": 3.5042343244794902,
+      "total_return": 4236.619298295704,
+      "avg_win": 16.877401417044354,
+      "avg_loss": -7.8068108194608685,
+      "profit_factor": 1.8285228393106245,
+      "best_trade": 20.0,
+      "worst_trade": -8.0
+    },
+    "80": {
+      "trades": 811,
+      "win_rate": 45.252774352651045,
+      "avg_return": 3.505662492759407,
+      "total_return": 2843.0922816278794,
+      "avg_win": 17.2161702169456,
+      "avg_loss": -7.827122045025127,
+      "profit_factor": 1.8180990353571334,
+      "best_trade": 20.0,
+      "worst_trade": -8.0
+    },
+    "85": {
+      "trades": 571,
+      "win_rate": 45.18388791593696,
+      "avg_return": 3.7363781093285136,
+      "total_return": 2133.471900426581,
+      "avg_win": 17.758334882530175,
+      "avg_loss": -7.821656547176367,
+      "profit_factor": 1.871452756024976,
+      "best_trade": 20.0,
+      "worst_trade": -8.0
+    },
+    "90": {
+      "trades": 264,
+      "win_rate": 47.72727272727273,
+      "avg_return": 4.355458081188471,
+      "total_return": 1149.8409334337562,
+      "avg_win": 17.59233969714871,
+      "avg_loss": -7.730390350775224,
+      "profit_factor": 2.077847340040286,
+      "best_trade": 20.0,
+      "worst_trade": -8.0
+    }
+  },
+  "total_trades_found": 2282
+}

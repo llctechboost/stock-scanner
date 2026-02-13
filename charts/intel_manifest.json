@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-02-06T23:09:34.240240",
+  "market": {
+    "sp500": "6939.03",
+    "dist_days": "8",
+    "vix": "17.44",
+    "vix_level": "Moderate",
+    "signal": "CAUTION"
+  },
+  "charts": [
+    {
+      "ticker": "GOOGL",
+      "path": "/Users/rara/clawd/trading/charts/GOOGL_20260206_2307.png",
+      "intel": "\ud83d\udcf8 GOOGL \u2014 Daily Chart\n\n\ud83d\udcca PATTERN: Flat Base\n   Flat Base (9.3% range, 5 weeks)\n   Score: 9/12 | RS Rating: 85\n\n\ud83d\udcb0 TRADE PLAN:\n   Buy Point:  $342.97\n   Stop Loss:  $318.96 (-7%)\n   Target 1:   $377.27 (+10%)\n   Target 2:   $411.56 (+20%)\n   Risk/Reward: 1:1.4\n   Current:    $338.00 (1.5% below buy)\n\n\ud83d\udcc8 FUNDAMENTALS: EPS Growth: 33% | ROE: 35.4%\n\n\ud83d\udcb8 OPTIONS FLOW: \ud83d\udfe2 BULLISH \u2014 $4.0M premium\n\n\n\ud83d\udea8 EARNINGS: 2026-02-04 (4 days) \u2014 DO NOT ENTER\n   Wait for post-earnings reaction, then reassess\n\n\u26aa CONVICTION: 60/100 \u2014 LOW \u2014 Wait for better setup",
+      "score": 9
+    },
+    {
+      "ticker": "AMD",
+      "path": "/Users/rara/clawd/trading/charts/AMD_20260206_2308.png",
+      "intel": "\ud83d\udcf8 AMD \u2014 Daily Chart\n\n\ud83d\udcca PATTERN: Ascending Base\n   Ascending Base (3 higher lows)\n   Score: 8/12 | RS Rating: 91\n\n\ud83d\udcb0 TRADE PLAN:\n   Buy Point:  $267.49\n   Stop Loss:  $248.77 (-7%)\n   Target 1:   $294.24 (+10%)\n   Target 2:   $320.99 (+20%)\n   Risk/Reward: 1:1.4\n   Current:    $236.73 (13.0% below buy)\n\n\ud83d\udcc8 FUNDAMENTALS: EPS Growth: 61%\n\n\ud83d\udcb8 OPTIONS FLOW: \ud83d\udfe2 BULLISH \u2014 $18.9M premium\n\n\n\ud83d\udea8 EARNINGS: 2026-02-03 (3 days) \u2014 DO NOT ENTER\n   Wait for post-earnings reaction, then reassess\n\n\u26aa CONVICTION: 35/100 \u2014 LOW \u2014 Wait for better setup",
+      "score": 8
+    },
+    {
+      "ticker": "NU",
+      "path": "/Users/rara/clawd/trading/charts/NU_20260206_2309.png",
+      "intel": "\ud83d\udcf8 NU \u2014 Daily Chart\n\n\ud83d\udcca PATTERN: Ascending Base\n   Ascending Base (3 higher lows)\n   Score: 7/12 | RS Rating: 70\n\n\ud83d\udcb0 TRADE PLAN:\n   Buy Point:  $19.02\n   Stop Loss:  $17.69 (-7%)\n   Target 1:   $20.92 (+10%)\n   Target 2:   $22.82 (+20%)\n   Risk/Reward: 1:1.4\n   Current:    $17.75 (7.2% below buy)\n\n\ud83d\udcc8 FUNDAMENTALS: EPS Growth: 41% | ROE: 27.8%\n\n\ud83d\udcb8 OPTIONS FLOW: \ud83d\udd34 BEARISH \u2014 $9K premium\n\n\n\u2705 EARNINGS: Clear (no upcoming)\n\n\u26aa CONVICTION: 41/100 \u2014 LOW \u2014 Wait for better setup",
+      "score": 7
+    }
+  ]
+}

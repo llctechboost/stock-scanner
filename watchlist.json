@@ -1,0 +1,145 @@
+{
+  "last_updated": "2026-02-06",
+  "market_context": {
+    "software_sentiment": "BEARISH",
+    "drivers": [
+      "AI hype cooling - monetization taking longer than expected",
+      "Enterprise spending cautious - CFOs tightening budgets",
+      "Rates still elevated - hurting growth stocks",
+      "DeepSeek shock - cheaper AI models = less infrastructure spend",
+      "Rotation to value from growth"
+    ],
+    "strategy": "Be selective. Only buy profitable companies with strong FCF. Avoid debt-fueled growth bets."
+  },
+  "munger_200w_plays": [
+    {
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "thesis": "Quality company at deep discount - AI fears overdone. PROFITABLE with strong FCF.",
+      "price_added": 269.39,
+      "200w_ma": 434.12,
+      "pct_from_200w": -37.9,
+      "pe": 16.1,
+      "profit_margin": "30%",
+      "fcf": "$8.8B",
+      "debt_equity": 57.3,
+      "analyst_target": 417,
+      "upside": "55%",
+      "signal": "BUY",
+      "entry_zone": "Now or $260",
+      "stop_loss": 240,
+      "conviction": "HIGH",
+      "notes": "Cleanest software play. Actually profitable, not burning cash. 16x P/E is historically cheap. FCF positive. Debt manageable."
+    }
+  ],
+  "watch_for_entry": [
+    {
+      "ticker": "CRM",
+      "name": "Salesforce Inc.",
+      "thesis": "Enterprise AI leader - good fundamentals but software sentiment could drag lower",
+      "price_added": 189.97,
+      "200w_ma": 232.61,
+      "pct_from_200w": -18.3,
+      "pe": 25.4,
+      "fcf": "$14.5B",
+      "analyst_target": 328,
+      "upside": "73%",
+      "signal": "WAIT",
+      "entry_zone": "$175 or lower",
+      "stop_loss": 155,
+      "conviction": "MEDIUM",
+      "notes": "Strong FCF but sentiment could push it lower. Wait for $175 level or sentiment turn."
+    },
+    {
+      "ticker": "DIS",
+      "name": "Walt Disney Co.",
+      "thesis": "Turnaround play - streaming turning profitable",
+      "price_added": 104.97,
+      "200w_ma": 100.36,
+      "pct_from_200w": 4.6,
+      "pe": 15.5,
+      "fcf": "$3.2B",
+      "analyst_target": 131,
+      "upside": "24%",
+      "signal": "WATCH",
+      "trigger": "Breakout above $110",
+      "conviction": "MEDIUM",
+      "notes": "Not software - different risk profile. Parks strong, streaming improving."
+    },
+    {
+      "ticker": "NKE",
+      "name": "Nike Inc.",
+      "thesis": "Turnaround in progress - new CEO cleanup",
+      "price_added": 62.70,
+      "200w_ma": 88.67,
+      "pct_from_200w": -29.3,
+      "pe": 36.7,
+      "analyst_target": 76,
+      "upside": "22%",
+      "signal": "WAIT",
+      "trigger": "Below $55 for better entry",
+      "conviction": "LOW",
+      "notes": "Turnaround not proven. High P/E for no growth. Consumer discretionary risk."
+    }
+  ],
+  "avoid": [
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "reason": "Debt-fueled AI infrastructure bet. $130B debt, NEGATIVE $10B FCF. Not a Munger play.",
+      "price": 136.48,
+      "pct_from_200w": 2.0,
+      "debt": "$130B",
+      "fcf": "-$10B",
+      "signal": "AVOID",
+      "notes": "Leveraged bet on AI data centers. If AI spend slows, this gets ugly. Could see $120."
+    },
+    {
+      "ticker": "PYPL",
+      "name": "PayPal Holdings",
+      "reason": "Value trap - losing share to Apple Pay, BNPL. Only 3.7% growth.",
+      "price": 39.90,
+      "pct_from_200w": -43.7,
+      "signal": "AVOID"
+    },
+    {
+      "ticker": "TGT",
+      "name": "Target Corporation",
+      "reason": "Revenue declining (-1.6%). Analysts have target BELOW current price.",
+      "price": 110.85,
+      "pct_from_200w": -13.3,
+      "signal": "AVOID"
+    }
+  ],
+  "alerts": [
+    {
+      "ticker": "ADBE",
+      "type": "price_below",
+      "price": 260,
+      "note": "Strong buy zone - back up the truck"
+    },
+    {
+      "ticker": "CRM",
+      "type": "price_below",
+      "price": 175,
+      "note": "New entry zone given sentiment"
+    },
+    {
+      "ticker": "DIS",
+      "type": "price_above",
+      "price": 110,
+      "note": "Breakout trigger"
+    },
+    {
+      "ticker": "NKE",
+      "type": "price_below",
+      "price": 55,
+      "note": "Better entry zone"
+    }
+  ],
+  "summary": {
+    "active_buys": ["ADBE"],
+    "waiting_for_entry": ["CRM @ $175", "DIS @ $110 breakout", "NKE @ $55"],
+    "avoiding": ["ORCL", "PYPL", "TGT"]
+  }
+}

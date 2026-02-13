@@ -1,0 +1,137 @@
+[
+  {
+    "ticker": "CCL",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "COIN",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "BMY",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "DRI",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "ESS",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "EIX",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "PTC",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "LIN",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "BR",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "ADSK",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "HIG",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "RMD",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "EQR",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  },
+  {
+    "ticker": "A",
+    "score": 18,
+    "signals": [
+      "bullish_mention",
+      "unusual_calls",
+      "high_volume"
+    ]
+  }
+]

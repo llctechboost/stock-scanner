@@ -1,0 +1,3234 @@
+{
+  "timestamp": "2026-02-06T23:06:47.806621",
+  "scan_count": 71,
+  "results": [
+    {
+      "ticker": "NVDA",
+      "price": 185.41000366210938,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 180.0,
+          "expiry": "2026-02-09",
+          "volume": 35229,
+          "oi": 10037,
+          "premium": 6.0,
+          "premium_flow": 21137400.0,
+          "iv": 0.3711000390625,
+          "vol_oi_ratio": 3.5099133207133604,
+          "dist_pct": -2.9178596382364295,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 182.5,
+          "expiry": "2026-02-09",
+          "volume": 26337,
+          "oi": 7296,
+          "premium": 3.85,
+          "premium_flow": 10139745.0,
+          "iv": 0.3298406860351562,
+          "vol_oi_ratio": 3.609786184210526,
+          "dist_pct": -1.5694965776563798,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 185.0,
+          "expiry": "2026-02-09",
+          "volume": 75240,
+          "oi": 7007,
+          "premium": 2.25,
+          "premium_flow": 16929000.0,
+          "iv": 0.3178779150390625,
+          "vol_oi_ratio": 10.737833594976452,
+          "dist_pct": -0.22113351707633017,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 48206145.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:48.273959"
+    },
+    {
+      "ticker": "AAPL",
+      "price": 278.1199951171875,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 277.5,
+          "expiry": "2026-02-09",
+          "volume": 15747,
+          "oi": 2605,
+          "premium": 2.01,
+          "premium_flow": 3165146.9999999995,
+          "iv": 0.1662681030273438,
+          "vol_oi_ratio": 6.044913627639155,
+          "dist_pct": -0.22292360422567298,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 280.0,
+          "expiry": "2026-02-09",
+          "volume": 37984,
+          "oi": 12820,
+          "premium": 0.91,
+          "premium_flow": 3456544.0,
+          "iv": 0.16602396484375004,
+          "vol_oi_ratio": 2.962870514820593,
+          "dist_pct": 0.6759689759164381,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 282.5,
+          "expiry": "2026-02-09",
+          "volume": 20614,
+          "oi": 3400,
+          "premium": 0.36,
+          "premium_flow": 742104.0,
+          "iv": 0.17310397216796874,
+          "vol_oi_ratio": 6.062941176470588,
+          "dist_pct": 1.5748615560585493,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 7363795.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:49.188562"
+    },
+    {
+      "ticker": "MSFT",
+      "price": 401.1400146484375,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 395.0,
+          "expiry": "2026-02-09",
+          "volume": 2922,
+          "oi": 468,
+          "premium": 7.8,
+          "premium_flow": 2279160.0,
+          "iv": 0.2524488818359375,
+          "vol_oi_ratio": 6.243589743589744,
+          "dist_pct": -1.5306412784121426,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 400.0,
+          "expiry": "2026-02-09",
+          "volume": 10248,
+          "oi": 1262,
+          "premium": 3.96,
+          "premium_flow": 4058208.0,
+          "iv": 0.2381667980957031,
+          "vol_oi_ratio": 8.120443740095087,
+          "dist_pct": -0.28419369965786595,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 405.0,
+          "expiry": "2026-02-09",
+          "volume": 6393,
+          "oi": 809,
+          "premium": 1.79,
+          "premium_flow": 1144347.0,
+          "iv": 0.2337723107910156,
+          "vol_oi_ratio": 7.902348578491965,
+          "dist_pct": 0.9622538790964107,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 7481715.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:49.768763"
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 322.8599853515625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 322.5,
+          "expiry": "2026-02-09",
+          "volume": 3315,
+          "oi": 341,
+          "premium": 3.3,
+          "premium_flow": 1093950.0,
+          "iv": 0.26709717285156254,
+          "vol_oi_ratio": 9.72140762463343,
+          "dist_pct": -0.11149890599496609,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 325.0,
+          "expiry": "2026-02-09",
+          "volume": 10838,
+          "oi": 462,
+          "premium": 2.1,
+          "premium_flow": 2275980.0,
+          "iv": 0.25952888916015626,
+          "vol_oi_ratio": 23.458874458874458,
+          "dist_pct": 0.6628305598500341,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 327.5,
+          "expiry": "2026-02-09",
+          "volume": 4827,
+          "oi": 406,
+          "premium": 1.25,
+          "premium_flow": 603375.0,
+          "iv": 0.257819921875,
+          "vol_oi_ratio": 11.889162561576354,
+          "dist_pct": 1.4371600256950345,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 3973305.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:50.374216"
+    },
+    {
+      "ticker": "META",
+      "price": 661.4600219726562,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 655.0,
+          "expiry": "2026-02-09",
+          "volume": 2024,
+          "oi": 47,
+          "premium": 10.57,
+          "premium_flow": 2139368.0,
+          "iv": 0.27149166015625,
+          "vol_oi_ratio": 43.06382978723404,
+          "dist_pct": -0.9766307498661343,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 660.0,
+          "expiry": "2026-02-09",
+          "volume": 7298,
+          "oi": 191,
+          "premium": 7.25,
+          "premium_flow": 5291050.0,
+          "iv": 0.26544924011230464,
+          "vol_oi_ratio": 38.20942408376963,
+          "dist_pct": -0.22072716780404383,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 662.5,
+          "expiry": "2026-02-09",
+          "volume": 3171,
+          "oi": 55,
+          "premium": 5.96,
+          "premium_flow": 1889916.0,
+          "iv": 0.2633740655517578,
+          "vol_oi_ratio": 57.654545454545456,
+          "dist_pct": 0.15722462322700148,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 9320334.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:51.140096"
+    },
+    {
+      "ticker": "AMZN",
+      "price": 210.32000732421875,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 205.0,
+          "expiry": "2026-02-09",
+          "volume": 17995,
+          "oi": 54,
+          "premium": 5.97,
+          "premium_flow": 10743015.0,
+          "iv": 0.3588931298828125,
+          "vol_oi_ratio": 333.24074074074076,
+          "dist_pct": -2.529482283641087,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 207.5,
+          "expiry": "2026-02-09",
+          "volume": 18540,
+          "oi": 71,
+          "premium": 4.15,
+          "premium_flow": 7694100.0,
+          "iv": 0.336920693359375,
+          "vol_oi_ratio": 261.1267605633803,
+          "dist_pct": -1.340817433441588,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 210.0,
+          "expiry": "2026-02-09",
+          "volume": 28050,
+          "oi": 115,
+          "premium": 2.6,
+          "premium_flow": 7293000.0,
+          "iv": 0.3298406860351562,
+          "vol_oi_ratio": 243.91304347826087,
+          "dist_pct": -0.1521525832420892,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 25730115.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:51.802400"
+    },
+    {
+      "ticker": "TSLA",
+      "price": 411.1099853515625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 400.0,
+          "expiry": "2026-02-09",
+          "volume": 10973,
+          "oi": 1876,
+          "premium": 12.3,
+          "premium_flow": 13496790.0,
+          "iv": 0.33570000244140624,
+          "vol_oi_ratio": 5.849147121535181,
+          "dist_pct": -2.7024362694722064,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 405.0,
+          "expiry": "2026-02-09",
+          "volume": 13929,
+          "oi": 838,
+          "premium": 8.4,
+          "premium_flow": 11700360.0,
+          "iv": 0.30493859130859374,
+          "vol_oi_ratio": 16.621718377088307,
+          "dist_pct": -1.486216722840609,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 407.5,
+          "expiry": "2026-02-09",
+          "volume": 10670,
+          "oi": 1325,
+          "premium": 6.76,
+          "premium_flow": 7212920.0,
+          "iv": 0.30152065673828127,
+          "vol_oi_ratio": 8.052830188679245,
+          "dist_pct": -0.8781069495248104,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 32410070.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:52.681089"
+    },
+    {
+      "ticker": "AMD",
+      "price": 208.44000244140625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 200.0,
+          "expiry": "2026-02-13",
+          "volume": 4555,
+          "oi": 2945,
+          "premium": 12.0,
+          "premium_flow": 5466000.0,
+          "iv": 0.6092568371582032,
+          "vol_oi_ratio": 1.5466893039049237,
+          "dist_pct": -4.049127970903179,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 202.5,
+          "expiry": "2026-02-13",
+          "volume": 6068,
+          "oi": 2231,
+          "premium": 10.18,
+          "premium_flow": 6177224.0,
+          "iv": 0.5942423388671876,
+          "vol_oi_ratio": 2.71985656656208,
+          "dist_pct": -2.849742070539469,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 205.0,
+          "expiry": "2026-02-13",
+          "volume": 8441,
+          "oi": 5555,
+          "premium": 8.6,
+          "premium_flow": 7259259.999999999,
+          "iv": 0.585941640625,
+          "vol_oi_ratio": 1.5195319531953195,
+          "dist_pct": -1.6503561701757585,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 18902484.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:53.353058"
+    },
+    {
+      "ticker": "AVGO",
+      "price": 332.9200134277344,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 325.0,
+          "expiry": "2026-02-09",
+          "volume": 1810,
+          "oi": 837,
+          "premium": 11.45,
+          "premium_flow": 2072450.0,
+          "iv": 0.5404098693847659,
+          "vol_oi_ratio": 2.162485065710872,
+          "dist_pct": -2.3789538352441344,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 330.0,
+          "expiry": "2026-02-09",
+          "volume": 2640,
+          "oi": 651,
+          "premium": 6.3,
+          "premium_flow": 1663200.0,
+          "iv": 0.41321387573242185,
+          "vol_oi_ratio": 4.055299539170507,
+          "dist_pct": -0.877091586555583,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 335.0,
+          "expiry": "2026-02-09",
+          "volume": 1916,
+          "oi": 647,
+          "premium": 3.5,
+          "premium_flow": 670600.0,
+          "iv": 0.3820862573242187,
+          "vol_oi_ratio": 2.961360123647604,
+          "dist_pct": 0.6247706621329688,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 4406250.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:54.036629"
+    },
+    {
+      "ticker": "CRM",
+      "price": 191.35000610351562,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 187.5,
+          "expiry": "2026-02-13",
+          "volume": 1464,
+          "oi": 495,
+          "premium": 3.75,
+          "premium_flow": 549000.0,
+          "iv": 0.5069629382324219,
+          "vol_oi_ratio": 2.9575757575757575,
+          "dist_pct": -2.012022984432447,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 195.0,
+          "expiry": "2026-02-20",
+          "volume": 1083,
+          "oi": 817,
+          "premium": 4.9,
+          "premium_flow": 530670.0000000001,
+          "iv": 0.4451959777832031,
+          "vol_oi_ratio": 1.3255813953488371,
+          "dist_pct": 1.907496096190255,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 200.0,
+          "expiry": "2026-02-20",
+          "volume": 2630,
+          "oi": 901,
+          "premium": 3.1,
+          "premium_flow": 815300.0,
+          "iv": 0.43506424316406256,
+          "vol_oi_ratio": 2.918978912319645,
+          "dist_pct": 4.52050881660539,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1345970.0,
+      "put_flow": 549000.0,
+      "timestamp": "2026-02-06T23:05:54.498514"
+    },
+    {
+      "ticker": "PLTR",
+      "price": 135.89999389648438,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 135.0,
+          "expiry": "2026-02-13",
+          "volume": 8106,
+          "oi": 11683,
+          "premium": 4.84,
+          "premium_flow": 3923304.0,
+          "iv": 0.5793499096679688,
+          "vol_oi_ratio": 0.6938286399041342,
+          "dist_pct": -0.662247194190387,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 136.0,
+          "expiry": "2026-02-13",
+          "volume": 4865,
+          "oi": 1371,
+          "premium": 4.45,
+          "premium_flow": 2164925.0,
+          "iv": 0.5725140405273439,
+          "vol_oi_ratio": 3.548504741064916,
+          "dist_pct": 0.07358801177857306,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 138.0,
+          "expiry": "2026-02-13",
+          "volume": 3055,
+          "oi": 6052,
+          "premium": 3.35,
+          "premium_flow": 1023425.0,
+          "iv": 0.5642133422851563,
+          "vol_oi_ratio": 0.5047918043621943,
+          "dist_pct": 1.5452584237164932,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 7111654.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:55.085353"
+    },
+    {
+      "ticker": "NET",
+      "price": 173.2100067138672,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 180.0,
+          "expiry": "2026-02-20",
+          "volume": 1336,
+          "oi": 380,
+          "premium": 10.05,
+          "premium_flow": 1342680.0,
+          "iv": 0.9613040979003906,
+          "vol_oi_ratio": 3.5157894736842104,
+          "dist_pct": 3.9200929639991786,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 170.0,
+          "expiry": "2026-02-13",
+          "volume": 566,
+          "oi": 137,
+          "premium": 13.3,
+          "premium_flow": 752780.0,
+          "iv": 1.280765314941406,
+          "vol_oi_ratio": 4.131386861313868,
+          "dist_pct": -1.8532455340007759,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 180.0,
+          "expiry": "2026-02-13",
+          "volume": 621,
+          "oi": 1000,
+          "premium": 16.2,
+          "premium_flow": 1006019.9999999999,
+          "iv": 1.2026407055664063,
+          "vol_oi_ratio": 0.621,
+          "dist_pct": 3.9200929639991786,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 2095460.0,
+      "put_flow": 1006019.9999999999,
+      "timestamp": "2026-02-06T23:05:55.630368"
+    },
+    {
+      "ticker": "DDOG",
+      "price": 111.69000244140625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 115.0,
+          "expiry": "2026-02-20",
+          "volume": 1962,
+          "oi": 720,
+          "premium": 7.0,
+          "premium_flow": 1373400.0,
+          "iv": 0.958740646972656,
+          "vol_oi_ratio": 2.725,
+          "dist_pct": 2.963557602508075,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-20",
+          "volume": 2192,
+          "oi": 1924,
+          "premium": 5.1,
+          "premium_flow": 1117920.0,
+          "iv": 0.9516606396484374,
+          "vol_oi_ratio": 1.1392931392931394,
+          "dist_pct": 7.440234020008426,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 100.0,
+          "expiry": "2026-02-13",
+          "volume": 1580,
+          "oi": 1618,
+          "premium": 3.2,
+          "premium_flow": 505600.0,
+          "iv": 1.3227572924804685,
+          "vol_oi_ratio": 0.9765142150803461,
+          "dist_pct": -10.466471649992979,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 2491320.0,
+      "put_flow": 505600.0,
+      "timestamp": "2026-02-06T23:05:57.217125"
+    },
+    {
+      "ticker": "CRWD",
+      "price": 395.5,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 380.0,
+          "expiry": "2026-02-13",
+          "volume": 1065,
+          "oi": 145,
+          "premium": 5.55,
+          "premium_flow": 591075.0,
+          "iv": 0.5505416040039064,
+          "vol_oi_ratio": 7.344827586206897,
+          "dist_pct": -3.919089759797725,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 410.0,
+          "expiry": "2026-02-20",
+          "volume": 515,
+          "oi": 827,
+          "premium": 9.48,
+          "premium_flow": 488220.0,
+          "iv": 0.5075122491455077,
+          "vol_oi_ratio": 0.6227327690447401,
+          "dist_pct": 3.6662452591656134,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 400.0,
+          "expiry": "2026-02-13",
+          "volume": 421,
+          "oi": 146,
+          "premium": 10.0,
+          "premium_flow": 421000.0,
+          "iv": 0.5630536859130859,
+          "vol_oi_ratio": 2.8835616438356166,
+          "dist_pct": 1.1378002528445006,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 909220.0,
+      "put_flow": 591075.0,
+      "timestamp": "2026-02-06T23:05:58.182665"
+    },
+    {
+      "ticker": "SMCI",
+      "price": 34.380001068115234,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 34.5,
+          "expiry": "2026-02-13",
+          "volume": 14276,
+          "oi": 10473,
+          "premium": 1.26,
+          "premium_flow": 1798775.9999999998,
+          "iv": 0.68555001953125,
+          "vol_oi_ratio": 1.3631242241955506,
+          "dist_pct": 0.349037021979779,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 35.0,
+          "expiry": "2026-02-13",
+          "volume": 17773,
+          "oi": 10953,
+          "premium": 1.03,
+          "premium_flow": 1830618.9999999998,
+          "iv": 0.6796907031250001,
+          "vol_oi_ratio": 1.6226604583219209,
+          "dist_pct": 1.8033708918635438,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 34.0,
+          "expiry": "2026-02-20",
+          "volume": 3357,
+          "oi": 3568,
+          "premium": 1.97,
+          "premium_flow": 661329.0,
+          "iv": 0.6718782812500002,
+          "vol_oi_ratio": 0.9408632286995515,
+          "dist_pct": -1.105296847903986,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 4290724.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:03.699427"
+    },
+    {
+      "ticker": "ARM",
+      "price": 123.69999694824219,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-13",
+          "volume": 1352,
+          "oi": 1539,
+          "premium": 6.1,
+          "premium_flow": 824719.9999999999,
+          "iv": 0.5793499096679688,
+          "vol_oi_ratio": 0.8784925276153346,
+          "dist_pct": -2.9911051249179237,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 125.0,
+          "expiry": "2026-02-13",
+          "volume": 2428,
+          "oi": 844,
+          "premium": 3.3,
+          "premium_flow": 801240.0,
+          "iv": 0.5664105859375,
+          "vol_oi_ratio": 2.876777251184834,
+          "dist_pct": 1.0509321615438292,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-20",
+          "volume": 2612,
+          "oi": 4199,
+          "premium": 7.2,
+          "premium_flow": 1880640.0000000002,
+          "iv": 0.5456588403320313,
+          "vol_oi_ratio": 0.6220528697308884,
+          "dist_pct": -2.9911051249179237,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 3506600.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:04.401338"
+    },
+    {
+      "ticker": "APP",
+      "price": 406.7200012207031,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 420.0,
+          "expiry": "2026-02-20",
+          "volume": 1280,
+          "oi": 199,
+          "premium": 30.18,
+          "premium_flow": 3863040.0,
+          "iv": 1.140629296875,
+          "vol_oi_ratio": 6.432160804020101,
+          "dist_pct": 3.2651452447480196,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 410.0,
+          "expiry": "2026-02-13",
+          "volume": 739,
+          "oi": 567,
+          "premium": 30.44,
+          "premium_flow": 2249516.0,
+          "iv": 1.4168119979858398,
+          "vol_oi_ratio": 1.3033509700176367,
+          "dist_pct": 0.8064513103492571,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 420.0,
+          "expiry": "2026-02-20",
+          "volume": 644,
+          "oi": 309,
+          "premium": 44.55,
+          "premium_flow": 2869019.9999999995,
+          "iv": 1.1035201074218752,
+          "vol_oi_ratio": 2.0841423948220066,
+          "dist_pct": 3.2651452447480196,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 6112556.0,
+      "put_flow": 2869019.9999999995,
+      "timestamp": "2026-02-06T23:06:06.395488"
+    },
+    {
+      "ticker": "HIMS",
+      "price": 23.020000457763672,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 23.0,
+          "expiry": "2026-02-20",
+          "volume": 4720,
+          "oi": 1182,
+          "premium": 1.54,
+          "premium_flow": 726880.0,
+          "iv": 0.84961087890625,
+          "vol_oi_ratio": 3.993231810490694,
+          "dist_pct": -0.08688295988685164,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 23.0,
+          "expiry": "2026-02-13",
+          "volume": 2386,
+          "oi": 449,
+          "premium": 1.15,
+          "premium_flow": 274389.99999999994,
+          "iv": 0.901368173828125,
+          "vol_oi_ratio": 5.314031180400891,
+          "dist_pct": -0.08688295988685164,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 23.5,
+          "expiry": "2026-02-13",
+          "volume": 1976,
+          "oi": 497,
+          "premium": 0.92,
+          "premium_flow": 181792.0,
+          "iv": 0.8906260937499999,
+          "vol_oi_ratio": 3.975855130784708,
+          "dist_pct": 2.085141323593869,
+          "score": 90
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 456181.99999999994,
+      "put_flow": 726880.0,
+      "timestamp": "2026-02-06T23:06:07.185523"
+    },
+    {
+      "ticker": "CAVA",
+      "price": 69.95999908447266,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 70.0,
+          "expiry": "2026-02-13",
+          "volume": 4235,
+          "oi": 3788,
+          "premium": 2.1,
+          "premium_flow": 889350.0,
+          "iv": 0.5537154003906251,
+          "vol_oi_ratio": 1.1180042238648362,
+          "dist_pct": 0.05717683826588528,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 70.0,
+          "expiry": "2026-02-20",
+          "volume": 1271,
+          "oi": 1230,
+          "premium": 2.98,
+          "premium_flow": 378758.0,
+          "iv": 0.5571333349609376,
+          "vol_oi_ratio": 1.0333333333333334,
+          "dist_pct": 0.05717683826588528,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 69.0,
+          "expiry": "2026-02-20",
+          "volume": 381,
+          "oi": 30,
+          "premium": 3.46,
+          "premium_flow": 131826.0,
+          "iv": 0.5751995605468749,
+          "vol_oi_ratio": 12.7,
+          "dist_pct": -1.3722114022807703,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1399934.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:10.876399"
+    },
+    {
+      "ticker": "JPM",
+      "price": 322.3999938964844,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 320.0,
+          "expiry": "2026-02-13",
+          "volume": 1283,
+          "oi": 926,
+          "premium": 6.41,
+          "premium_flow": 822403.0000000001,
+          "iv": 0.287970987548828,
+          "vol_oi_ratio": 1.3855291576673867,
+          "dist_pct": -0.7444149943920163,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 325.0,
+          "expiry": "2026-02-13",
+          "volume": 3125,
+          "oi": 1781,
+          "premium": 3.3,
+          "premium_flow": 1031250.0,
+          "iv": 0.26197027099609377,
+          "vol_oi_ratio": 1.7546322290847838,
+          "dist_pct": 0.8064535213206084,
+          "score": 100
+        },
+        {
+          "type": "PUT",
+          "strike": 320.0,
+          "expiry": "2026-02-13",
+          "volume": 1879,
+          "oi": 179,
+          "premium": 3.3,
+          "premium_flow": 620070.0,
+          "iv": 0.25928475097656256,
+          "vol_oi_ratio": 10.497206703910615,
+          "dist_pct": -0.7444149943920163,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1853653.0,
+      "put_flow": 620070.0,
+      "timestamp": "2026-02-06T23:06:12.510435"
+    },
+    {
+      "ticker": "V",
+      "price": 331.5799865722656,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 330.0,
+          "expiry": "2026-02-13",
+          "volume": 1289,
+          "oi": 343,
+          "premium": 4.8,
+          "premium_flow": 618720.0,
+          "iv": 0.2304764453125,
+          "vol_oi_ratio": 3.75801749271137,
+          "dist_pct": -0.4765023934643527,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 335.0,
+          "expiry": "2026-02-20",
+          "volume": 910,
+          "oi": 1283,
+          "premium": 3.8,
+          "premium_flow": 345800.0,
+          "iv": 0.21088435607910155,
+          "vol_oi_ratio": 0.7092751363990647,
+          "dist_pct": 1.031429388452854,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 345.0,
+          "expiry": "2026-02-20",
+          "volume": 829,
+          "oi": 1321,
+          "premium": 1.11,
+          "premium_flow": 92019.0,
+          "iv": 0.2148516015625,
+          "vol_oi_ratio": 0.627554882664648,
+          "dist_pct": 4.047292952287267,
+          "score": 75
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1056539.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:13.280075"
+    },
+    {
+      "ticker": "COIN",
+      "price": 165.1199951171875,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 160.0,
+          "expiry": "2026-02-13",
+          "volume": 2271,
+          "oi": 3640,
+          "premium": 12.1,
+          "premium_flow": 2747910.0,
+          "iv": 1.015385782470703,
+          "vol_oi_ratio": 0.6239010989010989,
+          "dist_pct": -3.1007723283626447,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 170.0,
+          "expiry": "2026-02-13",
+          "volume": 3133,
+          "oi": 574,
+          "premium": 7.0,
+          "premium_flow": 2193100.0,
+          "iv": 0.9958496508789063,
+          "vol_oi_ratio": 5.458188153310105,
+          "dist_pct": 2.95542940111469,
+          "score": 100
+        },
+        {
+          "type": "PUT",
+          "strike": 160.0,
+          "expiry": "2026-02-13",
+          "volume": 1320,
+          "oi": 552,
+          "premium": 6.78,
+          "premium_flow": 894960.0,
+          "iv": 1.0120899005126953,
+          "vol_oi_ratio": 2.391304347826087,
+          "dist_pct": -3.1007723283626447,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 4941010.0,
+      "put_flow": 894960.0,
+      "timestamp": "2026-02-06T23:06:15.503764"
+    },
+    {
+      "ticker": "HOOD",
+      "price": 82.81999969482422,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 80.0,
+          "expiry": "2026-02-13",
+          "volume": 4816,
+          "oi": 4220,
+          "premium": 6.4,
+          "premium_flow": 3082240.0,
+          "iv": 1.0991255981445316,
+          "vol_oi_ratio": 1.1412322274881517,
+          "dist_pct": -3.4049742878717404,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 82.0,
+          "expiry": "2026-02-13",
+          "volume": 2236,
+          "oi": 558,
+          "premium": 5.35,
+          "premium_flow": 1196259.9999999998,
+          "iv": 1.0781296093750001,
+          "vol_oi_ratio": 4.007168458781362,
+          "dist_pct": -0.9900986450685342,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 85.0,
+          "expiry": "2026-02-13",
+          "volume": 7346,
+          "oi": 4694,
+          "premium": 3.9,
+          "premium_flow": 2864940.0,
+          "iv": 1.0551805053710939,
+          "vol_oi_ratio": 1.5649765658287176,
+          "dist_pct": 2.6322148191362755,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 7143440.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:17.456837"
+    },
+    {
+      "ticker": "SOFI",
+      "price": 20.860000610351562,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 21.0,
+          "expiry": "2026-02-13",
+          "volume": 7477,
+          "oi": 2812,
+          "premium": 0.67,
+          "premium_flow": 500959.0,
+          "iv": 0.64648791015625,
+          "vol_oi_ratio": 2.6589615931721196,
+          "dist_pct": 0.6711379940179112,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 21.0,
+          "expiry": "2026-02-20",
+          "volume": 9542,
+          "oi": 9990,
+          "premium": 0.92,
+          "premium_flow": 877864.0000000001,
+          "iv": 0.6015664843750002,
+          "vol_oi_ratio": 0.9551551551551551,
+          "dist_pct": 0.6711379940179112,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 20.5,
+          "expiry": "2026-02-13",
+          "volume": 4449,
+          "oi": 2496,
+          "premium": 0.93,
+          "premium_flow": 413757.00000000006,
+          "iv": 0.6533237792968751,
+          "vol_oi_ratio": 1.7824519230769231,
+          "dist_pct": -1.7257938629825154,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1792580.0000000002,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:18.580117"
+    },
+    {
+      "ticker": "NU",
+      "price": 17.399999618530273,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 18.0,
+          "expiry": "2026-02-20",
+          "volume": 8631,
+          "oi": 11332,
+          "premium": 0.96,
+          "premium_flow": 828576.0,
+          "iv": 0.38086556640624997,
+          "vol_oi_ratio": 0.7616484292269678,
+          "dist_pct": 3.448278130022205,
+          "score": 100
+        },
+        {
+          "type": "PUT",
+          "strike": 17.0,
+          "expiry": "2026-02-20",
+          "volume": 8717,
+          "oi": 11987,
+          "premium": 0.35,
+          "premium_flow": 305095.0,
+          "iv": 0.39160764648437496,
+          "vol_oi_ratio": 0.7272044715108034,
+          "dist_pct": -2.2988484327568064,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 19.0,
+          "expiry": "2026-02-13",
+          "volume": 2963,
+          "oi": 701,
+          "premium": 0.03,
+          "premium_flow": 8889.0,
+          "iv": 0.500005,
+          "vol_oi_ratio": 4.226818830242511,
+          "dist_pct": 9.195404692801217,
+          "score": 65
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 8889.0,
+      "put_flow": 1133671.0,
+      "timestamp": "2026-02-06T23:06:19.494731"
+    },
+    {
+      "ticker": "UNH",
+      "price": 276.6499938964844,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 275.0,
+          "expiry": "2026-02-13",
+          "volume": 1104,
+          "oi": 358,
+          "premium": 5.95,
+          "premium_flow": 656880.0,
+          "iv": 0.3566958862304687,
+          "vol_oi_ratio": 3.083798882681564,
+          "dist_pct": -0.5964192781084109,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 280.0,
+          "expiry": "2026-02-13",
+          "volume": 1658,
+          "oi": 583,
+          "premium": 3.48,
+          "premium_flow": 576984.0,
+          "iv": 0.33850759155273435,
+          "vol_oi_ratio": 2.843910806174957,
+          "dist_pct": 1.210918553198709,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 270.0,
+          "expiry": "2026-02-13",
+          "volume": 628,
+          "oi": 388,
+          "premium": 9.48,
+          "premium_flow": 595344.0,
+          "iv": 0.38623660644531244,
+          "vol_oi_ratio": 1.6185567010309279,
+          "dist_pct": -2.4037571094155306,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1829208.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:22.732590"
+    },
+    {
+      "ticker": "RKLB",
+      "price": 72.31999969482422,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 70.0,
+          "expiry": "2026-02-13",
+          "volume": 1193,
+          "oi": 496,
+          "premium": 5.2,
+          "premium_flow": 620360.0,
+          "iv": 0.981445498046875,
+          "vol_oi_ratio": 2.405241935483871,
+          "dist_pct": -3.2079641933270864,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 72.0,
+          "expiry": "2026-02-13",
+          "volume": 1494,
+          "oi": 134,
+          "premium": 4.0,
+          "premium_flow": 597600.0,
+          "iv": 0.9570316796874999,
+          "vol_oi_ratio": 11.149253731343284,
+          "dist_pct": -0.44247745599357413,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 75.0,
+          "expiry": "2026-02-13",
+          "volume": 1856,
+          "oi": 1201,
+          "premium": 2.74,
+          "premium_flow": 508544.00000000006,
+          "iv": 0.9360357958984374,
+          "vol_oi_ratio": 1.5453788509575355,
+          "dist_pct": 3.705752650006694,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1726504.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:30.425398"
+    },
+    {
+      "ticker": "LRCX",
+      "price": 231.00999450683594,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 222.5,
+          "expiry": "2026-02-13",
+          "volume": 2930,
+          "oi": 96,
+          "premium": 4.48,
+          "premium_flow": 1312640.0000000002,
+          "iv": 0.6428258374023439,
+          "vol_oi_ratio": 30.520833333333332,
+          "dist_pct": -3.683820920823455,
+          "score": 100
+        },
+        {
+          "type": "PUT",
+          "strike": 230.0,
+          "expiry": "2026-02-13",
+          "volume": 1079,
+          "oi": 599,
+          "premium": 7.22,
+          "premium_flow": 779038.0,
+          "iv": 0.6004678625488282,
+          "vol_oi_ratio": 1.8013355592654423,
+          "dist_pct": -0.43720814287368426,
+          "score": 100
+        },
+        {
+          "type": "PUT",
+          "strike": 210.0,
+          "expiry": "2026-02-13",
+          "volume": 2987,
+          "oi": 334,
+          "premium": 1.7,
+          "premium_flow": 507789.99999999994,
+          "iv": 0.6709017285156251,
+          "vol_oi_ratio": 8.94311377245509,
+          "dist_pct": -9.094842217406407,
+          "score": 90
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 0,
+      "put_flow": 2599468.0,
+      "timestamp": "2026-02-06T23:06:36.329547"
+    },
+    {
+      "ticker": "MRVL",
+      "price": 80.27999877929688,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 80.0,
+          "expiry": "2026-02-13",
+          "volume": 3076,
+          "oi": 968,
+          "premium": 2.72,
+          "premium_flow": 836672.0000000001,
+          "iv": 0.5891154370117189,
+          "vol_oi_ratio": 3.177685950413223,
+          "dist_pct": -0.3487777572924962,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 77.0,
+          "expiry": "2026-02-20",
+          "volume": 1597,
+          "oi": 1734,
+          "premium": 5.36,
+          "premium_flow": 855992.0,
+          "iv": 0.5732464550781251,
+          "vol_oi_ratio": 0.9209919261822376,
+          "dist_pct": -4.085698591394028,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 83.0,
+          "expiry": "2026-02-20",
+          "volume": 3455,
+          "oi": 1458,
+          "premium": 2.3,
+          "premium_flow": 794649.9999999999,
+          "iv": 0.5478560839843751,
+          "vol_oi_ratio": 2.369684499314129,
+          "dist_pct": 3.388143076809035,
+          "score": 100
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 2487314.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:38.502677"
+    },
+    {
+      "ticker": "COST",
+      "price": 1001.1599731445312,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 1020.0,
+          "expiry": "2026-02-13",
+          "volume": 2001,
+          "oi": 243,
+          "premium": 5.02,
+          "premium_flow": 1004501.9999999999,
+          "iv": 0.22122971160888671,
+          "vol_oi_ratio": 8.234567901234568,
+          "dist_pct": 1.8818198250869278,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 1000.0,
+          "expiry": "2026-02-13",
+          "volume": 715,
+          "oi": 812,
+          "premium": 12.78,
+          "premium_flow": 913769.9999999999,
+          "iv": 0.22449505981445309,
+          "vol_oi_ratio": 0.8805418719211823,
+          "dist_pct": -0.11586291658144346,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 995.0,
+          "expiry": "2026-02-13",
+          "volume": 329,
+          "oi": 213,
+          "premium": 15.48,
+          "premium_flow": 509292.0,
+          "iv": 0.22815713256835937,
+          "vol_oi_ratio": 1.5446009389671362,
+          "dist_pct": -0.6152836019985363,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 2427564.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:40.461754"
+    },
+    {
+      "ticker": "XOM",
+      "price": 149.0500030517578,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 149.0,
+          "expiry": "2026-02-13",
+          "volume": 3855,
+          "oi": 327,
+          "premium": 2.04,
+          "premium_flow": 786420.0,
+          "iv": 0.2629468237304688,
+          "vol_oi_ratio": 11.788990825688073,
+          "dist_pct": -0.03354783678900622,
+          "score": 100
+        },
+        {
+          "type": "CALL",
+          "strike": 150.0,
+          "expiry": "2026-02-13",
+          "volume": 3138,
+          "oi": 542,
+          "premium": 1.51,
+          "premium_flow": 473838.0,
+          "iv": 0.25318129638671877,
+          "vol_oi_ratio": 5.789667896678967,
+          "dist_pct": 0.637367949541269,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 152.5,
+          "expiry": "2026-02-13",
+          "volume": 3658,
+          "oi": 193,
+          "premium": 0.87,
+          "premium_flow": 318246.0,
+          "iv": 0.26099371826171874,
+          "vol_oi_ratio": 18.95336787564767,
+          "dist_pct": 2.314657415366957,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1578504.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:44.737878"
+    },
+    {
+      "ticker": "PANW",
+      "price": 159.32000732421875,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 160.0,
+          "expiry": "2026-02-13",
+          "volume": 1033,
+          "oi": 347,
+          "premium": 4.05,
+          "premium_flow": 418364.99999999994,
+          "iv": 0.49121602539062503,
+          "vol_oi_ratio": 2.9769452449567724,
+          "dist_pct": 0.4268093425312579,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 162.5,
+          "expiry": "2026-02-13",
+          "volume": 1271,
+          "oi": 359,
+          "premium": 2.8,
+          "premium_flow": 355880.0,
+          "iv": 0.47241738525390625,
+          "vol_oi_ratio": 3.5403899721448466,
+          "dist_pct": 1.995978238508309,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 145.0,
+          "expiry": "2026-02-20",
+          "volume": 1681,
+          "oi": 389,
+          "premium": 3.05,
+          "premium_flow": 512704.99999999994,
+          "iv": 0.684573466796875,
+          "vol_oi_ratio": 4.32133676092545,
+          "dist_pct": -8.988204033331048,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 774245.0,
+      "put_flow": 512704.99999999994,
+      "timestamp": "2026-02-06T23:06:00.667685"
+    },
+    {
+      "ticker": "NOW",
+      "price": 100.73999786376953,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 100.0,
+          "expiry": "2026-02-13",
+          "volume": 1022,
+          "oi": 73,
+          "premium": 3.9,
+          "premium_flow": 398580.0,
+          "iv": 0.6164589135742189,
+          "vol_oi_ratio": 14.0,
+          "dist_pct": -0.7345621197751351,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 95.0,
+          "expiry": "2026-02-13",
+          "volume": 4332,
+          "oi": 664,
+          "premium": 1.28,
+          "premium_flow": 554496.0,
+          "iv": 0.6411168701171875,
+          "vol_oi_ratio": 6.524096385542169,
+          "dist_pct": -5.6978340137863785,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 102.0,
+          "expiry": "2026-02-13",
+          "volume": 708,
+          "oi": 12,
+          "premium": 2.85,
+          "premium_flow": 201780.0,
+          "iv": 0.6149940844726562,
+          "vol_oi_ratio": 59.0,
+          "dist_pct": 1.2507466378293621,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 600360.0,
+      "put_flow": 554496.0,
+      "timestamp": "2026-02-06T23:06:01.606913"
+    },
+    {
+      "ticker": "IONQ",
+      "price": 34.9900016784668,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 35.0,
+          "expiry": "2026-02-20",
+          "volume": 1255,
+          "oi": 2333,
+          "premium": 2.5,
+          "premium_flow": 313750.0,
+          "iv": 0.8974619628906249,
+          "vol_oi_ratio": 0.5379339905700814,
+          "dist_pct": 0.028574795809044484,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 35.0,
+          "expiry": "2026-02-13",
+          "volume": 653,
+          "oi": 337,
+          "premium": 2.0,
+          "premium_flow": 130600.0,
+          "iv": 0.9960937890625,
+          "vol_oi_ratio": 1.9376854599406528,
+          "dist_pct": 0.028574795809044484,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 37.0,
+          "expiry": "2026-02-13",
+          "volume": 1240,
+          "oi": 79,
+          "premium": 1.24,
+          "premium_flow": 153760.0,
+          "iv": 1.0429735351562504,
+          "vol_oi_ratio": 15.69620253164557,
+          "dist_pct": 5.744493355569561,
+          "score": 80
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 284360.0,
+      "put_flow": 313750.0,
+      "timestamp": "2026-02-06T23:06:05.117944"
+    },
+    {
+      "ticker": "RGTI",
+      "price": 17.709999084472656,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 17.0,
+          "expiry": "2026-02-13",
+          "volume": 1854,
+          "oi": 191,
+          "premium": 1.39,
+          "premium_flow": 257706.0,
+          "iv": 1.0390673046875003,
+          "vol_oi_ratio": 9.706806282722512,
+          "dist_pct": -4.009029481515626,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 18.0,
+          "expiry": "2026-02-13",
+          "volume": 1335,
+          "oi": 830,
+          "premium": 0.88,
+          "premium_flow": 117480.0,
+          "iv": 1.013676806640625,
+          "vol_oi_ratio": 1.608433734939759,
+          "dist_pct": 1.6374981960422783,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 17.0,
+          "expiry": "2026-02-20",
+          "volume": 1728,
+          "oi": 1334,
+          "premium": 1.65,
+          "premium_flow": 285120.0,
+          "iv": 0.956055126953125,
+          "vol_oi_ratio": 1.2953523238380809,
+          "dist_pct": -4.009029481515626,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 660306.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:05.639628"
+    },
+    {
+      "ticker": "CELH",
+      "price": 50.56999969482422,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 49.0,
+          "expiry": "2026-02-13",
+          "volume": 1457,
+          "oi": 976,
+          "premium": 2.5,
+          "premium_flow": 364250.0,
+          "iv": 0.5200243310546875,
+          "vol_oi_ratio": 1.492827868852459,
+          "dist_pct": -3.1046068900508743,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 51.0,
+          "expiry": "2026-02-13",
+          "volume": 933,
+          "oi": 758,
+          "premium": 1.39,
+          "premium_flow": 129686.99999999999,
+          "iv": 0.5400436621093752,
+          "vol_oi_ratio": 1.2308707124010554,
+          "dist_pct": 0.8503071144368453,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 47.5,
+          "expiry": "2026-02-20",
+          "volume": 2600,
+          "oi": 9003,
+          "premium": 4.92,
+          "premium_flow": 1279200.0,
+          "iv": 0.8105487695312499,
+          "vol_oi_ratio": 0.288792624680662,
+          "dist_pct": -6.070792393416664,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1773137.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:08.727675"
+    },
+    {
+      "ticker": "AXP",
+      "price": 359.1499938964844,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 367.5,
+          "expiry": "2026-02-13",
+          "volume": 1044,
+          "oi": 142,
+          "premium": 2.43,
+          "premium_flow": 253692.0,
+          "iv": 0.2898020239257812,
+          "vol_oi_ratio": 7.352112676056338,
+          "dist_pct": 2.3249356105856696,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 370.0,
+          "expiry": "2026-02-13",
+          "volume": 1112,
+          "oi": 1901,
+          "premium": 1.82,
+          "premium_flow": 202384.0,
+          "iv": 0.28601788208007806,
+          "vol_oi_ratio": 0.5849552866912151,
+          "dist_pct": 3.0210236079365926,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 357.5,
+          "expiry": "2026-02-13",
+          "volume": 172,
+          "oi": 47,
+          "premium": 7.42,
+          "premium_flow": 127624.0,
+          "iv": 0.3126899786376953,
+          "vol_oi_ratio": 3.6595744680851063,
+          "dist_pct": -0.45941637881802183,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 583700.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:14.758918"
+    },
+    {
+      "ticker": "NVO",
+      "price": 47.63999938964844,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 49.0,
+          "expiry": "2026-02-20",
+          "volume": 1929,
+          "oi": 2090,
+          "premium": 1.24,
+          "premium_flow": 239196.0,
+          "iv": 0.5014698291015626,
+          "vol_oi_ratio": 0.9229665071770335,
+          "dist_pct": 2.854745230427256,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 52.0,
+          "expiry": "2026-02-20",
+          "volume": 2838,
+          "oi": 1639,
+          "premium": 0.55,
+          "premium_flow": 156090.0,
+          "iv": 0.5210008837890624,
+          "vol_oi_ratio": 1.7315436241610738,
+          "dist_pct": 9.151974530249332,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 50.0,
+          "expiry": "2026-02-13",
+          "volume": 989,
+          "oi": 928,
+          "premium": 0.51,
+          "premium_flow": 50439.0,
+          "iv": 0.5195360546875,
+          "vol_oi_ratio": 1.0657327586206897,
+          "dist_pct": 4.953821663701281,
+          "score": 75
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 445725.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:21.695178"
+    },
+    {
+      "ticker": "UBER",
+      "price": 74.7699966430664,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 74.0,
+          "expiry": "2026-02-13",
+          "volume": 1753,
+          "oi": 131,
+          "premium": 2.01,
+          "premium_flow": 352353.0,
+          "iv": 0.3881897119140625,
+          "vol_oi_ratio": 13.381679389312977,
+          "dist_pct": -1.0298203525970198,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 75.0,
+          "expiry": "2026-02-13",
+          "volume": 1460,
+          "oi": 787,
+          "premium": 1.5,
+          "premium_flow": 219000.0,
+          "iv": 0.38721315917968746,
+          "vol_oi_ratio": 1.855146124523507,
+          "dist_pct": 0.30761450750302055,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 73.0,
+          "expiry": "2026-02-13",
+          "volume": 1675,
+          "oi": 558,
+          "premium": 0.76,
+          "premium_flow": 127300.0,
+          "iv": 0.3842835009765625,
+          "vol_oi_ratio": 3.0017921146953404,
+          "dist_pct": -2.36725521269706,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 571353.0,
+      "put_flow": 127300.0,
+      "timestamp": "2026-02-06T23:06:27.023065"
+    },
+    {
+      "ticker": "AMAT",
+      "price": 322.510009765625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 322.5,
+          "expiry": "2026-02-20",
+          "volume": 860,
+          "oi": 875,
+          "premium": 16.2,
+          "premium_flow": 1393200.0,
+          "iv": 0.644107562866211,
+          "vol_oi_ratio": 0.9828571428571429,
+          "dist_pct": -0.0031037069616147153,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 325.0,
+          "expiry": "2026-02-13",
+          "volume": 439,
+          "oi": 427,
+          "premium": 12.38,
+          "premium_flow": 543482.0000000001,
+          "iv": 0.747194910888672,
+          "vol_oi_ratio": 1.0281030444964872,
+          "dist_pct": 0.7720660317441093,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 320.0,
+          "expiry": "2026-02-13",
+          "volume": 247,
+          "oi": 288,
+          "premium": 15.05,
+          "premium_flow": 371735.00000000006,
+          "iv": 0.7628197546386719,
+          "vol_oi_ratio": 0.8576388888888888,
+          "dist_pct": -0.7782734456673386,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 2308417.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:37.787181"
+    },
+    {
+      "ticker": "QCOM",
+      "price": 137.33999633789062,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 140.0,
+          "expiry": "2026-02-20",
+          "volume": 3375,
+          "oi": 7289,
+          "premium": 2.81,
+          "premium_flow": 948375.0,
+          "iv": 0.3969786865234375,
+          "vol_oi_ratio": 0.46302647825490467,
+          "dist_pct": 1.9368019026046155,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 140.0,
+          "expiry": "2026-02-13",
+          "volume": 584,
+          "oi": 1058,
+          "premium": 1.8,
+          "premium_flow": 105120.0,
+          "iv": 0.383795224609375,
+          "vol_oi_ratio": 0.5519848771266541,
+          "dist_pct": 1.9368019026046155,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 135.0,
+          "expiry": "2026-02-13",
+          "volume": 675,
+          "oi": 499,
+          "premium": 1.91,
+          "premium_flow": 128925.0,
+          "iv": 0.4094297338867187,
+          "vol_oi_ratio": 1.3527054108216432,
+          "dist_pct": -1.7037981653455492,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1053495.0,
+      "put_flow": 128925.0,
+      "timestamp": "2026-02-06T23:06:39.338390"
+    },
+    {
+      "ticker": "NKE",
+      "price": 63.91999816894531,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 64.0,
+          "expiry": "2026-02-13",
+          "volume": 2747,
+          "oi": 911,
+          "premium": 1.12,
+          "premium_flow": 307664.00000000006,
+          "iv": 0.3393620751953125,
+          "vol_oi_ratio": 3.0153677277716793,
+          "dist_pct": 0.12515931374596836,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 65.0,
+          "expiry": "2026-02-13",
+          "volume": 1903,
+          "oi": 1080,
+          "premium": 0.69,
+          "premium_flow": 131307.0,
+          "iv": 0.32617861328125,
+          "vol_oi_ratio": 1.762037037037037,
+          "dist_pct": 1.6896149280232493,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 63.0,
+          "expiry": "2026-02-20",
+          "volume": 1950,
+          "oi": 1503,
+          "premium": 1.15,
+          "premium_flow": 224250.0,
+          "iv": 0.3286199951171874,
+          "vol_oi_ratio": 1.2974051896207586,
+          "dist_pct": -1.4392963005313124,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 438971.00000000006,
+      "put_flow": 224250.0,
+      "timestamp": "2026-02-06T23:06:42.361149"
+    },
+    {
+      "ticker": "CVX",
+      "price": 180.86000061035156,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 185.0,
+          "expiry": "2026-02-13",
+          "volume": 1847,
+          "oi": 873,
+          "premium": 1.04,
+          "premium_flow": 192088.0,
+          "iv": 0.26587648193359376,
+          "vol_oi_ratio": 2.115693012600229,
+          "dist_pct": 2.289063018731121,
+          "score": 90
+        },
+        {
+          "type": "PUT",
+          "strike": 180.0,
+          "expiry": "2026-02-13",
+          "volume": 1071,
+          "oi": 1838,
+          "premium": 1.95,
+          "premium_flow": 208844.99999999997,
+          "iv": 0.24634542724609376,
+          "vol_oi_ratio": 0.5826985854189336,
+          "dist_pct": -0.4755062520453957,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 180.0,
+          "expiry": "2026-02-13",
+          "volume": 711,
+          "oi": 1334,
+          "premium": 3.0,
+          "premium_flow": 213300.0,
+          "iv": 0.26563234375,
+          "vol_oi_ratio": 0.532983508245877,
+          "dist_pct": -0.4755062520453957,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 405388.0,
+      "put_flow": 208844.99999999997,
+      "timestamp": "2026-02-06T23:06:45.683104"
+    },
+    {
+      "ticker": "FCX",
+      "price": 60.66999816894531,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 61.0,
+          "expiry": "2026-02-13",
+          "volume": 1535,
+          "oi": 667,
+          "premium": 1.58,
+          "premium_flow": 242530.00000000003,
+          "iv": 0.5239305419921875,
+          "vol_oi_ratio": 2.3013493253373314,
+          "dist_pct": 0.5439291923756856,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 62.0,
+          "expiry": "2026-02-13",
+          "volume": 2512,
+          "oi": 599,
+          "premium": 1.17,
+          "premium_flow": 293904.0,
+          "iv": 0.5288133056640626,
+          "vol_oi_ratio": 4.193656093489149,
+          "dist_pct": 2.192190326676926,
+          "score": 90
+        },
+        {
+          "type": "CALL",
+          "strike": 63.0,
+          "expiry": "2026-02-13",
+          "volume": 1428,
+          "oi": 1193,
+          "premium": 0.86,
+          "premium_flow": 122808.0,
+          "iv": 0.5185595019531251,
+          "vol_oi_ratio": 1.1969823973176865,
+          "dist_pct": 3.840451460978167,
+          "score": 90
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 659242.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:47.211941"
+    },
+    {
+      "ticker": "SNOW",
+      "price": 168.42999267578125,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 170.0,
+          "expiry": "2026-02-13",
+          "volume": 617,
+          "oi": 723,
+          "premium": 5.15,
+          "premium_flow": 317755.0,
+          "iv": 0.639652041015625,
+          "vol_oi_ratio": 0.8533886583679114,
+          "dist_pct": 0.9321423692281043,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 175.0,
+          "expiry": "2026-02-13",
+          "volume": 875,
+          "oi": 1097,
+          "premium": 3.26,
+          "premium_flow": 285250.0,
+          "iv": 0.6293982373046876,
+          "vol_oi_ratio": 0.7976298997265269,
+          "dist_pct": 3.90073479185246,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 170.0,
+          "expiry": "2026-02-20",
+          "volume": 677,
+          "oi": 382,
+          "premium": 6.71,
+          "premium_flow": 454267.0,
+          "iv": 0.5777630114746093,
+          "vol_oi_ratio": 1.7722513089005236,
+          "dist_pct": 0.9321423692281043,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1057272.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:05:56.433247"
+    },
+    {
+      "ticker": "ZS",
+      "price": 167.3300018310547,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 175.0,
+          "expiry": "2026-02-13",
+          "volume": 707,
+          "oi": 7,
+          "premium": 2.56,
+          "premium_flow": 180992.0,
+          "iv": 0.5830119824218749,
+          "vol_oi_ratio": 101.0,
+          "dist_pct": 4.583755504102219,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 280.0,
+          "expiry": "2026-02-20",
+          "volume": 1090,
+          "oi": 150,
+          "premium": 112.7,
+          "premium_flow": 12284300.0,
+          "iv": 1.259769326171875,
+          "vol_oi_ratio": 7.266666666666667,
+          "dist_pct": 67.33400880656355,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 175.0,
+          "expiry": "2026-02-20",
+          "volume": 323,
+          "oi": 158,
+          "premium": 4.35,
+          "premium_flow": 140505.0,
+          "iv": 0.5708050732421875,
+          "vol_oi_ratio": 2.0443037974683542,
+          "dist_pct": 4.583755504102219,
+          "score": 70
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 321497.0,
+      "put_flow": 12284300.0,
+      "timestamp": "2026-02-06T23:05:58.785753"
+    },
+    {
+      "ticker": "MDB",
+      "price": 344.3500061035156,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 330.0,
+          "expiry": "2026-02-13",
+          "volume": 701,
+          "oi": 2419,
+          "premium": 7.41,
+          "premium_flow": 519441.0,
+          "iv": 0.7224148852539063,
+          "vol_oi_ratio": 0.28978916907813146,
+          "dist_pct": -4.1672733698752555,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 360.0,
+          "expiry": "2026-02-13",
+          "volume": 296,
+          "oi": 585,
+          "premium": 23.45,
+          "premium_flow": 694120.0,
+          "iv": 0.6440465283203125,
+          "vol_oi_ratio": 0.505982905982906,
+          "dist_pct": 4.544792687408812,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 370.0,
+          "expiry": "2026-02-13",
+          "volume": 672,
+          "oi": 345,
+          "premium": 3.4,
+          "premium_flow": 228479.99999999997,
+          "iv": 0.6518589501953126,
+          "vol_oi_ratio": 1.9478260869565218,
+          "dist_pct": 7.448814706503501,
+          "score": 70
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 228479.99999999997,
+      "put_flow": 1213561.0,
+      "timestamp": "2026-02-06T23:05:59.917242"
+    },
+    {
+      "ticker": "SHOP",
+      "price": 112.05000305175781,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 115.0,
+          "expiry": "2026-02-20",
+          "volume": 574,
+          "oi": 422,
+          "premium": 6.8,
+          "premium_flow": 390320.0,
+          "iv": 0.9274909594726561,
+          "vol_oi_ratio": 1.3601895734597156,
+          "dist_pct": 2.6327504398902457,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 110.0,
+          "expiry": "2026-02-13",
+          "volume": 215,
+          "oi": 241,
+          "premium": 8.25,
+          "premium_flow": 177375.0,
+          "iv": 1.1879923413085938,
+          "vol_oi_ratio": 0.8921161825726142,
+          "dist_pct": -1.8295430574962868,
+          "score": 70
+        },
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-13",
+          "volume": 681,
+          "oi": 660,
+          "premium": 3.9,
+          "premium_flow": 265590.0,
+          "iv": 1.1140181018066406,
+          "vol_oi_ratio": 1.0318181818181817,
+          "dist_pct": 7.0950439372767775,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 833285.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:02.389360"
+    },
+    {
+      "ticker": "DUOL",
+      "price": 119.4000015258789,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-20",
+          "volume": 531,
+          "oi": 444,
+          "premium": 6.71,
+          "premium_flow": 356301.0,
+          "iv": 0.7915059912109376,
+          "vol_oi_ratio": 1.195945945945946,
+          "dist_pct": 0.5025112784366668,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 110.0,
+          "expiry": "2026-02-20",
+          "volume": 1011,
+          "oi": 817,
+          "premium": 3.42,
+          "premium_flow": 345762.0,
+          "iv": 0.8168963623046874,
+          "vol_oi_ratio": 1.237454100367197,
+          "dist_pct": -7.87269799476639,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 170.0,
+          "expiry": "2026-02-20",
+          "volume": 1030,
+          "oi": 732,
+          "premium": 52.3,
+          "premium_flow": 5386900.0,
+          "iv": 1.0654343603515626,
+          "vol_oi_ratio": 1.407103825136612,
+          "dist_pct": 42.378557644451945,
+          "score": 80
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 356301.0,
+      "put_flow": 5732662.0,
+      "timestamp": "2026-02-06T23:06:08.074260"
+    },
+    {
+      "ticker": "LLY",
+      "price": 1058.1800537109375,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 1080.0,
+          "expiry": "2026-02-13",
+          "volume": 440,
+          "oi": 154,
+          "premium": 12.4,
+          "premium_flow": 545600.0,
+          "iv": 0.3763490100097656,
+          "vol_oi_ratio": 2.857142857142857,
+          "dist_pct": 2.062025853968992,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 1150.0,
+          "expiry": "2026-02-13",
+          "volume": 2133,
+          "oi": 460,
+          "premium": 1.66,
+          "premium_flow": 354078.0,
+          "iv": 0.3957579956054688,
+          "vol_oi_ratio": 4.636956521739131,
+          "dist_pct": 8.677157159318833,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 1062.5,
+          "expiry": "2026-02-13",
+          "volume": 231,
+          "oi": 223,
+          "premium": 24.6,
+          "premium_flow": 568260.0,
+          "iv": 0.4162350857543945,
+          "vol_oi_ratio": 1.0358744394618835,
+          "dist_pct": 0.40824302763153175,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 899678.0,
+      "put_flow": 568260.0,
+      "timestamp": "2026-02-06T23:06:20.515737"
+    },
+    {
+      "ticker": "VRTX",
+      "price": 477.9200134277344,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 475.0,
+          "expiry": "2026-02-13",
+          "volume": 301,
+          "oi": 31,
+          "premium": 17.24,
+          "premium_flow": 518924.0,
+          "iv": 0.5831340515136718,
+          "vol_oi_ratio": 9.709677419354838,
+          "dist_pct": -0.6109837097616976,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 465.0,
+          "expiry": "2026-02-20",
+          "volume": 260,
+          "oi": 27,
+          "premium": 20.05,
+          "premium_flow": 521300.0,
+          "iv": 0.5656781713867188,
+          "vol_oi_ratio": 9.62962962962963,
+          "dist_pct": -2.703384052714083,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 480.0,
+          "expiry": "2026-02-13",
+          "volume": 304,
+          "oi": 66,
+          "premium": 14.59,
+          "premium_flow": 443535.99999999994,
+          "iv": 0.571415418701172,
+          "vol_oi_ratio": 4.606060606060606,
+          "dist_pct": 0.435216461714495,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 962460.0,
+      "put_flow": 521300.0,
+      "timestamp": "2026-02-06T23:06:25.957710"
+    },
+    {
+      "ticker": "ABNB",
+      "price": 122.18000030517578,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 122.0,
+          "expiry": "2026-02-13",
+          "volume": 864,
+          "oi": 11,
+          "premium": 5.2,
+          "premium_flow": 449280.0,
+          "iv": 0.7912618530273439,
+          "vol_oi_ratio": 78.54545454545455,
+          "dist_pct": -0.14732387029479824,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 127.0,
+          "expiry": "2026-02-13",
+          "volume": 972,
+          "oi": 9,
+          "premium": 3.3,
+          "premium_flow": 320760.0,
+          "iv": 0.7573266455078126,
+          "vol_oi_ratio": 108.0,
+          "dist_pct": 3.944998921906235,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-13",
+          "volume": 231,
+          "oi": 126,
+          "premium": 6.5,
+          "premium_flow": 150150.0,
+          "iv": 0.8137225659179688,
+          "vol_oi_ratio": 1.8333333333333333,
+          "dist_pct": -1.7842529871752115,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 920190.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:27.970285"
+    },
+    {
+      "ticker": "AXON",
+      "price": 414.20001220703125,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 560.0,
+          "expiry": "2026-02-20",
+          "volume": 2131,
+          "oi": 30,
+          "premium": 157.54,
+          "premium_flow": 33571774.0,
+          "iv": 0.7771018383789063,
+          "vol_oi_ratio": 71.03333333333333,
+          "dist_pct": 35.2003823022808,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 590.0,
+          "expiry": "2026-02-20",
+          "volume": 1430,
+          "oi": 34,
+          "premium": 184.0,
+          "premium_flow": 26312000.0,
+          "iv": 0.885743330078125,
+          "vol_oi_ratio": 42.05882352941177,
+          "dist_pct": 42.44325992561727,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 620.0,
+          "expiry": "2026-02-20",
+          "volume": 3460,
+          "oi": 262,
+          "premium": 214.0,
+          "premium_flow": 74044000.0,
+          "iv": 0.96289099609375,
+          "vol_oi_ratio": 13.206106870229007,
+          "dist_pct": 49.686137548953745,
+          "score": 80
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 0,
+      "put_flow": 133927774.0,
+      "timestamp": "2026-02-06T23:06:31.106742"
+    },
+    {
+      "ticker": "URI",
+      "price": 899.5499877929688,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 880.0,
+          "expiry": "2026-02-20",
+          "volume": 235,
+          "oi": 111,
+          "premium": 25.76,
+          "premium_flow": 605360.0,
+          "iv": 0.3998473101806641,
+          "vol_oi_ratio": 2.1171171171171173,
+          "dist_pct": -2.1733075491373555,
+          "score": 80
+        },
+        {
+          "type": "PUT",
+          "strike": 890.0,
+          "expiry": "2026-02-20",
+          "volume": 120,
+          "oi": 113,
+          "premium": 114.81,
+          "premium_flow": 1377720.0,
+          "iv": 0.3820862573242187,
+          "vol_oi_ratio": 1.0619469026548674,
+          "dist_pct": -1.061640589468462,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 880.0,
+          "expiry": "2026-02-13",
+          "volume": 56,
+          "oi": 108,
+          "premium": 22.6,
+          "premium_flow": 126560.00000000001,
+          "iv": 0.400823862915039,
+          "vol_oi_ratio": 0.5185185185185185,
+          "dist_pct": -2.1733075491373555,
+          "score": 60
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 126560.00000000001,
+      "put_flow": 1983080.0,
+      "timestamp": "2026-02-06T23:06:33.825603"
+    },
+    {
+      "ticker": "ASML",
+      "price": 1413.010009765625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 1400.0,
+          "expiry": "2026-02-13",
+          "volume": 154,
+          "oi": 218,
+          "premium": 41.8,
+          "premium_flow": 643720.0,
+          "iv": 0.46362841064453125,
+          "vol_oi_ratio": 0.7064220183486238,
+          "dist_pct": -0.9207301912732353,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 1410.0,
+          "expiry": "2026-02-13",
+          "volume": 165,
+          "oi": 28,
+          "premium": 36.16,
+          "premium_flow": 596640.0,
+          "iv": 0.4562432305908204,
+          "vol_oi_ratio": 5.892857142857143,
+          "dist_pct": -0.21302112121090125,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 1415.0,
+          "expiry": "2026-02-13",
+          "volume": 276,
+          "oi": 71,
+          "premium": 34.51,
+          "premium_flow": 952476.0,
+          "iv": 0.45430538375854496,
+          "vol_oi_ratio": 3.887323943661972,
+          "dist_pct": 0.14083341382026573,
+          "score": 80
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 2192836.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:35.382969"
+    },
+    {
+      "ticker": "HD",
+      "price": 385.1499938964844,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 405.0,
+          "expiry": "2026-02-13",
+          "volume": 3406,
+          "oi": 173,
+          "premium": 0.47,
+          "premium_flow": 160082.0,
+          "iv": 0.252937158203125,
+          "vol_oi_ratio": 19.6878612716763,
+          "dist_pct": 5.153837834111625,
+          "score": 80
+        },
+        {
+          "type": "CALL",
+          "strike": 385.0,
+          "expiry": "2026-02-13",
+          "volume": 138,
+          "oi": 298,
+          "premium": 5.58,
+          "premium_flow": 77004.0,
+          "iv": 0.31140825317382803,
+          "vol_oi_ratio": 0.46308724832214765,
+          "dist_pct": -0.0389442811531469,
+          "score": 55
+        },
+        {
+          "type": "CALL",
+          "strike": 392.5,
+          "expiry": "2026-02-13",
+          "volume": 152,
+          "oi": 189,
+          "premium": 2.45,
+          "premium_flow": 37240.0,
+          "iv": 0.29871306762695304,
+          "vol_oi_ratio": 0.8042328042328042,
+          "dist_pct": 1.9083490120711426,
+          "score": 55
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 274326.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:43.019646"
+    },
+    {
+      "ticker": "GS",
+      "price": 928.75,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 1020.0,
+          "expiry": "2026-02-13",
+          "volume": 1128,
+          "oi": 140,
+          "premium": 0.7,
+          "premium_flow": 78959.99999999999,
+          "iv": 0.37280900634765624,
+          "vol_oi_ratio": 8.057142857142857,
+          "dist_pct": 9.825033647375504,
+          "score": 75
+        },
+        {
+          "type": "CALL",
+          "strike": 915.0,
+          "expiry": "2026-02-13",
+          "volume": 120,
+          "oi": 121,
+          "premium": 26.5,
+          "premium_flow": 318000.0,
+          "iv": 0.39124143920898435,
+          "vol_oi_ratio": 0.9917355371900827,
+          "dist_pct": -1.4804845222072678,
+          "score": 70
+        },
+        {
+          "type": "CALL",
+          "strike": 940.0,
+          "expiry": "2026-02-13",
+          "volume": 147,
+          "oi": 124,
+          "premium": 11.42,
+          "premium_flow": 167874.0,
+          "iv": 0.3380803497314453,
+          "vol_oi_ratio": 1.185483870967742,
+          "dist_pct": 1.2113055181695829,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 564834.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:11.679118"
+    },
+    {
+      "ticker": "DASH",
+      "price": 182.47000122070312,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 190.0,
+          "expiry": "2026-02-13",
+          "volume": 119,
+          "oi": 109,
+          "premium": 10.11,
+          "premium_flow": 120308.99999999999,
+          "iv": 0.5886271606445312,
+          "vol_oi_ratio": 1.091743119266055,
+          "dist_pct": 4.126705063255361,
+          "score": 70
+        },
+        {
+          "type": "CALL",
+          "strike": 180.0,
+          "expiry": "2026-02-20",
+          "volume": 122,
+          "oi": 60,
+          "premium": 14.3,
+          "premium_flow": 174460.0,
+          "iv": 0.8288591333007811,
+          "vol_oi_ratio": 2.033333333333333,
+          "dist_pct": -1.3536478348107106,
+          "score": 70
+        },
+        {
+          "type": "CALL",
+          "strike": 185.0,
+          "expiry": "2026-02-20",
+          "volume": 149,
+          "oi": 71,
+          "premium": 10.15,
+          "premium_flow": 151235.0,
+          "iv": 0.79101771484375,
+          "vol_oi_ratio": 2.0985915492957745,
+          "dist_pct": 1.3865286142223254,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 325695.0,
+      "put_flow": 120308.99999999999,
+      "timestamp": "2026-02-06T23:06:29.030397"
+    },
+    {
+      "ticker": "TJX",
+      "price": 155.86000061035156,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 155.0,
+          "expiry": "2026-02-20",
+          "volume": 510,
+          "oi": 1443,
+          "premium": 2.61,
+          "premium_flow": 133110.0,
+          "iv": 0.20142400146484374,
+          "vol_oi_ratio": 0.35343035343035345,
+          "dist_pct": -0.5517776254226736,
+          "score": 70
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 133110.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:41.244305"
+    },
+    {
+      "ticker": "LULU",
+      "price": 172.85000610351562,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 175.0,
+          "expiry": "2026-02-13",
+          "volume": 202,
+          "oi": 330,
+          "premium": 5.26,
+          "premium_flow": 106252.0,
+          "iv": 0.47827670166015623,
+          "vol_oi_ratio": 0.6121212121212121,
+          "dist_pct": 1.2438494767519976,
+          "score": 70
+        },
+        {
+          "type": "PUT",
+          "strike": 160.0,
+          "expiry": "2026-02-20",
+          "volume": 828,
+          "oi": 1493,
+          "premium": 1.31,
+          "premium_flow": 108468.0,
+          "iv": 0.4401911450195312,
+          "vol_oi_ratio": 0.5545880776959142,
+          "dist_pct": -7.434194764112459,
+          "score": 70
+        },
+        {
+          "type": "PUT",
+          "strike": 215.0,
+          "expiry": "2026-02-13",
+          "volume": 305,
+          "oi": 1,
+          "premium": 47.0,
+          "premium_flow": 1433500.0,
+          "iv": 0.8466812207031249,
+          "vol_oi_ratio": 305.0,
+          "dist_pct": 24.38530078572388,
+          "score": 60
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 0,
+      "put_flow": 1648220.0,
+      "timestamp": "2026-02-06T23:06:41.689896"
+    },
+    {
+      "ticker": "LOW",
+      "price": 278.3800048828125,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 260.0,
+          "expiry": "2026-02-20",
+          "volume": 307,
+          "oi": 533,
+          "premium": 19.65,
+          "premium_flow": 603254.9999999999,
+          "iv": 0.35950347534179683,
+          "vol_oi_ratio": 0.575984990619137,
+          "dist_pct": -6.602487448963797,
+          "score": 70
+        },
+        {
+          "type": "CALL",
+          "strike": 267.5,
+          "expiry": "2026-02-20",
+          "volume": 44,
+          "oi": 28,
+          "premium": 13.7,
+          "premium_flow": 60279.99999999999,
+          "iv": 0.3200751586914062,
+          "vol_oi_ratio": 1.5714285714285714,
+          "dist_pct": -3.908328433068522,
+          "score": 55
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 663534.9999999999,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:43.774949"
+    },
+    {
+      "ticker": "DECK",
+      "price": 115.44999694824219,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 114.0,
+          "expiry": "2026-02-20",
+          "volume": 204,
+          "oi": 290,
+          "premium": 2.55,
+          "premium_flow": 52019.99999999999,
+          "iv": 0.4274959594726563,
+          "vol_oi_ratio": 0.7034482758620689,
+          "dist_pct": -1.2559523486971083,
+          "score": 65
+        },
+        {
+          "type": "CALL",
+          "strike": 115.0,
+          "expiry": "2026-02-13",
+          "volume": 294,
+          "oi": 641,
+          "premium": 2.85,
+          "premium_flow": 83790.0,
+          "iv": 0.4506890869140625,
+          "vol_oi_ratio": 0.45865834633385333,
+          "dist_pct": -0.389776492106732,
+          "score": 55
+        },
+        {
+          "type": "CALL",
+          "strike": 120.0,
+          "expiry": "2026-02-13",
+          "volume": 225,
+          "oi": 169,
+          "premium": 0.83,
+          "premium_flow": 18675.0,
+          "iv": 0.4028380029296875,
+          "vol_oi_ratio": 1.331360946745562,
+          "dist_pct": 3.9411027908451497,
+          "score": 55
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 154485.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:32.013694"
+    },
+    {
+      "ticker": "ISRG",
+      "price": 488.1499938964844,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 565.0,
+          "expiry": "2026-02-20",
+          "volume": 130,
+          "oi": 9,
+          "premium": 85.67,
+          "premium_flow": 1113710.0,
+          "iv": 0.588993367919922,
+          "vol_oi_ratio": 14.444444444444445,
+          "dist_pct": 15.743113195615896,
+          "score": 60
+        },
+        {
+          "type": "PUT",
+          "strike": 520.0,
+          "expiry": "2026-02-13",
+          "volume": 44,
+          "oi": 71,
+          "premium": 30.57,
+          "premium_flow": 134508.0,
+          "iv": 0.49622085815429695,
+          "vol_oi_ratio": 0.6197183098591549,
+          "dist_pct": 6.524635153487197,
+          "score": 50
+        },
+        {
+          "type": "PUT",
+          "strike": 575.0,
+          "expiry": "2026-02-20",
+          "volume": 90,
+          "oi": 5,
+          "premium": 101.3,
+          "premium_flow": 911700.0,
+          "iv": 0.6497837756347657,
+          "vol_oi_ratio": 18.0,
+          "dist_pct": 17.7916638716445,
+          "score": 50
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 0,
+      "put_flow": 2159918.0,
+      "timestamp": "2026-02-06T23:06:23.740374"
+    },
+    {
+      "ticker": "GWW",
+      "price": 1197.6500244140625,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 1030.0,
+          "expiry": "2026-02-20",
+          "volume": 168,
+          "oi": 126,
+          "premium": 115.54,
+          "premium_flow": 1941072.0,
+          "iv": 0.5229539892578124,
+          "vol_oi_ratio": 1.3333333333333333,
+          "dist_pct": -13.998248319335483,
+          "score": 60
+        },
+        {
+          "type": "CALL",
+          "strike": 1160.0,
+          "expiry": "2026-03-20",
+          "volume": 17,
+          "oi": 6,
+          "premium": 32.8,
+          "premium_flow": 55759.99999999999,
+          "iv": 0.25203689865112305,
+          "vol_oi_ratio": 2.8333333333333335,
+          "dist_pct": -3.1436583013875334,
+          "score": 55
+        },
+        {
+          "type": "CALL",
+          "strike": 1060.0,
+          "expiry": "2026-02-20",
+          "volume": 94,
+          "oi": 131,
+          "premium": 140.95,
+          "premium_flow": 1324930.0,
+          "iv": 0.42780113220214844,
+          "vol_oi_ratio": 0.7175572519083969,
+          "dist_pct": -11.493342930578264,
+          "score": 50
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 3321762.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:32.863842"
+    },
+    {
+      "ticker": "KLAC",
+      "price": 1442.949951171875,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 1330.0,
+          "expiry": "2026-02-20",
+          "volume": 41,
+          "oi": 41,
+          "premium": 130.0,
+          "premium_flow": 533000.0,
+          "iv": 0.5072986282348633,
+          "vol_oi_ratio": 1.0,
+          "dist_pct": -7.8277109389791395,
+          "score": 60
+        },
+        {
+          "type": "CALL",
+          "strike": 1400.0,
+          "expiry": "2026-02-20",
+          "volume": 26,
+          "oi": 49,
+          "premium": 75.2,
+          "premium_flow": 195520.0,
+          "iv": 0.4942524940490723,
+          "vol_oi_ratio": 0.5306122448979592,
+          "dist_pct": -2.9765378305043564,
+          "score": 60
+        },
+        {
+          "type": "CALL",
+          "strike": 1410.0,
+          "expiry": "2026-02-20",
+          "volume": 69,
+          "oi": 72,
+          "premium": 71.3,
+          "premium_flow": 491970.0,
+          "iv": 0.4933217172241212,
+          "vol_oi_ratio": 0.9583333333333334,
+          "dist_pct": -2.2835131007222444,
+          "score": 60
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 1220490.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:36.922833"
+    },
+    {
+      "ticker": "EOG",
+      "price": 113.69999694824219,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 95.0,
+          "expiry": "2026-02-20",
+          "volume": 468,
+          "oi": 468,
+          "premium": 12.25,
+          "premium_flow": 573300.0,
+          "iv": 0.5390671093750001,
+          "vol_oi_ratio": 1.0,
+          "dist_pct": -16.446787555108454,
+          "score": 60
+        },
+        {
+          "type": "CALL",
+          "strike": 115.0,
+          "expiry": "2026-02-13",
+          "volume": 236,
+          "oi": 323,
+          "premium": 1.41,
+          "premium_flow": 33276.0,
+          "iv": 0.33838552246093745,
+          "vol_oi_ratio": 0.7306501547987616,
+          "dist_pct": 1.1433624332897667,
+          "score": 55
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 606576.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:46.529372"
+    },
+    {
+      "ticker": "TOST",
+      "price": 27.729999542236328,
+      "signals": [
+        {
+          "type": "PUT",
+          "strike": 27.5,
+          "expiry": "2026-02-13",
+          "volume": 180,
+          "oi": 111,
+          "premium": 1.49,
+          "premium_flow": 26820.0,
+          "iv": 1.0478563232421876,
+          "vol_oi_ratio": 1.6216216216216217,
+          "dist_pct": -0.8294249766791719,
+          "score": 55
+        }
+      ],
+      "bias": "BEARISH",
+      "call_flow": 0,
+      "put_flow": 26820.0,
+      "timestamp": "2026-02-06T23:06:09.715255"
+    },
+    {
+      "ticker": "MA",
+      "price": 548.739990234375,
+      "signals": [
+        {
+          "type": "CALL",
+          "strike": 545.0,
+          "expiry": "2026-02-13",
+          "volume": 81,
+          "oi": 35,
+          "premium": 8.69,
+          "premium_flow": 70389.0,
+          "iv": 0.2981027221679687,
+          "vol_oi_ratio": 2.3142857142857145,
+          "dist_pct": -0.6815596276804238,
+          "score": 55
+        }
+      ],
+      "bias": "BULLISH",
+      "call_flow": 70389.0,
+      "put_flow": 0,
+      "timestamp": "2026-02-06T23:06:13.987722"
+    }
+  ]
+}

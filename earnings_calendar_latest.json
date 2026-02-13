@@ -1,0 +1,311 @@
+{
+  "timestamp": "2026-01-31T22:19:06.168280",
+  "results": [
+    {
+      "ticker": "GWW",
+      "price": 1079.94,
+      "earnings_date": "2026-02-03",
+      "days_until": 2,
+      "category": "DANGER",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "AMD",
+      "price": 236.73,
+      "earnings_date": "2026-02-03",
+      "days_until": 2,
+      "category": "DANGER",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 338.0,
+      "earnings_date": "2026-02-04",
+      "days_until": 3,
+      "category": "DANGER",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "LLY",
+      "price": 1037.15,
+      "earnings_date": "2026-02-04",
+      "days_until": 3,
+      "category": "DANGER",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "NVO",
+      "price": 59.43,
+      "earnings_date": "2026-02-04",
+      "days_until": 3,
+      "category": "DANGER",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "AMZN",
+      "price": 239.3,
+      "earnings_date": "2026-02-05",
+      "days_until": 4,
+      "category": "DANGER",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "DDOG",
+      "price": 129.32,
+      "earnings_date": "2026-02-10",
+      "days_until": 9,
+      "category": "CAUTION",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "AMAT",
+      "price": 322.32,
+      "earnings_date": "2026-02-12",
+      "days_until": 11,
+      "category": "CAUTION",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "ABNB",
+      "price": 129.37,
+      "earnings_date": "2026-02-12",
+      "days_until": 11,
+      "category": "CAUTION",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "VRTX",
+      "price": 469.9,
+      "earnings_date": "2026-02-12",
+      "days_until": 11,
+      "category": "CAUTION",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "DXCM",
+      "price": 73.04,
+      "earnings_date": "2026-02-12",
+      "days_until": 11,
+      "category": "CAUTION",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "CELH",
+      "price": 52.48,
+      "earnings_date": "2026-02-19",
+      "days_until": 18,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "HD",
+      "price": 374.59,
+      "earnings_date": "2026-02-24",
+      "days_until": 23,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "NU",
+      "price": 17.75,
+      "earnings_date": "2026-02-25",
+      "days_until": 24,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "LOW",
+      "price": 267.06,
+      "earnings_date": "2026-02-25",
+      "days_until": 24,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "TJX",
+      "price": 149.81,
+      "earnings_date": "2026-02-25",
+      "days_until": 24,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "NVDA",
+      "price": 191.13,
+      "earnings_date": "2026-02-25",
+      "days_until": 24,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "RKLB",
+      "price": 80.07,
+      "earnings_date": "2026-02-26",
+      "days_until": 25,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "AVGO",
+      "price": 331.3,
+      "earnings_date": "2026-03-04",
+      "days_until": 31,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "GS",
+      "price": 935.41,
+      "earnings_date": "2026-04-13",
+      "days_until": 71,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "JPM",
+      "price": 305.89,
+      "earnings_date": "2026-04-14",
+      "days_until": 72,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "ASML",
+      "price": 1423.0,
+      "earnings_date": "2026-04-15",
+      "days_until": 73,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "TSLA",
+      "price": 430.41,
+      "earnings_date": "2026-04-21",
+      "days_until": 79,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "LRCX",
+      "price": 233.46,
+      "earnings_date": "2026-04-22",
+      "days_until": 80,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "AXP",
+      "price": 352.17,
+      "earnings_date": "2026-04-24",
+      "days_until": 82,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "KLAC",
+      "price": 1427.94,
+      "earnings_date": "2026-04-29",
+      "days_until": 87,
+      "category": "CLEAR",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "MDB",
+      "price": 371.33,
+      "earnings_date": "2025-12-01",
+      "days_until": -62,
+      "category": "PASSED",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "META",
+      "price": 716.5,
+      "earnings_date": "2026-01-28",
+      "days_until": -4,
+      "category": "PASSED",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "DECK",
+      "price": 119.34,
+      "earnings_date": "2026-01-29",
+      "days_until": -3,
+      "category": "PASSED",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    },
+    {
+      "ticker": "AAPL",
+      "price": 259.48,
+      "earnings_date": "2026-01-29",
+      "days_until": -3,
+      "category": "PASSED",
+      "est_eps": null,
+      "prev_eps": null,
+      "surprise_pct": null
+    }
+  ],
+  "summary": {
+    "total": 30,
+    "danger": 6,
+    "caution": 5,
+    "signal_conflicts": []
+  }
+}

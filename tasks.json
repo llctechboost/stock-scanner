@@ -1,0 +1,955 @@
+[
+  {
+    "id": "TASK-1",
+    "title": "Migrate Trading System from Hetzner to MacBook Air",
+    "description": "Moved all files from old Hetzner server (5.161.231.205) to local MacBook Air. Two folders: allfilestradingsystem202601310015/ and completedocumentationpackageallmarkdownfiles/. All 16 Python tools reorganized into trading/.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rah",
+    "tags": [
+      "migration",
+      "infrastructure"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-2",
+    "title": "Gmail Integration (IMAP + SMTP)",
+    "description": "Connected rara3bot@gmail.com via app password. Creds saved to .gmail-creds.json. Default recipient: llctechboost@gmail.com. 16 messages in inbox. Sending works.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "integration",
+      "email"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-3",
+    "title": "Google Cloud Service Account Setup",
+    "description": "Project dash-485802 with service account key (dash-485802-9d0410e86e65.json). Sheets API works. OAuth client also in project rara-485713 (unused for now).",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "integration",
+      "gcp"
+    ],
+    "created": "2026-01-31 19:30",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-4",
+    "title": "Fix Scanner V3 \u2014 HTF False Positives",
+    "description": "Raised HTF threshold from 15% to 40% advance. Before: 45 false breakouts. After: 0. Verified with full scan.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "bugfix"
+    ],
+    "created": "2026-01-31 20:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-5",
+    "title": "Fix Scanner V3 \u2014 Score Overflow (13/12)",
+    "description": "Capped max score at 12. Was showing 13/12 for GOOGL due to double-counting. Verified.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "bugfix"
+    ],
+    "created": "2026-01-31 20:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-6",
+    "title": "Fix Scanner V3 \u2014 Duplicate Buy Points",
+    "description": "Stocks appearing in both Breakouts AND Bases sections. Deduped \u2014 each stock now in ONE section only.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "bugfix"
+    ],
+    "created": "2026-01-31 20:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-7",
+    "title": "Fix Scanner V3 \u2014 RS Rating on Small Universe",
+    "description": "RS Rating was broken with <20 stocks (percentile math fails). Added absolute thresholds for small sample sizes.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "bugfix"
+    ],
+    "created": "2026-01-31 20:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-8",
+    "title": "Add Earnings Proximity Warning to Scanner",
+    "description": "Flags stocks with earnings within 14 days with \u26a0\ufe0f. Prevents entering trades before earnings reports.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "feature"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 21:30"
+  },
+  {
+    "id": "TASK-9",
+    "title": "Signal Matcher Earnings Penalty",
+    "description": "Signal matcher now penalizes stocks near earnings: -25 pts for \u22647 days, -15 pts for \u226414 days. Also penalizes bearish flow on bullish signals.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "feature"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 21:30"
+  },
+  {
+    "id": "TASK-10",
+    "title": "Fix Dashboard Text Parser",
+    "description": "Dashboard was showing empty patterns and bogus 'RS' cards. Fixed text parsing logic.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "dashboard",
+      "bugfix"
+    ],
+    "created": "2026-01-31 21:30",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-11",
+    "title": "Stock Scanner Dashboard (Port 5000)",
+    "description": "Full dashboard showing scan results, patterns, buy points, signal scores. Running at localhost:5000.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "dashboard",
+      "scanner"
+    ],
+    "created": "2026-01-31 20:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-12",
+    "title": "Kanban Task Board Dashboard (Port 5001)",
+    "description": "Jira-style kanban with drag-and-drop, filters, REST API, keyboard shortcuts. Dark theme. Running at localhost:5001.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "dashboard",
+      "project"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-02-01 00:18"
+  },
+  {
+    "id": "TASK-13",
+    "title": "Activity Log Dashboard (Port 5002)",
+    "description": "Activity/event log dashboard. Running at localhost:5002.",
+    "status": "Done",
+    "priority": "Low",
+    "assignee": "Rara",
+    "tags": [
+      "dashboard"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-14",
+    "title": "Build morning_briefing.py",
+    "description": "One-command full pipeline: runs scanner, money scanner, options flow, signal matcher, chart intel, generates briefing report.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "automation"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-15",
+    "title": "Build sector_rotation.py",
+    "description": "Tracks money flow across 11 sectors. Identifies leading vs lagging sectors. Built by sub-agent.",
+    "status": "Testing",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-16",
+    "title": "Build earnings_calendar.py",
+    "description": "Earnings calendar tracker for the ticker universe. Built by sub-agent.",
+    "status": "Testing",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-17",
+    "title": "Build dark_pool_tracker.py",
+    "description": "Reveals institutional accumulation via dark pool data. Built by sub-agent.",
+    "status": "Testing",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-18",
+    "title": "Build signal_tracker.py",
+    "description": "Records every signal and tracks win/loss rates by pattern type over time. signal_history.db created.",
+    "status": "Testing",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-19",
+    "title": "Build chart_screenshotter.py",
+    "description": "Takes TradingView daily chart screenshots for stocks scoring 8+ from scanner. Saves to charts/ with timestamps.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:30"
+  },
+  {
+    "id": "TASK-20",
+    "title": "Build chart_vision.py",
+    "description": "AI-powered pattern recognition using vision model. Grades patterns A/B/C/F. Detects VCPs math scanner can't see.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool",
+      "ai"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:30"
+  },
+  {
+    "id": "TASK-21",
+    "title": "Build chart_intel.py",
+    "description": "Combines scanner data + chart screenshots + vision analysis + market context into one-stop intel report per stock.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:30"
+  },
+  {
+    "id": "TASK-22",
+    "title": "CANSLIM Visual Guide with AI Chart Examples",
+    "description": "Complete pattern guide covering all 7 patterns with real chart screenshots (NVDA, NFLX, META, CELH, GOOGL, AMD, NU) + AI vision analysis. Emailed v2 to Rah.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "docs",
+      "education"
+    ],
+    "created": "2026-01-31 22:30",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-23",
+    "title": "Cloudflare Tunnel Setup (External Access)",
+    "description": "Attempted Cloudflare tunnels for external dashboard access. Failed \u2014 needs further config. Deprioritized in favor of local WiFi.",
+    "status": "Backlog",
+    "priority": "Low",
+    "assignee": "Rara",
+    "tags": [
+      "infrastructure",
+      "networking"
+    ],
+    "created": "2026-01-31 22:40",
+    "updated": "2026-01-31 22:50"
+  },
+  {
+    "id": "TASK-24",
+    "title": "Tailscale VPN Setup",
+    "description": "Attempted Tailscale install for remote access. Failed \u2014 needs sudo password for pkg installer. Deprioritized.",
+    "status": "Backlog",
+    "priority": "Low",
+    "assignee": "Rah",
+    "tags": [
+      "infrastructure",
+      "networking"
+    ],
+    "created": "2026-01-31 22:40",
+    "updated": "2026-01-31 22:50"
+  },
+  {
+    "id": "TASK-25",
+    "title": "Local WiFi Dashboard Access",
+    "description": "All dashboards accessible at 192.168.1.179:5000/5001/5002 from any device on same WiFi. Flask binds to 0.0.0.0.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "infrastructure",
+      "networking"
+    ],
+    "created": "2026-01-31 22:50",
+    "updated": "2026-02-01 00:18"
+  },
+  {
+    "id": "TASK-26",
+    "title": "Fix Kanban Board \u2014 Empty Tasks Bug",
+    "description": "tasks.json used 'column' field but JS expected 'status'. Fixed field name. Also seeded with all project tasks.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "dashboard",
+      "bugfix"
+    ],
+    "created": "2026-02-01 00:16",
+    "updated": "2026-02-01 00:18"
+  },
+  {
+    "id": "TASK-27",
+    "title": "Alpaca Paper Trading Integration",
+    "description": "Connect Alpaca API for paper trading execution. Need API keys from Rah. Will enable automated order placement based on scanner signals.",
+    "status": "Blocked",
+    "priority": "High",
+    "assignee": "Rara",
+    "blockers": [
+      "Need Alpaca API keys from Rah"
+    ],
+    "tags": [
+      "trading",
+      "integration"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-28",
+    "title": "Expand Ticker Universe Beyond 71",
+    "description": "Current scanner covers 71 tickers. Expand to full S&P 500 or broader market. May need data provider upgrade.",
+    "status": "Backlog",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "expansion"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-29",
+    "title": "Morning Briefing Cron Jobs (3x Daily)",
+    "description": "Set up automated morning_briefing.py runs: pre-market (8:30 AM), midday (12:00 PM), after-close (4:30 PM). Deliver via Telegram.",
+    "status": "To Do",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "automation",
+      "cron"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-30",
+    "title": "Conversational Trading Desk",
+    "description": "Rara as the trading interface \u2014 ask questions about setups, get trade ideas, execute orders, all through natural conversation in Telegram.",
+    "status": "Backlog",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "ux",
+      "trading"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-31",
+    "title": "Post-Earnings Reassessment: GOOGL (Feb 4)",
+    "description": "After GOOGL earnings on Feb 4, re-run scanner + vision analysis. Update trade plan. Currently: Flat Base 9/12, RS 85, conviction 57/100 (penalized).",
+    "status": "To Do",
+    "priority": "High",
+    "assignee": "Rara",
+    "due_date": "2026-02-05",
+    "tags": [
+      "trading",
+      "earnings"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-32",
+    "title": "Post-Earnings Reassessment: AMD (Feb 3)",
+    "description": "AMD dropped 17% post-earnings. Played 200 MA bounce with $202.5 calls. Sold 2 at +$110 profit. Remaining 2 targeting $205.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "due_date": "2026-02-04",
+    "tags": [
+      "trading",
+      "earnings"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-04 14:45"
+  },
+  {
+    "id": "TASK-33",
+    "title": "Configure Brave Search API Key",
+    "description": "Web search broken \u2014 needs Brave API key. Run: clawdbot configure --section web",
+    "status": "To Do",
+    "priority": "Low",
+    "assignee": "Rah",
+    "tags": [
+      "config",
+      "api"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-34",
+    "title": "Configure Memory Search (OpenAI/Google Key)",
+    "description": "memory_search disabled \u2014 needs OpenAI or Google API key for embeddings. Required for long-term memory recall.",
+    "status": "To Do",
+    "priority": "Medium",
+    "assignee": "Rah",
+    "tags": [
+      "config",
+      "api"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-35",
+    "title": "Build Backtest Engine",
+    "description": "5 backtest modules built: core_data_loader, core_engine, core_pattern_detector, core_trade_simulator, run_backtest. 111.9% return over 5 years verified.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "backtest"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-36",
+    "title": "Build Scanner V3 (scanner_v3.py)",
+    "description": "CANSLIM pattern scanner: detects Flat Base, Cup w/Handle, HTF, Ascending Base, Pocket Pivot, Double Bottom. Scores 0-12. Covers 71 tickers.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "trading"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-37",
+    "title": "Build Money Scanner (money_scanner.py)",
+    "description": "Ranks detected patterns 0-100 combining RS Rating, volume ratio, distance to buy point, sector/market adjustments.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "trading"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-38",
+    "title": "Build Options Flow Scanner (options_flow_scanner.py)",
+    "description": "Tracks unusual options activity. Distinguishes bullish/bearish/hedging. Measures premium and put/call ratio.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "options"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-39",
+    "title": "Build Signal Matcher (signal_matcher.py)",
+    "description": "Combines all scanner outputs into a conviction score 0-100. Applies earnings penalty, bearish flow penalty. Generates final BUY/WATCH/AVOID signal.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-40",
+    "title": "Build Combo Scanner (combo_scanner.py)",
+    "description": "Orchestrates scanner_v3 + money_scanner + options_flow + signal_matcher in one run.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-41",
+    "title": "Build Alert System (alert_system.py)",
+    "description": "Alert system for scanner events. Notifications when signals fire.",
+    "status": "Testing",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "notifications"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 21:00"
+  },
+  {
+    "id": "TASK-42",
+    "title": "Build Options Calculator (options_calc.py)",
+    "description": "Options pricing calculator for trade planning.",
+    "status": "Done",
+    "priority": "Low",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "options"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-43",
+    "title": "Build Position Calculator (position_calc.py)",
+    "description": "Position sizing calculator based on conviction, risk %, portfolio size.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "risk"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-44",
+    "title": "Build Position Manager (position_manager.py)",
+    "description": "Tracks open positions, P&L, stop losses, targets.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "risk"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-45",
+    "title": "Build Trade Journal (journal.py)",
+    "description": "Trade journaling system for tracking entries, exits, lessons learned.",
+    "status": "Done",
+    "priority": "Low",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "journal"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-46",
+    "title": "Build Options Journal (options_journal.py)",
+    "description": "Separate journal for options trades with Greeks tracking.",
+    "status": "Done",
+    "priority": "Low",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "options",
+      "journal"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-47",
+    "title": "Build Unusual Activity Scanner (unusual_activity.py)",
+    "description": "Detects unusual volume and options activity for early signal detection.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "tool"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-48",
+    "title": "Build Scanner Stats (scanner_stats.py)",
+    "description": "Historical stats and performance metrics for scanner signals.",
+    "status": "Done",
+    "priority": "Low",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "analytics"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-49",
+    "title": "Build Flow Dashboard (flow_dashboard.py)",
+    "description": "Options flow visualization dashboard.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "dashboard",
+      "options"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-50",
+    "title": "Build Morning Signals (morning_signals.py)",
+    "description": "Pre-market signal generation for daily trade candidates.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "automation"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-51",
+    "title": "Build Trade Execution (trade.py)",
+    "description": "Trade execution module \u2014 will connect to Alpaca once API keys are provided.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "execution"
+    ],
+    "created": "2026-01-31 19:00",
+    "updated": "2026-01-31 20:00"
+  },
+  {
+    "id": "TASK-52",
+    "title": "Write PATTERN_GUIDE.md",
+    "description": "Complete CANSLIM pattern reference guide with all 7 patterns, rules, concepts, position sizing, system overview.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "docs",
+      "education"
+    ],
+    "created": "2026-01-31 21:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-53",
+    "title": "Clawdbot Initial Setup & Identity",
+    "description": "Set up Rara identity, SOUL.md, USER.md, IDENTITY.md, AGENTS.md. Connected via Telegram.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "setup",
+      "identity"
+    ],
+    "created": "2026-01-31 18:00",
+    "updated": "2026-01-31 19:00"
+  },
+  {
+    "id": "TASK-54",
+    "title": "VCP Detection in Math Scanner",
+    "description": "Scanner V3 can't detect VCPs algorithmically \u2014 requires AI Vision. Add mathematical VCP detection as future enhancement.",
+    "status": "Backlog",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "scanner",
+      "feature"
+    ],
+    "created": "2026-01-31 22:00",
+    "updated": "2026-01-31 22:00"
+  },
+  {
+    "id": "TASK-55",
+    "title": "Automated Chart Screenshots via Cron",
+    "description": "Set up cron to auto-run chart_screenshotter.py after each scan. Currently manual only.",
+    "status": "To Do",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "automation",
+      "cron"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-56",
+    "title": "NU Holdings \u2014 Monitor for $19.02 Breakout",
+    "description": "NU is the cleanest setup: Ascending Base + VCP + Cup w/Handle, no earnings risk, conviction 70/100. Watch for breakout above $19.02 on 50%+ volume. Currently $17.75.",
+    "status": "In Progress",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "watchlist"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-57",
+    "title": "Set Up Telegram Notifications for Signals",
+    "description": "When scanner detects a new high-conviction signal or breakout, automatically notify Rah via Telegram.",
+    "status": "To Do",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "automation",
+      "notifications"
+    ],
+    "created": "2026-02-01 00:00",
+    "updated": "2026-02-01 00:00"
+  },
+  {
+    "id": "TASK-58",
+    "title": "Quant Data vs Unusual Whales Research",
+    "description": "Compared Quant Data ($59/mo) vs Unusual Whales for options flow analysis. Quant Data wins on data depth + includes Benzinga news. UW better for beginners/community.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "research",
+      "tools"
+    ],
+    "created": "2026-02-04 09:00",
+    "updated": "2026-02-04 10:00"
+  },
+  {
+    "id": "TASK-59",
+    "title": "Build Asymmetric Squeeze Watchlist",
+    "description": "Created watchlist of high short interest + beaten down stocks for asymmetric plays. Includes PLUG, HTZ, SMR, SOUN, NVAX, RUN, SEDG, SPCE. Ranked by IV and volume. Saved to trading/asymmetric-watchlist.md.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "watchlist",
+      "options"
+    ],
+    "created": "2026-02-04 10:00",
+    "updated": "2026-02-04 11:30"
+  },
+  {
+    "id": "TASK-60",
+    "title": "AMD 200 MA Bounce Trade",
+    "description": "Executed AMD $202.5 calls (2/6 exp) on 200 MA bounce. Entry: $4.65 x 4 contracts. Sold 2 at $5.20 (+$110 realized). Holding 2 for $205 target. First gamma-based trade using Quant Data.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rah",
+    "tags": [
+      "trading",
+      "options",
+      "gamma"
+    ],
+    "created": "2026-02-04 14:18",
+    "updated": "2026-02-04 14:45"
+  },
+  {
+    "id": "TASK-61",
+    "title": "ARKK Range Trade (Stock)",
+    "description": "Bought ARKK stock for range play $70-74. Using gamma levels from Quant Data. Targets: T1 $72, T2 $74. Stop below $69. Stock instead of options due to choppy setup.",
+    "status": "In Progress",
+    "priority": "Medium",
+    "assignee": "Rah",
+    "tags": [
+      "trading",
+      "stock",
+      "gamma"
+    ],
+    "created": "2026-02-04 17:40",
+    "updated": "2026-02-04 17:40"
+  },
+  {
+    "id": "TASK-62",
+    "title": "HOOD Gamma Analysis",
+    "description": "Analyzed HOOD gamma structure: negative gamma at $75, $80, $85. Price broke $80 support, cascading to $78. MVC at $85. Used for real-time trade planning.",
+    "status": "Done",
+    "priority": "Medium",
+    "assignee": "Rara",
+    "tags": [
+      "trading",
+      "gamma",
+      "analysis"
+    ],
+    "created": "2026-02-04 12:00",
+    "updated": "2026-02-04 13:00"
+  },
+  {
+    "id": "TASK-63",
+    "title": "Write Quant Data Learning Guide",
+    "description": "Created comprehensive guide on using Quant Data: 4 key panels (Gamma, Delta, Interval Map, Heat Map), daily workflow, trade setups (breakout, range, MVC fade), checklist. Delivered via Telegram.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "docs",
+      "education",
+      "options"
+    ],
+    "created": "2026-02-04 22:12",
+    "updated": "2026-02-04 22:15"
+  },
+  {
+    "id": "TASK-64",
+    "title": "M&A Acquisition Target Search",
+    "description": "Searched for government IT contractors, MSPs, HVAC businesses per Rah's criteria. Found IT Staffing w/ Govt Contracts ($4.5M, $1.1M CF) as top lead. Saved to business/acquisition-search-results.md.",
+    "status": "Done",
+    "priority": "High",
+    "assignee": "Rara",
+    "tags": [
+      "business",
+      "m&a",
+      "search"
+    ],
+    "created": "2026-02-04 22:12",
+    "updated": "2026-02-04 22:17"
+  },
+  {
+    "id": "TASK-65",
+    "title": "AMD Remaining Calls \u2014 Exit by Thu 11 AM",
+    "description": "2 remaining AMD $202.5c (2/6 exp). Must exit by Thursday 11 AM due to theta decay. Target: $205 ($7-7.50 premium). Stop: Below $199.",
+    "status": "In Progress",
+    "priority": "High",
+    "assignee": "Rah",
+    "due_date": "2026-02-05",
+    "tags": [
+      "trading",
+      "options"
+    ],
+    "created": "2026-02-04 14:45",
+    "updated": "2026-02-04 22:00"
+  },
+  {
+    "id": "TASK-66",
+    "title": "Contact Synergy BB \u2014 IT Staffing Lead",
+    "description": "Reach out to Synergy Business Brokers about IT Staffing w/ Govt Contracts listing. Request: 3yr financials, contract vehicles, backlog, set-aside status.",
+    "status": "To Do",
+    "priority": "High",
+    "assignee": "Rah",
+    "tags": [
+      "business",
+      "m&a",
+      "outreach"
+    ],
+    "created": "2026-02-04 22:17",
+    "updated": "2026-02-04 22:17"
+  },
+  {
+    "id": "TASK-67",
+    "title": "Quant Data 7-Day Trial",
+    "description": "Sign up for Quant Data free trial to practice gamma/GEX analysis workflow. Apply learnings from guide.",
+    "status": "To Do",
+    "priority": "Medium",
+    "assignee": "Rah",
+    "tags": [
+      "tools",
+      "trading",
+      "options"
+    ],
+    "created": "2026-02-04 10:00",
+    "updated": "2026-02-04 10:00"
+  }
+]

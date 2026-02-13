@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANSLIM Pattern Scanner</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #e6edf3;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, #58a6ff, #a371f7, #f778ba);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header .subtitle { color: #8b949e; font-size: 1em; }
+        .header .timestamp { color: #6e7681; font-size: 0.85em; margin-top: 5px; }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat-card .value { font-size: 1.6em; font-weight: bold; }
+        .stat-card .label { color: #8b949e; font-size: 0.8em; margin-top: 5px; }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            padding: 10px 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon { font-size: 1.3em; }
+        .section-title .count { 
+            margin-left: auto; 
+            background: rgba(88,166,255,0.2); 
+            color: #58a6ff; 
+            padding: 3px 10px; 
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.02);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.88em;
+        }
+        th {
+            background: rgba(88,166,255,0.1);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #58a6ff;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        tr:hover { background: rgba(255,255,255,0.03); }
+        
+        .ticker { font-weight: bold; color: #e6edf3; }
+        .score { font-weight: bold; font-size: 1.1em; }
+        .score-high { color: #3fb950; }
+        .score-mid { color: #f0883e; }
+        .positive { color: #3fb950; }
+        .negative { color: #f85149; }
+        .check { color: #3fb950; }
+        .x { color: #6e7681; }
+        
+        .gww-highlight {
+            background: linear-gradient(90deg, rgba(163,113,247,0.15), rgba(88,166,255,0.1)) !important;
+            border: 1px solid rgba(163,113,247,0.3);
+        }
+        .gww-label {
+            background: linear-gradient(90deg, #a371f7, #58a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        
+        .pattern-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        .badge-breakout { background: rgba(63,185,80,0.2); color: #3fb950; }
+        .badge-ascending { background: rgba(163,113,247,0.2); color: #a371f7; }
+        .badge-double { background: rgba(247,129,186,0.2); color: #f778ba; }
+        .badge-flat { background: rgba(88,166,255,0.2); color: #58a6ff; }
+        
+        .explanation {
+            background: rgba(163,113,247,0.1);
+            border: 1px solid rgba(163,113,247,0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .explanation h3 { color: #a371f7; margin-bottom: 10px; font-size: 1em; }
+        .explanation ul { margin-left: 20px; color: #8b949e; }
+        .explanation li { margin: 6px 0; }
+        .explanation strong { color: #e6edf3; }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            color: #6e7681;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 CANSLIM Pattern Scanner</h1>
+            <div class="subtitle">William O'Neil's Growth Stock Methodology</div>
+            <div class="timestamp">February 7, 2026 • 07:10 AM EST</div>
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="value" style="color:#3fb950">6</div>
+                <div class="label">🚀 Base Breakouts</div>
+            </div>
+            <div class="stat-card">
+                <div class="value" style="color:#a371f7">7</div>
+                <div class="label">📈 Ascending Bases</div>
+            </div>
+            <div class="stat-card">
+                <div class="value" style="color:#f778ba">18</div>
+                <div class="label">🔄 Double Bottoms</div>
+            </div>
+            <div class="stat-card">
+                <div class="value" style="color:#58a6ff">1</div>
+                <div class="label">📊 Flat Bases</div>
+            </div>
+            <div class="stat-card">
+                <div class="value gww-label">GWW</div>
+                <div class="label">🎯 Top Breakout</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🚀</span>
+                <span>BASE BREAKOUT — Breaking to New Highs</span>
+                <span class="count">6 stocks</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Score</th>
+                        <th>Price</th>
+                        <th>From High</th>
+                        <th>RS 3M</th>
+                        <th>Vol Surge</th>
+                        <th>Above 50MA</th>
+                        <th>Above 200MA</th>
+                        <th>Pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="gww-highlight">
+                        <td class="ticker gww-label">GWW ⭐</td>
+                        <td class="score score-high">100</td>
+                        <td>$1,197.65</td>
+                        <td class="positive">0.0%</td>
+                        <td class="positive">+26.0%</td>
+                        <td>1.4x</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td><span class="pattern-badge badge-breakout">BREAKOUT</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">LOW</td>
+                        <td class="score score-high">100</td>
+                        <td>$278.38</td>
+                        <td class="positive">0.0%</td>
+                        <td class="positive">+20.9%</td>
+                        <td>1.0x</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td><span class="pattern-badge badge-breakout">BREAKOUT</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">TJX</td>
+                        <td class="score score-high">96</td>
+                        <td>$155.86</td>
+                        <td class="positive">1.5%</td>
+                        <td class="positive">+8.7%</td>
+                        <td>1.3x</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td><span class="pattern-badge badge-breakout">BREAKOUT</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">ASML</td>
+                        <td class="score score-high">90</td>
+                        <td>$1,413.01</td>
+                        <td class="positive">2.9%</td>
+                        <td class="positive">+37.3%</td>
+                        <td>1.5x</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td><span class="pattern-badge badge-breakout">BREAKOUT</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">AAPL</td>
+                        <td class="score score-mid">89</td>
+                        <td>$278.12</td>
+                        <td class="positive">2.8%</td>
+                        <td class="positive">+3.2%</td>
+                        <td>1.3x</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td><span class="pattern-badge badge-breakout">BREAKOUT</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">JPM</td>
+                        <td class="score score-mid">83</td>
+                        <td>$322.40</td>
+                        <td class="positive">3.6%</td>
+                        <td class="positive">+3.3%</td>
+                        <td>1.1x</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td><span class="pattern-badge badge-breakout">BREAKOUT</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="explanation">
+                <h3>🎯 How GWW Was Identified as a Breakout:</h3>
+                <ul>
+                    <li><strong>Score: 100/100</strong> — Perfect breakout score</li>
+                    <li><strong>0% From High</strong> — Trading at all-time highs (maximum strength)</li>
+                    <li><strong>+26% RS (3 month)</strong> — Strongly outperforming the market</li>
+                    <li><strong>1.4x Volume</strong> — Above-average volume confirming the breakout</li>
+                    <li><strong>Above 50MA ✓ & 200MA ✓</strong> — Price structure is bullish on all timeframes</li>
+                    <li><strong>W.W. Grainger</strong> — Industrial MRO distributor, consistent earner, Munger-quality business</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📈</span>
+                <span>ASCENDING BASE — Series of Higher Lows</span>
+                <span class="count">7 stocks</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Score</th>
+                        <th>Price</th>
+                        <th>Base Gain</th>
+                        <th>RS 3M</th>
+                        <th>Pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ticker">AMAT</td>
+                        <td class="score score-high">97</td>
+                        <td>$322.51</td>
+                        <td class="positive">+36.7%</td>
+                        <td class="positive">+38.4%</td>
+                        <td><span class="pattern-badge badge-ascending">ASCENDING</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">GOOGL</td>
+                        <td class="score score-high">91</td>
+                        <td>$322.86</td>
+                        <td class="positive">+31.3%</td>
+                        <td class="positive">+13.5%</td>
+                        <td><span class="pattern-badge badge-ascending">ASCENDING</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">KLAC</td>
+                        <td class="score score-mid">88</td>
+                        <td>$1,442.95</td>
+                        <td class="positive">+27.7%</td>
+                        <td class="positive">+19.8%</td>
+                        <td><span class="pattern-badge badge-ascending">ASCENDING</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">LLY</td>
+                        <td class="score score-mid">86</td>
+                        <td>$1,058.18</td>
+                        <td class="positive">+25.7%</td>
+                        <td class="positive">+13.0%</td>
+                        <td><span class="pattern-badge badge-ascending">ASCENDING</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">DXCM</td>
+                        <td class="score score-mid">83</td>
+                        <td>$69.97</td>
+                        <td class="positive">+22.9%</td>
+                        <td class="positive">+20.6%</td>
+                        <td><span class="pattern-badge badge-ascending">ASCENDING</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">GS</td>
+                        <td class="score score-mid">80</td>
+                        <td>$928.75</td>
+                        <td class="positive">+20.2%</td>
+                        <td class="positive">+18.5%</td>
+                        <td><span class="pattern-badge badge-ascending">ASCENDING</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🔄</span>
+                <span>DOUBLE BOTTOM — W-Shaped Recovery</span>
+                <span class="count">18 stocks</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Score</th>
+                        <th>Price</th>
+                        <th>Depth</th>
+                        <th>RS 3M</th>
+                        <th>Pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ticker">MDB</td>
+                        <td class="score score-high">99</td>
+                        <td>$344.35</td>
+                        <td>27.1%</td>
+                        <td class="negative">-3.2%</td>
+                        <td><span class="pattern-badge badge-double">DOUBLE BTM</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">TSLA</td>
+                        <td class="score score-mid">87</td>
+                        <td>$411.11</td>
+                        <td>20.2%</td>
+                        <td class="negative">-7.8%</td>
+                        <td><span class="pattern-badge badge-double">DOUBLE BTM</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">URI</td>
+                        <td class="score score-mid">87</td>
+                        <td>$899.55</td>
+                        <td>19.5%</td>
+                        <td class="positive">+6.7%</td>
+                        <td><span class="pattern-badge badge-double">DOUBLE BTM</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">NVO</td>
+                        <td class="score score-mid">85</td>
+                        <td>$47.64</td>
+                        <td>29.7%</td>
+                        <td class="positive">+2.4%</td>
+                        <td><span class="pattern-badge badge-double">DOUBLE BTM</span></td>
+                    </tr>
+                    <tr>
+                        <td class="ticker">V</td>
+                        <td class="score score-mid">80</td>
+                        <td>$331.58</td>
+                        <td>10.2%</td>
+                        <td class="negative">-1.4%</td>
+                        <td><span class="pattern-badge badge-double">DOUBLE BTM</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <strong>CANSLIM Criteria:</strong> C = Current Earnings • A = Annual Earnings • N = New Products/Management • S = Supply & Demand • L = Leader • I = Institutional Sponsorship • M = Market Direction
+            <br><br>
+            "The whole secret to winning in the stock market is to lose the least amount possible when you're not right." — William O'Neil
+        </div>
+    </div>
+</body>
+</html>

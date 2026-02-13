@@ -1,0 +1,22 @@
+{
+  "SPY": {
+    "price": 692.42,
+    "prev_close": 693.38,
+    "change_pct": -0.14
+  },
+  "QQQ": {
+    "price": 613.19,
+    "prev_close": 612.8,
+    "change_pct": 0.06
+  },
+  "DIA": {
+    "price": 501.74,
+    "prev_close": 502.76,
+    "change_pct": -0.2
+  },
+  "IWM": {
+    "price": 263.66,
+    "prev_close": 266.63,
+    "change_pct": -1.11
+  }
+}

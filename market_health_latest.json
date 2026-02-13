@@ -1,0 +1,301 @@
+{
+  "timestamp": "2026-02-01T22:19:02.240222",
+  "indices": {
+    "SPY": {
+      "name": "S&P 500",
+      "price": 691.97,
+      "daily_change_pct": -0.3,
+      "weekly_change_pct": 0.4,
+      "monthly_change_pct": 0.72,
+      "ma50": 682.93,
+      "ma200": 638.2,
+      "above_50ma": true,
+      "above_200ma": true,
+      "ma50_above_200ma": true,
+      "high_52w": 695.49,
+      "dist_from_high_pct": -0.51,
+      "rsi": 47.6
+    },
+    "QQQ": {
+      "name": "Nasdaq 100",
+      "price": 621.87,
+      "daily_change_pct": -1.2,
+      "weekly_change_pct": -0.14,
+      "monthly_change_pct": 0.39,
+      "ma50": 617.44,
+      "ma200": 572.5,
+      "above_50ma": true,
+      "above_200ma": true,
+      "ma50_above_200ma": true,
+      "high_52w": 634.95,
+      "dist_from_high_pct": -2.06,
+      "rsi": 46.1
+    },
+    "DIA": {
+      "name": "Dow 30",
+      "price": 489.03,
+      "daily_change_pct": -0.24,
+      "weekly_change_pct": -0.39,
+      "monthly_change_pct": 1.16,
+      "ma50": 482.43,
+      "ma200": 450.76,
+      "above_50ma": true,
+      "above_200ma": true,
+      "ma50_above_200ma": true,
+      "high_52w": 495.72,
+      "dist_from_high_pct": -1.35,
+      "rsi": 42.3
+    },
+    "IWM": {
+      "name": "Russell 2000",
+      "price": 259.65,
+      "daily_change_pct": -1.41,
+      "weekly_change_pct": -1.95,
+      "monthly_change_pct": 4.68,
+      "ma50": 252.8,
+      "ma200": 230.2,
+      "above_50ma": true,
+      "above_200ma": true,
+      "ma50_above_200ma": true,
+      "high_52w": 269.79,
+      "dist_from_high_pct": -3.76,
+      "rsi": 49.0
+    }
+  },
+  "vix": {
+    "level": 17.44,
+    "label": "NEUTRAL",
+    "emoji": "\ud83d\ude10",
+    "daily_change_pct": 3.32,
+    "spiked": false,
+    "avg_10d": 16.77,
+    "avg_30d": 15.63,
+    "trend": "RISING"
+  },
+  "breadth": {
+    "advancing": 53,
+    "declining": 56,
+    "ad_ratio": 0.95,
+    "pct_above_50ma": 57.8,
+    "pct_above_200ma": 67.9,
+    "new_highs": 27,
+    "new_lows": 5,
+    "total_analyzed": 109,
+    "breadth_score": 60,
+    "breadth_label": "HEALTHY"
+  },
+  "sector_rotation": {
+    "sectors": [
+      {
+        "etf": "XLE",
+        "sector": "Energy",
+        "price": 51.05,
+        "perf_1w": 3.78,
+        "perf_1m": 13.55,
+        "perf_3m": 16.64,
+        "vol_ratio": 1.43,
+        "rsi": 85.8,
+        "mf_score": 19.37,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLB",
+        "sector": "Materials",
+        "price": 49.27,
+        "perf_1w": -1.4,
+        "perf_1m": 7.74,
+        "perf_3m": 11.33,
+        "vol_ratio": 1.33,
+        "rsi": 62.1,
+        "mf_score": 10.3,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLP",
+        "sector": "Consumer Staples",
+        "price": 83.51,
+        "perf_1w": 0.72,
+        "perf_1m": 6.86,
+        "perf_3m": 6.26,
+        "vol_ratio": 0.97,
+        "rsi": 78.6,
+        "mf_score": 6.65,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLI",
+        "sector": "Industrials",
+        "price": 165.44,
+        "perf_1w": 0.74,
+        "perf_1m": 5.77,
+        "perf_3m": 6.56,
+        "vol_ratio": 1.06,
+        "rsi": 60.2,
+        "mf_score": 6.11,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLC",
+        "sector": "Communication",
+        "price": 120.08,
+        "perf_1w": 2.67,
+        "perf_1m": 1.51,
+        "perf_3m": 2.82,
+        "vol_ratio": 1.29,
+        "rsi": 58.3,
+        "mf_score": 1.95,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLRE",
+        "sector": "Real Estate",
+        "price": 41.43,
+        "perf_1w": 0.44,
+        "perf_1m": 1.74,
+        "perf_3m": -2.01,
+        "vol_ratio": 1.01,
+        "rsi": 61.0,
+        "mf_score": 1.76,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLU",
+        "sector": "Utilities",
+        "price": 43.25,
+        "perf_1w": 1.62,
+        "perf_1m": 0.68,
+        "perf_3m": -4.9,
+        "vol_ratio": 1.24,
+        "rsi": 61.1,
+        "mf_score": 0.84,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLY",
+        "sector": "Consumer Disc",
+        "price": 121.17,
+        "perf_1w": -1.59,
+        "perf_1m": 0.67,
+        "perf_3m": 0.72,
+        "vol_ratio": 0.83,
+        "rsi": 37.7,
+        "mf_score": 0.56,
+        "above_50ma": true
+      },
+      {
+        "etf": "XLV",
+        "sector": "Healthcare",
+        "price": 154.74,
+        "perf_1w": -1.74,
+        "perf_1m": -0.6,
+        "perf_3m": 6.17,
+        "vol_ratio": 0.87,
+        "rsi": 40.7,
+        "mf_score": -0.53,
+        "above_50ma": false
+      },
+      {
+        "etf": "XLK",
+        "sector": "Technology",
+        "price": 143.88,
+        "perf_1w": -0.83,
+        "perf_1m": -1.05,
+        "perf_3m": -3.61,
+        "vol_ratio": 1.09,
+        "rsi": 44.4,
+        "mf_score": -1.15,
+        "above_50ma": false
+      },
+      {
+        "etf": "XLF",
+        "sector": "Financials",
+        "price": 53.44,
+        "perf_1w": 0.7,
+        "perf_1m": -3.15,
+        "perf_3m": 0.56,
+        "vol_ratio": 1.01,
+        "rsi": 30.6,
+        "mf_score": -3.18,
+        "above_50ma": false
+      }
+    ],
+    "leading": [
+      {
+        "sector": "Energy",
+        "etf": "XLE",
+        "mf_score": 19.37,
+        "perf_1m": 13.55
+      },
+      {
+        "sector": "Materials",
+        "etf": "XLB",
+        "mf_score": 10.3,
+        "perf_1m": 7.74
+      },
+      {
+        "sector": "Consumer Staples",
+        "etf": "XLP",
+        "mf_score": 6.65,
+        "perf_1m": 6.86
+      },
+      {
+        "sector": "Industrials",
+        "etf": "XLI",
+        "mf_score": 6.11,
+        "perf_1m": 5.77
+      },
+      {
+        "sector": "Communication",
+        "etf": "XLC",
+        "mf_score": 1.95,
+        "perf_1m": 1.51
+      }
+    ],
+    "lagging": [
+      {
+        "sector": "Financials",
+        "etf": "XLF",
+        "mf_score": -3.18,
+        "perf_1m": -3.15
+      },
+      {
+        "sector": "Technology",
+        "etf": "XLK",
+        "mf_score": -1.15,
+        "perf_1m": -1.05
+      },
+      {
+        "sector": "Healthcare",
+        "etf": "XLV",
+        "mf_score": -0.53,
+        "perf_1m": -0.6
+      }
+    ],
+    "offensive_avg_perf": 1.91,
+    "defensive_avg_perf": 4.44,
+    "rotation_direction": "RISK-OFF",
+    "rotation_signal": "BEARISH"
+  },
+  "regime": {
+    "regime": "BULL",
+    "score": 6,
+    "max_score": 10,
+    "signals": [
+      "SPY above 50MA \u2705",
+      "SPY above 200MA \u2705",
+      "Golden Cross (50MA > 200MA) \u2705",
+      "Breadth healthy (60/100)",
+      "VIX neutral (17.4)",
+      "Rotation: Risk-OFF \u26a0\ufe0f",
+      "4/4 indices above 50MA \u2705"
+    ]
+  },
+  "alerts": [
+    {
+      "type": "RISK_OFF",
+      "severity": "MEDIUM",
+      "message": "Money rotating from offensive to defensive sectors (risk-off)",
+      "emoji": "\ud83d\udee1\ufe0f"
+    }
+  ]
+}

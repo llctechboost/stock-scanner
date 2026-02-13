@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCP & Pattern Scanner Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1500px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header .subtitle { color: #888; font-size: 1em; }
+        .header .timestamp { color: #666; font-size: 0.85em; margin-top: 5px; }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-card .value { font-size: 1.8em; font-weight: bold; }
+        .stat-card .value.gold { color: #feca57; }
+        .stat-card .value.green { color: #00ff88; }
+        .stat-card .value.blue { color: #48dbfb; }
+        .stat-card .value.red { color: #ff6b6b; }
+        .stat-card .label { color: #888; font-size: 0.8em; margin-top: 5px; }
+        
+        .section-title {
+            font-size: 1.2em;
+            margin: 20px 0 12px;
+            padding-left: 10px;
+            border-left: 4px solid #feca57;
+        }
+        .section-title.vcp { border-left-color: #ff6b6b; }
+        .section-title.pivot { border-left-color: #00ff88; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.9em;
+        }
+        th {
+            background: rgba(255,107,107,0.15);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #ff6b6b;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        tr:hover { background: rgba(255,255,255,0.05); }
+        
+        .ticker { font-weight: bold; color: #fff; font-size: 1.05em; }
+        .score { font-weight: bold; }
+        .score-a { color: #00ff88; }
+        .score-b { color: #feca57; }
+        .score-c { color: #ff9f43; }
+        
+        .grade-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+        }
+        .grade-a { background: rgba(0,255,136,0.2); color: #00ff88; }
+        .grade-b { background: rgba(254,202,87,0.2); color: #feca57; }
+        .grade-c { background: rgba(255,159,67,0.2); color: #ff9f43; }
+        
+        .flag-badge {
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        .flag-textbook { background: rgba(255,107,107,0.25); color: #ff6b6b; }
+        .flag-pivot { background: rgba(0,255,136,0.25); color: #00ff88; }
+        .flag-forming { background: rgba(72,219,251,0.2); color: #48dbfb; }
+        
+        .highlight-row { background: rgba(255,107,107,0.08) !important; }
+        .gww-row { background: rgba(254,202,87,0.15) !important; border: 1px solid rgba(254,202,87,0.3); }
+        
+        .legend {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; color: #888; font-size: 0.85em; }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            color: #555;
+            font-size: 0.8em;
+        }
+        
+        .methodology {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: #888;
+        }
+        .methodology h3 { color: #feca57; margin-bottom: 10px; font-size: 1em; }
+        .methodology ul { margin-left: 20px; }
+        .methodology li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 VCP & Pattern Scanner</h1>
+            <div class="subtitle">Volatility Contraction Patterns — Minervini Method</div>
+            <div class="timestamp">February 7, 2026 • 07:07 AM EST</div>
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="value gold">6</div>
+                <div class="label">⭐ Textbook VCPs</div>
+            </div>
+            <div class="stat-card">
+                <div class="value green">5</div>
+                <div class="label">🎯 At Pivot Point</div>
+            </div>
+            <div class="stat-card">
+                <div class="value blue">53</div>
+                <div class="label">📐 Forming Patterns</div>
+            </div>
+            <div class="stat-card">
+                <div class="value red">NVDA</div>
+                <div class="label">Top VCP (9.3)</div>
+            </div>
+            <div class="stat-card">
+                <div class="value" style="color:#feca57">GWW</div>
+                <div class="label">Industrial Leader</div>
+            </div>
+        </div>
+        
+        <div class="section-title vcp">⭐ TEXTBOOK VCPs — Classic Minervini Patterns</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>VCP Score</th>
+                    <th>Grade</th>
+                    <th># Contractions</th>
+                    <th>Tightness</th>
+                    <th>Vol Dry-Up</th>
+                    <th>Pivot Price</th>
+                    <th>% From High</th>
+                    <th>Depth</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td class="ticker">NVDA</td>
+                    <td class="score score-a">9.3</td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>3</td>
+                    <td>71% → 27%</td>
+                    <td>0.7x</td>
+                    <td>$190.53</td>
+                    <td>10.4%</td>
+                    <td>14.1%</td>
+                    <td><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">VRTX</td>
+                    <td class="score score-a">8.8</td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>3</td>
+                    <td>95% → 83%</td>
+                    <td>0.5x</td>
+                    <td>$462.99</td>
+                    <td>7.0%</td>
+                    <td>11.6%</td>
+                    <td><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">KLAC</td>
+                    <td class="score score-a">8.8</td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>3</td>
+                    <td>54% → 85%</td>
+                    <td>0.5x</td>
+                    <td>$1,279.60</td>
+                    <td>14.4%</td>
+                    <td>14.3%</td>
+                    <td><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">V</td>
+                    <td class="score score-a">8.3</td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>3</td>
+                    <td>35% → 93%</td>
+                    <td>0.5x</td>
+                    <td>$355.14</td>
+                    <td>10.8%</td>
+                    <td>9.6%</td>
+                    <td><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">JPM</td>
+                    <td class="score score-a">8.0</td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>4</td>
+                    <td>71% → 44% → 96%</td>
+                    <td>0.6x</td>
+                    <td>$327.69</td>
+                    <td>3.6%</td>
+                    <td>9.5%</td>
+                    <td><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="ticker">GS</td>
+                    <td class="score score-b">7.0</td>
+                    <td><span class="grade-badge grade-b">B</span></td>
+                    <td>3</td>
+                    <td>82% → 68%</td>
+                    <td>0.9x</td>
+                    <td>$955.47</td>
+                    <td>4.8%</td>
+                    <td>8.7%</td>
+                    <td><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="section-title pivot">🎯 AT PIVOT — Ready to Break Out</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>VCP Score</th>
+                    <th>Grade</th>
+                    <th># Contractions</th>
+                    <th>Tightness</th>
+                    <th>Vol Dry-Up</th>
+                    <th>Pivot Price</th>
+                    <th>% From High</th>
+                    <th>Depth</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ticker">TJX</td>
+                    <td class="score score-a">8.5</td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>3</td>
+                    <td>59% → 115%</td>
+                    <td>0.5x</td>
+                    <td>$157.29</td>
+                    <td>1.5%</td>
+                    <td>11.2%</td>
+                    <td><span class="flag-badge flag-pivot">🎯 AT PIVOT</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">MA</td>
+                    <td class="score score-b">7.3</td>
+                    <td><span class="grade-badge grade-b">B</span></td>
+                    <td>3</td>
+                    <td>116% → 49%</td>
+                    <td>0.7x</td>
+                    <td>$552.90</td>
+                    <td>8.1%</td>
+                    <td>8.1%</td>
+                    <td><span class="flag-badge flag-pivot">🎯 AT PIVOT</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">META</td>
+                    <td class="score score-b">6.8</td>
+                    <td><span class="grade-badge grade-b">B</span></td>
+                    <td>2</td>
+                    <td>20%</td>
+                    <td>0.9x</td>
+                    <td>$672.87</td>
+                    <td>16.1%</td>
+                    <td>21.6%</td>
+                    <td><span class="flag-badge flag-pivot">🎯 AT PIVOT</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">DXCM</td>
+                    <td class="score score-b">6.3</td>
+                    <td><span class="grade-badge grade-b">B</span></td>
+                    <td>2</td>
+                    <td>20%</td>
+                    <td>1.4x</td>
+                    <td>$68.94</td>
+                    <td>22.9%</td>
+                    <td>22.8%</td>
+                    <td><span class="flag-badge flag-pivot">🎯 AT PIVOT</span></td>
+                </tr>
+                <tr>
+                    <td class="ticker">NU</td>
+                    <td class="score score-c">5.5</td>
+                    <td><span class="grade-badge grade-c">C</span></td>
+                    <td>3</td>
+                    <td>89% → 105%</td>
+                    <td>1.1x</td>
+                    <td>$16.90</td>
+                    <td>7.2%</td>
+                    <td>13.2%</td>
+                    <td><span class="flag-badge flag-pivot">🎯 AT PIVOT</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="section-title" style="border-left-color: #feca57;">🏭 GWW (Grainger) — How We Found It</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>VCP Score</th>
+                    <th>Grade</th>
+                    <th># Contractions</th>
+                    <th>Tightness</th>
+                    <th>Vol Dry-Up</th>
+                    <th>Pivot Price</th>
+                    <th>% From High</th>
+                    <th>Depth</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="gww-row">
+                    <td class="ticker" style="color:#feca57">GWW</td>
+                    <td class="score score-b">7.0</td>
+                    <td><span class="grade-badge grade-b">B</span></td>
+                    <td>3</td>
+                    <td>50% → 107%</td>
+                    <td>1.0x</td>
+                    <td>$1,068.72</td>
+                    <td>0.0%</td>
+                    <td>14.1%</td>
+                    <td><span class="flag-badge flag-forming">📐 FORMING</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="methodology">
+            <h3>📊 How GWW Was Identified:</h3>
+            <ul>
+                <li><strong>VCP Score 7.0/10</strong> — Above threshold for actionable setups</li>
+                <li><strong>3 Contractions</strong> — Multiple tightening waves (classic VCP structure)</li>
+                <li><strong>Tightness: 50% → 107%</strong> — Volatility contracting as expected</li>
+                <li><strong>0% From High</strong> — Trading at or near all-time highs (strength)</li>
+                <li><strong>Depth: 14.1%</strong> — Healthy correction depth (10-25% ideal for VCP)</li>
+                <li><strong>Industrial Leader</strong> — MRO distributor with consistent growth, Munger-style business</li>
+            </ul>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item"><span class="flag-badge flag-textbook">⭐ TEXTBOOK</span> Perfect VCP structure</div>
+            <div class="legend-item"><span class="flag-badge flag-pivot">🎯 AT PIVOT</span> At/near breakout point</div>
+            <div class="legend-item"><span class="flag-badge flag-forming">📐 FORMING</span> Pattern developing</div>
+            <div class="legend-item"><span style="color:#888">Vol Dry-Up &lt;0.8x = Bullish</span></div>
+        </div>
+        
+        <div class="footer">
+            <strong>Minervini VCP Criteria:</strong> Multiple contractions • Decreasing depth • Volume dry-up • Price near pivot
+            <br><br>
+            "The VCP tells you institutions are absorbing supply. When volume dries up, sellers are exhausted." — Mark Minervini
+        </div>
+    </div>
+</body>
+</html>

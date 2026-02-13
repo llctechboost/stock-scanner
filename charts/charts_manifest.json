@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-01-31T22:24:09.150280",
+  "min_score": 8,
+  "charts": [
+    {
+      "ticker": "GOOGL",
+      "score": 0,
+      "path": "/Users/rara/clawd/trading/charts/GOOGL_20260131_2223.png"
+    },
+    {
+      "ticker": "AMD",
+      "score": 0,
+      "path": "/Users/rara/clawd/trading/charts/AMD_20260131_2223.png"
+    },
+    {
+      "ticker": "NU",
+      "score": 0,
+      "path": "/Users/rara/clawd/trading/charts/NU_20260131_2223.png"
+    }
+  ]
+}
