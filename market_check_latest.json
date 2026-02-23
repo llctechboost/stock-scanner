@@ -1,22 +1,22 @@
 {
   "SPY": {
-    "price": 692.42,
-    "prev_close": 693.38,
-    "change_pct": -0.14
+    "price": 681.75,
+    "prev_close": 682.21,
+    "change_pct": -0.07
   },
   "QQQ": {
-    "price": 613.19,
-    "prev_close": 612.8,
-    "change_pct": 0.06
+    "price": 601.92,
+    "prev_close": 602.1,
+    "change_pct": -0.03
   },
   "DIA": {
-    "price": 501.74,
-    "prev_close": 502.76,
-    "change_pct": -0.2
+    "price": 495.28,
+    "prev_close": 494.89,
+    "change_pct": 0.08
   },
   "IWM": {
-    "price": 263.66,
-    "prev_close": 266.63,
-    "change_pct": -1.11
+    "price": 262.96,
+    "prev_close": 259.9,
+    "change_pct": 1.18
   }
 }

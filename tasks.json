@@ -198,7 +198,7 @@
     "id": "TASK-15",
     "title": "Build sector_rotation.py",
     "description": "Tracks money flow across 11 sectors. Identifies leading vs lagging sectors. Built by sub-agent.",
-    "status": "Testing",
+    "status": "Done",
     "priority": "Medium",
     "assignee": "Rara",
     "tags": [
@@ -206,13 +206,13 @@
       "tool"
     ],
     "created": "2026-01-31 21:00",
-    "updated": "2026-01-31 22:00"
+    "updated": "2026-02-13 16:09"
   },
   {
     "id": "TASK-16",
     "title": "Build earnings_calendar.py",
     "description": "Earnings calendar tracker for the ticker universe. Built by sub-agent.",
-    "status": "Testing",
+    "status": "Done",
     "priority": "Medium",
     "assignee": "Rara",
     "tags": [
@@ -220,13 +220,13 @@
       "tool"
     ],
     "created": "2026-01-31 21:00",
-    "updated": "2026-01-31 22:00"
+    "updated": "2026-02-13 16:09"
   },
   {
     "id": "TASK-17",
     "title": "Build dark_pool_tracker.py",
     "description": "Reveals institutional accumulation via dark pool data. Built by sub-agent.",
-    "status": "Testing",
+    "status": "Done",
     "priority": "Medium",
     "assignee": "Rara",
     "tags": [
@@ -234,13 +234,13 @@
       "tool"
     ],
     "created": "2026-01-31 21:00",
-    "updated": "2026-01-31 22:00"
+    "updated": "2026-02-13 16:09"
   },
   {
     "id": "TASK-18",
     "title": "Build signal_tracker.py",
     "description": "Records every signal and tracks win/loss rates by pattern type over time. signal_history.db created.",
-    "status": "Testing",
+    "status": "Done",
     "priority": "Medium",
     "assignee": "Rara",
     "tags": [
@@ -248,7 +248,7 @@
       "tool"
     ],
     "created": "2026-01-31 21:00",
-    "updated": "2026-01-31 22:00"
+    "updated": "2026-02-13 16:09"
   },
   {
     "id": "TASK-19",
@@ -568,7 +568,7 @@
     "id": "TASK-41",
     "title": "Build Alert System (alert_system.py)",
     "description": "Alert system for scanner events. Notifications when signals fire.",
-    "status": "Testing",
+    "status": "Done",
     "priority": "Medium",
     "assignee": "Rara",
     "tags": [
@@ -576,7 +576,7 @@
       "notifications"
     ],
     "created": "2026-01-31 19:00",
-    "updated": "2026-01-31 21:00"
+    "updated": "2026-02-13 16:09"
   },
   {
     "id": "TASK-42",
@@ -911,7 +911,7 @@
     "id": "TASK-65",
     "title": "AMD Remaining Calls \u2014 Exit by Thu 11 AM",
     "description": "2 remaining AMD $202.5c (2/6 exp). Must exit by Thursday 11 AM due to theta decay. Target: $205 ($7-7.50 premium). Stop: Below $199.",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "High",
     "assignee": "Rah",
     "due_date": "2026-02-05",
@@ -920,7 +920,7 @@
       "options"
     ],
     "created": "2026-02-04 14:45",
-    "updated": "2026-02-04 22:00"
+    "updated": "2026-02-13 08:03"
   },
   {
     "id": "TASK-66",
@@ -951,5 +951,34 @@
     ],
     "created": "2026-02-04 10:00",
     "updated": "2026-02-04 10:00"
+  },
+  {
+    "id": "TASK-68",
+    "title": "Sell BMW X6M \u2014 URGENT",
+    "description": "Sell the X6M immediately. List on multiple platforms for fastest sale.",
+    "status": "To Do",
+    "priority": "High",
+    "assignee": "Rah",
+    "tags": [
+      "personal",
+      "urgent",
+      "money"
+    ],
+    "created": "2026-02-13 11:34",
+    "updated": "2026-02-13 11:34"
+  },
+  {
+    "id": "TASK-69",
+    "title": "Follow up with Ismael \u2014 Jeep auction prices",
+    "description": "Contact Ismael about jeep auction prices. Get current market data.",
+    "status": "To Do",
+    "priority": "High",
+    "assignee": "Rah",
+    "tags": [
+      "personal",
+      "follow-up"
+    ],
+    "created": "2026-02-13 11:34",
+    "updated": "2026-02-13 11:34"
   }
 ]

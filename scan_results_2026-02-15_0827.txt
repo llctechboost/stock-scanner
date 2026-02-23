@@ -1,0 +1,71 @@
+
+================================================================================
+                    CANSLIM STOCK SCANNER v3
+              O'Neil / Kacher Methodology - Enhanced
+                    2026-02-15 08:27
+================================================================================
+
+📊 MARKET TIMING
+--------------------------------------------------------------------------------
+S&P 500: $6836.17
+Above 21-day MA: ✗
+Above 50-day MA: ✗
+Distribution Days: 10
+VIX: 20.60 (Elevated)
+
+🛑 Red light - Preserve capital, wait
+
+🏭 INDUSTRY GROUP STRENGTH
+--------------------------------------------------------------------------------
+  Communication Services: Avg Score 5.0 (2 stocks) - Moderate
+  Financial Services: Avg Score 5.0 (2 stocks) - Moderate
+  Healthcare: Avg Score 4.7 (3 stocks) - Moderate
+  Technology: Avg Score 4.4 (9 stocks) - Moderate
+  Consumer Cyclical: Avg Score 4.0 (3 stocks) - Moderate
+
+📈 BASES FORMING (Watch List)
+--------------------------------------------------------------------------------
+
+NU - Score: 6/12 - $16.82
+  RS Rating: 67
+  ✓ Ascending Base (3 higher lows)
+  ✓ EPS Growth 41%
+  ✓ ROE 27.8%
+  ✓ ⚠️ EARNINGS IN 10 DAYS (2026-02-25)
+    → Buy point: $19.02
+
+LOW - Score: 4/12 - $287.39
+  RS Rating: 78
+  ✓ RS Rating 78
+  ✓ Flat Base (12.0% range, 5 weeks)
+  ✓ ⚠️ EARNINGS IN 10 DAYS (2026-02-25)
+    → Buy point: $293.65
+
+⚡ POCKET PIVOTS (Early Entry)
+--------------------------------------------------------------------------------
+
+DXCM - Score: 7/12 - $70.02
+  RS Rating: 50
+  ✓ Pocket Pivot (continuation, 1.4x volume)
+  ✓ Volume Breakout (2.0x avg)
+  ✓ EPS Growth 76%
+  ✓ ROE 34.5%
+
+ABNB - Score: 5/12 - $121.35
+  RS Rating: 43
+  ✓ Pocket Pivot (continuation, 1.1x volume)
+  ✓ Volume Breakout (2.4x avg)
+  ✓ ROE 30.2%
+
+COIN - Score: 4/12 - $164.32
+  RS Rating: 5
+  ✓ Pocket Pivot (continuation, 1.1x volume)
+  ✓ Volume Breakout (3.2x avg)
+
+================================================================================
+Total stocks scanned: 71
+Stocks meeting criteria: 19
+  Breakouts: 0
+  Bases forming: 2
+  Pocket pivots: 3
+================================================================================
