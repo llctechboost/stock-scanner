@@ -135,7 +135,7 @@
         <div class="header">
             <div>
                 <h1>📊 Stock Scanner Command Center</h1>
-                <div class="timestamp">Last scan: February 26, 2026 • 06:09 PM EST</div>
+                <div class="timestamp">Last scan: February 27, 2026 • 12:05 AM EST</div>
             </div>
             <div class="status">
                 <button class="export-btn" onclick="exportToTradingView()">📤 Export to TradingView</button>
@@ -158,15 +158,15 @@
                 <div class="stat-label">⚡ Daily Squeeze</div>
             </div>
             <div class="stat-card" data-filter="cup" onclick="filterStocks('cup')">
-                <div class="stat-value" style="color:#ffa500">91</div>
+                <div class="stat-value" style="color:#ffa500">93</div>
                 <div class="stat-label">☕ Cup & Handle</div>
             </div>
             <div class="stat-card" data-filter="vcp" onclick="filterStocks('vcp')">
-                <div class="stat-value" style="color:#ff6b6b">146</div>
+                <div class="stat-value" style="color:#ff6b6b">145</div>
                 <div class="stat-label">⭐ VCPs</div>
             </div>
             <div class="stat-card" data-filter="wma" onclick="filterStocks('wma')">
-                <div class="stat-value" style="color:#00d4ff">94</div>
+                <div class="stat-value" style="color:#00d4ff">99</div>
                 <div class="stat-label">🧠 200-WMA Zone</div>
             </div>
             <div class="stat-card" data-filter="watchlist" onclick="filterStocks('watchlist')">
@@ -174,7 +174,7 @@
                 <div class="stat-label">👀 Watch List</div>
             </div>
             <div class="stat-card" data-filter="all" onclick="filterStocks('all')">
-                <div class="stat-value" style="color:#a371f7">493</div>
+                <div class="stat-value" style="color:#a371f7">492</div>
                 <div class="stat-label">📊 All Stocks</div>
             </div>
         </div>
@@ -212,6 +212,18 @@
                     <td class="negative">$73.86</td>
                     <td class="positive">$107.50</td>
                     <td class="cyan">+8%</td>
+                    <td class="munger-stars">⭐⭐⭐</td>
+                    <td><span class="action-badge action-buy">BUY</span></td>
+                </tr>
+<tr class="stock-row cup-handle" data-categories="actionable wma vcp cup all" data-ticker="DG" data-score="95" data-weekly-sq="0" data-daily-sq="49" onclick="loadChart('DG')">
+                    <td class="ticker">DG</td>
+                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
+                    <td><span class="score-pill score-a">95</span></td>
+                    <td>$154.00</td>
+                    <td class="positive">$156.34</td>
+                    <td class="negative">$142.41</td>
+                    <td class="positive">$180.46</td>
+                    <td class="cyan">+7%</td>
                     <td class="munger-stars">⭐⭐⭐</td>
                     <td><span class="action-badge action-buy">BUY</span></td>
                 </tr>
@@ -260,18 +272,6 @@
                     <td class="negative">$29.88</td>
                     <td class="positive">$40.83</td>
                     <td class="cyan">-7%</td>
-                    <td class="munger-stars">⭐⭐⭐</td>
-                    <td><span class="action-badge action-buy">BUY</span></td>
-                </tr>
-<tr class="stock-row cup-handle" data-categories="actionable vcp cup all" data-ticker="DGX" data-score="85" data-weekly-sq="0" data-daily-sq="49" onclick="loadChart('DGX')">
-                    <td class="ticker">DGX</td>
-                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
-                    <td><span class="score-pill score-a">85</span></td>
-                    <td>$154.00</td>
-                    <td class="positive">$156.34</td>
-                    <td class="negative">$142.41</td>
-                    <td class="positive">$180.46</td>
-                    <td class="">-14%</td>
                     <td class="munger-stars">⭐⭐⭐</td>
                     <td><span class="action-badge action-buy">BUY</span></td>
                 </tr>
@@ -404,6 +404,18 @@
                     <td class="negative">$31.13</td>
                     <td class="positive">$39.71</td>
                     <td class="">+82%</td>
+                    <td class="munger-stars">⭐⭐⭐</td>
+                    <td><span class="action-badge action-buy">BUY</span></td>
+                </tr>
+<tr class="stock-row cup-handle" data-categories="actionable wma vcp cup all" data-ticker="DLTR" data-score="80" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('DLTR')">
+                    <td class="ticker">DLTR</td>
+                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
+                    <td><span class="score-pill score-a">80</span></td>
+                    <td>$126.95</td>
+                    <td class="positive">$135.86</td>
+                    <td class="negative">$123.75</td>
+                    <td class="positive">$159.82</td>
+                    <td class="cyan">+7%</td>
                     <td class="munger-stars">⭐⭐⭐</td>
                     <td><span class="action-badge action-buy">BUY</span></td>
                 </tr>
@@ -560,6 +572,18 @@
                     <td class="negative">$116.74</td>
                     <td class="positive">$153.74</td>
                     <td class="cyan">-4%</td>
+                    <td class="munger-stars">⭐⭐</td>
+                    <td><span class="action-badge action-buy">BUY</span></td>
+                </tr>
+<tr class="stock-row cup-handle" data-categories="wma cup watchlist all" data-ticker="EOG" data-score="75" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('EOG')">
+                    <td class="ticker">EOG</td>
+                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
+                    <td><span class="score-pill score-b">75</span></td>
+                    <td>$121.13</td>
+                    <td class="positive">$125.11</td>
+                    <td class="negative">$113.96</td>
+                    <td class="positive">$145.33</td>
+                    <td class="cyan">+7%</td>
                     <td class="munger-stars">⭐⭐</td>
                     <td><span class="action-badge action-buy">BUY</span></td>
                 </tr>
@@ -788,18 +812,6 @@
                     <td class="negative">$111.26</td>
                     <td class="positive">$154.43</td>
                     <td class="">+10%</td>
-                    <td class="munger-stars">⭐⭐</td>
-                    <td><span class="action-badge action-buy">BUY</span></td>
-                </tr>
-<tr class="stock-row cup-handle" data-categories="actionable cup all" data-ticker="DHI" data-score="70" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('DHI')">
-                    <td class="ticker">DHI</td>
-                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
-                    <td><span class="score-pill score-b">70</span></td>
-                    <td>$211.10</td>
-                    <td class="positive">$213.21</td>
-                    <td class="negative">$194.21</td>
-                    <td class="positive">$255.35</td>
-                    <td class="">+42%</td>
                     <td class="munger-stars">⭐⭐</td>
                     <td><span class="action-badge action-buy">BUY</span></td>
                 </tr>
@@ -1064,18 +1076,6 @@
                     <td class="negative">$64.27</td>
                     <td class="positive">$83.83</td>
                     <td class="cyan">+9%</td>
-                    <td class="munger-stars">⭐⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row cup-handle" data-categories="wma cup watchlist all" data-ticker="EOG" data-score="65" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('EOG')">
-                    <td class="ticker">EOG</td>
-                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
-                    <td><span class="score-pill score-b">65</span></td>
-                    <td>$121.13</td>
-                    <td class="positive">$125.11</td>
-                    <td class="negative">$113.96</td>
-                    <td class="positive">$145.33</td>
-                    <td class="cyan">+7%</td>
                     <td class="munger-stars">⭐⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -1479,10 +1479,10 @@
                     <td class="ticker">HUBB</td>
                     <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
                     <td><span class="score-pill score-b">60</span></td>
-                    <td>$524.19</td>
-                    <td class="positive">$526.81</td>
-                    <td class="negative">$482.25</td>
-                    <td class="positive">$629.03</td>
+                    <td>$522.77</td>
+                    <td class="positive">$525.38</td>
+                    <td class="negative">$480.95</td>
+                    <td class="positive">$627.32</td>
                     <td class="">+56%</td>
                     <td class="munger-stars">⭐⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
@@ -1571,7 +1571,7 @@
                     <td class="munger-stars">⭐⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row wma-buy-zone" data-categories="wma watchlist all" data-ticker="SJM" data-score="60" data-weekly-sq="83" data-daily-sq="50" onclick="loadChart('SJM')">
+<tr class="stock-row wma-buy-zone" data-categories="wma watchlist all" data-ticker="SJM" data-score="60" data-weekly-sq="85" data-daily-sq="53" onclick="loadChart('SJM')">
                     <td class="ticker">SJM</td>
                     <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
                     <td><span class="score-pill score-b">60</span></td>
@@ -1643,27 +1643,15 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="vcp watchlist all" data-ticker="DHR" data-score="55" data-weekly-sq="0" data-daily-sq="60" onclick="loadChart('DHR')">
-                    <td class="ticker">DHR</td>
-                    <td><span class="pattern-tag tag-vcp">VCP ⭐</span></td>
+<tr class="stock-row cup-handle" data-categories="cup watchlist all" data-ticker="DLR" data-score="55" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('DLR')">
+                    <td class="ticker">DLR</td>
+                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
                     <td><span class="score-pill score-c">55</span></td>
-                    <td>$158.97</td>
-                    <td class="positive">$159.76</td>
-                    <td class="negative">$146.25</td>
-                    <td class="positive">$190.76</td>
-                    <td class="">-24%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row " data-categories="vcp watchlist all" data-ticker="DOC" data-score="55" data-weekly-sq="34" data-daily-sq="0" onclick="loadChart('DOC')">
-                    <td class="ticker">DOC</td>
-                    <td><span class="pattern-tag tag-vcp">VCP</span></td>
-                    <td><span class="score-pill score-c">55</span></td>
-                    <td>$126.95</td>
-                    <td class="positive">$127.58</td>
-                    <td class="negative">$116.79</td>
-                    <td class="positive">$152.34</td>
-                    <td class="">+644%</td>
+                    <td>$176.37</td>
+                    <td class="positive">$182.78</td>
+                    <td class="negative">$166.49</td>
+                    <td class="positive">$208.97</td>
+                    <td class="">+32%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -1772,6 +1760,18 @@
                     <td class="negative">$36.59</td>
                     <td class="positive">$47.00</td>
                     <td class="cyan">+2%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row high-squeeze" data-categories="squeeze squeeze_weekly watchlist all" data-ticker="VMC" data-score="55" data-weekly-sq="100" data-daily-sq="0" onclick="loadChart('VMC')">
+                    <td class="ticker">VMC</td>
+                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
+                    <td><span class="score-pill score-c">55</span></td>
+                    <td>$308.99</td>
+                    <td class="positive">$310.53</td>
+                    <td class="negative">$284.27</td>
+                    <td class="positive">$370.79</td>
+                    <td class="">+35%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -1967,18 +1967,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row high-squeeze" data-categories="vcp squeeze squeeze_daily watchlist all" data-ticker="DLR" data-score="50" data-weekly-sq="0" data-daily-sq="100" onclick="loadChart('DLR')">
-                    <td class="ticker">DLR</td>
-                    <td><span class="pattern-tag tag-vcp">VCP ⭐</span></td>
-                    <td><span class="score-pill score-c">50</span></td>
-                    <td>$105.55</td>
-                    <td class="positive">$106.08</td>
-                    <td class="negative">$97.11</td>
-                    <td class="positive">$126.66</td>
-                    <td class="">-37%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row " data-categories="watchlist all" data-ticker="DOW" data-score="50" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('DOW')">
                     <td class="ticker">DOW</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
@@ -2039,7 +2027,7 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row high-squeeze" data-categories="wma squeeze squeeze_weekly all" data-ticker="EQR" data-score="50" data-weekly-sq="100" data-daily-sq="100" onclick="loadChart('EQR')">
+<tr class="stock-row high-squeeze" data-categories="wma squeeze squeeze_daily squeeze_weekly all" data-ticker="EQR" data-score="50" data-weekly-sq="100" data-daily-sq="100" onclick="loadChart('EQR')">
                     <td class="ticker">EQR</td>
                     <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
                     <td><span class="score-pill score-c">50</span></td>
@@ -2063,7 +2051,7 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="vcp watchlist all" data-ticker="F" data-score="50" data-weekly-sq="29" data-daily-sq="85" onclick="loadChart('F')">
+<tr class="stock-row " data-categories="vcp watchlist all" data-ticker="F" data-score="50" data-weekly-sq="29" data-daily-sq="86" onclick="loadChart('F')">
                     <td class="ticker">F</td>
                     <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
                     <td><span class="score-pill score-c">50</span></td>
@@ -2363,6 +2351,18 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
+<tr class="stock-row " data-categories="watchlist all" data-ticker="PNW" data-score="50" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('PNW')">
+                    <td class="ticker">PNW</td>
+                    <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
+                    <td><span class="score-pill score-c">50</span></td>
+                    <td>$99.54</td>
+                    <td class="positive">$100.04</td>
+                    <td class="negative">$91.58</td>
+                    <td class="positive">$119.45</td>
+                    <td class="">+32%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
 <tr class="stock-row " data-categories="watchlist all" data-ticker="PWR" data-score="50" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('PWR')">
                     <td class="ticker">PWR</td>
                     <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
@@ -2639,18 +2639,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row high-squeeze" data-categories="squeeze squeeze_weekly all" data-ticker="MSCI" data-score="45" data-weekly-sq="100" data-daily-sq="0" onclick="loadChart('MSCI')">
-                    <td class="ticker">MSCI</td>
-                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
-                    <td><span class="score-pill score-c">45</span></td>
-                    <td>$572.87</td>
-                    <td class="positive">$575.73</td>
-                    <td class="negative">$527.04</td>
-                    <td class="positive">$687.44</td>
-                    <td class="">+11%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="MSI" data-score="45" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('MSI')">
                     <td class="ticker">MSI</td>
                     <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
@@ -2732,18 +2720,6 @@
                     <td class="negative">$434.74</td>
                     <td class="positive">$531.13</td>
                     <td class="">+61%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row high-squeeze" data-categories="squeeze squeeze_weekly all" data-ticker="VMC" data-score="45" data-weekly-sq="100" data-daily-sq="0" onclick="loadChart('VMC')">
-                    <td class="ticker">VMC</td>
-                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
-                    <td><span class="score-pill score-c">45</span></td>
-                    <td>$308.99</td>
-                    <td class="positive">$310.53</td>
-                    <td class="negative">$284.27</td>
-                    <td class="positive">$370.79</td>
-                    <td class="">+35%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -2876,6 +2852,42 @@
                     <td class="negative">$64.87</td>
                     <td class="positive">$84.61</td>
                     <td class="">+55%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row " data-categories="all" data-ticker="DGX" data-score="40" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('DGX')">
+                    <td class="ticker">DGX</td>
+                    <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
+                    <td><span class="score-pill score-c">40</span></td>
+                    <td>$211.10</td>
+                    <td class="positive">$212.16</td>
+                    <td class="negative">$194.21</td>
+                    <td class="positive">$253.32</td>
+                    <td class="">+45%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row " data-categories="vcp all" data-ticker="DHI" data-score="40" data-weekly-sq="60" data-daily-sq="0" onclick="loadChart('DHI')">
+                    <td class="ticker">DHI</td>
+                    <td><span class="pattern-tag tag-vcp">VCP</span></td>
+                    <td><span class="score-pill score-c">40</span></td>
+                    <td>$158.97</td>
+                    <td class="positive">$159.76</td>
+                    <td class="negative">$146.25</td>
+                    <td class="positive">$190.76</td>
+                    <td class="">+26%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row wma-buy-zone" data-categories="wma vcp all" data-ticker="DOC" data-score="40" data-weekly-sq="23" data-daily-sq="34" onclick="loadChart('DOC')">
+                    <td class="ticker">DOC</td>
+                    <td><span class="pattern-tag tag-vcp">VCP</span></td>
+                    <td><span class="score-pill score-c">40</span></td>
+                    <td>$17.51</td>
+                    <td class="positive">$17.60</td>
+                    <td class="negative">$16.11</td>
+                    <td class="positive">$21.01</td>
+                    <td class="cyan">-4%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -3227,18 +3239,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="all" data-ticker="PNW" data-score="40" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('PNW')">
-                    <td class="ticker">PNW</td>
-                    <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
-                    <td><span class="score-pill score-c">40</span></td>
-                    <td>$99.54</td>
-                    <td class="positive">$100.04</td>
-                    <td class="negative">$91.58</td>
-                    <td class="positive">$119.45</td>
-                    <td class="">+32%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="PSX" data-score="40" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('PSX')">
                     <td class="ticker">PSX</td>
                     <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
@@ -3512,6 +3512,18 @@
                     <td class="negative">$22.76</td>
                     <td class="positive">$29.69</td>
                     <td class="">-36%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row cup-handle" data-categories="wma cup all" data-ticker="DHR" data-score="35" data-weekly-sq="35" data-daily-sq="0" onclick="loadChart('DHR')">
+                    <td class="ticker">DHR</td>
+                    <td><span class="pattern-tag tag-cup">CUP & HANDLE ☕</span></td>
+                    <td><span class="score-pill score-c">35</span></td>
+                    <td>$209.36</td>
+                    <td class="positive">$225.65</td>
+                    <td class="negative">$205.55</td>
+                    <td class="positive">$248.86</td>
+                    <td class="cyan">-7%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -3815,6 +3827,18 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
+<tr class="stock-row high-squeeze" data-categories="squeeze squeeze_weekly all" data-ticker="CBRE" data-score="30" data-weekly-sq="100" data-daily-sq="0" onclick="loadChart('CBRE')">
+                    <td class="ticker">CBRE</td>
+                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
+                    <td><span class="score-pill score-c">30</span></td>
+                    <td>$150.00</td>
+                    <td class="positive">$150.75</td>
+                    <td class="negative">$138.00</td>
+                    <td class="positive">$180.00</td>
+                    <td class="">+41%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="CMS" data-score="30" data-weekly-sq="40" data-daily-sq="0" onclick="loadChart('CMS')">
                     <td class="ticker">CMS</td>
                     <td><span class="pattern-tag tag-breakout">BREAKOUT</span></td>
@@ -3863,15 +3887,15 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="all" data-ticker="DLTR" data-score="30" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('DLTR')">
-                    <td class="ticker">DLTR</td>
-                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
+<tr class="stock-row high-squeeze" data-categories="wma squeeze squeeze_weekly all" data-ticker="DIS" data-score="30" data-weekly-sq="100" data-daily-sq="10" onclick="loadChart('DIS')">
+                    <td class="ticker">DIS</td>
+                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
                     <td><span class="score-pill score-c">30</span></td>
-                    <td>$176.37</td>
-                    <td class="positive">$177.25</td>
-                    <td class="negative">$162.26</td>
-                    <td class="positive">$211.64</td>
-                    <td class="">+62%</td>
+                    <td>$105.55</td>
+                    <td class="positive">$106.08</td>
+                    <td class="negative">$97.11</td>
+                    <td class="positive">$126.66</td>
+                    <td class="cyan">+5%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -4403,18 +4427,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="vcp all" data-ticker="DIS" data-score="25" data-weekly-sq="10" data-daily-sq="35" onclick="loadChart('DIS')">
-                    <td class="ticker">DIS</td>
-                    <td><span class="pattern-tag tag-vcp">VCP ⭐</span></td>
-                    <td><span class="score-pill score-c">25</span></td>
-                    <td>$209.36</td>
-                    <td class="positive">$210.41</td>
-                    <td class="negative">$192.61</td>
-                    <td class="positive">$251.23</td>
-                    <td class="">+86%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="DPZ" data-score="25" data-weekly-sq="84" data-daily-sq="0" onclick="loadChart('DPZ')">
                     <td class="ticker">DPZ</td>
                     <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
@@ -4451,7 +4463,7 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="all" data-ticker="HRL" data-score="25" data-weekly-sq="0" data-daily-sq="24" onclick="loadChart('HRL')">
+<tr class="stock-row " data-categories="all" data-ticker="HRL" data-score="25" data-weekly-sq="0" data-daily-sq="26" onclick="loadChart('HRL')">
                     <td class="ticker">HRL</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
                     <td><span class="score-pill score-c">25</span></td>
@@ -4595,6 +4607,18 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
+<tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="MMC" data-score="25" data-weekly-sq="60" data-daily-sq="0" onclick="loadChart('MMC')">
+                    <td class="ticker">MMC</td>
+                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                    <td><span class="score-pill score-c">25</span></td>
+                    <td>$185.29</td>
+                    <td class="positive">$186.22</td>
+                    <td class="negative">$170.47</td>
+                    <td class="positive">$222.35</td>
+                    <td class="cyan">-2%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
 <tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="PANW" data-score="25" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('PANW')">
                     <td class="ticker">PANW</td>
                     <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
@@ -4640,6 +4664,18 @@
                     <td class="negative">$91.09</td>
                     <td class="positive">$118.81</td>
                     <td class="">-13%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="SNPS" data-score="25" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('SNPS')">
+                    <td class="ticker">SNPS</td>
+                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                    <td><span class="score-pill score-c">25</span></td>
+                    <td>$426.00</td>
+                    <td class="positive">$428.13</td>
+                    <td class="negative">$391.92</td>
+                    <td class="positive">$511.20</td>
+                    <td class="cyan">-7%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -4703,6 +4739,18 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
+<tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="WAT" data-score="25" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('WAT')">
+                    <td class="ticker">WAT</td>
+                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
+                    <td><span class="score-pill score-c">25</span></td>
+                    <td>$322.83</td>
+                    <td class="positive">$324.44</td>
+                    <td class="negative">$297.00</td>
+                    <td class="positive">$387.40</td>
+                    <td class="cyan">-1%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
 <tr class="stock-row wma-buy-zone" data-categories="wma vcp all" data-ticker="ABT" data-score="20" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('ABT')">
                     <td class="ticker">ABT</td>
                     <td><span class="pattern-tag tag-vcp">VCP</span></td>
@@ -4751,18 +4799,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row high-squeeze" data-categories="squeeze squeeze_weekly all" data-ticker="CBRE" data-score="20" data-weekly-sq="100" data-daily-sq="0" onclick="loadChart('CBRE')">
-                    <td class="ticker">CBRE</td>
-                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
-                    <td><span class="score-pill score-c">20</span></td>
-                    <td>$150.00</td>
-                    <td class="positive">$150.75</td>
-                    <td class="negative">$138.00</td>
-                    <td class="positive">$180.00</td>
-                    <td class="">+41%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="EPAM" data-score="20" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('EPAM')">
                     <td class="ticker">EPAM</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
@@ -4772,6 +4808,18 @@
                     <td class="negative">$127.53</td>
                     <td class="positive">$166.34</td>
                     <td class="">-44%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row " data-categories="all" data-ticker="EXPE" data-score="20" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('EXPE')">
+                    <td class="ticker">EXPE</td>
+                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
+                    <td><span class="score-pill score-c">20</span></td>
+                    <td>$217.93</td>
+                    <td class="positive">$219.02</td>
+                    <td class="negative">$200.50</td>
+                    <td class="positive">$261.52</td>
+                    <td class="">+50%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -4823,18 +4871,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="all" data-ticker="MS" data-score="20" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('MS')">
-                    <td class="ticker">MS</td>
-                    <td><span class="pattern-tag tag-pivot">AT PIVOT</span></td>
-                    <td><span class="score-pill score-c">20</span></td>
-                    <td>$177.49</td>
-                    <td class="positive">$178.38</td>
-                    <td class="negative">$163.29</td>
-                    <td class="positive">$212.99</td>
-                    <td class="">+72%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row high-squeeze" data-categories="wma squeeze squeeze_daily all" data-ticker="PTC" data-score="20" data-weekly-sq="0" data-daily-sq="100" onclick="loadChart('PTC')">
                     <td class="ticker">PTC</td>
                     <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
@@ -4856,6 +4892,18 @@
                     <td class="negative">$133.94</td>
                     <td class="positive">$174.71</td>
                     <td class="cyan">+3%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
+<tr class="stock-row " data-categories="all" data-ticker="SBAC" data-score="20" data-weekly-sq="92" data-daily-sq="0" onclick="loadChart('SBAC')">
+                    <td class="ticker">SBAC</td>
+                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
+                    <td><span class="score-pill score-c">20</span></td>
+                    <td>$192.17</td>
+                    <td class="positive">$193.13</td>
+                    <td class="negative">$176.80</td>
+                    <td class="positive">$230.60</td>
+                    <td class="">-16%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -4955,6 +5003,18 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
+<tr class="stock-row " data-categories="all" data-ticker="COF" data-score="15" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('COF')">
+                    <td class="ticker">COF</td>
+                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
+                    <td><span class="score-pill score-c">15</span></td>
+                    <td>$208.47</td>
+                    <td class="positive">$209.51</td>
+                    <td class="negative">$191.79</td>
+                    <td class="positive">$250.16</td>
+                    <td class="">+45%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="CPRT" data-score="15" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('CPRT')">
                     <td class="ticker">CPRT</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
@@ -5012,18 +5072,6 @@
                     <td class="negative">$50.77</td>
                     <td class="positive">$66.22</td>
                     <td class="">-26%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row " data-categories="all" data-ticker="EXPE" data-score="15" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('EXPE')">
-                    <td class="ticker">EXPE</td>
-                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
-                    <td><span class="score-pill score-c">15</span></td>
-                    <td>$217.93</td>
-                    <td class="positive">$219.02</td>
-                    <td class="negative">$200.50</td>
-                    <td class="positive">$261.52</td>
-                    <td class="">+50%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -5195,7 +5243,7 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="all" data-ticker="META" data-score="15" data-weekly-sq="59" data-daily-sq="0" onclick="loadChart('META')">
+<tr class="stock-row " data-categories="all" data-ticker="META" data-score="15" data-weekly-sq="60" data-daily-sq="0" onclick="loadChart('META')">
                     <td class="ticker">META</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
                     <td><span class="score-pill score-c">15</span></td>
@@ -5204,18 +5252,6 @@
                     <td class="negative">$604.45</td>
                     <td class="positive">$788.41</td>
                     <td class="">+53%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="MMC" data-score="15" data-weekly-sq="60" data-daily-sq="0" onclick="loadChart('MMC')">
-                    <td class="ticker">MMC</td>
-                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
-                    <td><span class="score-pill score-c">15</span></td>
-                    <td>$181.10</td>
-                    <td class="positive">$182.01</td>
-                    <td class="negative">$166.61</td>
-                    <td class="positive">$217.32</td>
-                    <td class="cyan">-4%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -5327,18 +5363,6 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="SNPS" data-score="15" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('SNPS')">
-                    <td class="ticker">SNPS</td>
-                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
-                    <td><span class="score-pill score-c">15</span></td>
-                    <td>$426.00</td>
-                    <td class="positive">$428.13</td>
-                    <td class="negative">$391.92</td>
-                    <td class="positive">$511.20</td>
-                    <td class="cyan">-7%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="TECH" data-score="15" data-weekly-sq="60" data-daily-sq="0" onclick="loadChart('TECH')">
                     <td class="ticker">TECH</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
@@ -5384,18 +5408,6 @@
                     <td class="negative">$162.67</td>
                     <td class="positive">$212.18</td>
                     <td class="">+106%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row wma-buy-zone" data-categories="wma all" data-ticker="WAT" data-score="15" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('WAT')">
-                    <td class="ticker">WAT</td>
-                    <td><span class="pattern-tag tag-200wma">200-WMA 🧠</span></td>
-                    <td><span class="score-pill score-c">15</span></td>
-                    <td>$322.83</td>
-                    <td class="positive">$324.44</td>
-                    <td class="negative">$297.00</td>
-                    <td class="positive">$387.40</td>
-                    <td class="cyan">-1%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -5579,6 +5591,18 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
+<tr class="stock-row " data-categories="all" data-ticker="IT" data-score="10" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('IT')">
+                    <td class="ticker">IT</td>
+                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
+                    <td><span class="score-pill score-c">10</span></td>
+                    <td>$155.80</td>
+                    <td class="positive">$156.58</td>
+                    <td class="negative">$143.34</td>
+                    <td class="positive">$186.96</td>
+                    <td class="">-58%</td>
+                    <td class="munger-stars">⭐</td>
+                    <td><span class="action-badge action-watch">WATCH</span></td>
+                </tr>
 <tr class="stock-row " data-categories="all" data-ticker="MA" data-score="10" data-weekly-sq="98" data-daily-sq="0" onclick="loadChart('MA')">
                     <td class="ticker">MA</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
@@ -5684,18 +5708,6 @@
                     <td class="negative">$205.45</td>
                     <td class="positive">$267.97</td>
                     <td class="">-32%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row " data-categories="all" data-ticker="SBAC" data-score="10" data-weekly-sq="92" data-daily-sq="0" onclick="loadChart('SBAC')">
-                    <td class="ticker">SBAC</td>
-                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
-                    <td><span class="score-pill score-c">10</span></td>
-                    <td>$192.17</td>
-                    <td class="positive">$193.13</td>
-                    <td class="negative">$176.80</td>
-                    <td class="positive">$230.60</td>
-                    <td class="">-16%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -5828,18 +5840,6 @@
                     <td class="negative">$253.19</td>
                     <td class="positive">$330.25</td>
                     <td class="">-22%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row " data-categories="all" data-ticker="COF" data-score="5" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('COF')">
-                    <td class="ticker">COF</td>
-                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
-                    <td><span class="score-pill score-c">5</span></td>
-                    <td>$208.47</td>
-                    <td class="positive">$209.51</td>
-                    <td class="negative">$191.79</td>
-                    <td class="positive">$250.16</td>
-                    <td class="">+45%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -5987,7 +5987,7 @@
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
-<tr class="stock-row " data-categories="all" data-ticker="FICO" data-score="0" data-weekly-sq="0" data-daily-sq="2" onclick="loadChart('FICO')">
+<tr class="stock-row " data-categories="all" data-ticker="FICO" data-score="0" data-weekly-sq="0" data-daily-sq="3" onclick="loadChart('FICO')">
                     <td class="ticker">FICO</td>
                     <td><span class="pattern-tag tag-forming">WATCH</span></td>
                     <td><span class="score-pill score-c">0</span></td>
@@ -6008,18 +6008,6 @@
                     <td class="negative">$24.20</td>
                     <td class="positive">$31.56</td>
                     <td class="">-15%</td>
-                    <td class="munger-stars">⭐</td>
-                    <td><span class="action-badge action-watch">WATCH</span></td>
-                </tr>
-<tr class="stock-row " data-categories="all" data-ticker="IT" data-score="0" data-weekly-sq="0" data-daily-sq="0" onclick="loadChart('IT')">
-                    <td class="ticker">IT</td>
-                    <td><span class="pattern-tag tag-forming">WATCH</span></td>
-                    <td><span class="score-pill score-c">0</span></td>
-                    <td>$155.80</td>
-                    <td class="positive">$156.58</td>
-                    <td class="negative">$143.34</td>
-                    <td class="positive">$186.96</td>
-                    <td class="">-58%</td>
                     <td class="munger-stars">⭐</td>
                     <td><span class="action-badge action-watch">WATCH</span></td>
                 </tr>
@@ -6193,11 +6181,11 @@
     <script>
         const stockData = {
             'MCHP': { price: 74.97, entry: 81.08, stop: 74, target: 108, pattern: 'CUP & HANDLE', vcp: 9, rs: '+45%', high: '6.6%', wma: '+8%', munger: '⭐⭐⭐', dailySq: 100, weeklySq: 0 },
+            'DG': { price: 154.00, entry: 156.34, stop: 142, target: 180, pattern: 'CUP & HANDLE', vcp: 9, rs: '+48%', high: '0.5%', wma: '+7%', munger: '⭐⭐⭐', dailySq: 49, weeklySq: 0 },
             'IEX': { price: 209.59, entry: 216.73, stop: 197, target: 243, pattern: 'CUP & HANDLE', vcp: 7, rs: '+21%', high: '2.3%', wma: '+6%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'TGT': { price: 114.79, entry: 117.86, stop: 107, target: 139, pattern: 'CUP & HANDLE', vcp: 7, rs: '+34%', high: '3.4%', wma: '-8%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'CF': { price: 97.16, entry: 100.45, stop: 92, target: 124, pattern: 'CUP & HANDLE', vcp: 9, rs: '+26%', high: '3.6%', wma: '+21%', munger: '⭐⭐⭐', dailySq: 84, weeklySq: 0 },
             'CMCSA': { price: 30.85, entry: 32.80, stop: 30, target: 41, pattern: 'CUP & HANDLE', vcp: 7, rs: '+25%', high: '8.8%', wma: '-7%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
-            'DGX': { price: 154.00, entry: 156.34, stop: 142, target: 180, pattern: 'CUP & HANDLE', vcp: 9, rs: '+48%', high: '0.5%', wma: '-14%', munger: '⭐⭐⭐', dailySq: 49, weeklySq: 0 },
             'DRI': { price: 214.83, entry: 220.85, stop: 201, target: 271, pattern: 'CUP & HANDLE', vcp: 9, rs: '+21%', high: '2.7%', wma: '+38%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'FCX': { price: 68.38, entry: 69.51, stop: 63, target: 85, pattern: 'CUP & HANDLE', vcp: 9, rs: '+67%', high: '0.6%', wma: '+71%', munger: '⭐⭐⭐', dailySq: 40, weeklySq: 0 },
             'HON': { price: 240.88, entry: 246.41, stop: 224, target: 283, pattern: 'CUP & HANDLE', vcp: 9, rs: '+26%', high: '1.3%', wma: '+29%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
@@ -6209,6 +6197,7 @@
             'AVY': { price: 192.94, entry: 199.42, stop: 182, target: 225, pattern: 'CUP & HANDLE', vcp: 7, rs: '+14%', high: '2.3%', wma: '+6%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'BEN': { price: 27.43, entry: 28.44, stop: 26, target: 32, pattern: 'CUP & HANDLE', vcp: 7, rs: '+25%', high: '2.6%', wma: '+24%', munger: '⭐⭐⭐', dailySq: 60, weeklySq: 0 },
             'CCL': { price: 32.70, entry: 34.17, stop: 31, target: 40, pattern: 'CUP & HANDLE', vcp: 7, rs: '+28%', high: '3.4%', wma: '+82%', munger: '⭐⭐⭐', dailySq: 60, weeklySq: 0 },
+            'DLTR': { price: 126.95, entry: 135.86, stop: 124, target: 160, pattern: 'CUP & HANDLE', vcp: 7, rs: '+20%', high: '10.1%', wma: '+7%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'EMN': { price: 75.22, entry: 82.17, stop: 75, target: 105, pattern: 'CUP & HANDLE', vcp: 0, rs: '+26%', high: '20.3%', wma: '-5%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'LUV': { price: 50.93, entry: 55.35, stop: 50, target: 62, pattern: 'CUP & HANDLE', vcp: 7, rs: '+49%', high: '7.1%', wma: '+61%', munger: '⭐⭐⭐', dailySq: 0, weeklySq: 0 },
             'NCLH': { price: 25.02, entry: 25.27, stop: 23, target: 30, pattern: 'CUP & HANDLE', vcp: 7, rs: '+36%', high: '7.1%', wma: '+35%', munger: '⭐⭐⭐', dailySq: 60, weeklySq: 0 },
@@ -6222,6 +6211,7 @@
             'ADM': { price: 67.42, entry: 67.76, stop: 62, target: 81, pattern: 'BREAKOUT', vcp: 9, rs: '+14%', high: '2.3%', wma: '+7%', munger: '⭐⭐', dailySq: 100, weeklySq: 0 },
             'BA': { price: 229.41, entry: 247.16, stop: 225, target: 296, pattern: 'CUP & HANDLE', vcp: 9, rs: '+26%', high: '9.0%', wma: '+20%', munger: '⭐⭐', dailySq: 76, weeklySq: 0 },
             'CLX': { price: 126.89, entry: 128.16, stop: 117, target: 154, pattern: 'CUP & HANDLE', vcp: 0, rs: '+20%', high: '15.5%', wma: '-4%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
+            'EOG': { price: 121.13, entry: 125.11, stop: 114, target: 145, pattern: 'CUP & HANDLE', vcp: 0, rs: '+16%', high: '3.8%', wma: '+7%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'EXR': { price: 147.64, entry: 154.28, stop: 141, target: 178, pattern: 'CUP & HANDLE', vcp: 7, rs: '+13%', high: '3.3%', wma: '+5%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'HAL': { price: 35.71, entry: 35.89, stop: 33, target: 43, pattern: 'BREAKOUT', vcp: 9, rs: '+40%', high: '0.2%', wma: '+18%', munger: '⭐⭐', dailySq: 100, weeklySq: 0 },
             'LYB': { price: 56.30, entry: 60.06, stop: 55, target: 79, pattern: 'CUP & HANDLE', vcp: 0, rs: '+23%', high: '20.6%', wma: '-21%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
@@ -6241,7 +6231,6 @@
             'COP': { price: 110.70, entry: 112.71, stop: 103, target: 124, pattern: 'CUP & HANDLE', vcp: 0, rs: '+29%', high: '0.8%', wma: '+11%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'CTVA': { price: 78.82, entry: 79.61, stop: 73, target: 95, pattern: 'CUP & HANDLE', vcp: 7, rs: '+20%', high: '0.0%', wma: '+35%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'DECK': { price: 119.41, entry: 122.15, stop: 111, target: 154, pattern: 'CUP & HANDLE', vcp: 0, rs: '+40%', high: '17.6%', wma: '+10%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
-            'DHI': { price: 211.10, entry: 213.21, stop: 194, target: 255, pattern: 'CUP & HANDLE', vcp: 0, rs: '+41%', high: '0.0%', wma: '+42%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'DOV': { price: 227.14, entry: 235.64, stop: 215, target: 267, pattern: 'CUP & HANDLE', vcp: 0, rs: '+22%', high: '2.6%', wma: '+41%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'EQIX': { price: 948.02, entry: 970.13, stop: 884, target: 1143, pattern: 'CUP & HANDLE', vcp: 0, rs: '+27%', high: '1.3%', wma: '+27%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'FANG': { price: 166.98, entry: 177.77, stop: 162, target: 198, pattern: 'CUP & HANDLE', vcp: 0, rs: '+14%', high: '5.1%', wma: '+15%', munger: '⭐⭐', dailySq: 54, weeklySq: 0 },
@@ -6264,7 +6253,6 @@
             'COST': { price: 986.74, entry: 1028.66, stop: 937, target: 1169, pattern: 'CUP & HANDLE', vcp: 7, rs: '+10%', high: '6.2%', wma: '+37%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'CPT': { price: 110.24, entry: 110.79, stop: 101, target: 132, pattern: 'VCP', vcp: 9, rs: '+5%', high: '8.8%', wma: '+6%', munger: '⭐⭐', dailySq: 100, weeklySq: 0 },
             'DAY': { price: 69.86, entry: 70.21, stop: 64, target: 84, pattern: 'BREAKOUT', vcp: 0, rs: '+2%', high: '2.6%', wma: '+9%', munger: '⭐⭐', dailySq: 100, weeklySq: 60 },
-            'EOG': { price: 121.13, entry: 125.11, stop: 114, target: 145, pattern: 'CUP & HANDLE', vcp: 0, rs: '+16%', high: '3.8%', wma: '+7%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'EQT': { price: 59.74, entry: 61.11, stop: 56, target: 72, pattern: 'CUP & HANDLE', vcp: 9, rs: '+6%', high: '2.1%', wma: '+42%', munger: '⭐⭐', dailySq: 24, weeklySq: 89 },
             'GLW': { price: 150.30, entry: 151.05, stop: 138, target: 180, pattern: 'AT PIVOT', vcp: 0, rs: '+81%', high: '6.3%', wma: '+242%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'GS': { price: 929.00, entry: 933.64, stop: 855, target: 1115, pattern: 'VCP', vcp: 9, rs: '+16%', high: '4.8%', wma: '+97%', munger: '⭐⭐', dailySq: 100, weeklySq: 0 },
@@ -6298,7 +6286,7 @@
             'DE': { price: 619.46, entry: 622.56, stop: 570, target: 743, pattern: 'AT PIVOT', vcp: 0, rs: '+25%', high: '6.5%', wma: '+51%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'EMR': { price: 152.72, entry: 162.68, stop: 148, target: 178, pattern: 'CUP & HANDLE', vcp: 0, rs: '+17%', high: '5.2%', wma: '+48%', munger: '⭐⭐', dailySq: 15, weeklySq: 0 },
             'FITB': { price: 51.97, entry: 52.23, stop: 48, target: 62, pattern: 'VCP', vcp: 7, rs: '+21%', high: '5.6%', wma: '+50%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
-            'HUBB': { price: 524.19, entry: 526.81, stop: 482, target: 629, pattern: 'BREAKOUT', vcp: 7, rs: '+22%', high: '0.7%', wma: '+56%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
+            'HUBB': { price: 522.77, entry: 525.38, stop: 481, target: 627, pattern: 'BREAKOUT', vcp: 7, rs: '+22%', high: '0.7%', wma: '+56%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'IR': { price: 94.53, entry: 99.75, stop: 91, target: 115, pattern: 'CUP & HANDLE', vcp: 0, rs: '+19%', high: '4.3%', wma: '+28%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'KLAC': { price: 1524.31, entry: 1531.93, stop: 1402, target: 1829, pattern: 'VCP', vcp: 7, rs: '+33%', high: '9.4%', wma: '+134%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'KR': { price: 67.18, entry: 71.96, stop: 66, target: 83, pattern: 'CUP & HANDLE', vcp: 0, rs: '+2%', high: '8.2%', wma: '+28%', munger: '⭐⭐', dailySq: 0, weeklySq: 100 },
@@ -6306,14 +6294,13 @@
             'OXY': { price: 51.43, entry: 51.69, stop: 47, target: 62, pattern: 'BREAKOUT', vcp: 0, rs: '+25%', high: '1.9%', wma: '-5%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'PFG': { price: 97.50, entry: 97.99, stop: 90, target: 117, pattern: 'BREAKOUT', vcp: 7, rs: '+16%', high: '0.0%', wma: '+30%', munger: '⭐⭐', dailySq: 55, weeklySq: 0 },
             'RCL': { price: 318.94, entry: 320.53, stop: 293, target: 383, pattern: 'VCP', vcp: 7, rs: '+20%', high: '12.3%', wma: '+104%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
-            'SJM': { price: 116.00, entry: 116.58, stop: 107, target: 139, pattern: 'BREAKOUT', vcp: 0, rs: '+17%', high: '0.0%', wma: '+1%', munger: '⭐⭐', dailySq: 50, weeklySq: 83 },
+            'SJM': { price: 116.00, entry: 116.58, stop: 107, target: 139, pattern: 'BREAKOUT', vcp: 0, rs: '+17%', high: '0.0%', wma: '+1%', munger: '⭐⭐', dailySq: 53, weeklySq: 85 },
             'VTRS': { price: 15.25, entry: 15.33, stop: 14, target: 18, pattern: 'AT PIVOT', vcp: 0, rs: '+44%', high: '5.5%', wma: '+54%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'WM': { price: 233.90, entry: 237.57, stop: 216, target: 275, pattern: 'CUP & HANDLE', vcp: 7, rs: '+9%', high: '2.3%', wma: '+25%', munger: '⭐⭐', dailySq: 44, weeklySq: 0 },
             'XOM': { price: 148.54, entry: 149.28, stop: 137, target: 178, pattern: 'VCP', vcp: 7, rs: '+31%', high: '3.9%', wma: '+44%', munger: '⭐⭐', dailySq: 0, weeklySq: 0 },
             'APD': { price: 276.23, entry: 296.07, stop: 270, target: 355, pattern: 'CUP & HANDLE', vcp: 0, rs: '+7%', high: '10.4%', wma: '+5%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'AZO': { price: 3660.00, entry: 3896.74, stop: 3550, target: 4264, pattern: 'CUP & HANDLE', vcp: 9, rs: '-7%', high: '15.9%', wma: '+24%', munger: '⭐', dailySq: 100, weeklySq: 0 },
-            'DHR': { price: 158.97, entry: 159.76, stop: 146, target: 191, pattern: 'VCP', vcp: 9, rs: '+16%', high: '17.0%', wma: '-24%', munger: '⭐', dailySq: 60, weeklySq: 0 },
-            'DOC': { price: 126.95, entry: 127.58, stop: 117, target: 152, pattern: 'VCP', vcp: 7, rs: '+74%', high: '26.6%', wma: '+644%', munger: '⭐', dailySq: 0, weeklySq: 34 },
+            'DLR': { price: 176.37, entry: 182.78, stop: 166, target: 209, pattern: 'CUP & HANDLE', vcp: 0, rs: '+13%', high: '2.5%', wma: '+32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ED': { price: 110.76, entry: 111.31, stop: 102, target: 133, pattern: 'BREAKOUT', vcp: 0, rs: '+13%', high: '2.0%', wma: '+23%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'EG': { price: 337.82, entry: 349.49, stop: 318, target: 383, pattern: 'CUP & HANDLE', vcp: 0, rs: '+8%', high: '7.5%', wma: '-0%', munger: '⭐', dailySq: 28, weeklySq: 60 },
             'ETN': { price: 374.59, entry: 400.05, stop: 364, target: 446, pattern: 'CUP & HANDLE', vcp: 0, rs: '+11%', high: '5.4%', wma: '+46%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6323,6 +6310,7 @@
             'PSA': { price: 303.95, entry: 308.31, stop: 281, target: 342, pattern: 'CUP & HANDLE', vcp: 0, rs: '+13%', high: '1.4%', wma: '+11%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'REGN': { price: 770.79, entry: 774.64, stop: 709, target: 925, pattern: 'VCP', vcp: 7, rs: '-2%', high: '5.0%', wma: '+1%', munger: '⭐', dailySq: 100, weeklySq: 0 },
             'UDR': { price: 38.09, entry: 40.17, stop: 37, target: 47, pattern: 'CUP & HANDLE', vcp: 0, rs: '+7%', high: '13.5%', wma: '+2%', munger: '⭐', dailySq: 40, weeklySq: 0 },
+            'VMC': { price: 308.99, entry: 310.53, stop: 284, target: 371, pattern: 'AT PIVOT', vcp: 0, rs: '+6%', high: '6.5%', wma: '+35%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'ADI': { price: 354.35, entry: 356.12, stop: 326, target: 425, pattern: 'BREAKOUT', vcp: 0, rs: '+41%', high: '1.8%', wma: '+78%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'AES': { price: 16.25, entry: 16.33, stop: 15, target: 20, pattern: 'BREAKOUT', vcp: 0, rs: '+19%', high: '1.6%', wma: '+0%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ALGN': { price: 189.20, entry: 190.15, stop: 174, target: 227, pattern: 'AT PIVOT', vcp: 0, rs: '+28%', high: '8.7%', wma: '-21%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6339,7 +6327,6 @@
             'CMI': { price: 588.11, entry: 591.05, stop: 541, target: 706, pattern: 'BREAKOUT', vcp: 7, rs: '+19%', high: '2.6%', wma: '+102%', munger: '⭐', dailySq: 92, weeklySq: 0 },
             'CSX': { price: 42.65, entry: 42.86, stop: 39, target: 51, pattern: 'BREAKOUT', vcp: 0, rs: '+23%', high: '0.0%', wma: '+33%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'DD': { price: 50.35, entry: 50.60, stop: 46, target: 60, pattern: 'BREAKOUT', vcp: 0, rs: '+30%', high: '2.3%', wma: '+66%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'DLR': { price: 105.55, entry: 106.08, stop: 97, target: 127, pattern: 'VCP', vcp: 9, rs: '-4%', high: '41.6%', wma: '-37%', munger: '⭐', dailySq: 100, weeklySq: 0 },
             'DOW': { price: 29.90, entry: 30.05, stop: 28, target: 36, pattern: 'WATCH', vcp: 0, rs: '+31%', high: '17.3%', wma: '-26%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'DVN': { price: 42.66, entry: 42.87, stop: 39, target: 51, pattern: 'AT PIVOT', vcp: 0, rs: '+20%', high: '5.1%', wma: '-1%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'EIX': { price: 74.37, entry: 74.74, stop: 68, target: 89, pattern: 'BREAKOUT', vcp: 0, rs: '+29%', high: '1.2%', wma: '+23%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6347,7 +6334,7 @@
             'ENPH': { price: 45.77, entry: 46.00, stop: 42, target: 55, pattern: 'WATCH', vcp: 0, rs: '+65%', high: '28.3%', wma: '-64%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'EQR': { price: 64.12, entry: 64.44, stop: 59, target: 77, pattern: '200-WMA', vcp: 0, rs: '+6%', high: '10.9%', wma: '+5%', munger: '⭐', dailySq: 100, weeklySq: 100 },
             'ESS': { price: 262.74, entry: 264.05, stop: 242, target: 315, pattern: '200-WMA', vcp: 0, rs: '+2%', high: '13.1%', wma: '+10%', munger: '⭐', dailySq: 48, weeklySq: 100 },
-            'F': { price: 14.41, entry: 14.48, stop: 13, target: 17, pattern: 'BREAKOUT', vcp: 7, rs: '+11%', high: '0.1%', wma: '+36%', munger: '⭐', dailySq: 85, weeklySq: 29 },
+            'F': { price: 14.41, entry: 14.48, stop: 13, target: 17, pattern: 'BREAKOUT', vcp: 7, rs: '+11%', high: '0.1%', wma: '+36%', munger: '⭐', dailySq: 86, weeklySq: 29 },
             'FDX': { price: 387.68, entry: 389.62, stop: 357, target: 465, pattern: 'BREAKOUT', vcp: 0, rs: '+42%', high: '0.2%', wma: '+64%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'FRT': { price: 108.44, entry: 108.98, stop: 100, target: 130, pattern: 'BREAKOUT', vcp: 0, rs: '+11%', high: '0.6%', wma: '+16%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'GEHC': { price: 83.92, entry: 84.34, stop: 77, target: 101, pattern: 'VCP', vcp: 7, rs: '+5%', high: '7.3%', wma: '+8%', munger: '⭐', dailySq: 0, weeklySq: 15 },
@@ -6372,6 +6359,7 @@
             'PEP': { price: 167.58, entry: 168.42, stop: 154, target: 201, pattern: 'BREAKOUT', vcp: 0, rs: '+16%', high: '1.7%', wma: '+9%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PKG': { price: 231.83, entry: 232.99, stop: 213, target: 278, pattern: 'VCP', vcp: 7, rs: '+16%', high: '5.9%', wma: '+38%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PNC': { price: 222.82, entry: 223.93, stop: 205, target: 267, pattern: 'VCP', vcp: 7, rs: '+17%', high: '8.1%', wma: '+44%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'PNW': { price: 99.54, entry: 100.04, stop: 92, target: 119, pattern: 'BREAKOUT', vcp: 0, rs: '+12%', high: '0.5%', wma: '+32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PWR': { price: 565.05, entry: 567.88, stop: 520, target: 678, pattern: 'BREAKOUT', vcp: 0, rs: '+26%', high: '0.6%', wma: '+121%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'RF': { price: 29.36, entry: 29.51, stop: 27, target: 35, pattern: 'VCP', vcp: 7, rs: '+17%', high: '5.1%', wma: '+46%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'SNA': { price: 386.67, entry: 388.60, stop: 356, target: 464, pattern: 'BREAKOUT', vcp: 7, rs: '+14%', high: '0.1%', wma: '+42%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6395,7 +6383,6 @@
             'LLY': { price: 1022.02, entry: 1116.33, stop: 1017, target: 1287, pattern: 'CUP & HANDLE', vcp: 0, rs: '-8%', high: '7.8%', wma: '+59%', munger: '⭐', dailySq: 100, weeklySq: 0 },
             'LNT': { price: 71.45, entry: 71.81, stop: 66, target: 86, pattern: 'BREAKOUT', vcp: 0, rs: '+5%', high: '0.6%', wma: '+33%', munger: '⭐', dailySq: 0, weeklySq: 40 },
             'MAA': { price: 135.87, entry: 136.55, stop: 125, target: 163, pattern: 'VCP', vcp: 7, rs: '+2%', high: '17.1%', wma: '-1%', munger: '⭐', dailySq: 100, weeklySq: 76 },
-            'MSCI': { price: 572.87, entry: 575.73, stop: 527, target: 687, pattern: 'AT PIVOT', vcp: 0, rs: '+2%', high: '7.9%', wma: '+11%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'MSI': { price: 471.95, entry: 474.31, stop: 434, target: 566, pattern: 'AT PIVOT', vcp: 0, rs: '+28%', high: '3.2%', wma: '+38%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'NVDA': { price: 184.89, entry: 185.81, stop: 170, target: 222, pattern: 'WATCH', vcp: 0, rs: '+4%', high: '10.7%', wma: '+109%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'PPL': { price: 38.60, entry: 38.79, stop: 36, target: 46, pattern: 'BREAKOUT', vcp: 0, rs: '+7%', high: '0.0%', wma: '+34%', munger: '⭐', dailySq: 0, weeklySq: 33 },
@@ -6403,7 +6390,6 @@
             'SYK': { price: 386.06, entry: 389.92, stop: 355, target: 432, pattern: 'CUP & HANDLE', vcp: 0, rs: '+3%', high: '3.9%', wma: '+24%', munger: '⭐', dailySq: 0, weeklySq: 84 },
             'T': { price: 27.46, entry: 29.09, stop: 26, target: 33, pattern: 'CUP & HANDLE', vcp: 0, rs: '+7%', high: '5.2%', wma: '+45%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'TT': { price: 457.14, entry: 477.27, stop: 435, target: 531, pattern: 'CUP & HANDLE', vcp: 0, rs: '+9%', high: '3.3%', wma: '+61%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'VMC': { price: 308.99, entry: 310.53, stop: 284, target: 371, pattern: 'AT PIVOT', vcp: 0, rs: '+6%', high: '6.5%', wma: '+35%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'AMGN': { price: 379.33, entry: 381.23, stop: 349, target: 455, pattern: 'BREAKOUT', vcp: 0, rs: '+12%', high: '1.3%', wma: '+43%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'AOS': { price: 77.15, entry: 77.54, stop: 71, target: 93, pattern: 'AT PIVOT', vcp: 0, rs: '+19%', high: '4.1%', wma: '+14%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'APH': { price: 148.47, entry: 149.21, stop: 137, target: 178, pattern: 'VCP', vcp: 7, rs: '+8%', high: '10.7%', wma: '+129%', munger: '⭐', dailySq: 0, weeklySq: 60 },
@@ -6415,6 +6401,9 @@
             'CNC': { price: 42.93, entry: 43.14, stop: 40, target: 52, pattern: 'VCP', vcp: 7, rs: '+8%', high: '33.2%', wma: '-34%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CNP': { price: 43.01, entry: 43.23, stop: 40, target: 52, pattern: 'BREAKOUT', vcp: 0, rs: '+10%', high: '0.4%', wma: '+42%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'DAL': { price: 70.51, entry: 70.86, stop: 65, target: 85, pattern: 'AT PIVOT', vcp: 0, rs: '+13%', high: '6.4%', wma: '+55%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'DGX': { price: 211.10, entry: 212.16, stop: 194, target: 253, pattern: 'BREAKOUT', vcp: 0, rs: '+10%', high: '0.0%', wma: '+45%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'DHI': { price: 158.97, entry: 159.76, stop: 146, target: 191, pattern: 'VCP', vcp: 7, rs: '+3%', high: '13.1%', wma: '+26%', munger: '⭐', dailySq: 0, weeklySq: 60 },
+            'DOC': { price: 17.51, entry: 17.60, stop: 16, target: 21, pattern: 'VCP', vcp: 7, rs: '-2%', high: '9.7%', wma: '-4%', munger: '⭐', dailySq: 34, weeklySq: 23 },
             'ECL': { price: 306.76, entry: 308.29, stop: 282, target: 368, pattern: 'BREAKOUT', vcp: 0, rs: '+12%', high: '0.5%', wma: '+46%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ELV': { price: 323.05, entry: 351.66, stop: 320, target: 436, pattern: 'CUP & HANDLE', vcp: 9, rs: '-3%', high: '27.6%', wma: '-25%', munger: '⭐', dailySq: 60, weeklySq: 53 },
             'ES': { price: 75.05, entry: 75.43, stop: 69, target: 90, pattern: 'BREAKOUT', vcp: 0, rs: '+15%', high: '0.1%', wma: '+19%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6444,7 +6433,6 @@
             'PFE': { price: 27.10, entry: 27.24, stop: 25, target: 33, pattern: 'BREAKOUT', vcp: 0, rs: '+7%', high: '2.3%', wma: '-6%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PH': { price: 1014.97, entry: 1020.04, stop: 934, target: 1218, pattern: 'BREAKOUT', vcp: 0, rs: '+19%', high: '0.8%', wma: '+98%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PLD': { price: 142.66, entry: 143.37, stop: 131, target: 171, pattern: 'BREAKOUT', vcp: 0, rs: '+13%', high: '0.0%', wma: '+27%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'PNW': { price: 99.54, entry: 100.04, stop: 92, target: 119, pattern: 'BREAKOUT', vcp: 0, rs: '+12%', high: '0.5%', wma: '+32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PSX': { price: 152.46, entry: 153.22, stop: 140, target: 183, pattern: 'AT PIVOT', vcp: 0, rs: '+15%', high: '4.8%', wma: '+36%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'REG': { price: 78.42, entry: 78.81, stop: 72, target: 94, pattern: 'BREAKOUT', vcp: 0, rs: '+12%', high: '0.0%', wma: '+28%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ROK': { price: 411.30, entry: 413.36, stop: 378, target: 494, pattern: 'AT PIVOT', vcp: 0, rs: '+5%', high: '4.1%', wma: '+46%', munger: '⭐', dailySq: 0, weeklySq: 12 },
@@ -6468,6 +6456,7 @@
             'CARR': { price: 62.76, entry: 63.07, stop: 58, target: 75, pattern: 'WATCH', vcp: 0, rs: '+17%', high: '21.6%', wma: '+14%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CRM': { price: 199.47, entry: 216.22, stop: 197, target: 252, pattern: 'CUP & HANDLE', vcp: 0, rs: '-15%', high: '34.7%', wma: '-14%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CZR': { price: 24.74, entry: 24.86, stop: 23, target: 30, pattern: 'WATCH', vcp: 0, rs: '+12%', high: '28.4%', wma: '-36%', munger: '⭐', dailySq: 0, weeklySq: 60 },
+            'DHR': { price: 209.36, entry: 225.65, stop: 206, target: 249, pattern: 'CUP & HANDLE', vcp: 0, rs: '-9%', high: '13.5%', wma: '-7%', munger: '⭐', dailySq: 0, weeklySq: 35 },
             'EW': { price: 85.90, entry: 86.33, stop: 79, target: 103, pattern: 'BREAKOUT', vcp: 0, rs: '-1%', high: '1.2%', wma: '+7%', munger: '⭐', dailySq: 0, weeklySq: 24 },
             'FAST': { price: 45.68, entry: 45.91, stop: 42, target: 55, pattern: 'AT PIVOT', vcp: 0, rs: '+15%', high: '8.4%', wma: '+41%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'HUM': { price: 186.83, entry: 198.64, stop: 181, target: 219, pattern: 'CUP & HANDLE', vcp: 9, rs: '-21%', high: '39.7%', wma: '-49%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6493,11 +6482,12 @@
             'AXP': { price: 335.32, entry: 337.00, stop: 308, target: 402, pattern: 'WATCH', vcp: 0, rs: '-7%', high: '12.7%', wma: '+48%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'BIIB': { price: 188.02, entry: 188.96, stop: 173, target: 226, pattern: 'AT PIVOT', vcp: 0, rs: '+3%', high: '6.5%', wma: '-11%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'BLK': { price: 1090.27, entry: 1095.72, stop: 1003, target: 1308, pattern: 'VCP', vcp: 7, rs: '+6%', high: '8.9%', wma: '+35%', munger: '⭐', dailySq: 84, weeklySq: 84 },
+            'CBRE': { price: 150.00, entry: 150.75, stop: 138, target: 180, pattern: 'WATCH', vcp: 0, rs: '-8%', high: '12.6%', wma: '+41%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'CMS': { price: 77.05, entry: 77.44, stop: 71, target: 92, pattern: 'BREAKOUT', vcp: 0, rs: '+4%', high: '0.0%', wma: '+26%', munger: '⭐', dailySq: 0, weeklySq: 40 },
             'CSCO': { price: 78.10, entry: 78.49, stop: 72, target: 94, pattern: 'WATCH', vcp: 0, rs: '+3%', high: '10.0%', wma: '+49%', munger: '⭐', dailySq: 0, weeklySq: 37 },
             'CTSH': { price: 64.97, entry: 65.29, stop: 60, target: 78, pattern: '200-WMA', vcp: 0, rs: '-15%', high: '24.7%', wma: '-5%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'D': { price: 63.35, entry: 63.67, stop: 58, target: 76, pattern: 'AT PIVOT', vcp: 0, rs: '+4%', high: '4.8%', wma: '+20%', munger: '⭐', dailySq: 0, weeklySq: 84 },
-            'DLTR': { price: 176.37, entry: 177.25, stop: 162, target: 212, pattern: 'AT PIVOT', vcp: 0, rs: '+2%', high: '6.5%', wma: '+62%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'DIS': { price: 105.55, entry: 106.08, stop: 97, target: 127, pattern: '200-WMA', vcp: 0, rs: '+3%', high: '14.3%', wma: '+5%', munger: '⭐', dailySq: 10, weeklySq: 100 },
             'DTE': { price: 146.59, entry: 147.32, stop: 135, target: 176, pattern: 'BREAKOUT', vcp: 0, rs: '+9%', high: '0.0%', wma: '+29%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'DUK': { price: 129.23, entry: 129.88, stop: 119, target: 155, pattern: 'BREAKOUT', vcp: 0, rs: '+7%', high: '0.0%', wma: '+31%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'EBAY': { price: 87.90, entry: 88.34, stop: 81, target: 105, pattern: 'WATCH', vcp: 0, rs: '+7%', high: '12.2%', wma: '+57%', munger: '⭐', dailySq: 0, weeklySq: 76 },
@@ -6542,11 +6532,10 @@
             'CMG': { price: 38.05, entry: 38.24, stop: 35, target: 46, pattern: 'VCP', vcp: 7, rs: '+14%', high: '34.7%', wma: '-13%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'COR': { price: 366.65, entry: 368.48, stop: 337, target: 440, pattern: 'BREAKOUT', vcp: 0, rs: '-2%', high: '2.0%', wma: '+65%', munger: '⭐', dailySq: 40, weeklySq: 53 },
             'CRL': { price: 175.46, entry: 176.34, stop: 161, target: 211, pattern: 'WATCH', vcp: 0, rs: '-1%', high: '22.6%', wma: '-12%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'DIS': { price: 209.36, entry: 210.41, stop: 193, target: 251, pattern: 'VCP', vcp: 9, rs: '-8%', high: '27.5%', wma: '+86%', munger: '⭐', dailySq: 35, weeklySq: 10 },
             'DPZ': { price: 399.29, entry: 401.29, stop: 367, target: 479, pattern: '200-WMA', vcp: 0, rs: '-4%', high: '18.8%', wma: '+0%', munger: '⭐', dailySq: 0, weeklySq: 84 },
             'EXPD': { price: 144.72, entry: 145.44, stop: 133, target: 174, pattern: 'WATCH', vcp: 0, rs: '-1%', high: '12.3%', wma: '+26%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'GPN': { price: 77.85, entry: 78.24, stop: 72, target: 93, pattern: 'WATCH', vcp: 0, rs: '+5%', high: '25.2%', wma: '-24%', munger: '⭐', dailySq: 0, weeklySq: 60 },
-            'HRL': { price: 24.82, entry: 24.94, stop: 23, target: 30, pattern: 'WATCH', vcp: 0, rs: '+9%', high: '18.5%', wma: '-23%', munger: '⭐', dailySq: 24, weeklySq: 0 },
+            'HRL': { price: 24.82, entry: 24.94, stop: 23, target: 30, pattern: 'WATCH', vcp: 0, rs: '+9%', high: '18.5%', wma: '-23%', munger: '⭐', dailySq: 26, weeklySq: 0 },
             'ICE': { price: 162.89, entry: 176.85, stop: 161, target: 211, pattern: 'CUP & HANDLE', vcp: 0, rs: '+5%', high: '13.1%', wma: '+23%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'INCY': { price: 100.09, entry: 100.59, stop: 92, target: 120, pattern: 'VCP', vcp: 7, rs: '-5%', high: '9.5%', wma: '+40%', munger: '⭐', dailySq: 90, weeklySq: 59 },
             'IP': { price: 43.13, entry: 43.35, stop: 40, target: 52, pattern: 'WATCH', vcp: 0, rs: '+11%', high: '20.2%', wma: '+11%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6558,28 +6547,31 @@
             'LVS': { price: 55.95, entry: 56.23, stop: 51, target: 67, pattern: 'VCP', vcp: 7, rs: '-17%', high: '19.1%', wma: '+19%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'LW': { price: 47.45, entry: 47.69, stop: 44, target: 57, pattern: 'VCP', vcp: 9, rs: '-19%', high: '27.7%', wma: '-36%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'MKTX': { price: 184.87, entry: 185.79, stop: 170, target: 222, pattern: 'WATCH', vcp: 0, rs: '+13%', high: '18.7%', wma: '-21%', munger: '⭐', dailySq: 0, weeklySq: 84 },
+            'MMC': { price: 185.29, entry: 186.22, stop: 170, target: 222, pattern: '200-WMA', vcp: 0, rs: '+2%', high: '23.1%', wma: '-2%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'PANW': { price: 149.40, entry: 150.15, stop: 137, target: 179, pattern: '200-WMA', vcp: 0, rs: '-20%', high: '32.5%', wma: '+4%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PEG': { price: 85.85, entry: 86.28, stop: 79, target: 103, pattern: 'AT PIVOT', vcp: 0, rs: '+5%', high: '3.2%', wma: '+26%', munger: '⭐', dailySq: 0, weeklySq: 99 },
             'RJF': { price: 159.68, entry: 160.48, stop: 147, target: 192, pattern: 'AT PIVOT', vcp: 0, rs: '+4%', high: '8.9%', wma: '+30%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'RVTY': { price: 99.01, entry: 99.51, stop: 91, target: 119, pattern: 'VCP', vcp: 7, rs: '-6%', high: '16.0%', wma: '-13%', munger: '⭐', dailySq: 0, weeklySq: 32 },
+            'SNPS': { price: 426.00, entry: 428.13, stop: 392, target: 511, pattern: '200-WMA', vcp: 0, rs: '+6%', high: '34.0%', wma: '-7%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'SO': { price: 96.35, entry: 96.83, stop: 89, target: 116, pattern: 'BREAKOUT', vcp: 0, rs: '+9%', high: '1.8%', wma: '+30%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'TMO': { price: 520.12, entry: 522.72, stop: 479, target: 624, pattern: '200-WMA', vcp: 0, rs: '-13%', high: '18.7%', wma: '-2%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'TRMB': { price: 68.23, entry: 68.57, stop: 63, target: 82, pattern: 'VCP', vcp: 9, rs: '-16%', high: '20.0%', wma: '+10%', munger: '⭐', dailySq: 60, weeklySq: 0 },
             'UHS': { price: 204.33, entry: 205.35, stop: 188, target: 245, pattern: 'WATCH', vcp: 0, rs: '-16%', high: '16.3%', wma: '+25%', munger: '⭐', dailySq: 0, weeklySq: 56 },
             'VICI': { price: 29.78, entry: 29.93, stop: 27, target: 36, pattern: 'AT PIVOT', vcp: 0, rs: '+5%', high: '9.6%', wma: '+6%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'WAT': { price: 322.83, entry: 324.44, stop: 297, target: 387, pattern: '200-WMA', vcp: 0, rs: '-22%', high: '21.7%', wma: '-1%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ABT': { price: 116.26, entry: 116.84, stop: 107, target: 140, pattern: 'VCP', vcp: 7, rs: '-9%', high: '15.5%', wma: '+6%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'AIZ': { price: 229.44, entry: 230.59, stop: 211, target: 275, pattern: 'AT PIVOT', vcp: 0, rs: '+1%', high: '5.3%', wma: '+35%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ANET': { price: 130.25, entry: 130.90, stop: 120, target: 156, pattern: 'WATCH', vcp: 0, rs: '+4%', high: '19.6%', wma: '+77%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'BAC': { price: 52.30, entry: 52.56, stop: 48, target: 63, pattern: 'AT PIVOT', vcp: 0, rs: '+0%', high: '8.6%', wma: '+41%', munger: '⭐', dailySq: 0, weeklySq: 76 },
-            'CBRE': { price: 150.00, entry: 150.75, stop: 138, target: 180, pattern: 'WATCH', vcp: 0, rs: '-8%', high: '12.6%', wma: '+41%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'EPAM': { price: 138.62, entry: 139.31, stop: 128, target: 166, pattern: 'WATCH', vcp: 0, rs: '-25%', high: '37.4%', wma: '-44%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'EXPE': { price: 217.93, entry: 219.02, stop: 200, target: 262, pattern: 'WATCH', vcp: 0, rs: '-16%', high: '27.7%', wma: '+50%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'HBAN': { price: 17.54, entry: 17.63, stop: 16, target: 21, pattern: 'AT PIVOT', vcp: 0, rs: '+9%', high: '9.0%', wma: '+33%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'HPE': { price: 20.84, entry: 20.94, stop: 19, target: 25, pattern: 'WATCH', vcp: 0, rs: '-2%', high: '20.1%', wma: '+22%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'IBM': { price: 242.01, entry: 243.22, stop: 223, target: 290, pattern: 'WATCH', vcp: 0, rs: '-20%', high: '22.7%', wma: '+33%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'KHC': { price: 24.57, entry: 24.69, stop: 23, target: 29, pattern: 'VCP', vcp: 7, rs: '-2%', high: '20.2%', wma: '-19%', munger: '⭐', dailySq: 68, weeklySq: 84 },
-            'MS': { price: 177.49, entry: 178.38, stop: 163, target: 213, pattern: 'AT PIVOT', vcp: 0, rs: '+8%', high: '6.7%', wma: '+72%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'PTC': { price: 157.19, entry: 157.98, stop: 145, target: 189, pattern: '200-WMA', vcp: 0, rs: '-9%', high: '27.4%', wma: '-0%', munger: '⭐', dailySq: 100, weeklySq: 0 },
             'QCOM': { price: 145.59, entry: 146.32, stop: 134, target: 175, pattern: 'VCP', vcp: 7, rs: '-10%', high: '22.0%', wma: '+3%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'SBAC': { price: 192.17, entry: 193.13, stop: 177, target: 231, pattern: 'WATCH', vcp: 0, rs: '-1%', high: '19.8%', wma: '-16%', munger: '⭐', dailySq: 0, weeklySq: 92 },
             'SCHW': { price: 97.52, entry: 98.01, stop: 90, target: 117, pattern: 'AT PIVOT', vcp: 0, rs: '+8%', high: '8.7%', wma: '+35%', munger: '⭐', dailySq: 0, weeklySq: 21 },
             'TAP': { price: 48.04, entry: 48.28, stop: 44, target: 58, pattern: '200-WMA', vcp: 0, rs: '+5%', high: '21.4%', wma: '-8%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'URI': { price: 858.09, entry: 862.38, stop: 789, target: 1030, pattern: 'WATCH', vcp: 0, rs: '+6%', high: '15.5%', wma: '+47%', munger: '⭐', dailySq: 0, weeklySq: 43 },
@@ -6588,12 +6580,12 @@
             'ACN': { price: 207.38, entry: 208.42, stop: 191, target: 249, pattern: 'WATCH', vcp: 0, rs: '-17%', high: '41.6%', wma: '-30%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'BAX': { price: 20.36, entry: 20.46, stop: 19, target: 24, pattern: 'WATCH', vcp: 0, rs: '+9%', high: '43.6%', wma: '-45%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'BKNG': { price: 4250.26, entry: 4271.51, stop: 3910, target: 5100, pattern: 'WATCH', vcp: 0, rs: '-13%', high: '26.7%', wma: '+17%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'COF': { price: 208.47, entry: 209.51, stop: 192, target: 250, pattern: 'WATCH', vcp: 0, rs: '-2%', high: '18.9%', wma: '+45%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CPRT': { price: 37.15, entry: 37.34, stop: 34, target: 45, pattern: 'WATCH', vcp: 0, rs: '-5%', high: '41.8%', wma: '-17%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CRWD': { price: 381.10, entry: 383.01, stop: 351, target: 457, pattern: 'WATCH', vcp: 0, rs: '-26%', high: '31.6%', wma: '+34%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CTAS': { price: 198.28, entry: 199.27, stop: 182, target: 238, pattern: 'WATCH', vcp: 0, rs: '+8%', high: '12.3%', wma: '+27%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'EA': { price: 201.07, entry: 202.08, stop: 185, target: 241, pattern: 'BREAKOUT', vcp: 0, rs: '-0%', high: '1.7%', wma: '+42%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ETSY': { price: 55.18, entry: 55.46, stop: 51, target: 66, pattern: 'WATCH', vcp: 0, rs: '+2%', high: '27.0%', wma: '-26%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'EXPE': { price: 217.93, entry: 219.02, stop: 200, target: 262, pattern: 'WATCH', vcp: 0, rs: '-16%', high: '27.7%', wma: '+50%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'FTNT': { price: 79.20, entry: 79.60, stop: 73, target: 95, pattern: 'WATCH', vcp: 0, rs: '-2%', high: '27.4%', wma: '+10%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'GDDY': { price: 86.20, entry: 86.63, stop: 79, target: 103, pattern: 'WATCH', vcp: 0, rs: '-32%', high: '55.2%', wma: '-27%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'GIS': { price: 44.93, entry: 45.15, stop: 41, target: 54, pattern: 'WATCH', vcp: 0, rs: '-3%', high: '27.8%', wma: '-26%', munger: '⭐', dailySq: 0, weeklySq: 100 },
@@ -6608,8 +6600,7 @@
             'LULU': { price: 186.10, entry: 187.03, stop: 171, target: 223, pattern: 'VCP', vcp: 7, rs: '+5%', high: '49.2%', wma: '-41%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'MCO': { price: 479.47, entry: 481.87, stop: 441, target: 575, pattern: 'WATCH', vcp: 0, rs: '-1%', high: '11.1%', wma: '+23%', munger: '⭐', dailySq: 0, weeklySq: 7 },
             'MDT': { price: 97.03, entry: 97.52, stop: 89, target: 116, pattern: 'AT PIVOT', vcp: 0, rs: '-7%', high: '7.2%', wma: '+19%', munger: '⭐', dailySq: 0, weeklySq: 24 },
-            'META': { price: 657.01, entry: 660.30, stop: 604, target: 788, pattern: 'WATCH', vcp: 0, rs: '+3%', high: '16.7%', wma: '+53%', munger: '⭐', dailySq: 0, weeklySq: 59 },
-            'MMC': { price: 181.10, entry: 182.01, stop: 167, target: 217, pattern: '200-WMA', vcp: 0, rs: '+1%', high: '24.8%', wma: '-4%', munger: '⭐', dailySq: 0, weeklySq: 60 },
+            'META': { price: 657.01, entry: 660.30, stop: 604, target: 788, pattern: 'WATCH', vcp: 0, rs: '+3%', high: '16.7%', wma: '+53%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'NFLX': { price: 84.59, entry: 85.01, stop: 78, target: 102, pattern: 'VCP', vcp: 9, rs: '-19%', high: '36.8%', wma: '+32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'NTAP': { price: 99.14, entry: 99.64, stop: 91, target: 119, pattern: 'VCP', vcp: 9, rs: '-11%', high: '20.8%', wma: '+11%', munger: '⭐', dailySq: 37, weeklySq: 0 },
             'PAYC': { price: 129.79, entry: 130.44, stop: 119, target: 156, pattern: 'WATCH', vcp: 0, rs: '-21%', high: '51.0%', wma: '-44%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6619,12 +6610,10 @@
             'RMD': { price: 257.06, entry: 258.35, stop: 236, target: 308, pattern: 'WATCH', vcp: 0, rs: '+1%', high: '12.1%', wma: '+19%', munger: '⭐', dailySq: 0, weeklySq: 68 },
             'ROL': { price: 59.76, entry: 60.06, stop: 55, target: 72, pattern: 'AT PIVOT', vcp: 0, rs: '-2%', high: '8.6%', wma: '+33%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'RSG': { price: 224.59, entry: 225.71, stop: 207, target: 270, pattern: 'WATCH', vcp: 0, rs: '+4%', high: '12.3%', wma: '+26%', munger: '⭐', dailySq: 84, weeklySq: 68 },
-            'SNPS': { price: 426.00, entry: 428.13, stop: 392, target: 511, pattern: '200-WMA', vcp: 0, rs: '+6%', high: '34.0%', wma: '-7%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'TECH': { price: 57.92, entry: 58.21, stop: 53, target: 70, pattern: 'WATCH', vcp: 0, rs: '-12%', high: '18.7%', wma: '-18%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'TMUS': { price: 213.15, entry: 214.22, stop: 196, target: 256, pattern: 'WATCH', vcp: 0, rs: '+4%', high: '20.9%', wma: '+20%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'TROW': { price: 96.46, entry: 96.94, stop: 89, target: 116, pattern: '200-WMA', vcp: 0, rs: '-3%', high: '11.5%', wma: '-4%', munger: '⭐', dailySq: 0, weeklySq: 97 },
             'VST': { price: 176.82, entry: 177.70, stop: 163, target: 212, pattern: 'WATCH', vcp: 0, rs: '+4%', high: '18.7%', wma: '+106%', munger: '⭐', dailySq: 0, weeklySq: 36 },
-            'WAT': { price: 322.83, entry: 324.44, stop: 297, target: 387, pattern: '200-WMA', vcp: 0, rs: '-22%', high: '21.7%', wma: '-1%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'WTW': { price: 308.29, entry: 309.83, stop: 284, target: 370, pattern: 'WATCH', vcp: 0, rs: '-4%', high: '11.7%', wma: '+18%', munger: '⭐', dailySq: 0, weeklySq: 100 },
             'ADBE': { price: 259.04, entry: 260.34, stop: 238, target: 311, pattern: 'WATCH', vcp: 0, rs: '-19%', high: '42.6%', wma: '-40%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'ADP': { price: 218.36, entry: 219.45, stop: 201, target: 262, pattern: 'WATCH', vcp: 0, rs: '-14%', high: '32.1%', wma: '-11%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6640,6 +6629,7 @@
             'FDS': { price: 214.27, entry: 215.34, stop: 197, target: 257, pattern: 'WATCH', vcp: 0, rs: '-23%', high: '54.3%', wma: '-47%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'FIS': { price: 51.05, entry: 51.31, stop: 47, target: 61, pattern: 'WATCH', vcp: 0, rs: '-22%', high: '37.3%', wma: '-25%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'GEN': { price: 22.80, entry: 22.91, stop: 21, target: 27, pattern: '200-WMA', vcp: 0, rs: '-14%', high: '28.1%', wma: '-1%', munger: '⭐', dailySq: 0, weeklySq: 0 },
+            'IT': { price: 155.80, entry: 156.58, stop: 143, target: 187, pattern: 'WATCH', vcp: 0, rs: '-34%', high: '68.7%', wma: '-58%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'MA': { price: 514.77, entry: 517.34, stop: 474, target: 618, pattern: 'WATCH', vcp: 0, rs: '-6%', high: '13.8%', wma: '+15%', munger: '⭐', dailySq: 0, weeklySq: 98 },
             'MSFT': { price: 401.72, entry: 403.73, stop: 370, target: 482, pattern: '200-WMA', vcp: 0, rs: '-16%', high: '25.6%', wma: '+8%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'MTCH': { price: 32.22, entry: 32.38, stop: 30, target: 39, pattern: 'WATCH', vcp: 0, rs: '-3%', high: '15.9%', wma: '-16%', munger: '⭐', dailySq: 62, weeklySq: 60 },
@@ -6649,7 +6639,6 @@
             'ORLY': { price: 91.33, entry: 91.79, stop: 84, target: 110, pattern: 'VCP', vcp: 7, rs: '-10%', high: '15.3%', wma: '+27%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'PAYX': { price: 94.48, entry: 94.95, stop: 87, target: 113, pattern: 'WATCH', vcp: 0, rs: '-15%', high: '39.2%', wma: '-20%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'POOL': { price: 223.31, entry: 224.43, stop: 205, target: 268, pattern: 'WATCH', vcp: 0, rs: '-8%', high: '37.7%', wma: '-32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'SBAC': { price: 192.17, entry: 193.13, stop: 177, target: 231, pattern: 'WATCH', vcp: 0, rs: '-1%', high: '19.8%', wma: '-16%', munger: '⭐', dailySq: 0, weeklySq: 92 },
             'SPGI': { price: 437.49, entry: 439.68, stop: 402, target: 525, pattern: '200-WMA', vcp: 0, rs: '-11%', high: '22.0%', wma: '+2%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'SWKS': { price: 59.61, entry: 59.91, stop: 55, target: 72, pattern: 'VCP', vcp: 7, rs: '-5%', high: '26.5%', wma: '-30%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'TSCO': { price: 51.18, entry: 51.44, stop: 47, target: 61, pattern: '200-WMA', vcp: 0, rs: '-6%', high: '17.6%', wma: '+8%', munger: '⭐', dailySq: 13, weeklySq: 60 },
@@ -6661,7 +6650,6 @@
             'ALLE': { price: 160.41, entry: 161.21, stop: 148, target: 192, pattern: 'WATCH', vcp: 0, rs: '-3%', high: '10.8%', wma: '+28%', munger: '⭐', dailySq: 0, weeklySq: 60 },
             'AMZN': { price: 207.92, entry: 208.96, stop: 191, target: 250, pattern: 'WATCH', vcp: 0, rs: '-9%', high: '18.1%', wma: '+25%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'BIO': { price: 275.21, entry: 276.59, stop: 253, target: 330, pattern: 'WATCH', vcp: 0, rs: '-17%', high: '19.0%', wma: '-22%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'COF': { price: 208.47, entry: 209.51, stop: 192, target: 250, pattern: 'WATCH', vcp: 0, rs: '-2%', high: '18.9%', wma: '+45%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'FMC': { price: 14.60, entry: 14.67, stop: 13, target: 18, pattern: 'WATCH', vcp: 0, rs: '+9%', high: '66.4%', wma: '-77%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'FOX': { price: 52.03, entry: 52.29, stop: 48, target: 62, pattern: 'WATCH', vcp: 0, rs: '-10%', high: '23.2%', wma: '+38%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'FOXA': { price: 56.82, entry: 57.10, stop: 52, target: 68, pattern: 'WATCH', vcp: 0, rs: '-12%', high: '25.3%', wma: '+39%', munger: '⭐', dailySq: 0, weeklySq: 0 },
@@ -6674,9 +6662,8 @@
             'CDW': { price: 123.39, entry: 124.01, stop: 114, target: 148, pattern: 'WATCH', vcp: 0, rs: '-13%', high: '34.2%', wma: '-32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CPB': { price: 26.86, entry: 26.99, stop: 25, target: 32, pattern: 'WATCH', vcp: 0, rs: '-10%', high: '32.9%', wma: '-32%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'CSGP': { price: 45.00, entry: 45.22, stop: 41, target: 54, pattern: 'WATCH', vcp: 0, rs: '-35%', high: '53.5%', wma: '-41%', munger: '⭐', dailySq: 0, weeklySq: 0 },
-            'FICO': { price: 1388.44, entry: 1395.38, stop: 1277, target: 1666, pattern: 'WATCH', vcp: 0, rs: '-23%', high: '37.1%', wma: '+13%', munger: '⭐', dailySq: 2, weeklySq: 0 },
+            'FICO': { price: 1388.44, entry: 1395.38, stop: 1277, target: 1666, pattern: 'WATCH', vcp: 0, rs: '-23%', high: '37.1%', wma: '+13%', munger: '⭐', dailySq: 3, weeklySq: 0 },
             'INVH': { price: 26.30, entry: 26.43, stop: 24, target: 32, pattern: 'WATCH', vcp: 0, rs: '-5%', high: '23.6%', wma: '-15%', munger: '⭐', dailySq: 58, weeklySq: 84 },
-            'IT': { price: 155.80, entry: 156.58, stop: 143, target: 187, pattern: 'WATCH', vcp: 0, rs: '-34%', high: '68.7%', wma: '-58%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'MOH': { price: 146.36, entry: 147.09, stop: 135, target: 176, pattern: 'WATCH', vcp: 0, rs: '-0%', high: '58.6%', wma: '-50%', munger: '⭐', dailySq: 0, weeklySq: 0 },
             'NVR': { price: 7434.14, entry: 7471.31, stop: 6839, target: 8921, pattern: 'WATCH', vcp: 0, rs: '-0%', high: '13.0%', wma: '+10%', munger: '⭐', dailySq: 0, weeklySq: 68 },
             'ORCL': { price: 150.31, entry: 151.06, stop: 138, target: 180, pattern: 'WATCH', vcp: 0, rs: '-24%', high: '54.0%', wma: '+11%', munger: '⭐', dailySq: 0, weeklySq: 0 },
